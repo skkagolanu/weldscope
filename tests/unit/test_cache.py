@@ -26,7 +26,7 @@ def sample_response():
                 doc_name="test.pdf",
                 page_num=1,
                 chunk_text="Test content",
-                relevance_score=0.9,
+                fusion_score=0.9,
                 metadata={},
             )
         ],

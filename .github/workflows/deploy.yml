@@ -21,14 +21,14 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
+          python-version: '3.12'
       - name: Install browser checker
         run: |
           pip install playwright==1.65.0
           playwright install --with-deps chromium
       - name: Check rendered application
         env:
-          APP_URL: ${{ vars.STREAMLIT_APP_URL || 'https://rag-demo-skullkrak7.streamlit.app/' }}
+          APP_URL: ${{ vars.STREAMLIT_APP_URL || 'https://weldscope.streamlit.app/' }}
         run: python scripts/check_hosted_app.py --url "$APP_URL"
       - uses: actions/upload-artifact@v4
         if: failure()

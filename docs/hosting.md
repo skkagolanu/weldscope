@@ -1,77 +1,35 @@
-# WeldScope hosting and recovery
+# Hosting status and deployment
 
-## Addresses
+Public URL: https://weldscope.streamlit.app/
 
-- Source: https://github.com/skkagolanu/weldscope
-- Existing hosted app: https://rag-demo-skullkrak7.streamlit.app/
-- Browser health checks: https://github.com/skkagolanu/weldscope/actions/workflows/deploy.yml
+Source: https://github.com/skkagolanu/weldscope
 
-The existing subdomain is intentionally retained until a replacement is deployed.
-A repository rename does not automatically migrate a Community Cloud app.
+## Observed status on 11 November 2026
 
-## Inspection on 11 November 2026
+The owner recovered the app and reported **HTTP 402 Payment Required** from the HF/Novita inference route. That is a generation billing failure, separate from the public URL.
 
-The public app returned HTTP 200 but rendered “This app has gone to sleep due to
-inactivity.” Its public wake button was clicked. Subsequent browser visits showed
-the wake-up screen, including “taking longer than normal,” without a chat input.
-The hosted app has **not** passed an end-to-end question/answer check. Its runtime
-logs and deployment configuration were unavailable in this session, so the cause
-of the failed wake-up is unconfirmed.
+An anonymous browser confirmed that Community Cloud embeds the running application in a frame. The deployment was still showing the old “FSW Defect Analysis RAG System” heading, rather than the current source's “WeldScope.” The original browser probe only searched the outer page; the checker now inspects app frames as well.
 
-Local checks passed on Python 3.11:
+The updated source uses Groq directly for generation. Greetings and app/source explanations work without inference credentials. Live Groq inference remains to be verified after owner configuration. Runtime hosting logs and settings were not available to this maintenance session.
 
-- The bundled Chroma index loaded 2,165 chunks, and real embedding, hybrid retrieval,
-  and cross-encoder reranking completed for a welding-defect question.
-- 107 tests passed with 96.71% package coverage. The Streamlit test exercises chat,
-  chunk delivery, citations including page one, and clearing history with mocked
-  inference. It does not establish that a hosted HuggingFace account can generate.
-- Editable package installation and formatting checks passed.
-- The real Streamlit server started locally, loaded its components, and rendered
-  a usable chat input in Chromium. A placeholder token was used for startup only;
-  no external inference was attempted.
+## Deploy the current source
 
-Docker execution was not verified because the local Docker daemon was unavailable.
+1. In Community Cloud, verify the source is `skkagolanu/weldscope`, branch `main`, entrypoint `app.py`.
+2. Use **Python 3.12**. If the existing deployment uses another Python version, Streamlit requires deleting and redeploying it to change the interpreter. Preserve its settings first, and reuse `weldscope` as the subdomain.
+3. Add the root-level Groq settings from the [README](https://github.com/skkagolanu/weldscope#configure-groq-generation) in the app's Secrets settings. Add the key privately; no credentials need to be shared in chat.
+4. Wait for dependency installation and model downloads. Confirm the WeldScope header and a local reply to “hi.” Then submit a welding question, inspect its source passages, ask a follow-up, and clear the conversation.
+5. If the deployment remains on the old heading, inspect its source coordinates and build logs before calling it updated. A successful GitHub workflow alone is not proof of the deployed version.
 
-## Recover or migrate the Community Cloud app
+[Streamlit app settings](https://docs.streamlit.io/deploy/streamlit-community-cloud/manage-your-app/app-settings) · [Changing Python](https://docs.streamlit.io/deploy/streamlit-community-cloud/manage-your-app/upgrade-python) · [Changing GitHub coordinates](https://docs.streamlit.io/deploy/streamlit-community-cloud/manage-your-app/rename-your-app)
 
-An owner must perform these steps in the Streamlit dashboard. The source changes
-are ready for Python 3.11 or 3.12; select **3.11** for parity with local verification.
+## Verified locally
 
-1. Open the app in https://share.streamlit.io/ and inspect its build/runtime logs.
-2. Before changing GitHub coordinates, preserve the app settings through the
-   dashboard, then delete the existing deployment. Community Cloud documents
-   deleting and redeploying as the required repository-rename procedure.
-3. Deploy `skkagolanu/weldscope`, branch `main`, entrypoint `app.py` with Python 3.11.
-   Retain the existing app subdomain if available, or choose a WeldScope subdomain.
-4. Restore the app's existing configuration through Streamlit settings. Leave
-   optional Langfuse tracing disabled unless it is configured.
-5. Wait for model downloads and index loading. Verify that the chat input appears,
-   submit a welding question, confirm an answer and source passages, ask a follow-up,
-   and clear the conversation.
-6. If the public URL changes, update this page, the README, and the repository
-   variable `STREAMLIT_APP_URL`. The browser checker accepts `--url` for ad hoc checks.
+Python 3.12, compatible pinned dependencies, real local embeddings and reranking, and retrieval from the 2,165-chunk index. Streamlit tests cover chat/reruns, citations, local replies without a key, and clearing history. Provider request tests use a local transport. Trace correlation is checked using real SDK spans with an in-memory exporter.
 
-If the app is view-only or missing after a previous GitHub owner/repo change,
-follow Streamlit's recovery guidance below. Do not delete an unrelated app or
-rename the entire GitHub account to repair this one deployment.
+Docker execution remains unverified because the local Docker daemon is unavailable.
 
-- [Streamlit: changing GitHub coordinates](https://docs.streamlit.io/deploy/streamlit-community-cloud/manage-your-app/rename-your-app)
-- [Streamlit: app settings](https://docs.streamlit.io/deploy/streamlit-community-cloud/manage-your-app/app-settings)
+## Hosted availability checks
 
-## Uptime checks
+The checker inspects the app frame, waits for a chat input, and verifies the new local greeting without sending a provider request. It fails on sleep pages, startup errors, stale UI, and broken greetings, and stores screenshot/text artifacts. `--startup-only` checks startup without sending a greeting.
 
-The Hosted App Check workflow runs daily, after successful CI on main, and on
-manual dispatch. It opens a browser and waits for the rendered chat input. A
-sleep page, wake-up loop, initialization error, or HTTP error fails the check and
-produces screenshot/text artifacts. It never converts failure into a green result.
-This checks startup availability, not inference-provider availability or answer quality.
-
-Run it locally after installing Playwright and its Chromium browser:
-
-```bash
-python scripts/check_hosted_app.py --url https://rag-demo-skullkrak7.streamlit.app/
-```
-
-The checker does not wake sleeping apps or submit paid inference requests.
-Community Cloud hibernation is a hosting limitation; these checks detect downtime
-but do not provide an always-on service guarantee.
+These checks run daily, after successful CI, and manually. They measure startup and local conversation availability, not provider quotas or answer quality. Community Cloud hibernation still applies; this is not an always-on hosting guarantee.

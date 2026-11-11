@@ -78,3 +78,6 @@ Thumbs.db
 # Generated documentation
 docs/_build/
 artifacts/
+
+# Streamlit deployment credentials
+.streamlit/secrets.toml

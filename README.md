@@ -1,260 +1,97 @@
 # WeldScope
 
-A research assistant for friction stir welding defects, causes, and corrective actions.
+A research assistant for **friction stir welding (FSW)** defects, causes, and corrective actions.
 
-[Open the Streamlit app](https://rag-demo-skullkrak7.streamlit.app/) · [Hosting status](https://github.com/skkagolanu/weldscope/actions/workflows/deploy.yml)
+[Open the app](https://weldscope.streamlit.app/) · [CI](https://github.com/skkagolanu/weldscope/actions/workflows/ci.yml) · [Hosted checks](https://github.com/skkagolanu/weldscope/actions/workflows/deploy.yml) · [Hosting status](docs/hosting.md)
 
-Community Cloud may put the app to sleep. See [hosting and recovery](docs/hosting.md) for the current status and redeployment steps.
+## What it does
 
-[![CI Pipeline](https://github.com/skkagolanu/weldscope/actions/workflows/ci.yml/badge.svg)](https://github.com/skkagolanu/weldscope/actions/workflows/ci.yml)
-[![Coverage](https://img.shields.io/badge/coverage-96.71%25-brightgreen)](https://github.com/skkagolanu/weldscope)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Python 3.11–3.12](https://img.shields.io/badge/python-3.11--3.12-blue.svg)](https://www.python.org/downloads/)
+- Answers greetings and questions about WeldScope and its sources locally, without inference calls or document search.
+- Searches five bundled research PDFs using BM25S keyword retrieval and Chroma semantic search, then reranks passages with a cross-encoder.
+- Uses Groq to generate streamed answers with inspectable source passages. The prompt asks it to abstain when evidence is insufficient; answer quality has not yet been benchmarked.
+- Keeps up to ten completed exchanges within a bounded context budget. Search queries stay separate from chat history and sensor summaries; failed exchanges are excluded.
+- Includes example sensor readings only when requested. The CSV is a static demonstration, not a live feed.
+- Reports raw fusion and reranker scores separately. They are not probabilities; unmeasured response confidence is `None`.
+- Records retrieval, reranking, generation, first-token and total latency per reply. Token counts remain unknown unless the provider reports them.
 
-Retrieval-Augmented Generation (RAG) system for intelligent defect analysis in Friction Stir Welding (FSW) processes.
+The packaged index contains **2,165 chunks**. The corpus remains local to the app; no new hosted vector database is required. Rebuild the index from the source PDFs when the corpus changes. Runtime edits to Community Cloud storage are not durable.
 
-## Features
+## Run locally
 
-- Hybrid Retrieval: BM25 + vector search with cross-encoder reranking
-- Streaming Responses: Real-time LLM output with HuggingFace API
-- Conversation Memory: Context-aware multi-turn conversations (last 10 turns)
-- Memory Counter: Visual indicator showing remaining context window
-- Sensor Data Integration: Bundled sensor log summaries included in question context
-- Source Attribution: Full citation tracking with relevance scores
-- Observability: Langfuse integration for tracing and monitoring
-- Modular Architecture: Clean separation of concerns with automated tests
-- Production Ready: Error handling, validation, and graceful degradation
-- Session History: In-memory conversations; optional tracing sends data to Langfuse when enabled
-
-## Quick Start
-
-### Installation
-
-Use Python 3.11 or 3.12 with the pinned dependencies.
+Use **Python 3.12**. The runtime, development tools, Docker image and CI all target this interpreter.
 
 ```bash
-# Clone repository
 git clone https://github.com/skkagolanu/weldscope.git
 cd weldscope
-
-# Create virtual environment
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-
-# Install dependencies
-pip install -r requirements.txt
+python3.12 -m venv .venv
+source .venv/bin/activate
 pip install -r requirements-dev.txt
-
-```
-
-### Configuration
-
-```bash
-# Copy environment template
+pip install -e . --no-deps
 cp .env.example .env
-
-# Edit .env with your credentials
-# Required: HF_TOKEN
-# Optional: LANGFUSE_PUBLIC_KEY, LANGFUSE_SECRET_KEY
-```
-
-### Build Vector Store
-
-```bash
-# Place FSW PDF documents in data/ directory
-python build_vectorstore.py --pdf-dir ./data --output-dir ./vectorstore
-```
-
-### Run Application
-
-```bash
 streamlit run app.py
 ```
 
-Access at `http://localhost:8501`
+Dependencies and compatible transitive versions are pinned in `requirements*.txt`, `pyproject.toml`, and `constraints.txt`. PyTorch uses CPU wheels. Deprecated LangChain Community/Classic and their RAGAS-dependent path have been removed. PDF loading uses PyPDF directly; local embeddings use Sentence Transformers directly.
 
-## Architecture
+## Configure Groq generation
 
-### System Components
+Use a Groq **Free-plan** account, then set these **root-level TOML values** in Streamlit app settings, outside any `[table]`:
 
-```
-┌─────────────────┐
-│  Streamlit UI   │
-└────────┬────────┘
-         │
-┌────────▼────────┐
-│  RAG Pipeline   │
-└────────┬────────┘
-         │
-    ┌────┴────┐
-    │         │
-┌───▼──┐  ┌──▼────┐
-│Hybrid│  │Reranker│
-│Retriever│  └───┬───┘
-└───┬──┘      │
-    │         │
-┌───▼─────────▼───┐
-│  LLM Generator   │
-└──────────────────┘
+```toml
+LLM_PROVIDER = "groq"
+GROQ_MODEL = "openai/gpt-oss-20b"
+GROQ_API_KEY = "your-key-added-privately"
 ```
 
-### Module Structure
+For local use, set these variables in the ignored `.env` file instead. Greetings and app/source explanations work without a key. Never commit `.env` or `.streamlit/secrets.toml`.
 
-```
-weldscope/
-├── core/              # Configuration, models, exceptions
-├── ingestion/         # Document loading and vectorstore building
-├── retrieval/         # Hybrid retrieval and reranking
-├── generation/        # LLM generation and response formatting
-├── pipeline/          # End-to-end RAG orchestration
-└── observability/     # Langfuse tracing integration
-```
+Groq publishes free-plan limits of 30 requests/minute, 1,000/day, 8,000 tokens/minute and 200,000/day for this model; exact account limits may differ. A payment method is required to upgrade to its paid Developer plan. See [rate limits](https://console.groq.com/docs/rate-limits) and [billing FAQ](https://console.groq.com/docs/billing-faqs).
 
-## Usage
+HF Inference Providers currently lists no included credits for free accounts. Changing the model through the same HF billing route does not resolve an HTTP 402. This app uses Groq directly for generation; the embedding and reranking weights are downloaded from Hugging Face and run locally. See [HF pricing](https://huggingface.co/docs/inference-providers/en/pricing). No paid-provider fallback is attempted.
 
-### Basic Query
+Other settings include `RETRIEVAL_K`, `RERANK_TOP_K`, `MAX_TOKENS`, `TEMPERATURE`, and `VECTORSTORE_PATH`. See [.env.example](.env.example).
 
-```python
-from weldscope.core.config import RAGConfig
-from weldscope.ingestion.builder import VectorStoreBuilder
-from weldscope.retrieval.retriever import HybridRetriever
-from weldscope.pipeline.pipeline import RAGPipeline
-
-# Initialize
-config = RAGConfig()
-builder = VectorStoreBuilder(config)
-vectorstore, documents = builder.load_vectorstore()
-
-# Create retriever
-retriever = HybridRetriever(vectorstore, documents, config)
-
-# Create pipeline
-pipeline = RAGPipeline(retriever, config)
-
-# Query
-response = pipeline.query("What causes wormhole defects in FSW?")
-print(response.answer)
-
-for source in response.sources:
-    print(f"- {source.doc_name} (Page {source.page_num})")
-```
-
-### Streaming Query
-
-```python
-for chunk in pipeline.stream_query("Explain FSW process parameters"):
-    print(chunk, end="", flush=True)
-```
-
-### With Observability
-
-```python
-from weldscope.observability.tracer import RAGTracer
-
-config = RAGConfig(langfuse_enabled=True)
-tracer = RAGTracer(config)
-pipeline = RAGPipeline(retriever, config, tracer=tracer)
-
-response = pipeline.query("What are common FSW defects?")
-
-# Feedback
-tracer.score_feedback(1.0, "user_feedback")
-tracer.flush()
-```
-
-## Configuration
-
-### Environment Variables
-
-| Variable | Description | Default |
-|----------|-------------|---------|
-| `HF_TOKEN` | HuggingFace API token | Required |
-| `MODEL_NAME` | LLM model identifier | `meta-llama/Llama-3.1-8B-Instruct` |
-| `TEMPERATURE` | LLM temperature | `0.05` |
-| `RETRIEVAL_K` | Documents to retrieve | `5` |
-| `RERANK_TOP_K` | Documents after reranking | `3` |
-| `CHUNK_SIZE` | Document chunk size | `500` |
-| `CHUNK_OVERLAP` | Chunk overlap | `50` |
-| `LANGFUSE_ENABLED` | Enable tracing | `false` |
-
-See `.env.example` for complete configuration options.
-
-## Development
-
-### Running Tests
+## Rebuild the index
 
 ```bash
-# All tests
-pytest tests/ -v --cov=weldscope
-
-# Specific module
-pytest tests/unit/test_pipeline.py -v
-
-# With coverage report
-pytest tests/ --cov=weldscope --cov-report=html
+python build_vectorstore.py --pdf-dir ./data --output-dir ./vectorstore
 ```
 
-### Code Quality
+New chunks receive deterministic IDs from their source, page and text. Existing stored IDs are retained on load. Metadata filters are applied consistently to lexical and semantic search; the hybrid API supports exact metadata filters.
+
+## Verification
+
+The current Python 3.12 suite passes 140 tests with 96.81% package coverage.
 
 ```bash
-# Format code
-black weldscope/ tests/
-
-# Lint
-pylint weldscope/
-
-# Type checking
-mypy weldscope/
+pytest tests/ --cov-fail-under=90
+black --check weldscope tests app.py scripts examples
+pip check
+pip install -r requirements-docs.txt
+sphinx-build -b html -W docs /tmp/weldscope-docs
 ```
 
-## Project Status
+The tests cover routing, session context, filters, citations, provider request serialization and errors, real in-memory Langfuse spans, and the Streamlit chat flow. Provider tests use a local HTTP transport; they do not establish live account access. Real embedding, retrieval and reranking have also been exercised against a copy of the bundled index on the updated Python 3.12 stack.
 
-### Completed Features
+The browser check handles Community Cloud's embedded app frame and verifies a greeting through the local reply path:
 
-- Modular RAG architecture
-- Hybrid retrieval (BM25 + vector)
-- Cross-encoder reranking
-- Streaming LLM responses
-- Source attribution and citations
-- Langfuse observability
-- Vector store builder
-- Streamlit UI
-- 107 passing tests; 96.71% package coverage (Python 3.11)
+```bash
+playwright install chromium
+python scripts/check_hosted_app.py --url https://weldscope.streamlit.app/
+```
 
-### Roadmap
+Daily and post-CI checks detect a sleep page, startup failure, stale deployment, or broken greeting. They do not guarantee always-on hosting or live inference availability.
 
-- RAGAS evaluation framework
-- Performance monitoring
-- API documentation
+## Evaluation and observability
 
-## Technical Specifications
+Optional Langfuse tracing connects query, retrieval and generation spans with feedback. Enable it only after configuring the deployment keys. Query content can be sent to Langfuse when enabled.
 
-### Dependencies
+`GroundedAnswerEvaluator` provides explicit model-judged scores through the configured generator, with one provider request per example. It validates score ranges and input lengths, and leaves reference recall unknown when no reference is supplied. These are model judgements, not calibrated confidence or RAGAS benchmark results.
 
-- **LangChain**: 1.2.8
-- **Streamlit**: 1.53.1
-- **ChromaDB**: 1.4.1
-- **Sentence Transformers**: 5.2.2
-- **Langfuse**: 3.12.1
-- **PyPDF**: 6.6.2
+A labeled retrieval/answer-quality benchmark, measured quality regression gates, and cache integration remain future work. Software test coverage does not establish RAG answer quality.
 
-### Models
+## Code layout
 
-- **Embeddings**: `sentence-transformers/paraphrase-MiniLM-L3-v2` (384 dims)
-- **LLM**: `meta-llama/Llama-3.1-8B-Instruct` (8B params)
-- **Reranker**: `cross-encoder/ms-marco-MiniLM-L-6-v2`
+`weldscope/` contains configuration, ingestion, retrieval, generation, conversation routing, orchestration, monitoring, tracing and optional evaluation. `app.py` is the Streamlit entrypoint. See [architecture](docs/architecture.md), [Streamlit documentation assessment](docs/streamlit-review.md), [dependency maintenance](docs/dependencies.md), and [hosting recovery](docs/hosting.md).
 
-### Performance
-
-Latency depends on model downloads, hosting resources, and the inference provider.
-The bundled vector store contains 2,165 chunks across five source documents; it is about 21 MB.
-
-## License
-
-MIT License - Copyright (c) 2026 Sai Karthik Kagolanu
-
-## Contact
-
-- **Author**: Sai Karthik Kagolanu
-- **GitHub**: [@skkagolanu](https://github.com/skkagolanu)
-- **Project**: [weldscope](https://github.com/skkagolanu/weldscope)
+MIT License · Sai Karthik Kagolanu

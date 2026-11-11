@@ -16,7 +16,7 @@ pip install -r requirements-dev.txt
 
 ```bash
 cp .env.example .env
-# Edit .env with your HF_TOKEN
+# Edit .env with your GROQ_API_KEY
 ```
 
 ## Build Vector Store

@@ -5,6 +5,11 @@ import sys
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
+# Load the public API through normal runtime imports before autodoc inspects
+# Pydantic models and third-party lazy modules/type stubs.
+import weldscope.pipeline.pipeline
+import weldscope.evaluation.evaluator
+
 project = "WeldScope"
 copyright = "2026, Sai Karthik Kagolanu"
 author = "Sai Karthik Kagolanu"

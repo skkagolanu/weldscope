@@ -1,15 +1,32 @@
 """Vector store builder for document ingestion."""
 
 from pathlib import Path
+from hashlib import sha256
 from typing import List, Optional
 from langchain_core.documents import Document
-from langchain_community.document_loaders import PyPDFLoader
+from pypdf import PdfReader
+from sentence_transformers import SentenceTransformer
+from langchain_core.embeddings import Embeddings
 from langchain_text_splitters import RecursiveCharacterTextSplitter
-from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_chroma import Chroma
 
 from weldscope.core.config import RAGConfig
 from weldscope.core.exceptions import ConfigurationError
+
+
+class LocalEmbeddings(Embeddings):
+    """Sentence Transformer inference without a provider integration package."""
+
+    def __init__(self, model_name):
+        self.model = SentenceTransformer(model_name)
+
+    def embed_documents(self, texts):
+        return self.model.encode(
+            texts, show_progress_bar=False, normalize_embeddings=False
+        ).tolist()
+
+    def embed_query(self, text):
+        return self.embed_documents([text])[0]
 
 
 class VectorStoreBuilder:
@@ -19,10 +36,10 @@ class VectorStoreBuilder:
         self.config = config
         self._embeddings = None
 
-    def _get_embeddings(self) -> HuggingFaceEmbeddings:
+    def _get_embeddings(self) -> LocalEmbeddings:
         """Initialize embedding model."""
         if self._embeddings is None:
-            self._embeddings = HuggingFaceEmbeddings(model_name=self.config.embedding_model)
+            self._embeddings = LocalEmbeddings(model_name=self.config.embedding_model)
         return self._embeddings
 
     def load_pdfs(self, pdf_dir: str) -> List[Document]:
@@ -39,9 +56,19 @@ class VectorStoreBuilder:
             raise ConfigurationError(f"No PDF files found in: {pdf_dir}")
 
         for pdf_file in pdf_files:
-            loader = PyPDFLoader(str(pdf_file))
-            docs = loader.load()
-            documents.extend(docs)
+            reader = PdfReader(str(pdf_file))
+            for page_index, page in enumerate(reader.pages):
+                text = page.extract_text() or ""
+                if text.strip():
+                    documents.append(
+                        Document(
+                            page_content=text,
+                            metadata={
+                                "source": str(pdf_file),
+                                "page": page_index,
+                            },
+                        )
+                    )
 
         return documents
 
@@ -63,8 +90,24 @@ class VectorStoreBuilder:
         embeddings = self._get_embeddings()
         persist_dir = persist_directory or self.config.vectorstore_path
 
+        ids = [
+            sha256(
+                (
+                    Path(doc.metadata.get("source", "")).name
+                    + "\0"
+                    + str(doc.metadata.get("page", ""))
+                    + "\0"
+                    + doc.page_content
+                ).encode()
+            ).hexdigest()
+            for doc in documents
+        ]
+        unique = dict(zip(ids, documents))
         vectorstore = Chroma.from_documents(
-            documents=documents, embedding=embeddings, persist_directory=persist_dir
+            documents=list(unique.values()),
+            ids=list(unique),
+            embedding=embeddings,
+            persist_directory=persist_dir,
         )
 
         return vectorstore
@@ -88,6 +131,7 @@ class VectorStoreBuilder:
         if collection and collection["ids"]:
             for i, doc_id in enumerate(collection["ids"]):
                 doc = Document(
+                    id=doc_id,
                     page_content=collection["documents"][i],
                     metadata=collection["metadatas"][i] if collection["metadatas"] else {},
                 )

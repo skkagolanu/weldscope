@@ -3,7 +3,7 @@
 from typing import Optional, Dict, Any, List
 from functools import wraps
 import time
-from langfuse import Langfuse, observe
+from langfuse import Langfuse
 
 from weldscope.core.config import RAGConfig
 from weldscope.core.exceptions import RAGException
@@ -34,10 +34,10 @@ class RAGTracer:
             if not self.enabled:
                 return func
 
-            @observe(name=name)
             @wraps(func)
             def wrapper(*args, **kwargs):
-                return func(*args, **kwargs)
+                with self.client.start_as_current_observation(name=name):
+                    return func(*args, **kwargs)
 
             return wrapper
 

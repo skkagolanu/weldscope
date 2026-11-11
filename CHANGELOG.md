@@ -4,6 +4,23 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased] - 2026-11-11
 
+- Require Python 3.12 across package metadata, local configuration, Docker, dev container and CI.
+- Update the maintained runtime/tooling stack with resolved dependency constraints.
+- Replace deprecated Community/Classic and RAGAS imports, rank-bm25 and unused provider integrations.
+- Use direct PyPDF and Sentence Transformers APIs, BM25S, and Groq generation; keep the bundled Chroma index.
+- Preserve stored chunk IDs and assign deterministic IDs to newly ingested chunks.
+- Separate fusion/reranking score labels and leave unmeasured confidence unknown.
+- Connect per-stage timing, reported token usage and error types to the session performance monitor.
+- Validate real SDK trace correlation locally with an in-memory exporter.
+
+
+- Add Groq generation with GPT-OSS 20B, explicit provider selection, and friendly billing/rate-limit errors.
+- Route greetings and app/source questions locally without retrieving documents or requiring inference credentials.
+- Keep bounded completed conversation history separate from focused document search queries.
+- Resolve research follow-ups against the active topic, omit failed exchanges, and include sensor data only when requested.
+- Update hosted URLs and health checks for https://weldscope.streamlit.app/.
+
+
 - Rebrand the repository, package, Streamlit headings, examples, and docs as WeldScope.
 - Deliver generation chunks to the UI as they arrive and preserve feedback across reruns.
 - Repair optional Langfuse SDK calls and prevent duplicating the current question in history.

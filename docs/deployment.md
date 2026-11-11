@@ -5,7 +5,7 @@
 ### Dockerfile
 
 ```dockerfile
-FROM python:3.11-slim
+FROM python:3.12-slim
 
 WORKDIR /app
 
@@ -30,7 +30,7 @@ docker run -p 8501:8501 --env-file .env weldscope
 
 1. Push repository to GitHub
 2. Connect to [Streamlit Cloud](https://streamlit.io/cloud)
-3. Add `HF_TOKEN` to secrets
+3. Configure `LLM_PROVIDER=groq`, `GROQ_MODEL=openai/gpt-oss-20b`, and `GROQ_API_KEY` in app settings; see [setup](https://github.com/skkagolanu/weldscope#configure-groq-generation)
 4. Deploy
 
 ## AWS Deployment
@@ -69,8 +69,13 @@ nohup streamlit run app.py --server.port=8501 &
 
 ## Environment Variables
 
-Required:
-- `HF_TOKEN`: HuggingFace API token
+For Groq generation:
+- `GROQ_API_KEY`: configured privately in the hosting environment
+- `LLM_PROVIDER`: `groq`
+- `GROQ_MODEL`: `openai/gpt-oss-20b`
+
+Greetings and app explanations require no inference credentials.
+Generation uses Groq directly. Hugging Face hosts the downloaded local model weights; no HF inference billing route is used.
 
 Optional:
 - `LANGFUSE_ENABLED`: Enable tracing (true/false)

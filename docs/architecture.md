@@ -48,7 +48,7 @@
 - **tracer.py**: Langfuse integration for tracing
 
 ### Evaluation (`weldscope/evaluation/`)
-- **evaluator.py**: RAGAS metrics evaluation
+- **evaluator.py**: Explicit model-judged grounded answer evaluation
 
 ## Data Flow
 

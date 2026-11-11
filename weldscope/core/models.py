@@ -11,8 +11,10 @@ class Source:
     doc_name: str
     page_num: Optional[int]
     chunk_text: str
-    relevance_score: float
+    fusion_score: Optional[float]
     metadata: Dict[str, Any]
+    rerank_score: Optional[float] = None
+    chunk_id: Optional[str] = None
 
 
 @dataclass
@@ -22,7 +24,7 @@ class RAGResponse:
     query: str
     answer: str
     sources: List[Source]
-    confidence: float = 1.0
+    confidence: Optional[float] = None
     faithfulness_score: Optional[float] = None
     latency_ms: float = 0.0
     metadata: Dict[str, Any] = None

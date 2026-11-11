@@ -1,5 +1,5 @@
-"""Evaluation module initialization."""
+"""Optional grounded answer evaluation."""
 
-from weldscope.evaluation.evaluator import RAGASEvaluator, EvaluationResult
+from weldscope.evaluation.evaluator import GroundedAnswerEvaluator, EvaluationResult
 
-__all__ = ["RAGASEvaluator", "EvaluationResult"]
+__all__ = ["GroundedAnswerEvaluator", "EvaluationResult"]

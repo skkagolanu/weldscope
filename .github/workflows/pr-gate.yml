@@ -27,8 +27,6 @@ jobs:
         pip install -e .
     
     - name: Run tests with coverage
-      env:
-        HF_TOKEN: ${{ secrets.HF_TOKEN }}
       run: |
         pytest tests/ -v --cov=weldscope --cov-report=term-missing --cov-fail-under=90
     

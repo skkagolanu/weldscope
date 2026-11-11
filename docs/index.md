@@ -13,6 +13,8 @@ api/index
 architecture
 deployment
 hosting
+streamlit-review
+dependencies
 ```
 
 ## Features
@@ -24,7 +26,7 @@ hosting
 - Langfuse observability
 - Performance monitoring
 - Query/response caching
-- RAGAS evaluation
+- Model-judged evaluation
 
 ## Quick Links
 

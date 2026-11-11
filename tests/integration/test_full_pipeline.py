@@ -13,7 +13,7 @@ from weldscope.pipeline.pipeline import RAGPipeline
 @pytest.fixture
 def config():
     """Create test config."""
-    return RAGConfig(hf_token="test_token")
+    return RAGConfig(groq_api_key="test_token")
 
 
 @pytest.fixture
@@ -35,7 +35,7 @@ def mock_vectorstore_data():
 
 
 @patch("weldscope.ingestion.builder.Chroma")
-@patch("weldscope.ingestion.builder.HuggingFaceEmbeddings")
+@patch("weldscope.ingestion.builder.LocalEmbeddings")
 def test_full_pipeline_integration(
     mock_embeddings, mock_chroma, config, mock_vectorstore_data, tmp_path
 ):
@@ -61,9 +61,8 @@ def test_full_pipeline_integration(
     assert documents[0].metadata["source"] == "fsw_doc1.pdf"
 
     # Initialize retriever
-    with patch("weldscope.retrieval.retriever.BM25Retriever"):
-        retriever = HybridRetriever(vectorstore, documents, config)
-        assert retriever is not None
+    retriever = HybridRetriever(vectorstore, documents, config)
+    assert retriever is not None
 
     # Initialize pipeline
     with (
@@ -94,7 +93,7 @@ def test_full_pipeline_integration(
 
 
 @patch("weldscope.ingestion.builder.Chroma")
-@patch("weldscope.ingestion.builder.HuggingFaceEmbeddings")
+@patch("weldscope.ingestion.builder.LocalEmbeddings")
 def test_pipeline_handles_empty_results(mock_embeddings, mock_chroma, config, tmp_path):
     """Test pipeline handles empty retrieval results gracefully."""
     mock_embeddings.return_value = Mock()
@@ -113,7 +112,7 @@ def test_pipeline_handles_empty_results(mock_embeddings, mock_chroma, config, tm
 
 
 @patch("weldscope.ingestion.builder.Chroma")
-@patch("weldscope.ingestion.builder.HuggingFaceEmbeddings")
+@patch("weldscope.ingestion.builder.LocalEmbeddings")
 def test_pipeline_with_streaming(
     mock_embeddings, mock_chroma, config, mock_vectorstore_data, tmp_path
 ):
@@ -131,8 +130,7 @@ def test_pipeline_with_streaming(
     builder = VectorStoreBuilder(config)
     vectorstore, documents = builder.load_vectorstore(str(persist_dir))
 
-    with patch("weldscope.retrieval.retriever.BM25Retriever"):
-        retriever = HybridRetriever(vectorstore, documents, config)
+    retriever = HybridRetriever(vectorstore, documents, config)
 
     with (
         patch("weldscope.pipeline.pipeline.Reranker"),
@@ -145,6 +143,6 @@ def test_pipeline_with_streaming(
         pipeline.generator.create_prompt = Mock(return_value="Test prompt")
         pipeline.generator.stream = Mock(return_value=iter(["Chunk ", "1", " and ", "2"]))
 
-        chunks = list(pipeline.stream_query("Test query"))
+        chunks = list(pipeline.stream_query("FSW query"))
 
         assert chunks == ["Chunk ", "1", " and ", "2"]

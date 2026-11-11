@@ -12,7 +12,7 @@ from weldscope.core.exceptions import RetrievalError
 @pytest.fixture
 def config():
     """Create test config."""
-    return RAGConfig(hf_token="test_token")
+    return RAGConfig(groq_api_key="test_token")
 
 
 @pytest.fixture

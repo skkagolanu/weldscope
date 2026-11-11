@@ -19,7 +19,7 @@ def test_format_sources_extracts_metadata():
     assert len(sources) == 1
     assert sources[0].doc_name == "doc1.pdf"
     assert sources[0].page_num == 5
-    assert sources[0].relevance_score == 0.95
+    assert sources[0].fusion_score == 0.95
     assert sources[0].chunk_text == "Test content"
 
 
@@ -31,7 +31,7 @@ def test_format_sources_handles_missing_metadata():
 
     assert sources[0].doc_name == "Unknown"
     assert sources[0].page_num is None
-    assert sources[0].relevance_score == 0.0
+    assert sources[0].fusion_score is None
 
 
 def test_create_response_builds_complete_response():
@@ -41,7 +41,7 @@ def test_create_response_builds_complete_response():
             doc_name="test.pdf",
             page_num=1,
             chunk_text="Content",
-            relevance_score=0.9,
+            fusion_score=0.9,
             metadata={"source": "test.pdf"},
         )
     ]
@@ -70,21 +70,21 @@ def test_create_response_builds_complete_response():
 def test_format_citation_with_page():
     """Format citation includes page number."""
     source = Source(
-        doc_name="doc.pdf", page_num=10, chunk_text="text", relevance_score=0.88, metadata={}
+        doc_name="doc.pdf", page_num=10, chunk_text="text", fusion_score=0.88, metadata={}
     )
 
     citation = ResponseFormatter.format_citation(source, 1)
 
     assert "[1]" in citation
     assert "doc.pdf" in citation
-    assert "Page 10" in citation
+    assert "Page 11" in citation
     assert "0.880" in citation
 
 
 def test_format_citation_without_page():
     """Format citation works without page number."""
     source = Source(
-        doc_name="doc.pdf", page_num=None, chunk_text="text", relevance_score=0.75, metadata={}
+        doc_name="doc.pdf", page_num=None, chunk_text="text", fusion_score=0.75, metadata={}
     )
 
     citation = ResponseFormatter.format_citation(source, 2)
@@ -93,3 +93,16 @@ def test_format_citation_without_page():
     assert "doc.pdf" in citation
     assert "Page" not in citation
     assert "0.750" in citation
+
+
+def test_unmeasured_confidence_is_unknown():
+    assert ResponseFormatter.create_response("question", "answer", []).confidence is None
+
+
+def test_scores_and_chunk_identity_remain_distinct():
+    source = ResponseFormatter.format_sources(
+        [Document(id="chunk-1", page_content="Text", metadata={"score": 0.2, "rerank_score": -1.5})]
+    )[0]
+    assert source.fusion_score == 0.2
+    assert source.rerank_score == -1.5
+    assert source.chunk_id == "chunk-1"

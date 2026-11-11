@@ -18,7 +18,7 @@ class PerformanceMetrics:
     total_latency_ms: float
     retrieved_docs: int
     reranked_docs: int
-    tokens_generated: int
+    tokens_generated: Optional[int]
     metadata: Dict[str, Any] = field(default_factory=dict)
 
 
@@ -45,11 +45,16 @@ class PerformanceMonitor:
         generation_latency_ms: float,
         retrieved_docs: int,
         reranked_docs: int,
-        tokens_generated: int = 0,
+        tokens_generated: Optional[int] = None,
         metadata: Optional[Dict[str, Any]] = None,
+        total_latency_ms: Optional[float] = None,
     ) -> PerformanceMetrics:
         """Record performance metrics for a query."""
-        total_latency = retrieval_latency_ms + reranking_latency_ms + generation_latency_ms
+        total_latency = (
+            total_latency_ms
+            if total_latency_ms is not None
+            else retrieval_latency_ms + reranking_latency_ms + generation_latency_ms
+        )
 
         metrics = PerformanceMetrics(
             query_id=query_id,
@@ -65,6 +70,7 @@ class PerformanceMonitor:
         )
 
         self.metrics_history.append(metrics)
+        self.metrics_history[:] = self.metrics_history[-200:]
         return metrics
 
     def is_slow_query(self, metrics: PerformanceMetrics) -> bool:

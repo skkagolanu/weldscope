@@ -1,6 +1,7 @@
 """Cross-encoder reranker for retrieved documents."""
 
 from typing import List, Tuple
+from threading import RLock
 from langchain_core.documents import Document
 from sentence_transformers import CrossEncoder
 
@@ -12,6 +13,7 @@ class Reranker:
     """Rerank documents using cross-encoder model."""
 
     def __init__(self, config: RAGConfig):
+        self._lock = RLock()
         self.config = config
         self._model = None
 
@@ -26,6 +28,10 @@ class Reranker:
         return self._model
 
     def rerank(self, query: str, documents: List[Document], top_k: int = None) -> List[Document]:
+        with self._lock:
+            return self._rerank(query, documents, top_k)
+
+    def _rerank(self, query: str, documents: List[Document], top_k: int = None) -> List[Document]:
         """Rerank documents by relevance to query."""
         if not documents:
             return []
@@ -42,14 +48,21 @@ class Reranker:
 
             reranked = []
             for doc, score in doc_scores[:top_k]:
-                doc.metadata["rerank_score"] = float(score)
-                reranked.append(doc)
+                result = Document(
+                    id=doc.id, page_content=doc.page_content, metadata=dict(doc.metadata)
+                )
+                result.metadata["rerank_score"] = float(score)
+                reranked.append(result)
 
             return reranked
         except Exception as e:
             raise RetrievalError(f"Reranking failed: {e}")
 
     def score_pairs(self, query: str, texts: List[str]) -> List[float]:
+        with self._lock:
+            return self._score_pairs(query, texts)
+
+    def _score_pairs(self, query: str, texts: List[str]) -> List[float]:
         """Score query-text pairs without document wrapping."""
         try:
             model = self._get_model()
