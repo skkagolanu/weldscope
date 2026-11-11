@@ -4,9 +4,9 @@ import pytest
 from unittest.mock import Mock, patch
 import numpy as np
 from langchain_core.documents import Document
-from rag_demo.retrieval.reranker import Reranker
-from rag_demo.core.config import RAGConfig
-from rag_demo.core.exceptions import RetrievalError
+from weldscope.retrieval.reranker import Reranker
+from weldscope.core.config import RAGConfig
+from weldscope.core.exceptions import RetrievalError
 
 
 @pytest.fixture
@@ -27,7 +27,7 @@ def test_reranker_initialization(reranker):
     assert reranker._model is None
 
 
-@patch("rag_demo.retrieval.reranker.CrossEncoder")
+@patch("weldscope.retrieval.reranker.CrossEncoder")
 def test_get_model_initializes_cross_encoder(mock_cross_encoder, reranker):
     """Get model initializes CrossEncoder."""
     mock_cross_encoder.return_value = Mock()
@@ -39,7 +39,7 @@ def test_get_model_initializes_cross_encoder(mock_cross_encoder, reranker):
     assert reranker._model is not None
 
 
-@patch("rag_demo.retrieval.reranker.CrossEncoder")
+@patch("weldscope.retrieval.reranker.CrossEncoder")
 def test_get_model_caches_instance(mock_cross_encoder, reranker):
     """Get model caches CrossEncoder instance."""
     mock_cross_encoder.return_value = Mock()
@@ -51,7 +51,7 @@ def test_get_model_caches_instance(mock_cross_encoder, reranker):
     mock_cross_encoder.assert_called_once()
 
 
-@patch("rag_demo.retrieval.reranker.CrossEncoder")
+@patch("weldscope.retrieval.reranker.CrossEncoder")
 def test_get_model_raises_on_error(mock_cross_encoder, reranker):
     """Get model raises RetrievalError on initialization failure."""
     mock_cross_encoder.side_effect = Exception("Model error")
@@ -66,7 +66,7 @@ def test_rerank_empty_documents(reranker):
     assert result == []
 
 
-@patch("rag_demo.retrieval.reranker.CrossEncoder")
+@patch("weldscope.retrieval.reranker.CrossEncoder")
 def test_rerank_sorts_by_score(mock_cross_encoder, reranker):
     """Rerank sorts documents by relevance score."""
     mock_model = Mock()
@@ -88,7 +88,7 @@ def test_rerank_sorts_by_score(mock_cross_encoder, reranker):
     assert results[0].metadata["rerank_score"] == 0.9
 
 
-@patch("rag_demo.retrieval.reranker.CrossEncoder")
+@patch("weldscope.retrieval.reranker.CrossEncoder")
 def test_rerank_respects_top_k(mock_cross_encoder, reranker):
     """Rerank returns only top_k documents."""
     mock_model = Mock()
@@ -108,7 +108,7 @@ def test_rerank_respects_top_k(mock_cross_encoder, reranker):
     assert results[1].metadata["rerank_score"] == 0.6
 
 
-@patch("rag_demo.retrieval.reranker.CrossEncoder")
+@patch("weldscope.retrieval.reranker.CrossEncoder")
 def test_rerank_adds_scores_to_metadata(mock_cross_encoder, reranker):
     """Rerank adds rerank_score to document metadata."""
     mock_model = Mock()
@@ -124,7 +124,7 @@ def test_rerank_adds_scores_to_metadata(mock_cross_encoder, reranker):
     assert results[0].metadata["source"] == "test.pdf"
 
 
-@patch("rag_demo.retrieval.reranker.CrossEncoder")
+@patch("weldscope.retrieval.reranker.CrossEncoder")
 def test_rerank_raises_on_error(mock_cross_encoder, reranker):
     """Rerank raises RetrievalError on failure."""
     mock_model = Mock()
@@ -137,7 +137,7 @@ def test_rerank_raises_on_error(mock_cross_encoder, reranker):
         reranker.rerank("test query", docs)
 
 
-@patch("rag_demo.retrieval.reranker.CrossEncoder")
+@patch("weldscope.retrieval.reranker.CrossEncoder")
 def test_score_pairs_returns_scores(mock_cross_encoder, reranker):
     """Score pairs returns list of scores."""
     mock_model = Mock()
@@ -152,7 +152,7 @@ def test_score_pairs_returns_scores(mock_cross_encoder, reranker):
     assert all(isinstance(s, float) for s in scores)
 
 
-@patch("rag_demo.retrieval.reranker.CrossEncoder")
+@patch("weldscope.retrieval.reranker.CrossEncoder")
 def test_score_pairs_raises_on_error(mock_cross_encoder, reranker):
     """Score pairs raises RetrievalError on failure."""
     mock_model = Mock()

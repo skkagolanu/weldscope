@@ -24,4 +24,4 @@ python examples/rag_sensorfusion.py
 
 ## Note
 
-For production use, see the main application (`app.py`) which uses the modular `rag_demo` package.
+For production use, see the main application (`app.py`) which uses the modular `weldscope` package.

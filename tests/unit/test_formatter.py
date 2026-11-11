@@ -2,8 +2,8 @@
 
 import pytest
 from langchain_core.documents import Document
-from rag_demo.generation.formatter import ResponseFormatter
-from rag_demo.core.models import Source, RAGResponse
+from weldscope.generation.formatter import ResponseFormatter
+from weldscope.core.models import Source, RAGResponse
 
 
 def test_format_sources_extracts_metadata():

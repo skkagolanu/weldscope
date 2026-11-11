@@ -3,17 +3,17 @@
 ## Core Modules
 
 ```{eval-rst}
-.. automodule:: rag_demo.core.config
+.. automodule:: weldscope.core.config
    :members:
    :undoc-members:
    :show-inheritance:
 
-.. automodule:: rag_demo.core.models
+.. automodule:: weldscope.core.models
    :members:
    :undoc-members:
    :show-inheritance:
 
-.. automodule:: rag_demo.core.exceptions
+.. automodule:: weldscope.core.exceptions
    :members:
    :undoc-members:
    :show-inheritance:
@@ -22,12 +22,12 @@
 ## Retrieval
 
 ```{eval-rst}
-.. automodule:: rag_demo.retrieval.retriever
+.. automodule:: weldscope.retrieval.retriever
    :members:
    :undoc-members:
    :show-inheritance:
 
-.. automodule:: rag_demo.retrieval.reranker
+.. automodule:: weldscope.retrieval.reranker
    :members:
    :undoc-members:
    :show-inheritance:
@@ -36,12 +36,12 @@
 ## Generation
 
 ```{eval-rst}
-.. automodule:: rag_demo.generation.generator
+.. automodule:: weldscope.generation.generator
    :members:
    :undoc-members:
    :show-inheritance:
 
-.. automodule:: rag_demo.generation.formatter
+.. automodule:: weldscope.generation.formatter
    :members:
    :undoc-members:
    :show-inheritance:
@@ -50,7 +50,7 @@
 ## Pipeline
 
 ```{eval-rst}
-.. automodule:: rag_demo.pipeline.pipeline
+.. automodule:: weldscope.pipeline.pipeline
    :members:
    :undoc-members:
    :show-inheritance:
@@ -59,7 +59,7 @@
 ## Ingestion
 
 ```{eval-rst}
-.. automodule:: rag_demo.ingestion.builder
+.. automodule:: weldscope.ingestion.builder
    :members:
    :undoc-members:
    :show-inheritance:
@@ -68,7 +68,7 @@
 ## Observability
 
 ```{eval-rst}
-.. automodule:: rag_demo.observability.tracer
+.. automodule:: weldscope.observability.tracer
    :members:
    :undoc-members:
    :show-inheritance:
@@ -77,7 +77,7 @@
 ## Evaluation
 
 ```{eval-rst}
-.. automodule:: rag_demo.evaluation.evaluator
+.. automodule:: weldscope.evaluation.evaluator
    :members:
    :undoc-members:
    :show-inheritance:

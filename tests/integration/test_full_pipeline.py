@@ -4,10 +4,10 @@ import pytest
 from pathlib import Path
 from unittest.mock import Mock, patch
 
-from rag_demo.core.config import RAGConfig
-from rag_demo.ingestion.builder import VectorStoreBuilder
-from rag_demo.retrieval.retriever import HybridRetriever
-from rag_demo.pipeline.pipeline import RAGPipeline
+from weldscope.core.config import RAGConfig
+from weldscope.ingestion.builder import VectorStoreBuilder
+from weldscope.retrieval.retriever import HybridRetriever
+from weldscope.pipeline.pipeline import RAGPipeline
 
 
 @pytest.fixture
@@ -34,8 +34,8 @@ def mock_vectorstore_data():
     }
 
 
-@patch("rag_demo.ingestion.builder.Chroma")
-@patch("rag_demo.ingestion.builder.HuggingFaceEmbeddings")
+@patch("weldscope.ingestion.builder.Chroma")
+@patch("weldscope.ingestion.builder.HuggingFaceEmbeddings")
 def test_full_pipeline_integration(
     mock_embeddings, mock_chroma, config, mock_vectorstore_data, tmp_path
 ):
@@ -61,14 +61,14 @@ def test_full_pipeline_integration(
     assert documents[0].metadata["source"] == "fsw_doc1.pdf"
 
     # Initialize retriever
-    with patch("rag_demo.retrieval.retriever.BM25Retriever"):
+    with patch("weldscope.retrieval.retriever.BM25Retriever"):
         retriever = HybridRetriever(vectorstore, documents, config)
         assert retriever is not None
 
     # Initialize pipeline
     with (
-        patch("rag_demo.pipeline.pipeline.Reranker"),
-        patch("rag_demo.pipeline.pipeline.LLMGenerator"),
+        patch("weldscope.pipeline.pipeline.Reranker"),
+        patch("weldscope.pipeline.pipeline.LLMGenerator"),
     ):
         pipeline = RAGPipeline(retriever, config)
 
@@ -93,8 +93,8 @@ def test_full_pipeline_integration(
         assert response.metadata["reranked_count"] == 1
 
 
-@patch("rag_demo.ingestion.builder.Chroma")
-@patch("rag_demo.ingestion.builder.HuggingFaceEmbeddings")
+@patch("weldscope.ingestion.builder.Chroma")
+@patch("weldscope.ingestion.builder.HuggingFaceEmbeddings")
 def test_pipeline_handles_empty_results(mock_embeddings, mock_chroma, config, tmp_path):
     """Test pipeline handles empty retrieval results gracefully."""
     mock_embeddings.return_value = Mock()
@@ -112,8 +112,8 @@ def test_pipeline_handles_empty_results(mock_embeddings, mock_chroma, config, tm
     assert len(documents) == 0
 
 
-@patch("rag_demo.ingestion.builder.Chroma")
-@patch("rag_demo.ingestion.builder.HuggingFaceEmbeddings")
+@patch("weldscope.ingestion.builder.Chroma")
+@patch("weldscope.ingestion.builder.HuggingFaceEmbeddings")
 def test_pipeline_with_streaming(
     mock_embeddings, mock_chroma, config, mock_vectorstore_data, tmp_path
 ):
@@ -131,12 +131,12 @@ def test_pipeline_with_streaming(
     builder = VectorStoreBuilder(config)
     vectorstore, documents = builder.load_vectorstore(str(persist_dir))
 
-    with patch("rag_demo.retrieval.retriever.BM25Retriever"):
+    with patch("weldscope.retrieval.retriever.BM25Retriever"):
         retriever = HybridRetriever(vectorstore, documents, config)
 
     with (
-        patch("rag_demo.pipeline.pipeline.Reranker"),
-        patch("rag_demo.pipeline.pipeline.LLMGenerator"),
+        patch("weldscope.pipeline.pipeline.Reranker"),
+        patch("weldscope.pipeline.pipeline.LLMGenerator"),
     ):
         pipeline = RAGPipeline(retriever, config)
 

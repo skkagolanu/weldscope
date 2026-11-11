@@ -75,3 +75,6 @@ Thumbs.db
 /tmp/
 *.whl
 *.tar.gz
+# Generated documentation
+docs/_build/
+artifacts/

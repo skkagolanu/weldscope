@@ -4,10 +4,10 @@ import pytest
 from unittest.mock import Mock, patch
 from langchain_core.documents import Document
 
-from rag_demo.pipeline.pipeline import RAGPipeline
-from rag_demo.core.config import RAGConfig
-from rag_demo.core.models import RAGResponse
-from rag_demo.core.exceptions import RetrievalError
+from weldscope.pipeline.pipeline import RAGPipeline
+from weldscope.core.config import RAGConfig
+from weldscope.core.models import RAGResponse
+from weldscope.core.exceptions import RetrievalError
 
 
 @pytest.fixture
@@ -34,8 +34,8 @@ def mock_tracer():
 def pipeline(mock_retriever, config):
     """Create pipeline instance."""
     with (
-        patch("rag_demo.pipeline.pipeline.Reranker"),
-        patch("rag_demo.pipeline.pipeline.LLMGenerator"),
+        patch("weldscope.pipeline.pipeline.Reranker"),
+        patch("weldscope.pipeline.pipeline.LLMGenerator"),
     ):
         return RAGPipeline(mock_retriever, config)
 
@@ -69,6 +69,24 @@ def test_query_raises_on_no_documents(pipeline):
 
     with pytest.raises(RetrievalError, match="No documents retrieved"):
         pipeline.query("test question")
+
+
+def test_query_delivers_chunks_before_generation_completes(pipeline):
+    docs = [Document(page_content="Evidence", metadata={"source": "fsw.pdf"})]
+    pipeline.retriever.retrieve.return_value = docs
+    pipeline.reranker.rerank.return_value = docs
+    delivered = []
+
+    def generate():
+        yield "First "
+        assert delivered == ["First "]
+        yield "second"
+
+    pipeline.generator.stream.return_value = generate()
+    response = pipeline.query("question", stream=True, on_chunk=delivered.append)
+    assert delivered == ["First ", "second"]
+    assert response.answer == "First second"
+    assert response.sources[0].doc_name == "fsw.pdf"
 
 
 def test_query_executes_full_pipeline(pipeline):
@@ -110,8 +128,8 @@ def test_query_with_streaming(pipeline):
 def test_query_with_tracing(mock_retriever, config, mock_tracer):
     """Query with tracer logs retrieval and generation."""
     with (
-        patch("rag_demo.pipeline.pipeline.Reranker"),
-        patch("rag_demo.pipeline.pipeline.LLMGenerator"),
+        patch("weldscope.pipeline.pipeline.Reranker"),
+        patch("weldscope.pipeline.pipeline.LLMGenerator"),
     ):
         pipeline = RAGPipeline(mock_retriever, config, tracer=mock_tracer)
 

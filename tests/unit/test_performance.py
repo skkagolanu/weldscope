@@ -3,7 +3,7 @@
 import pytest
 import time
 from datetime import datetime
-from rag_demo.monitoring.performance import PerformanceMonitor, PerformanceMetrics
+from weldscope.monitoring.performance import PerformanceMonitor, PerformanceMetrics
 
 
 @pytest.fixture

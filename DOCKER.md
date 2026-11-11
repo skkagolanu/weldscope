@@ -19,7 +19,7 @@ docker-compose down
 
 ```bash
 # Build image
-docker build -t rag-demo .
+docker build -t weldscope .
 
 # Run container
 docker run -d \
@@ -27,15 +27,15 @@ docker run -d \
   -e HF_TOKEN=your_token \
   -v $(pwd)/data:/app/data:ro \
   -v $(pwd)/vectorstore:/app/vectorstore:ro \
-  --name rag-demo \
-  rag-demo
+  --name weldscope \
+  weldscope
 
 # View logs
-docker logs -f rag-demo
+docker logs -f weldscope
 
 # Stop container
-docker stop rag-demo
-docker rm rag-demo
+docker stop weldscope
+docker rm weldscope
 ```
 
 ## Building Vector Store
@@ -49,7 +49,7 @@ docker run --rm \
   -e HF_TOKEN=your_token \
   -v $(pwd)/data:/app/data:ro \
   -v $(pwd)/vectorstore:/app/vectorstore \
-  rag-demo \
+  weldscope \
   python build_vectorstore.py --pdf-dir /app/data --output-dir /app/vectorstore
 ```
 
@@ -71,12 +71,12 @@ LANGFUSE_SECRET_KEY=
 ```bash
 # Build and push to ECR
 aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin <account-id>.dkr.ecr.us-east-1.amazonaws.com
-docker build -t rag-demo .
-docker tag rag-demo:latest <account-id>.dkr.ecr.us-east-1.amazonaws.com/rag-demo:latest
-docker push <account-id>.dkr.ecr.us-east-1.amazonaws.com/rag-demo:latest
+docker build -t weldscope .
+docker tag weldscope:latest <account-id>.dkr.ecr.us-east-1.amazonaws.com/weldscope:latest
+docker push <account-id>.dkr.ecr.us-east-1.amazonaws.com/weldscope:latest
 
 # Create ECS task definition and service
-aws ecs create-service --cluster rag-cluster --service-name rag-demo --task-definition rag-demo:1 --desired-count 2
+aws ecs create-service --cluster rag-cluster --service-name weldscope --task-definition weldscope:1 --desired-count 2
 ```
 
 ### Kubernetes
@@ -85,20 +85,20 @@ aws ecs create-service --cluster rag-cluster --service-name rag-demo --task-defi
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: rag-demo
+  name: weldscope
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: rag-demo
+      app: weldscope
   template:
     metadata:
       labels:
-        app: rag-demo
+        app: weldscope
     spec:
       containers:
-      - name: rag-demo
-        image: rag-demo:latest
+      - name: weldscope
+        image: weldscope:latest
         ports:
         - containerPort: 8501
         env:
@@ -131,20 +131,20 @@ curl http://localhost:8501/_stcore/health
 
 ```bash
 # Check logs
-docker logs rag-demo
+docker logs weldscope
 
 # Check if port is available
 lsof -i :8501
 
 # Verify environment variables
-docker exec rag-demo env | grep HF_TOKEN
+docker exec weldscope env | grep HF_TOKEN
 ```
 
 ### Out of memory
 
 ```bash
 # Increase memory limit
-docker run -d -p 8501:8501 --memory=4g rag-demo
+docker run -d -p 8501:8501 --memory=4g weldscope
 ```
 
 ### Slow performance

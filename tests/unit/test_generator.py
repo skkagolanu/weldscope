@@ -2,9 +2,9 @@
 
 import pytest
 from unittest.mock import Mock, patch
-from rag_demo.generation.generator import LLMGenerator
-from rag_demo.core.config import RAGConfig
-from rag_demo.core.exceptions import GenerationError
+from weldscope.generation.generator import LLMGenerator
+from weldscope.core.config import RAGConfig
+from weldscope.core.exceptions import GenerationError
 
 
 @pytest.fixture
@@ -26,8 +26,8 @@ def test_generator_initialization(generator):
     assert generator._chat_model is None
 
 
-@patch("rag_demo.generation.generator.ChatHuggingFace")
-@patch("rag_demo.generation.generator.HuggingFaceEndpoint")
+@patch("weldscope.generation.generator.ChatHuggingFace")
+@patch("weldscope.generation.generator.HuggingFaceEndpoint")
 def test_get_llm_initializes_endpoint(mock_endpoint, mock_chat, generator):
     """Get LLM initializes HuggingFace endpoint."""
     mock_endpoint.return_value = Mock()
@@ -41,8 +41,8 @@ def test_get_llm_initializes_endpoint(mock_endpoint, mock_chat, generator):
     assert generator._llm is not None
 
 
-@patch("rag_demo.generation.generator.ChatHuggingFace")
-@patch("rag_demo.generation.generator.HuggingFaceEndpoint")
+@patch("weldscope.generation.generator.ChatHuggingFace")
+@patch("weldscope.generation.generator.HuggingFaceEndpoint")
 def test_get_llm_caches_instance(mock_endpoint, mock_chat, generator):
     """Get LLM caches endpoint instance."""
     mock_endpoint.return_value = Mock()
@@ -56,8 +56,8 @@ def test_get_llm_caches_instance(mock_endpoint, mock_chat, generator):
     mock_chat.assert_called_once()
 
 
-@patch("rag_demo.generation.generator.ChatHuggingFace")
-@patch("rag_demo.generation.generator.HuggingFaceEndpoint")
+@patch("weldscope.generation.generator.ChatHuggingFace")
+@patch("weldscope.generation.generator.HuggingFaceEndpoint")
 def test_get_llm_raises_on_error(mock_endpoint, mock_chat, generator):
     """Get LLM raises GenerationError on initialization failure."""
     mock_endpoint.side_effect = Exception("API error")
@@ -66,8 +66,8 @@ def test_get_llm_raises_on_error(mock_endpoint, mock_chat, generator):
         generator._get_llm()
 
 
-@patch("rag_demo.generation.generator.ChatHuggingFace")
-@patch("rag_demo.generation.generator.HuggingFaceEndpoint")
+@patch("weldscope.generation.generator.ChatHuggingFace")
+@patch("weldscope.generation.generator.HuggingFaceEndpoint")
 def test_generate_returns_response(mock_endpoint, mock_chat, generator):
     """Generate returns LLM response."""
     mock_response = Mock()
@@ -82,8 +82,8 @@ def test_generate_returns_response(mock_endpoint, mock_chat, generator):
     assert result == "Test answer"
 
 
-@patch("rag_demo.generation.generator.ChatHuggingFace")
-@patch("rag_demo.generation.generator.HuggingFaceEndpoint")
+@patch("weldscope.generation.generator.ChatHuggingFace")
+@patch("weldscope.generation.generator.HuggingFaceEndpoint")
 def test_generate_raises_on_error(mock_endpoint, mock_chat, generator):
     """Generate raises GenerationError on failure."""
     mock_chat_model = Mock()
@@ -95,8 +95,8 @@ def test_generate_raises_on_error(mock_endpoint, mock_chat, generator):
         generator.generate("Test prompt")
 
 
-@patch("rag_demo.generation.generator.ChatHuggingFace")
-@patch("rag_demo.generation.generator.HuggingFaceEndpoint")
+@patch("weldscope.generation.generator.ChatHuggingFace")
+@patch("weldscope.generation.generator.HuggingFaceEndpoint")
 def test_stream_yields_chunks(mock_endpoint, mock_chat, generator):
     """Stream yields response chunks."""
     chunk1, chunk2, chunk3 = Mock(), Mock(), Mock()
@@ -113,8 +113,8 @@ def test_stream_yields_chunks(mock_endpoint, mock_chat, generator):
     assert chunks == ["chunk1", "chunk2", "chunk3"]
 
 
-@patch("rag_demo.generation.generator.ChatHuggingFace")
-@patch("rag_demo.generation.generator.HuggingFaceEndpoint")
+@patch("weldscope.generation.generator.ChatHuggingFace")
+@patch("weldscope.generation.generator.HuggingFaceEndpoint")
 def test_stream_raises_on_error(mock_endpoint, mock_chat, generator):
     """Stream raises GenerationError on failure."""
     mock_chat_model = Mock()

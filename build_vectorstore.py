@@ -3,8 +3,8 @@
 import argparse
 from pathlib import Path
 
-from rag_demo.core.config import RAGConfig
-from rag_demo.ingestion.builder import VectorStoreBuilder
+from weldscope.core.config import RAGConfig
+from weldscope.ingestion.builder import VectorStoreBuilder
 
 
 def main():

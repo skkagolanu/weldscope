@@ -2,9 +2,9 @@
 
 import pytest
 from unittest.mock import Mock, patch
-from rag_demo.observability.tracer import RAGTracer
-from rag_demo.core.config import RAGConfig
-from rag_demo.core.exceptions import RAGException
+from weldscope.observability.tracer import RAGTracer
+from weldscope.core.config import RAGConfig
+from weldscope.core.exceptions import RAGException
 
 
 def test_tracer_disabled_by_default():
@@ -24,7 +24,7 @@ def test_tracer_requires_keys_when_enabled():
         RAGTracer(config)
 
 
-@patch("rag_demo.observability.tracer.Langfuse")
+@patch("weldscope.observability.tracer.Langfuse")
 def test_tracer_initializes_client_when_enabled(mock_langfuse):
     """Tracer initializes Langfuse client when enabled with keys."""
     config = RAGConfig(
@@ -76,7 +76,7 @@ def test_score_feedback_disabled():
     tracer.score_feedback("trace_id", 1.0, "good")
 
 
-@patch("rag_demo.observability.tracer.Langfuse")
+@patch("weldscope.observability.tracer.Langfuse")
 def test_flush_when_enabled(mock_langfuse):
     """Flush calls client flush when enabled."""
     config = RAGConfig(

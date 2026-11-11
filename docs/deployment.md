@@ -22,8 +22,8 @@ CMD ["streamlit", "run", "app.py", "--server.port=8501", "--server.address=0.0.0
 ### Build and Run
 
 ```bash
-docker build -t rag-demo .
-docker run -p 8501:8501 --env-file .env rag-demo
+docker build -t weldscope .
+docker run -p 8501:8501 --env-file .env weldscope
 ```
 
 ## Streamlit Cloud
@@ -46,8 +46,8 @@ sudo apt update
 sudo apt install python3-pip python3-venv
 
 # Clone and setup
-git clone https://github.com/SkullKrak7/RAG_Demo.git
-cd RAG_Demo
+git clone https://github.com/skkagolanu/weldscope.git
+cd weldscope
 python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt

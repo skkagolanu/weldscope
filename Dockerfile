@@ -24,21 +24,22 @@ COPY --from=builder /root/.local /root/.local
 ENV PATH=/root/.local/bin:$PATH
 
 # Copy application code
-COPY rag_demo/ ./rag_demo/
+COPY weldscope/ ./weldscope/
 COPY app.py .
 COPY build_vectorstore.py .
 COPY pyproject.toml .
-COPY README_NEW.md ./README.md
+COPY README.md ./README.md
 
 # Create directories for data
-RUN mkdir -p /app/data /app/vectorstore
+COPY data/ ./data/
+COPY vectorstore/ ./vectorstore/
 
 # Expose Streamlit port
 EXPOSE 8501
 
 # Health check
 HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
-    CMD curl -f http://localhost:8501/_stcore/health || exit 1
+    CMD python -c "import urllib.request; urllib.request.urlopen('http://localhost:8501/_stcore/health', timeout=5)"
 
 # Run Streamlit
 CMD ["streamlit", "run", "app.py", "--server.port=8501", "--server.address=0.0.0.0", "--server.headless=true"]

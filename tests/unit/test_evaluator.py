@@ -2,9 +2,9 @@
 
 import pytest
 from unittest.mock import Mock, patch
-from rag_demo.evaluation.evaluator import RAGASEvaluator, EvaluationResult
-from rag_demo.core.config import RAGConfig
-from rag_demo.core.exceptions import ConfigurationError
+from weldscope.evaluation.evaluator import RAGASEvaluator, EvaluationResult
+from weldscope.core.config import RAGConfig
+from weldscope.core.exceptions import ConfigurationError
 
 
 @pytest.fixture
@@ -48,7 +48,7 @@ def test_evaluate_raises_on_mismatched_ground_truths(evaluator):
         )
 
 
-@patch("rag_demo.evaluation.evaluator.evaluate")
+@patch("weldscope.evaluation.evaluator.evaluate")
 def test_evaluate_returns_results(mock_evaluate, evaluator):
     """Evaluate returns EvaluationResult."""
     mock_evaluate.return_value = {
@@ -72,7 +72,7 @@ def test_evaluate_returns_results(mock_evaluate, evaluator):
     assert result.overall_score == pytest.approx(0.8875)
 
 
-@patch("rag_demo.evaluation.evaluator.evaluate")
+@patch("weldscope.evaluation.evaluator.evaluate")
 def test_evaluate_with_ground_truths(mock_evaluate, evaluator):
     """Evaluate accepts ground truths."""
     mock_evaluate.return_value = {
@@ -90,7 +90,7 @@ def test_evaluate_with_ground_truths(mock_evaluate, evaluator):
     mock_evaluate.assert_called_once()
 
 
-@patch("rag_demo.evaluation.evaluator.evaluate")
+@patch("weldscope.evaluation.evaluator.evaluate")
 def test_evaluate_single(mock_evaluate, evaluator):
     """Evaluate single response."""
     mock_evaluate.return_value = {

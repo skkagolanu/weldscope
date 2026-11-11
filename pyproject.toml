@@ -3,12 +3,12 @@ requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "rag_demo"
+name = "weldscope"
 version = "1.0.0"
-description = "Production-grade RAG system for FSW defect analysis"
+description = "WeldScope - a research assistant for friction stir welding defects"
 authors = [{name = "Sai Karthik Kagolanu", email = "skullkrak7@example.com"}]
-readme = "README_NEW.md"
-requires-python = ">=3.11"
+readme = "README.md"
+requires-python = ">=3.11,<3.13"
 dependencies = [
     "streamlit==1.53.1",
     "pandas==2.2.3",
@@ -26,6 +26,8 @@ dependencies = [
     "pypdf==6.6.2",
     "langfuse==3.12.1",
     "pydantic==2.12.5",
+    "pydantic-settings==2.12.0",
+    "rank-bm25==0.2.2",
     "python-dotenv==1.2.1",
 ]
 
@@ -43,7 +45,7 @@ dev = [
 
 [tool.setuptools.packages.find]
 where = ["."]
-include = ["rag_demo*"]
+include = ["weldscope*"]
 exclude = ["tests*"]
 
 [tool.pytest.ini_options]
@@ -56,7 +58,7 @@ addopts = [
     "-v",
     "--strict-markers",
     "--tb=short",
-    "--cov=rag_demo",
+    "--cov=weldscope",
     "--cov-report=term-missing",
     "--cov-report=html",
     "--cov-report=xml",
@@ -68,7 +70,7 @@ markers = [
 ]
 
 [tool.coverage.run]
-source = ["rag_demo"]
+source = ["weldscope"]
 omit = [
     "*/tests/*",
     "*/__pycache__/*",

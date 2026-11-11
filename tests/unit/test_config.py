@@ -3,7 +3,7 @@
 import os
 import pytest
 from pydantic import ValidationError
-from rag_demo.core.config import RAGConfig
+from weldscope.core.config import RAGConfig
 
 
 def test_config_requires_hf_token(monkeypatch):

@@ -1,11 +1,11 @@
 """Sphinx configuration."""
 
-import os
+from pathlib import Path
 import sys
 
-sys.path.insert(0, os.path.abspath(".."))
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-project = "RAG Demo"
+project = "WeldScope"
 copyright = "2026, Sai Karthik Kagolanu"
 author = "Sai Karthik Kagolanu"
 release = "1.0.0"
@@ -22,7 +22,7 @@ templates_path = ["_templates"]
 exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 
 html_theme = "sphinx_rtd_theme"
-html_static_path = ["_static"]
+html_static_path = []
 
 autodoc_default_options = {
     "members": True,

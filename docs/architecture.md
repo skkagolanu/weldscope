@@ -25,29 +25,29 @@
 
 ## Module Structure
 
-### Core (`rag_demo/core/`)
+### Core (`weldscope/core/`)
 - **config.py**: Pydantic configuration with validation
 - **models.py**: Data models (Source, RAGResponse)
 - **exceptions.py**: Custom exception hierarchy
 
-### Retrieval (`rag_demo/retrieval/`)
+### Retrieval (`weldscope/retrieval/`)
 - **retriever.py**: Hybrid retrieval (BM25 + vector)
 - **reranker.py**: Cross-encoder reranking
 
-### Generation (`rag_demo/generation/`)
+### Generation (`weldscope/generation/`)
 - **generator.py**: LLM generation with streaming
 - **formatter.py**: Response formatting with citations
 
-### Pipeline (`rag_demo/pipeline/`)
+### Pipeline (`weldscope/pipeline/`)
 - **pipeline.py**: End-to-end RAG orchestration
 
-### Ingestion (`rag_demo/ingestion/`)
+### Ingestion (`weldscope/ingestion/`)
 - **builder.py**: Document loading and vector store creation
 
-### Observability (`rag_demo/observability/`)
+### Observability (`weldscope/observability/`)
 - **tracer.py**: Langfuse integration for tracing
 
-### Evaluation (`rag_demo/evaluation/`)
+### Evaluation (`weldscope/evaluation/`)
 - **evaluator.py**: RAGAS metrics evaluation
 
 ## Data Flow

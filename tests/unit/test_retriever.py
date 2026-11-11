@@ -3,9 +3,9 @@
 import pytest
 from unittest.mock import Mock, MagicMock, patch
 from langchain_core.documents import Document
-from rag_demo.retrieval.retriever import HybridRetriever
-from rag_demo.core.config import RAGConfig
-from rag_demo.core.exceptions import RetrievalError
+from weldscope.retrieval.retriever import HybridRetriever
+from weldscope.core.config import RAGConfig
+from weldscope.core.exceptions import RetrievalError
 
 
 @pytest.fixture
@@ -36,7 +36,7 @@ def documents():
 @pytest.fixture
 def retriever(mock_vectorstore, documents, config):
     """Create retriever instance."""
-    with patch("rag_demo.retrieval.retriever.BM25Retriever"):
+    with patch("weldscope.retrieval.retriever.BM25Retriever"):
         return HybridRetriever(mock_vectorstore, documents, config)
 
 
@@ -50,7 +50,7 @@ def test_retriever_initialization(retriever):
 
 def test_retriever_initialization_error(mock_vectorstore, documents, config):
     """Retriever raises RetrievalError on initialization failure."""
-    with patch("rag_demo.retrieval.retriever.BM25Retriever") as mock_bm25:
+    with patch("weldscope.retrieval.retriever.BM25Retriever") as mock_bm25:
         mock_bm25.from_documents.side_effect = Exception("Init error")
 
         with pytest.raises(RetrievalError, match="Failed to initialize"):

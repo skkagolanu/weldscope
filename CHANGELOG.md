@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [Unreleased] - 2026-11-11
+
+- Rebrand the repository, package, Streamlit headings, examples, and docs as WeldScope.
+- Deliver generation chunks to the UI as they arrive and preserve feedback across reruns.
+- Repair optional Langfuse SDK calls and prevent duplicating the current question in history.
+- Fix the package README, explicit dependencies, Docker assets, health checks, and writable index mount.
+- Use CPU-only PyTorch wheels for the hosted demo.
+- Replace permissive HTTP checks with rendered-chat availability checks and failure artifacts.
+- Add Streamlit regression coverage and document the observed hosting outage and recovery steps.
+- Remove stale generated documentation; rebuild from the maintained sources.
+
 ## [1.1.0] - 2026-02-04
 
 ### Added

@@ -66,16 +66,16 @@ This will:
 
 ```bash
 # Format
-black rag_demo/ tests/
+black weldscope/ tests/
 
 # Test
-pytest tests/ -v --cov=rag_demo --cov-fail-under=90
+pytest tests/ -v --cov=weldscope --cov-fail-under=90
 
 # Lint
-pylint rag_demo/ --disable=C0114,C0115,C0116,R0913,R0914
+pylint weldscope/ --disable=C0114,C0115,C0116,R0913,R0914
 
 # Security
-bandit -r rag_demo/ -ll
+bandit -r weldscope/ -ll
 ```
 
 ### Git Hooks
@@ -92,31 +92,31 @@ git commit --no-verify
 
 ### Run Tests
 ```bash
-pytest tests/ -v --cov=rag_demo
+pytest tests/ -v --cov=weldscope
 ```
 
 ### Format Code
 ```bash
-black rag_demo/ tests/
+black weldscope/ tests/
 ```
 
 ### Lint
 ```bash
-pylint rag_demo/
+pylint weldscope/
 ```
 
 ### Security Scan
 ```bash
-bandit -r rag_demo/ -ll
+bandit -r weldscope/ -ll
 ```
 
 ### Full Quality Check
 ```bash
 # Run all checks locally before pushing
-pytest tests/ --cov=rag_demo --cov-fail-under=90
-black --check rag_demo/ tests/
-pylint rag_demo/ --disable=C0114,C0115,C0116,R0913,R0914
-bandit -r rag_demo/ -ll
+pytest tests/ --cov=weldscope --cov-fail-under=90
+black --check weldscope/ tests/
+pylint weldscope/ --disable=C0114,C0115,C0116,R0913,R0914
+bandit -r weldscope/ -ll
 ```
 
 ## Required Secrets
@@ -157,12 +157,12 @@ Coverage reports are:
 - Clear pytest cache: `pytest --cache-clear`
 
 ### Coverage below threshold
-- Run with missing lines: `pytest --cov=rag_demo --cov-report=term-missing`
+- Run with missing lines: `pytest --cov=weldscope --cov-report=term-missing`
 - Add tests for uncovered code
 - Update threshold in `pyproject.toml` if justified
 
 ### Black formatting issues
-- Auto-fix: `black rag_demo/ tests/`
+- Auto-fix: `black weldscope/ tests/`
 - Check config in `pyproject.toml`
 
 ### Security scan failures

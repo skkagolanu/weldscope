@@ -1,18 +1,20 @@
-"""Streamlit UI for FSW RAG system with conversation memory and sensor analysis."""
+"""Streamlit UI for WeldScope with conversation memory and sensor analysis."""
 
 import streamlit as st
 from pathlib import Path
 import pandas as pd
 from datetime import datetime
 
-from rag_demo.core.config import RAGConfig
-from rag_demo.core.exceptions import RetrievalError, GenerationError
-from rag_demo.ingestion.builder import VectorStoreBuilder
-from rag_demo.retrieval.retriever import HybridRetriever
-from rag_demo.pipeline.pipeline import RAGPipeline
-from rag_demo.observability.tracer import RAGTracer
+from weldscope.core.config import RAGConfig
+from weldscope.core.exceptions import RetrievalError, GenerationError
+from weldscope.ingestion.builder import VectorStoreBuilder
+from weldscope.retrieval.retriever import HybridRetriever
+from weldscope.pipeline.pipeline import RAGPipeline
+from weldscope.observability.tracer import RAGTracer
 
-st.set_page_config(page_title="FSW Defect Analysis RAG", page_icon="⚙", layout="wide")
+st.set_page_config(
+    page_title="WeldScope | Welding Research Assistant", page_icon="⚙", layout="wide"
+)
 
 
 @st.cache_resource
@@ -74,7 +76,9 @@ def get_conversation_context(messages, max_turns=10):
     if len(messages) <= 1:
         return ""
 
-    recent = messages[-(max_turns * 2) :]
+    # The current prompt is already supplied separately.
+    history = messages[:-1] if messages[-1]["role"] == "user" else messages
+    recent = history[-(max_turns * 2) :]
     context = "\n\nPrevious conversation:\n"
     for msg in recent:
         role = msg["role"].capitalize()
@@ -87,15 +91,15 @@ def get_conversation_context(messages, max_turns=10):
 def render_source(source, index):
     """Render single source citation."""
     with st.expander(f"Source {index}: {source.doc_name}"):
-        if source.page_num:
-            st.caption(f"Page {source.page_num}")
+        if source.page_num is not None:
+            st.caption(f"Page {source.page_num + 1}")
         st.caption(f"Relevance Score: {source.relevance_score:.3f}")
         st.text(source.chunk_text)
 
 
 def main():
     """Main Streamlit application."""
-    st.title("FSW Defect Analysis RAG System")
+    st.title("WeldScope")
     st.markdown(
         "Ask questions about friction stir welding defects, root causes, and corrective actions."
     )
@@ -110,13 +114,13 @@ def main():
     with st.sidebar:
         st.header("Session Info")
         st.caption(f"Session ID: {st.session_state.session_id}")
-        
+
         # Message counter
         total_messages = len(st.session_state.messages)
         user_messages = len([m for m in st.session_state.messages if m["role"] == "user"])
         st.metric("Messages in conversation", total_messages)
         st.metric("Your questions", user_messages)
-        
+
         # Memory retention indicator
         max_memory_turns = 10
         if user_messages > max_memory_turns:
@@ -147,13 +151,19 @@ def main():
         return
 
     # Display conversation history
-    for message in st.session_state.messages:
+    for message_index, message in enumerate(st.session_state.messages):
         with st.chat_message(message["role"]):
             st.markdown(message["content"])
             if "sources" in message:
                 st.markdown("**Sources:**")
                 for i, source in enumerate(message["sources"], 1):
                     render_source(source, i)
+            if tracer and message.get("trace_id"):
+                feedback = st.feedback("thumbs", key=f"feedback_{message_index}")
+                if feedback is not None and feedback != message.get("feedback"):
+                    tracer.score_feedback(message["trace_id"], float(feedback))
+                    tracer.flush()
+                    message["feedback"] = feedback
 
     # Chat input
     if prompt := st.chat_input("Ask about FSW defects..."):
@@ -180,12 +190,13 @@ def main():
                 if sensor_context:
                     augmented_query = f"{augmented_query}{sensor_context}"
 
-                with st.spinner("Retrieving relevant documents..."):
-                    response = pipeline.query(augmented_query, stream=True)
-
-                for chunk in response.answer:
+                def display_chunk(chunk):
+                    nonlocal full_response
                     full_response += chunk
                     message_placeholder.markdown(full_response + "▌")
+
+                with st.spinner("Retrieving evidence and writing an answer..."):
+                    response = pipeline.query(augmented_query, stream=True, on_chunk=display_chunk)
 
                 message_placeholder.markdown(full_response)
 
@@ -203,25 +214,10 @@ def main():
                         "role": "assistant",
                         "content": full_response,
                         "sources": response.sources,
+                        "trace_id": response.metadata.get("trace_id"),
                     }
                 )
-
-                col1, col2 = st.columns([1, 1])
-                with col1:
-                    if st.button(
-                        "Helpful", key=f"up_{len(st.session_state.messages)}"
-                    ):
-                        if tracer:
-                            tracer.score_feedback(1.0, "user_feedback")
-                        st.success("Feedback recorded!")
-
-                with col2:
-                    if st.button(
-                        "Not Helpful", key=f"down_{len(st.session_state.messages)}"
-                    ):
-                        if tracer:
-                            tracer.score_feedback(0.0, "user_feedback")
-                        st.info("Feedback recorded!")
+                st.rerun()
 
             except RetrievalError as e:
                 st.error(f"Retrieval failed: {e}")

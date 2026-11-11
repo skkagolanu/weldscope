@@ -1,17 +1,18 @@
-# RAG Demo Documentation
+# WeldScope Documentation
 
-Production-grade Retrieval-Augmented Generation system for Friction Stir Welding defect analysis.
+Retrieval-Augmented Generation research assistant for Friction Stir Welding defect analysis.
 
 ## Contents
 
 ```{toctree}
 :maxdepth: 2
-:caption: Contents:
+:caption: Contents
 
 quickstart
 api/index
 architecture
 deployment
+hosting
 ```
 
 ## Features
@@ -27,6 +28,6 @@ deployment
 
 ## Quick Links
 
-- [GitHub Repository](https://github.com/SkullKrak7/RAG_Demo)
+- [GitHub Repository](https://github.com/skkagolanu/weldscope)
 - [API Reference](api/index.md)
 - [Architecture](architecture.md)

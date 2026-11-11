@@ -1,11 +1,17 @@
-# FSW RAG Demo: Production-Grade Friction Stir Welding Defect Analysis
+# WeldScope
 
-[![CI Pipeline](https://github.com/SkullKrak7/RAG_Demo/actions/workflows/ci.yml/badge.svg)](https://github.com/SkullKrak7/RAG_Demo/actions/workflows/ci.yml)
-[![Coverage](https://img.shields.io/badge/coverage-95%25-brightgreen)](https://github.com/SkullKrak7/RAG_Demo)
+A research assistant for friction stir welding defects, causes, and corrective actions.
+
+[Open the Streamlit app](https://rag-demo-skullkrak7.streamlit.app/) · [Hosting status](https://github.com/skkagolanu/weldscope/actions/workflows/deploy.yml)
+
+Community Cloud may put the app to sleep. See [hosting and recovery](docs/hosting.md) for the current status and redeployment steps.
+
+[![CI Pipeline](https://github.com/skkagolanu/weldscope/actions/workflows/ci.yml/badge.svg)](https://github.com/skkagolanu/weldscope/actions/workflows/ci.yml)
+[![Coverage](https://img.shields.io/badge/coverage-96.71%25-brightgreen)](https://github.com/skkagolanu/weldscope)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
+[![Python 3.11–3.12](https://img.shields.io/badge/python-3.11--3.12-blue.svg)](https://www.python.org/downloads/)
 
-Enterprise-grade Retrieval-Augmented Generation (RAG) system for intelligent defect analysis in Friction Stir Welding (FSW) processes.
+Retrieval-Augmented Generation (RAG) system for intelligent defect analysis in Friction Stir Welding (FSW) processes.
 
 ## Features
 
@@ -13,21 +19,23 @@ Enterprise-grade Retrieval-Augmented Generation (RAG) system for intelligent def
 - Streaming Responses: Real-time LLM output with HuggingFace API
 - Conversation Memory: Context-aware multi-turn conversations (last 10 turns)
 - Memory Counter: Visual indicator showing remaining context window
-- Sensor Data Integration: Real-time FSW sensor analysis with defect correlation
+- Sensor Data Integration: Bundled sensor log summaries included in question context
 - Source Attribution: Full citation tracking with relevance scores
 - Observability: Langfuse integration for tracing and monitoring
-- Modular Architecture: Clean separation of concerns with 100% test coverage
+- Modular Architecture: Clean separation of concerns with automated tests
 - Production Ready: Error handling, validation, and graceful degradation
-- Privacy-First: In-memory sessions, no persistent user data storage
+- Session History: In-memory conversations; optional tracing sends data to Langfuse when enabled
 
 ## Quick Start
 
 ### Installation
 
+Use Python 3.11 or 3.12 with the pinned dependencies.
+
 ```bash
 # Clone repository
-git clone https://github.com/SkullKrak7/RAG_Demo.git
-cd RAG_Demo
+git clone https://github.com/skkagolanu/weldscope.git
+cd weldscope
 
 # Create virtual environment
 python -m venv venv
@@ -37,8 +45,6 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
 pip install -r requirements-dev.txt
 
-# Setup git hooks
-./setup-hooks.sh
 ```
 
 ### Configuration
@@ -95,7 +101,7 @@ Access at `http://localhost:8501`
 ### Module Structure
 
 ```
-rag_demo/
+weldscope/
 ├── core/              # Configuration, models, exceptions
 ├── ingestion/         # Document loading and vectorstore building
 ├── retrieval/         # Hybrid retrieval and reranking
@@ -109,15 +115,15 @@ rag_demo/
 ### Basic Query
 
 ```python
-from rag_demo.core.config import RAGConfig
-from rag_demo.ingestion.builder import VectorStoreBuilder
-from rag_demo.retrieval.retriever import HybridRetriever
-from rag_demo.pipeline.pipeline import RAGPipeline
+from weldscope.core.config import RAGConfig
+from weldscope.ingestion.builder import VectorStoreBuilder
+from weldscope.retrieval.retriever import HybridRetriever
+from weldscope.pipeline.pipeline import RAGPipeline
 
 # Initialize
 config = RAGConfig()
 builder = VectorStoreBuilder(config)
-vectorstore = builder.load_vectorstore()
+vectorstore, documents = builder.load_vectorstore()
 
 # Create retriever
 retriever = HybridRetriever(vectorstore, documents, config)
@@ -143,7 +149,7 @@ for chunk in pipeline.stream_query("Explain FSW process parameters"):
 ### With Observability
 
 ```python
-from rag_demo.observability.tracer import RAGTracer
+from weldscope.observability.tracer import RAGTracer
 
 config = RAGConfig(langfuse_enabled=True)
 tracer = RAGTracer(config)
@@ -179,26 +185,26 @@ See `.env.example` for complete configuration options.
 
 ```bash
 # All tests
-pytest tests/ -v --cov=rag_demo
+pytest tests/ -v --cov=weldscope
 
 # Specific module
 pytest tests/unit/test_pipeline.py -v
 
 # With coverage report
-pytest tests/ --cov=rag_demo --cov-report=html
+pytest tests/ --cov=weldscope --cov-report=html
 ```
 
 ### Code Quality
 
 ```bash
 # Format code
-black rag_demo/ tests/
+black weldscope/ tests/
 
 # Lint
-pylint rag_demo/
+pylint weldscope/
 
 # Type checking
-mypy rag_demo/
+mypy weldscope/
 ```
 
 ## Project Status
@@ -213,16 +219,13 @@ mypy rag_demo/
 - Langfuse observability
 - Vector store builder
 - Streamlit UI
-- 100% test coverage on core modules
+- 107 passing tests; 96.71% package coverage (Python 3.11)
 
 ### Roadmap
 
-- CI/CD pipeline (GitHub Actions)
-- Integration tests
 - RAGAS evaluation framework
 - Performance monitoring
 - API documentation
-- Docker deployment
 
 ## Technical Specifications
 
@@ -243,9 +246,8 @@ mypy rag_demo/
 
 ### Performance
 
-- **Query Latency**: < 2s (with reranking)
-- **Embedding Speed**: ~50ms per query
-- **Vector Store Size**: ~500MB (5 documents)
+Latency depends on model downloads, hosting resources, and the inference provider.
+The bundled vector store contains 2,165 chunks across five source documents; it is about 21 MB.
 
 ## License
 
@@ -254,5 +256,5 @@ MIT License - Copyright (c) 2026 Sai Karthik Kagolanu
 ## Contact
 
 - **Author**: Sai Karthik Kagolanu
-- **GitHub**: [@SkullKrak7](https://github.com/SkullKrak7)
-- **Project**: [RAG_Demo](https://github.com/SkullKrak7/RAG_Demo)
+- **GitHub**: [@skkagolanu](https://github.com/skkagolanu)
+- **Project**: [weldscope](https://github.com/skkagolanu/weldscope)

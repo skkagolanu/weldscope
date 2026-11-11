@@ -1,24 +1,37 @@
-name: Deploy to Streamlit Cloud
+name: Hosted App Check
 
 on:
-  push:
-    branches: [ main ]
+  workflow_run:
+    workflows: [CI Pipeline]
+    types: [completed]
+    branches: [main]
   workflow_dispatch:
+  schedule:
+    - cron: '30 7 * * *'
+
+permissions:
+  contents: read
 
 jobs:
-  deploy:
+  check:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
-    
+    timeout-minutes: 8
     steps:
-    - uses: actions/checkout@v4
-    
-    - name: Trigger Streamlit Cloud deployment
-      run: |
-        echo "Streamlit Cloud auto-deploys from main branch"
-        echo "Deployment URL: https://rag-demo-skullkrak7.streamlit.app/"
-    
-    - name: Verify deployment health
-      run: |
-        sleep 30
-        curl -f https://rag-demo-skullkrak7.streamlit.app/ || echo "Deployment verification skipped"
-      continue-on-error: true
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install browser checker
+        run: |
+          pip install playwright==1.65.0
+          playwright install --with-deps chromium
+      - name: Check rendered application
+        env:
+          APP_URL: ${{ vars.STREAMLIT_APP_URL || 'https://rag-demo-skullkrak7.streamlit.app/' }}
+        run: python scripts/check_hosted_app.py --url "$APP_URL"
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: hosted-app-failure
+          path: artifacts/

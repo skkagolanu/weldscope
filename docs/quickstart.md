@@ -3,8 +3,8 @@
 ## Installation
 
 ```bash
-git clone https://github.com/SkullKrak7/RAG_Demo.git
-cd RAG_Demo
+git clone https://github.com/skkagolanu/weldscope.git
+cd weldscope
 python -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
@@ -34,10 +34,10 @@ streamlit run app.py
 ## Basic Usage
 
 ```python
-from rag_demo.core.config import RAGConfig
-from rag_demo.ingestion.builder import VectorStoreBuilder
-from rag_demo.retrieval.retriever import HybridRetriever
-from rag_demo.pipeline.pipeline import RAGPipeline
+from weldscope.core.config import RAGConfig
+from weldscope.ingestion.builder import VectorStoreBuilder
+from weldscope.retrieval.retriever import HybridRetriever
+from weldscope.pipeline.pipeline import RAGPipeline
 
 # Initialize
 config = RAGConfig()
@@ -59,7 +59,7 @@ for source in response.sources:
 ## Running Tests
 
 ```bash
-pytest tests/ -v --cov=rag_demo
+pytest tests/ -v --cov=weldscope
 ```
 
 ## Pre-commit Checks

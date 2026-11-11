@@ -5,9 +5,9 @@ from pathlib import Path
 from unittest.mock import Mock, patch, MagicMock
 from langchain_core.documents import Document
 
-from rag_demo.ingestion.builder import VectorStoreBuilder
-from rag_demo.core.config import RAGConfig
-from rag_demo.core.exceptions import ConfigurationError
+from weldscope.ingestion.builder import VectorStoreBuilder
+from weldscope.core.config import RAGConfig
+from weldscope.core.exceptions import ConfigurationError
 
 
 @pytest.fixture
@@ -28,7 +28,7 @@ def test_builder_initialization(builder, config):
     assert builder._embeddings is None
 
 
-@patch("rag_demo.ingestion.builder.HuggingFaceEmbeddings")
+@patch("weldscope.ingestion.builder.HuggingFaceEmbeddings")
 def test_get_embeddings_initializes_model(mock_embeddings, builder):
     """Get embeddings initializes HuggingFace model."""
     mock_embeddings.return_value = Mock()
@@ -39,7 +39,7 @@ def test_get_embeddings_initializes_model(mock_embeddings, builder):
     mock_embeddings.assert_called_once_with(model_name=builder.config.embedding_model)
 
 
-@patch("rag_demo.ingestion.builder.HuggingFaceEmbeddings")
+@patch("weldscope.ingestion.builder.HuggingFaceEmbeddings")
 def test_get_embeddings_caches_instance(mock_embeddings, builder):
     """Get embeddings caches model instance."""
     mock_embeddings.return_value = Mock()
@@ -68,7 +68,7 @@ def test_load_pdfs_raises_on_no_pdfs(builder, tmp_path):
         builder.load_pdfs(str(empty_dir))
 
 
-@patch("rag_demo.ingestion.builder.PyPDFLoader")
+@patch("weldscope.ingestion.builder.PyPDFLoader")
 def test_load_pdfs_loads_all_pdfs(mock_loader, builder, tmp_path):
     """Load PDFs loads all PDF files from directory."""
     pdf_dir = tmp_path / "pdfs"
@@ -88,7 +88,7 @@ def test_load_pdfs_loads_all_pdfs(mock_loader, builder, tmp_path):
     assert mock_loader.call_count == 2
 
 
-@patch("rag_demo.ingestion.builder.RecursiveCharacterTextSplitter")
+@patch("weldscope.ingestion.builder.RecursiveCharacterTextSplitter")
 def test_split_documents_uses_config_params(mock_splitter, builder):
     """Split documents uses chunk size and overlap from config."""
     mock_splitter_instance = Mock()
@@ -106,8 +106,8 @@ def test_split_documents_uses_config_params(mock_splitter, builder):
     )
 
 
-@patch("rag_demo.ingestion.builder.Chroma")
-@patch("rag_demo.ingestion.builder.HuggingFaceEmbeddings")
+@patch("weldscope.ingestion.builder.Chroma")
+@patch("weldscope.ingestion.builder.HuggingFaceEmbeddings")
 def test_build_vectorstore_creates_chroma(mock_embeddings, mock_chroma, builder):
     """Build vectorstore creates Chroma instance."""
     mock_embeddings.return_value = Mock()
@@ -120,8 +120,8 @@ def test_build_vectorstore_creates_chroma(mock_embeddings, mock_chroma, builder)
     mock_chroma.from_documents.assert_called_once()
 
 
-@patch("rag_demo.ingestion.builder.Chroma")
-@patch("rag_demo.ingestion.builder.HuggingFaceEmbeddings")
+@patch("weldscope.ingestion.builder.Chroma")
+@patch("weldscope.ingestion.builder.HuggingFaceEmbeddings")
 def test_build_vectorstore_uses_persist_directory(mock_embeddings, mock_chroma, builder):
     """Build vectorstore uses specified persist directory."""
     mock_embeddings.return_value = Mock()
@@ -134,8 +134,8 @@ def test_build_vectorstore_uses_persist_directory(mock_embeddings, mock_chroma, 
     assert call_args[1]["persist_directory"] == "/custom/path"
 
 
-@patch("rag_demo.ingestion.builder.Chroma")
-@patch("rag_demo.ingestion.builder.HuggingFaceEmbeddings")
+@patch("weldscope.ingestion.builder.Chroma")
+@patch("weldscope.ingestion.builder.HuggingFaceEmbeddings")
 def test_load_vectorstore_raises_on_missing_directory(
     mock_embeddings, mock_chroma, builder, tmp_path
 ):
@@ -147,8 +147,8 @@ def test_load_vectorstore_raises_on_missing_directory(
         builder.load_vectorstore(str(nonexistent))
 
 
-@patch("rag_demo.ingestion.builder.Chroma")
-@patch("rag_demo.ingestion.builder.HuggingFaceEmbeddings")
+@patch("weldscope.ingestion.builder.Chroma")
+@patch("weldscope.ingestion.builder.HuggingFaceEmbeddings")
 def test_load_vectorstore_loads_existing(mock_embeddings, mock_chroma, builder, tmp_path):
     """Load vectorstore loads existing Chroma instance."""
     mock_embeddings.return_value = Mock()
@@ -173,9 +173,9 @@ def test_load_vectorstore_loads_existing(mock_embeddings, mock_chroma, builder, 
     mock_chroma.assert_called_once()
 
 
-@patch("rag_demo.ingestion.builder.VectorStoreBuilder.build_vectorstore")
-@patch("rag_demo.ingestion.builder.VectorStoreBuilder.split_documents")
-@patch("rag_demo.ingestion.builder.VectorStoreBuilder.load_pdfs")
+@patch("weldscope.ingestion.builder.VectorStoreBuilder.build_vectorstore")
+@patch("weldscope.ingestion.builder.VectorStoreBuilder.split_documents")
+@patch("weldscope.ingestion.builder.VectorStoreBuilder.load_pdfs")
 def test_build_from_pdfs_executes_full_pipeline(
     mock_load, mock_split, mock_build, builder, tmp_path
 ):
