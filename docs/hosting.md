@@ -33,3 +33,13 @@ Docker execution remains unverified because the local Docker daemon is unavailab
 The checker inspects the app frame, waits for a chat input, and verifies the new local greeting without sending a provider request. It fails on sleep pages, startup errors, stale UI, and broken greetings, and stores screenshot/text artifacts. `--startup-only` checks startup without sending a greeting.
 
 These checks run daily, after successful CI, and manually. They measure startup and local conversation availability, not provider quotas or answer quality. Community Cloud hibernation still applies; this is not an always-on hosting guarantee.
+
+## Verified after the 12 November owner reboot
+
+The public `quality-v1` UI passed the seven-turn end-to-end browser regression: greeting, purpose, real Groq FSW answer, the exact ship/butter-chicken request, TMAZ, the HAZ follow-up and an unsupported future-standard question. Source identifiers referred only to current `fsw_doc*.pdf` files, citation ranges were valid, and reported usage was captured for all four research turns. [Dated raw evidence](benchmarks/hosted-quality-2026-11-12.json).
+
+The exact recipe was refused locally with **0 retrieval/generation**, **no token usage**, **1 ms backend** and **610 ms browser**. Warm TMAZ/HAZ replies took **582/614 ms backend**, **1,222/1,263 ms browser**. The future-standard request correctly stated that the evidence contained no 2035 changes. Its then-serving abstention recognizer produced an unnecessary support warning; a focused regression now covers and corrects that wording in source. This final small correction has separate local verification rather than being silently attributed to the earlier hosted run.
+
+**Cold startup is still slow:** the first research request took **10,014 ms backend / 12,004 ms browser**: retriever initialization 4,598 ms, reranker loading 4,663 ms, reranker prediction 104 ms, search 33 ms, generation 613 ms. These measurements confirm model/index initialization dominates this request. They do not isolate CPU deserialization from model-file fetching. The future-standard answer took 1,648 ms backend / 2,304 ms browser, including 1.346 s reported provider queue time. There is no universal two-second claim.
+
+CI for `56b32ce` passed tests, blocking type/error lint, security and the actual retrieval regression gate: [executed workflow](https://github.com/skkagolanu/weldscope/actions/runs/43213547802). Its quality-evidence artifact preserves benchmark output and sanitized test telemetry. Live external Langfuse retention and reliable Community Cloud storage across rebuilds remain unverified.

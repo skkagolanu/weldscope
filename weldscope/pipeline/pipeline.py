@@ -219,8 +219,12 @@ class RAGPipeline:
             if answer_checks["status"] == "withheld":
                 answer = "The generated reply contained invalid source citations and has been withheld. Please rephrase the corpus question."
             if self.tracer:
+                reported_usage = getattr(self.generator, "last_usage", None)
+                total_tokens = (
+                    reported_usage.get("total_tokens") if isinstance(reported_usage, dict) else None
+                )
                 self.tracer.log_generation(
-                    prompt, answer, None, (perf_counter() - generation_started) * 1000
+                    prompt, answer, total_tokens, (perf_counter() - generation_started) * 1000
                 )
         return ResponseFormatter.create_response(
             query=question,

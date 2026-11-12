@@ -23,7 +23,7 @@ st.set_page_config(
 
 @st.cache_resource
 def load_config():
-    """Load configuration."""
+    """Load quality-v1 configuration, including telemetry settings."""
     return RAGConfig()
 
 

@@ -24,7 +24,7 @@ def check_answer(answer, documents):
         re.search(
             r"\b(?:no (?:supporting )?(?:evidence|information)|insufficient evidence|"
             r"not (?:specified|established|provided) in|cannot (?:determine|answer|establish)|"
-            r"(?:documents|sources|context) (?:do not|does not|don't|doesn't) (?:contain|provide|establish))\b",
+            r"(?:documents|sources|context|(?:source )?evidence) (?:do not|does not|don't|doesn't) (?:contain|provide|establish))\b",
             answer,
             re.I,
         )

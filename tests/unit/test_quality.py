@@ -51,6 +51,10 @@ def test_all_versioned_routing_cases():
         ("FSW requires exactly 9372 RPM [1].", "needs_review"),
         ("FSW is solid-state.", "needs_review"),
         ("The sources do not contain that information.", "abstention"),
+        (
+            "The provided source evidence does not contain any information about changes in 2035.",
+            "abstention",
+        ),
     ],
 )
 def test_citation_and_numerical_support_diagnostics(answer, status):

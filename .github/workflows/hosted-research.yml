@@ -1,0 +1,31 @@
+name: Hosted Research Regression
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  research-regression:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install browser and validation dependencies
+        run: |
+          pip install -c constraints.txt playwright==1.65.0 langchain-core==1.7.7 groq==1.7.0 pydantic-settings==2.16.2 python-dotenv==1.2.4
+          playwright install --with-deps chromium
+      - name: Exercise live research and exact conversation
+        env:
+          PYTHONPATH: .
+          APP_URL: ${{ vars.STREAMLIT_APP_URL || 'https://weldscope.streamlit.app/' }}
+        run: python scripts/hosted_regression.py --url "$APP_URL" --output artifacts/hosted-regression.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: hosted-research-evidence
+          path: artifacts/hosted-regression.json

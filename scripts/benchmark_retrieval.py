@@ -125,6 +125,7 @@ def run(dataset_path, output, gate=None):
             str(p.relative_to(ROOT)): digest(p)
             for p in [Path(__file__).resolve(), *sorted((ROOT / "weldscope").rglob("*.py"))]
         },
+        models={"embedding": config.embedding_model, "reranker": config.reranker_model},
         packages={
             name: importlib.metadata.version(name)
             for name in ["bm25s", "chromadb", "sentence-transformers", "torch", "langchain-chroma"]
@@ -144,7 +145,8 @@ def run(dataset_path, output, gate=None):
             note="Reranked variant uses a 20-candidate research ablation; production uses 5 candidates -> 3 passages. Latency includes first-query caches/model loading where incurred and is not randomized or a hosted SLA.",
         ),
         corpus_chunks=len(documents),
-        excluded_stale_chunks=2165 - len(documents),
+        total_index_chunks=raw_count,
+        excluded_stale_chunks=raw_count - len(documents),
         categories=dict(Counter(case["category"] for case in dataset["cases"])),
         initialization_ms=initialization_ms,
         routing_accuracy=mean(row["correct"] for row in routing),

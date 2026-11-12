@@ -49,6 +49,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--url", default="https://weldscope.streamlit.app/")
     parser.add_argument("--browser-path")
+    parser.add_argument("--startup-timeout", type=int, default=180)
     parser.add_argument("--output", type=Path, default=Path("artifacts/hosted-regression.json"))
     args = parser.parse_args()
     results = []
@@ -64,7 +65,7 @@ def main():
             browser = p.chromium.launch(executable_path=args.browser_path)
             page = browser.new_page()
             page.goto(args.url, wait_until="domcontentloaded", timeout=60000)
-            app = find_chat_frame(page, 60)
+            app = find_chat_frame(page, args.startup_timeout)
             questions = [
                 "hi",
                 "what do you do",
