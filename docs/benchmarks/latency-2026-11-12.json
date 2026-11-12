@@ -95,5 +95,13 @@
         "answer_words": 111
       }
     ]
+  },
+  "recipe_history_regression": {
+    "median_ms": 0.015178499893409025,
+    "max_ms": 0.3701179998643056,
+    "calls": 100,
+    "retrieval_calls": 0,
+    "provider_calls": 0,
+    "route": "out_of_scope"
   }
 }

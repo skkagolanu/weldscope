@@ -16,6 +16,12 @@ Baseline source: `e641e70`. Three successful, fresh-chat requests were measured;
 
 The browser/backend gap is measured, but it cannot all be attributed to network delay: it includes Streamlit scheduling, rendering and full-script reruns. The older generation-stage timer also included synchronous UI callbacks. These samples are latency observations, not answer-quality validation.
 
+## Clarified stress-test intent
+
+The user later clarified that the original request was for a cooking recipe framed around a sinking ship, after greeting the app, asking its purpose, and asking what FSW is. This is an off-corpus recipe request, not a request for emergency guidance. The baseline ship-damage prompt above was an approximation made before that clarification; it is not a reproduction of the complete original conversation or its reported nine seconds.
+
+A dedicated recipe-task check now runs before maritime context, domain keywords and prior FSW history. It returns a short corpus-scope refusal without asking for incident details or giving emergency/repair instructions. Regression tests reproduce the greeting → app purpose → FSW → recipe pattern and verify zero document-loader and provider calls for the last turn. Food-industry welding research remains allowed. A 100-call controlled test of this multi-turn recipe case measured median 0.015 ms and maximum 0.370 ms, with zero retrieval and provider calls; this excludes browser/server startup.
+
 ## Changes and evidence for each
 
 | Change | What identified the issue | What changed | Evidence and limit |
@@ -48,4 +54,4 @@ The updated app was also exercised in a real **local Streamlit browser**: the sh
 
 A public probe after pushing `a2b2684` still showed the old Search/Rerank/Total caption and a 167-word model-generated research answer to the scenario. Those results are explicitly excluded from the optimized comparison: the hosted process had not visibly applied the new behavior. An owner-side Streamlit reboot was requested to obtain valid hosted after measurements.
 
-Local verification: **148 tests passed, 97.18% package coverage**, a successful browser greeting/scope check, and a warning-free docs build. The final public after comparison remains pending rollout. Do not call these few queries a p95 benchmark or promise a two-second SLA.
+Local verification: **153 tests passed, 97.21% package coverage**, a successful browser greeting/scope check, and a warning-free docs build. The final public after comparison remains pending rollout. Do not call these few queries a p95 benchmark or promise a two-second SLA.

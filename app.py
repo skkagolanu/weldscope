@@ -46,7 +46,7 @@ def release_system(resource):
 
 @st.cache_resource(scope="session", on_release=release_system)
 def initialize_system(_config):
-    """Initialize corpus-only conversation handling (pipeline revision 2)."""
+    """Initialize corpus-only conversation handling (pipeline revision 3)."""
     tracer = None
     if _config.langfuse_enabled:
         tracer = RAGTracer(_config)

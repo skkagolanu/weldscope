@@ -24,6 +24,7 @@ from weldscope.pipeline.pipeline import RAGPipeline
         "What is the RAG based on?",
         "What documents do you use?",
         "What can you do?",
+        "What was this chatbot built for?",
         "How do you work?",
         "What is WeldScope?",
     ],

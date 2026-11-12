@@ -32,6 +32,18 @@ SCOPE_REPLY = (
 )
 
 
+def is_recipe_request(text):
+    recipe = re.search(r"\b(?:recipes?|meal plans?)\b", text)
+    food = re.search(
+        r"\b(?:cook\w*|bak\w*|meals?|dinner|lunch|breakfast|food|pizza|pasta|curry)\b", text
+    )
+    cooking_instructions = re.search(
+        r"\b(?:how (?:do|can|should) i|help me|teach me|instructions to)\b.{0,80}\b(?:cook|bake)\b",
+        text,
+    )
+    return bool(cooking_instructions or (recipe and (food or not DOMAIN.search(text))))
+
+
 def is_live_operational_request(text):
     vessel = re.search(r"\b(?:ship|boat|vessel|yacht|ferry|hull)\b", text)
     live = re.search(
@@ -109,6 +121,12 @@ def plan_conversation(question, history=None):
     """Handle known social/product questions locally; retrieve only for research."""
     text = re.sub(r"\s+", " ", question.lower()).strip().rstrip(".!? ")
     text = text.replace("what's", "what is").replace("who's", "who is")
+    # Current task intent wins over both domain keywords and prior conversation.
+    if is_recipe_request(text):
+        return ConversationPlan(
+            "out_of_scope",
+            "Recipes and cooking instructions are outside this chatbot's corpus. I can answer questions grounded in the bundled friction stir welding documents.",
+        )
     if is_live_operational_request(text):
         return ConversationPlan("out_of_scope", SCOPE_REPLY)
     if re.fullmatch(
@@ -129,6 +147,7 @@ def plan_conversation(question, history=None):
             "local", "See you! Come back whenever you'd like to explore a welding question."
         )
     about = (
+        r"\b(?:what (?:is|was) (?:this (?:chatbot|app)|weldscope) (?:built|designed|made|used) for|what (?:is|was) your purpose)\b",
         r"\b(?:what|who) (?:is|are) (?:you|weldscope|this (?:app|rag|chatbot|assistant|project)|(?:a |the )?rag)\b",
         r"\b(?:what|which) (?:can you|do you|are you) (?:do|use|help|based|trained)\b",
         r"\b(?:how do you work|how does (?:this|weldscope|the rag) work|what can (?:this|weldscope) do)\b",

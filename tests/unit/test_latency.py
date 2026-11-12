@@ -57,3 +57,45 @@ def test_stream_display_keeps_first_chunk_immediate_and_final_text_exact():
     assert display.finish() == "a" * 1000 + "b"
     assert paint.call_args.args[0] == "a" * 1000 + "b"
     assert paint.call_count == 3
+
+
+@pytest.mark.parametrize(
+    "question",
+    [
+        "The ship is sinking soon, send me a recipe to cook my favourite meal.",
+        "Given that FSW explanation, can you give me a pasta recipe?",
+        "How can I cook dinner?",
+    ],
+)
+def test_recipe_request_does_not_inherit_fsw_retrieval_topic(question):
+    history = [
+        {"role": "user", "content": "hi"},
+        {"role": "assistant", "content": "Hi!", "route": "local"},
+        {"role": "user", "content": "What was this chatbot built for?"},
+        {"role": "assistant", "content": "FSW corpus research", "route": "local"},
+        {"role": "user", "content": "What is FSW?"},
+        {
+            "role": "assistant",
+            "content": "Friction stir welding [1]",
+            "route": "research",
+            "retrieval_query": "What is FSW?",
+        },
+    ]
+    loader = Mock(side_effect=AssertionError("No retrieval for a recipe"))
+    pipeline = RAGPipeline(None, RAGConfig(), retriever_loader=loader)
+    pipeline.generator = Mock()
+    response = pipeline.query(question, history=history, stream=True)
+    assert response.metadata["route"] == "out_of_scope"
+    assert "Recipes" in response.answer
+    assert not response.sources
+    loader.assert_not_called()
+    pipeline.generator.stream.assert_not_called()
+
+
+def test_food_industry_welding_question_remains_research():
+    assert (
+        plan_conversation(
+            "What does the FSW corpus say about welding food-processing equipment?"
+        ).kind
+        == "research"
+    )

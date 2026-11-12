@@ -58,6 +58,12 @@ def main():
                 expect(app.locator('[data-testid="stChatMessage"]').last).to_contain_text(
                     "I can't assess a real vessel's condition", timeout=10000
                 )
+                chat_input.fill("Given that FSW explanation, send me a recipe for pasta.")
+                chat_input.press("Enter")
+                expect(app.locator('[data-testid="stChatMessage"]').last).to_contain_text(
+                    "Recipes and cooking instructions are outside this chatbot's corpus",
+                    timeout=10000,
+                )
             print(
                 "Healthy: rendered chat"
                 + ("" if args.startup_only else " and local greeting")
