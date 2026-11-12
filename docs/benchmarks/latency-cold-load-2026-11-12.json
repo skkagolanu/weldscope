@@ -59,5 +59,85 @@
       "local_files_only": false,
       "load_ms": 2146.685
     }
-  ]
+  ],
+  "post_push_public_probe": {
+    "status": "Exact recipe still entered research; updated guard not observed in the public process. Excluded from optimized after results.",
+    "results": [
+      {
+        "question": "hi",
+        "status": "complete",
+        "browser_total_ms": 1143.4,
+        "browser_first_visible_ms": 1141.2,
+        "backend_total_ms": 1,
+        "timing_caption": "Local reply \u00b7 Total 1 ms",
+        "answer_words": 18,
+        "answer": "Hi! I'm WeldScope. Ask me about friction stir welding, the documents I use, or how this assistant works."
+      },
+      {
+        "question": "what do you do",
+        "status": "complete",
+        "browser_total_ms": 625.4,
+        "browser_first_visible_ms": 622.4,
+        "backend_total_ms": 4,
+        "timing_caption": "Local reply \u00b7 Total 4 ms",
+        "answer_words": 125,
+        "answer": "I'm WeldScope, a research assistant for friction stir welding (FSW). I help explore welding defects, possible causes, process parameters, and corrective actions.\n\nMy bundled document collection contains fsw_doc1.pdf, fsw_doc2.pdf, fsw_doc3.pdf, fsw_doc4.pdf, fsw_doc5.pdf. I combine keyword search (BM25) with semantic vector search, rerank the passages, and pass relevant evidence to a language model to write an answer with source passages. RAG means retrieval-augmented generation: the documents are searched at question time; they aren't used to train the model.\n\nThere's also a bundled example sensor CSV, used when you ask about sensor readings; it isn't a live feed. I use recent completed exchanges for follow-ups within this session. Clear Conversation resets that context.\n\nTry: What causes tunnel defects in FSW? or What do the sensor readings show?"
+      },
+      {
+        "question": "what is fsw",
+        "status": "complete",
+        "browser_total_ms": 1157.8,
+        "browser_first_visible_ms": 733.3,
+        "backend_total_ms": 535,
+        "timing_caption": "Search 13 ms \u00b7 Rerank 89 ms \u00b7 Generate 432 ms \u00b7 First text 413 ms \u00b7 Total 535 ms",
+        "answer_words": 86,
+        "answer": "Friction Stir Welding (FSW) is a solid\u2011state joining process that uses a rotating, non\u2011cutting tool to generate frictional heat and plasticize the material, then mechanically stir the material to form a weld. The process is performed on a machine that can be a conventional milling machine, a dedicated FSW machine, or an industrial robot, all of which share similar operational principles with other machining processes such as drilling or grinding. The choice of machine depends on load capability, stiffness, accuracy, and production volume requirements. [1] [2]"
+      },
+      {
+        "question": "i am in a ship that has fsw for welds. unfortunately i think there were lots of faults and now the joints that had defects are coming off. i would be drowning soon but i want to know how to cook butter chicken one last time before sinkign",
+        "status": "complete",
+        "browser_total_ms": 1093.7,
+        "browser_first_visible_ms": 676.3,
+        "backend_total_ms": 441,
+        "timing_caption": "Search 21 ms \u00b7 Rerank 100 ms \u00b7 Generate 319 ms \u00b7 First text 315 ms \u00b7 Total 441 ms",
+        "answer_words": 86,
+        "answer": "Friction Stir Welding (FSW) is a solid\u2011state joining process that uses a rotating, non\u2011cutting tool to generate frictional heat and plasticize the material, then mechanically stir the material to form a weld. The process is performed on a machine that can be a conventional milling machine, a dedicated FSW machine, or an industrial robot, all of which share similar operational principles with other machining processes such as drilling or grinding. The choice of machine depends on load capability, stiffness, accuracy, and production volume requirements. [1] [2]"
+      }
+    ]
+  },
+  "local_browser_probe": {
+    "status": "Actual local browser, separate from full four-turn AppTest regression; no FSW provider request in this browser sequence.",
+    "results": [
+      {
+        "question": "hi",
+        "status": "complete",
+        "browser_total_ms": 631.9,
+        "browser_first_visible_ms": 630.7,
+        "backend_total_ms": 1,
+        "timing_caption": "Local reply \u00b7 Total 1 ms",
+        "answer_words": 18,
+        "answer": "Hi! I'm WeldScope. Ask me about friction stir welding, the documents I use, or how this assistant works."
+      },
+      {
+        "question": "what do you do",
+        "status": "complete",
+        "browser_total_ms": 351.6,
+        "browser_first_visible_ms": 350.4,
+        "backend_total_ms": 2,
+        "timing_caption": "Local reply \u00b7 Total 2 ms",
+        "answer_words": 125,
+        "answer": "I'm WeldScope, a research assistant for friction stir welding (FSW). I help explore welding defects, possible causes, process parameters, and corrective actions.\n\nMy bundled document collection contains fsw_doc1.pdf, fsw_doc2.pdf, fsw_doc3.pdf, fsw_doc4.pdf, fsw_doc5.pdf. I combine keyword search (BM25) with semantic vector search, rerank the passages, and pass relevant evidence to a language model to write an answer with source passages. RAG means retrieval-augmented generation: the documents are searched at question time; they aren't used to train the model.\n\nThere's also a bundled example sensor CSV, used when you ask about sensor readings; it isn't a live feed. I use recent completed exchanges for follow-ups within this session. Clear Conversation resets that context.\n\nTry: What causes tunnel defects in FSW? or What do the sensor readings show?"
+      },
+      {
+        "question": "i am in a ship that has fsw for welds. unfortunately i think there were lots of faults and now the joints that had defects are coming off. i would be drowning soon but i want to know how to cook butter chicken one last time before sinkign",
+        "status": "complete",
+        "browser_total_ms": 335.0,
+        "browser_first_visible_ms": 333.9,
+        "backend_total_ms": 0,
+        "timing_caption": "Local reply \u00b7 Total 0 ms",
+        "answer_words": 21,
+        "answer": "Recipes and cooking instructions are outside this chatbot's corpus. I can answer questions grounded in the bundled friction stir welding documents."
+      }
+    ]
+  }
 }
