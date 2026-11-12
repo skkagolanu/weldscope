@@ -1,0 +1,822 @@
+{
+  "version": "fsw-v1",
+  "annotation": "AI-authored and source-inspected; provisional page-level positive anchors, not exhaustive relevance judgements or independent expert labels. No source text used to train embeddings or reranker. All 50 cases are a development benchmark, not held-out generalization evidence.",
+  "page_numbering": "one-based physical PDF page",
+  "corpus": {
+    "fsw_doc1.pdf": {
+      "sha256": "985f46ce0f21904406bcff0022c7aa0c09c1e7d5ab296ec9747a5e0a1dc9c845"
+    },
+    "fsw_doc2.pdf": {
+      "sha256": "947b49d2588a41d40825785b771b28a7de895bc3f27235243ec39e21c086dc94"
+    },
+    "fsw_doc3.pdf": {
+      "sha256": "79809aef2d8b8e4d597651464486141b6109bf08cff5783dac74a62dc7b2a6de"
+    },
+    "fsw_doc4.pdf": {
+      "sha256": "c0ffe68bbaceb7cec022d2aa79c3712acfbebcc0f1d0d530273bb6d74cd6f9aa"
+    },
+    "fsw_doc5.pdf": {
+      "sha256": "ec91b2860c1b4d01367a0fda2042de4dd8e3631c6a583bbb2bb1edd4c9254bbc"
+    }
+  },
+  "cases": [
+    {
+      "id": "FSW-001",
+      "category": "exact",
+      "question": "What is the advancing side in FSW?",
+      "expected_route": "research",
+      "answerable": true,
+      "reference_answer": "Tool rotation and welding travel have the same direction on the advancing side.",
+      "evidence": [
+        {
+          "source": "fsw_doc2.pdf",
+          "page": 11
+        }
+      ],
+      "history": []
+    },
+    {
+      "id": "FSW-002",
+      "category": "exact",
+      "question": "What is the retreating side in FSW?",
+      "expected_route": "research",
+      "answerable": true,
+      "reference_answer": "Tool rotation opposes the welding travel direction on the retreating side.",
+      "evidence": [
+        {
+          "source": "fsw_doc2.pdf",
+          "page": 11
+        }
+      ],
+      "history": []
+    },
+    {
+      "id": "FSW-003",
+      "category": "exact",
+      "question": "What is an FSW bobbin tool?",
+      "expected_route": "research",
+      "answerable": true,
+      "reference_answer": "A bobbin tool has two shoulders separated by a fixed or adjustable pin.",
+      "evidence": [
+        {
+          "source": "fsw_doc2.pdf",
+          "page": 11
+        }
+      ],
+      "history": []
+    },
+    {
+      "id": "FSW-004",
+      "category": "exact",
+      "question": "What is dwell time at the start of an FSW weld?",
+      "expected_route": "research",
+      "answerable": true,
+      "reference_answer": "The interval after full tool depth and before tool travel starts.",
+      "evidence": [
+        {
+          "source": "fsw_doc2.pdf",
+          "page": 11
+        }
+      ],
+      "history": []
+    },
+    {
+      "id": "FSW-005",
+      "category": "exact",
+      "question": "What is dwell time at the end of an FSW weld?",
+      "expected_route": "research",
+      "answerable": true,
+      "reference_answer": "The interval between stopping travel and beginning withdrawal of the rotating tool.",
+      "evidence": [
+        {
+          "source": "fsw_doc2.pdf",
+          "page": 11
+        }
+      ],
+      "history": []
+    },
+    {
+      "id": "FSW-006",
+      "category": "exact",
+      "question": "What is tool rotation speed in FSW?",
+      "expected_route": "research",
+      "answerable": true,
+      "reference_answer": "Angular tool speed measured in revolutions per minute.",
+      "evidence": [
+        {
+          "source": "fsw_doc2.pdf",
+          "page": 12
+        }
+      ],
+      "history": []
+    },
+    {
+      "id": "FSW-007",
+      "category": "exact",
+      "question": "What does the FSW tool shoulder contact?",
+      "expected_route": "research",
+      "answerable": true,
+      "reference_answer": "The shoulder contacts the surface of the parent material.",
+      "evidence": [
+        {
+          "source": "fsw_doc2.pdf",
+          "page": 12
+        }
+      ],
+      "history": []
+    },
+    {
+      "id": "FSW-008",
+      "category": "exact",
+      "question": "Does the scope of ISO 25239-5 include friction stir spot welding?",
+      "expected_route": "research",
+      "answerable": true,
+      "reference_answer": "The bundled preview excludes friction stir spot welding and refers to the ISO 18785 series.",
+      "evidence": [
+        {
+          "source": "fsw_doc1.pdf",
+          "page": 7
+        }
+      ],
+      "history": []
+    },
+    {
+      "id": "FSW-009",
+      "category": "exact",
+      "question": "How many satisfactory test welds does the bundled FSW quality preview require for reproducibility testing?",
+      "expected_route": "research",
+      "answerable": true,
+      "reference_answer": "At least three satisfactory welds must be made and documented.",
+      "evidence": [
+        {
+          "source": "fsw_doc1.pdf",
+          "page": 9
+        }
+      ],
+      "history": []
+    },
+    {
+      "id": "FSW-010",
+      "category": "exact",
+      "question": "Which inspection methods does the FSW quality preview list after welding?",
+      "expected_route": "research",
+      "answerable": true,
+      "reference_answer": "It lists visual, non-destructive and destructive testing, dimensional checks and postweld-operation records.",
+      "evidence": [
+        {
+          "source": "fsw_doc1.pdf",
+          "page": 11
+        }
+      ],
+      "history": []
+    },
+    {
+      "id": "FSW-011",
+      "category": "paraphrase",
+      "question": "In friction stir welding, which part of the tool projects into the workpiece?",
+      "expected_route": "research",
+      "answerable": true,
+      "reference_answer": "The pin extends into the workpiece to make the weld.",
+      "evidence": [
+        {
+          "source": "fsw_doc2.pdf",
+          "page": 11
+        }
+      ],
+      "history": []
+    },
+    {
+      "id": "FSW-012",
+      "category": "paraphrase",
+      "question": "Why does the friction stir process hold the plates firmly against a support during plunging?",
+      "expected_route": "research",
+      "answerable": true,
+      "reference_answer": "The non-consumable tool plunges between rigidly clamped materials supported on a backing plate.",
+      "evidence": [
+        {
+          "source": "fsw_doc2.pdf",
+          "page": 14
+        }
+      ],
+      "history": []
+    },
+    {
+      "id": "FSW-013",
+      "category": "paraphrase",
+      "question": "When FSW equipment is relocated, what repeatability demonstration does the quality preview require?",
+      "expected_route": "research",
+      "answerable": true,
+      "reference_answer": "Reproducibility testing applies to moved stationary equipment and requires at least three satisfactory documented welds under a production WPS.",
+      "evidence": [
+        {
+          "source": "fsw_doc1.pdf",
+          "page": 9
+        }
+      ],
+      "history": []
+    },
+    {
+      "id": "FSW-014",
+      "category": "paraphrase",
+      "question": "Before FSW, what contamination should be removed from the parent material?",
+      "expected_route": "research",
+      "answerable": true,
+      "reference_answer": "The parent material must be sufficiently free of contaminants such as oil, grease and dirt in accordance with the WPS.",
+      "evidence": [
+        {
+          "source": "fsw_doc1.pdf",
+          "page": 10
+        }
+      ],
+      "history": []
+    },
+    {
+      "id": "FSW-015",
+      "category": "paraphrase",
+      "question": "Does friction stir welding join metal by melting it?",
+      "expected_route": "research",
+      "answerable": true,
+      "reference_answer": "FSW is a solid-state process: frictional heating softens material and the rotating tool stirs it into a joint.",
+      "evidence": [
+        {
+          "source": "fsw_doc4.pdf",
+          "page": 26
+        },
+        {
+          "source": "fsw_doc2.pdf",
+          "page": 13
+        }
+      ],
+      "history": []
+    },
+    {
+      "id": "FSW-016",
+      "category": "paraphrase",
+      "question": "Why is a two-shouldered FSW tool described as self-reacting?",
+      "expected_route": "research",
+      "answerable": true,
+      "reference_answer": "Its shoulders maintain contact with the workpiece on opposite sides, with a fixed or adjustable probe separating them.",
+      "evidence": [
+        {
+          "source": "fsw_doc2.pdf",
+          "page": 11
+        }
+      ],
+      "history": []
+    },
+    {
+      "id": "FSW-017",
+      "category": "paraphrase",
+      "question": "What does the thick-section FSW thesis mean by thick material?",
+      "expected_route": "research",
+      "answerable": true,
+      "reference_answer": "That thesis defines thick section as greater than 20 mm and studies 50 mm aluminium alloys.",
+      "evidence": [
+        {
+          "source": "fsw_doc4.pdf",
+          "page": 27
+        }
+      ],
+      "history": []
+    },
+    {
+      "id": "FSW-018",
+      "category": "paraphrase",
+      "question": "Why should an FSW monitoring method be tested across different aluminium alloys?",
+      "expected_route": "research",
+      "answerable": true,
+      "reference_answer": "The monitoring paper identifies limited generalization of earlier studies to one alloy, thickness or parameter set.",
+      "evidence": [
+        {
+          "source": "fsw_doc5.pdf",
+          "page": 2
+        }
+      ],
+      "history": []
+    },
+    {
+      "id": "FSW-019",
+      "category": "paraphrase",
+      "question": "How were internal voids checked independently in the FSW force-monitoring study?",
+      "expected_route": "research",
+      "answerable": true,
+      "reference_answer": "Welds were inspected using micro-focus computed tomography.",
+      "evidence": [
+        {
+          "source": "fsw_doc5.pdf",
+          "page": 5
+        }
+      ],
+      "history": []
+    },
+    {
+      "id": "FSW-020",
+      "category": "paraphrase",
+      "question": "Which moving parts does the FSW handbook identify for thermal management?",
+      "expected_route": "research",
+      "answerable": true,
+      "reference_answer": "The thermal management system includes the tool and spindle connection, workpiece and backing anvil.",
+      "evidence": [
+        {
+          "source": "fsw_doc2.pdf",
+          "page": 19
+        }
+      ],
+      "history": []
+    },
+    {
+      "id": "FSW-021",
+      "category": "synonym",
+      "question": "What is the TMAZ?",
+      "expected_route": "research",
+      "answerable": true,
+      "reference_answer": "The thermomechanically affected zone is plastically deformed and altered by welding heat.",
+      "evidence": [
+        {
+          "source": "fsw_doc2.pdf",
+          "page": 12
+        }
+      ],
+      "history": []
+    },
+    {
+      "id": "FSW-022",
+      "category": "synonym",
+      "question": "What is the HAZ?",
+      "expected_route": "research",
+      "answerable": true,
+      "reference_answer": "The heat affected zone has microstructure or properties changed by heat without tool plastic deformation.",
+      "evidence": [
+        {
+          "source": "fsw_doc2.pdf",
+          "page": 17
+        }
+      ],
+      "history": []
+    },
+    {
+      "id": "FSW-023",
+      "category": "synonym",
+      "question": "What does axial force mean?",
+      "expected_route": "research",
+      "answerable": true,
+      "reference_answer": "It is force on the workpiece along the tool rotation axis.",
+      "evidence": [
+        {
+          "source": "fsw_doc2.pdf",
+          "page": 11
+        }
+      ],
+      "history": []
+    },
+    {
+      "id": "FSW-024",
+      "category": "synonym",
+      "question": "What is the anvil used for?",
+      "expected_route": "research",
+      "answerable": true,
+      "reference_answer": "The anvil supports the root side of the joint.",
+      "evidence": [
+        {
+          "source": "fsw_doc2.pdf",
+          "page": 11
+        }
+      ],
+      "history": []
+    },
+    {
+      "id": "FSW-025",
+      "category": "synonym",
+      "question": "What does travel speed measure?",
+      "expected_route": "research",
+      "answerable": true,
+      "reference_answer": "The rate at which the welding operation advances along the welding direction.",
+      "evidence": [
+        {
+          "source": "fsw_doc2.pdf",
+          "page": 12
+        }
+      ],
+      "history": []
+    },
+    {
+      "id": "FSW-026",
+      "category": "synonym",
+      "question": "Explain the shoulder scroll feature.",
+      "expected_route": "research",
+      "answerable": true,
+      "reference_answer": "A shoulder scroll can contain softened material and remove the need for tool tilt.",
+      "evidence": [
+        {
+          "source": "fsw_doc2.pdf",
+          "page": 29
+        }
+      ],
+      "history": []
+    },
+    {
+      "id": "FSW-027",
+      "category": "synonym",
+      "question": "What does dynamically recrystallized zone mean?",
+      "expected_route": "research",
+      "answerable": true,
+      "reference_answer": "The stir zone is also called the dynamically recrystallized zone or weld nugget.",
+      "evidence": [
+        {
+          "source": "fsw_doc3.pdf",
+          "page": 2
+        }
+      ],
+      "history": []
+    },
+    {
+      "id": "FSW-028",
+      "category": "synonym",
+      "question": "Why is the solid-state joining tool called non-consumable?",
+      "expected_route": "research",
+      "answerable": true,
+      "reference_answer": "The rotating shoulder and probe stir friction-softened parent material rather than supply filler.",
+      "evidence": [
+        {
+          "source": "fsw_doc4.pdf",
+          "page": 26
+        },
+        {
+          "source": "fsw_doc2.pdf",
+          "page": 14
+        }
+      ],
+      "history": []
+    },
+    {
+      "id": "FSW-029",
+      "category": "multihop",
+      "question": "In FSW, compare the advancing and retreating sides and distinguish tool rotation speed from travel speed.",
+      "expected_route": "research",
+      "answerable": true,
+      "reference_answer": "Advancing rotation agrees with travel and retreating rotation opposes it; rotation speed is angular speed in RPM while travel speed is forward progress.",
+      "evidence": [
+        {
+          "source": "fsw_doc2.pdf",
+          "page": 11
+        },
+        {
+          "source": "fsw_doc2.pdf",
+          "page": 12
+        }
+      ],
+      "history": []
+    },
+    {
+      "id": "FSW-030",
+      "category": "multihop",
+      "question": "In FSW, compare the definitions of HAZ and TMAZ.",
+      "expected_route": "research",
+      "answerable": true,
+      "reference_answer": "Heat affects the HAZ without tool plastic deformation; the TMAZ experiences both heat and tool plastic deformation.",
+      "evidence": [
+        {
+          "source": "fsw_doc2.pdf",
+          "page": 12
+        },
+        {
+          "source": "fsw_doc2.pdf",
+          "page": 17
+        }
+      ],
+      "history": []
+    },
+    {
+      "id": "FSW-031",
+      "category": "multihop",
+      "question": "How do the FSW quality preview requirements differ before and after welding?",
+      "expected_route": "research",
+      "answerable": true,
+      "reference_answer": "Before welding the WPS governs preparation and cleaning; afterward selected inspections, tests and dimensional/postweld checks verify compliance.",
+      "evidence": [
+        {
+          "source": "fsw_doc1.pdf",
+          "page": 10
+        },
+        {
+          "source": "fsw_doc1.pdf",
+          "page": 11
+        }
+      ],
+      "history": []
+    },
+    {
+      "id": "FSW-032",
+      "category": "multihop",
+      "question": "How does the FSW thesis connect marine applications with its thick-section study?",
+      "expected_route": "research",
+      "answerable": true,
+      "reference_answer": "FSW is used in shipbuilding; marine superstructures motivate thicker sections, and the thesis studies 50 mm alloys under its greater-than-20-mm definition.",
+      "evidence": [
+        {
+          "source": "fsw_doc4.pdf",
+          "page": 26
+        },
+        {
+          "source": "fsw_doc4.pdf",
+          "page": 27
+        }
+      ],
+      "history": []
+    },
+    {
+      "id": "FSW-033",
+      "category": "multihop",
+      "question": "Why are FSW force signals studied, and how did the monitoring paper independently check internal defects?",
+      "expected_route": "research",
+      "answerable": true,
+      "reference_answer": "Force/torque variations offer indirect quality feedback while micro-focus CT was used to inspect internal defects.",
+      "evidence": [
+        {
+          "source": "fsw_doc5.pdf",
+          "page": 2
+        },
+        {
+          "source": "fsw_doc5.pdf",
+          "page": 5
+        }
+      ],
+      "history": []
+    },
+    {
+      "id": "FSW-034",
+      "category": "multihop",
+      "question": "Compare a bobbin FSW tool with dual-rotation tooling.",
+      "expected_route": "research",
+      "answerable": true,
+      "reference_answer": "Bobbin tools have two shoulders separated by a pin; dual-rotation tooling independently rotates pin and shoulder.",
+      "evidence": [
+        {
+          "source": "fsw_doc2.pdf",
+          "page": 11
+        },
+        {
+          "source": "fsw_doc2.pdf",
+          "page": 30
+        }
+      ],
+      "history": []
+    },
+    {
+      "id": "FSW-035",
+      "category": "followup",
+      "question": "How is that different from the retreating side?",
+      "expected_route": "research",
+      "answerable": true,
+      "reference_answer": "Advancing-side rotation agrees with travel, while retreating-side rotation opposes it.",
+      "evidence": [
+        {
+          "source": "fsw_doc2.pdf",
+          "page": 11
+        }
+      ],
+      "history": [
+        {
+          "role": "user",
+          "content": "What is the advancing side in FSW?"
+        },
+        {
+          "role": "assistant",
+          "content": "Previous corpus discussion.",
+          "route": "research",
+          "retrieval_query": "What is the advancing side in FSW?"
+        }
+      ]
+    },
+    {
+      "id": "FSW-036",
+      "category": "followup",
+      "question": "What about its force direction?",
+      "expected_route": "research",
+      "answerable": true,
+      "reference_answer": "Axial force acts along the tool rotation axis.",
+      "evidence": [
+        {
+          "source": "fsw_doc2.pdf",
+          "page": 11
+        }
+      ],
+      "history": [
+        {
+          "role": "user",
+          "content": "Explain axial force in FSW."
+        },
+        {
+          "role": "assistant",
+          "content": "Previous corpus discussion.",
+          "route": "research",
+          "retrieval_query": "Explain axial force in FSW."
+        }
+      ]
+    },
+    {
+      "id": "FSW-037",
+      "category": "followup",
+      "question": "And when does that interval end?",
+      "expected_route": "research",
+      "answerable": true,
+      "reference_answer": "Start dwell ends when tool travel starts.",
+      "evidence": [
+        {
+          "source": "fsw_doc2.pdf",
+          "page": 11
+        }
+      ],
+      "history": [
+        {
+          "role": "user",
+          "content": "What is dwell time at the start of FSW?"
+        },
+        {
+          "role": "assistant",
+          "content": "Previous corpus discussion.",
+          "route": "research",
+          "retrieval_query": "What is dwell time at the start of FSW?"
+        }
+      ]
+    },
+    {
+      "id": "FSW-038",
+      "category": "followup",
+      "question": "Tell me more about the cleaning requirement.",
+      "expected_route": "research",
+      "answerable": true,
+      "reference_answer": "Cleaning follows the WPS and removes contaminants such as oil, grease and dirt.",
+      "evidence": [
+        {
+          "source": "fsw_doc1.pdf",
+          "page": 10
+        }
+      ],
+      "history": [
+        {
+          "role": "user",
+          "content": "What does ISO 25239-5 say about pre-weld preparation?"
+        },
+        {
+          "role": "assistant",
+          "content": "Previous corpus discussion.",
+          "route": "research",
+          "retrieval_query": "What does ISO 25239-5 say about pre-weld preparation?"
+        }
+      ]
+    },
+    {
+      "id": "FSW-039",
+      "category": "followup",
+      "question": "What about its definition of thick section?",
+      "expected_route": "research",
+      "answerable": true,
+      "reference_answer": "The thesis defines thick section as greater than 20 mm and studies 50 mm aluminium alloys.",
+      "evidence": [
+        {
+          "source": "fsw_doc4.pdf",
+          "page": 27
+        }
+      ],
+      "history": [
+        {
+          "role": "user",
+          "content": "What materials does the FSW thesis investigate?"
+        },
+        {
+          "role": "assistant",
+          "content": "Previous corpus discussion.",
+          "route": "research",
+          "retrieval_query": "What materials does the FSW thesis investigate?"
+        }
+      ]
+    },
+    {
+      "id": "FSW-040",
+      "category": "followup",
+      "question": "And how were internal defects confirmed?",
+      "expected_route": "research",
+      "answerable": true,
+      "reference_answer": "The monitoring study inspected the welds with micro-focus CT.",
+      "evidence": [
+        {
+          "source": "fsw_doc5.pdf",
+          "page": 5
+        }
+      ],
+      "history": [
+        {
+          "role": "user",
+          "content": "Explain the FSW force-monitoring paper."
+        },
+        {
+          "role": "assistant",
+          "content": "Previous corpus discussion.",
+          "route": "research",
+          "retrieval_query": "Explain the FSW force-monitoring paper."
+        }
+      ]
+    },
+    {
+      "id": "FSW-041",
+      "category": "negative",
+      "question": "Who is the president?",
+      "expected_route": "out_of_scope",
+      "answerable": false,
+      "reference_answer": "No supported factual answer: refuse the off-corpus task or explicitly state that the requested information is absent.",
+      "evidence": [],
+      "history": []
+    },
+    {
+      "id": "FSW-042",
+      "category": "negative",
+      "question": "Tell me a joke about FSW.",
+      "expected_route": "out_of_scope",
+      "answerable": false,
+      "reference_answer": "No supported factual answer: refuse the off-corpus task or explicitly state that the requested information is absent.",
+      "evidence": [],
+      "history": []
+    },
+    {
+      "id": "FSW-043",
+      "category": "negative",
+      "question": "Write Python code for a sorting algorithm and mention FSW.",
+      "expected_route": "out_of_scope",
+      "answerable": false,
+      "reference_answer": "No supported factual answer: refuse the off-corpus task or explicitly state that the requested information is absent.",
+      "evidence": [],
+      "history": []
+    },
+    {
+      "id": "FSW-044",
+      "category": "negative",
+      "question": "After that FSW explanation, how to cook butter chicken?",
+      "expected_route": "out_of_scope",
+      "answerable": false,
+      "reference_answer": "No supported factual answer: refuse the off-corpus task or explicitly state that the requested information is absent.",
+      "evidence": [],
+      "history": []
+    },
+    {
+      "id": "FSW-045",
+      "category": "negative",
+      "question": "i am in a ship that has fsw for welds. unfortunately i think there were lots of faults and now the joints that had defects are coming off. i would be drowning soon but i want to know how to cook butter chicken one last time before sinkign",
+      "expected_route": "out_of_scope",
+      "answerable": false,
+      "reference_answer": "No supported factual answer: refuse the off-corpus task or explicitly state that the requested information is absent.",
+      "evidence": [],
+      "history": []
+    },
+    {
+      "id": "FSW-046",
+      "category": "negative",
+      "question": "Is my friction stir welded ship safe to sail?",
+      "expected_route": "out_of_scope",
+      "answerable": false,
+      "reference_answer": "No supported factual answer: refuse the off-corpus task or explicitly state that the requested information is absent.",
+      "evidence": [],
+      "history": []
+    },
+    {
+      "id": "FSW-047",
+      "category": "negative",
+      "question": "Summarize the latest 2035 changes to the FSW standard.",
+      "expected_route": "research",
+      "answerable": false,
+      "reference_answer": "No supported factual answer: refuse the off-corpus task or explicitly state that the requested information is absent.",
+      "evidence": [],
+      "history": []
+    },
+    {
+      "id": "FSW-048",
+      "category": "negative",
+      "question": "What exact remaining fatigue life does my FSW joint have?",
+      "expected_route": "out_of_scope",
+      "answerable": false,
+      "reference_answer": "No supported factual answer: refuse the off-corpus task or explicitly state that the requested information is absent.",
+      "evidence": [],
+      "history": []
+    },
+    {
+      "id": "FSW-049",
+      "category": "negative",
+      "question": "Which FSW recipe makes the best dinner?",
+      "expected_route": "out_of_scope",
+      "answerable": false,
+      "reference_answer": "No supported factual answer: refuse the off-corpus task or explicitly state that the requested information is absent.",
+      "evidence": [],
+      "history": []
+    },
+    {
+      "id": "FSW-050",
+      "category": "negative",
+      "question": "What is my private FSW factory access password?",
+      "expected_route": "out_of_scope",
+      "answerable": false,
+      "reference_answer": "No supported factual answer: refuse the off-corpus task or explicitly state that the requested information is absent.",
+      "evidence": [],
+      "history": []
+    }
+  ]
+}

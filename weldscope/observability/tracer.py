@@ -27,7 +27,7 @@ class RAGTracer:
                 host="https://cloud.langfuse.com",
             )
 
-    def trace_query(self, name: str = "rag_query"):
+    def trace_query(self, name: str = "rag_query", metadata=None):
         """Decorator to trace RAG query execution."""
 
         def decorator(func):
@@ -36,7 +36,10 @@ class RAGTracer:
 
             @wraps(func)
             def wrapper(*args, **kwargs):
-                with self.client.start_as_current_observation(name=name):
+                # SDK decorates a generator as a context manager; exercised by the real-span integration test.
+                with self.client.start_as_current_observation(
+                    name=name, metadata=metadata
+                ):  # pylint: disable=not-context-manager
                     return func(*args, **kwargs)
 
             return wrapper
@@ -51,7 +54,7 @@ class RAGTracer:
         self.client.start_observation(
             as_type="span",
             name="retrieval",
-            input=query,
+            input=query if self.config.trace_content else {"characters": len(query)},
             output={"num_chunks": num_chunks},
             metadata={"latency_ms": latency_ms},
         ).end()
@@ -66,8 +69,8 @@ class RAGTracer:
         self.client.start_observation(
             as_type="generation",
             name="generation",
-            input=prompt,
-            output=answer,
+            input=prompt if self.config.trace_content else {"characters": len(prompt)},
+            output=answer if self.config.trace_content else {"characters": len(answer)},
             usage_details={"total": tokens_used} if tokens_used is not None else None,
             metadata={"latency_ms": latency_ms},
         ).end()

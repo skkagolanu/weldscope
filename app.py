@@ -1,5 +1,6 @@
 """Streamlit UI for WeldScope with conversation memory and sensor analysis."""
 
+import json
 import streamlit as st
 from pathlib import Path
 import pandas as pd
@@ -28,15 +29,22 @@ def load_config():
 
 @st.cache_resource
 def load_retriever(_config):
-    """Load cache-first models and the index only for research (revision 4)."""
+    """Load cache-first models and the index only for research (revision 5)."""
     builder = VectorStoreBuilder(_config)
-    vectorstore, documents = builder.load_vectorstore()
-    return HybridRetriever(vectorstore, documents, _config)
+    vectorstore, documents = builder.load_vectorstore(
+        corpus_directory=str(Path(__file__).parent / "data")
+    )
+    return HybridRetriever(
+        vectorstore,
+        documents,
+        _config,
+        allowed_sources=[doc.metadata["source"] for doc in documents],
+    )
 
 
 @st.cache_resource
 def load_reranker(_config):
-    """Share cache-first weights; serialize loading and inference (revision 4)."""
+    """Share cache-first weights; serialize loading and inference (revision 5)."""
     return Reranker(_config)
 
 
@@ -46,7 +54,7 @@ def release_system(resource):
 
 @st.cache_resource(scope="session", on_release=release_system)
 def initialize_system(_config):
-    """Initialize corpus-only conversation handling (pipeline revision 4)."""
+    """Initialize corpus-only conversation handling (pipeline revision 5)."""
     tracer = None
     if _config.langfuse_enabled:
         tracer = RAGTracer(_config)
@@ -104,6 +112,11 @@ def render_source(source, index):
 
 
 def render_details(message, message_index, tracer):
+    checks = message.get("answer_checks") or {}
+    if checks.get("status") == "needs_review":
+        st.warning(
+            "Automated checks found citation or numerical-support gaps. Verify the reply against the source passages."
+        )
     if message.get("sources"):
         st.markdown("**Sources:**")
         for i, source in enumerate(message["sources"], 1):
@@ -123,6 +136,21 @@ def render_details(message, message_index, tracer):
             st.caption(f"Local reply · Total {t['total_ms']:.0f} ms")
         with st.expander("Latency breakdown"):
             st.json(t)
+            if message.get("request_id"):
+                st.code(
+                    json.dumps(
+                        {
+                            "app_revision": "quality-v1",
+                            "request_id": message["request_id"],
+                            "route": message.get("route"),
+                            "timings": t,
+                            "token_usage": message.get("token_usage"),
+                            "answer_checks": message.get("answer_checks"),
+                        },
+                        indent=2,
+                    ),
+                    language="json",
+                )
     if tracer and message.get("trace_id"):
         feedback = st.feedback("thumbs", key=f"feedback_{message_index}")
         if feedback is not None and feedback != message.get("feedback"):
@@ -218,6 +246,8 @@ def main():
                     )
 
                 display.finish()
+                if response.metadata.get("answer_checks", {}).get("status") == "withheld":
+                    message_placeholder.markdown(response.answer)
                 response.metadata.setdefault("timings", {})["render_updates"] = display.render_count
 
                 st.session_state.messages.append(
@@ -225,6 +255,9 @@ def main():
                         "role": "assistant",
                         "content": response.answer,
                         "sources": response.sources,
+                        "answer_checks": response.metadata.get("answer_checks"),
+                        "request_id": response.metadata.get("request_id"),
+                        "token_usage": response.metadata.get("token_usage"),
                         "trace_id": response.metadata.get("trace_id"),
                         "route": response.metadata.get("route"),
                         "timings": response.metadata.get("timings"),

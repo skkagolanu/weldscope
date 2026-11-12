@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased] - 2026-11-12
 
+- Add a 50-case versioned FSW development benchmark with page anchors, reference summaries and PDF fingerprints; save actual four-variant retrieval JSON/CSV and frozen regression floors.
+- Exclude 42 stale index chunks for missing source PDFs from both retrieval paths without mutating the bundled index.
+- Accept domain synonyms and explicit follow-ups; reject unrelated requests despite incidental FSW keywords.
+- Check citation ranges, missing citations and numerical-support gaps; withhold final replies containing invalid references.
+- Add bounded sanitized JSONL telemetry with request/trace correlation, reported usage, errors and model-load state; document Community Cloud persistence limits.
+- Make application mypy and error lint blocking, run real retrieval gates in CI and preserve benchmark/telemetry artifacts.
+- Keep RAGAS out of both runtime and offline environments under the reaffirmed no-legacy dependency constraint; do not claim unexecuted model-judge scores.
+
 - Enforce corpus-only generation; unsupported and live operational-assessment requests receive immediate local scope refusals without emergency/repair advice.
 - Batch streaming redraws while preserving the first chunk and exact final text.
 - Remove the redundant successful-turn rerun; preserve current-run citations, feedback and counters.

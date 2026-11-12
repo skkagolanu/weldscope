@@ -30,6 +30,8 @@ class RAGConfig(BaseSettings):
     langfuse_secret_key: Optional[SecretStr] = None
 
     vectorstore_path: str = "./vectorstore"
+    telemetry_path: str = "artifacts/telemetry/events.jsonl"
+    trace_content: bool = False
 
     @field_validator("groq_api_key", "langfuse_public_key", "langfuse_secret_key", mode="before")
     @classmethod

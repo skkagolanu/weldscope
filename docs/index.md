@@ -16,6 +16,8 @@ hosting
 streamlit-review
 dependencies
 latency
+evaluation
+operations
 ```
 
 ## Features
@@ -26,7 +28,7 @@ latency
 - Source attribution and citations
 - Langfuse observability
 - Performance monitoring
-- Query/response caching
+- Optional cache module (not integrated into the query path)
 - Model-judged evaluation
 
 ## Quick Links

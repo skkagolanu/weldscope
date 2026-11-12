@@ -11,3 +11,7 @@ Development dependency auditing uses `pip-audit`; no Safety CLI compatibility ba
 When updating, resolve the full direct package set together under Python 3.12, pin the resulting transitive versions, and run the tests, real index smoke test, docs build and browser checks. Do not change package pins in isolation or rebuild the shipped index merely to update libraries.
 
 Sources: [Streamlit release notes](https://docs.streamlit.io/develop/quick-reference/release-notes), [Sentence Transformers installation](https://sbert.net/docs/installation.html), [Langfuse SDK migration](https://langfuse.com/docs/observability/sdk/upgrade-path/python-v4-to-v5), [BM25S](https://bm25s.github.io/), and package metadata from [PyPI](https://pypi.org/).
+
+## Offline evaluation dependency decision
+
+RAGAS 0.4.3 was reconsidered for an isolated offline environment. Its metadata still requires `langchain-community`; the owner reaffirmed that the no-legacy constraint applies everywhere. It therefore remains uninstalled. The [retrieval benchmark](evaluation.md) uses existing maintained application dependencies, without an added evaluation framework. No RAGAS or model-judged benchmark score is claimed.

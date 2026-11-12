@@ -1,6 +1,6 @@
 """Cross-encoder reranker for retrieved documents."""
 
-from typing import List, Tuple
+from typing import List, Optional
 from threading import RLock
 from time import perf_counter
 from langchain_core.documents import Document
@@ -17,7 +17,7 @@ class Reranker:
     def __init__(self, config: RAGConfig):
         self._lock = RLock()
         self.config = config
-        self._model = None
+        self._model: Optional[CrossEncoder] = None
 
     def _get_model(self) -> CrossEncoder:
         """Initialize cross-encoder model."""
@@ -30,13 +30,13 @@ class Reranker:
         return self._model
 
     def rerank(
-        self, query: str, documents: List[Document], top_k: int = None, *, timings=None
+        self, query: str, documents: List[Document], top_k: Optional[int] = None, *, timings=None
     ) -> List[Document]:
         with self._lock:
             return self._rerank(query, documents, top_k, timings=timings)
 
     def _rerank(
-        self, query: str, documents: List[Document], top_k: int = None, *, timings=None
+        self, query: str, documents: List[Document], top_k: Optional[int] = None, *, timings=None
     ) -> List[Document]:
         """Rerank documents by relevance to query."""
         if not documents:
@@ -52,7 +52,7 @@ class Reranker:
                 )
             top_k = top_k or self.config.retrieval_k
 
-            pairs = [[query, doc.page_content] for doc in documents]
+            pairs = [(query, doc.page_content) for doc in documents]
             score_started = perf_counter()
             scores = model.predict(pairs)
             if timings is not None:
@@ -81,7 +81,7 @@ class Reranker:
         """Score query-text pairs without document wrapping."""
         try:
             model = self._get_model()
-            pairs = [[query, text] for text in texts]
+            pairs = [(query, text) for text in texts]
             scores = model.predict(pairs)
             return [float(s) for s in scores]
         except Exception as e:

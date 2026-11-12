@@ -36,7 +36,7 @@ class QueryCache:
         self.cache: Dict[str, CacheEntry] = {}
         self.hits = 0
         self.misses = 0
-        self._embedder = None
+        self._embedder: Optional[SentenceTransformer] = None
         self.embedding_model = embedding_model
 
     def _get_embedder(self) -> SentenceTransformer:
@@ -48,7 +48,7 @@ class QueryCache:
     def _compute_embedding(self, text: str) -> List[float]:
         """Compute embedding for text."""
         embedder = self._get_embedder()
-        return embedder.encode(text).tolist()
+        return [float(value) for value in embedder.encode(text).tolist()]
 
     def _compute_similarity(self, emb1: List[float], emb2: List[float]) -> float:
         """Compute cosine similarity between embeddings."""

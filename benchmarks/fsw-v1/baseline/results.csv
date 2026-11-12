@@ -1,0 +1,185 @@
+id,category,variant,question,retrieval_query,latency_ms,recall,mrr,ndcg
+FSW-001,exact,bm25,What is the advancing side in FSW?,What is the advancing side in FSW?,0.34423800025251694,0.0,0.0,0.0
+FSW-001,exact,vector,What is the advancing side in FSW?,What is the advancing side in FSW?,60.98105500132078,0.0,0.0,0.0
+FSW-001,exact,hybrid,What is the advancing side in FSW?,What is the advancing side in FSW?,14.474422001512721,0.0,0.0,0.0
+FSW-001,exact,reranked,What is the advancing side in FSW?,What is the advancing side in FSW?,348.1503760012856,1.0,0.5,0.6309297535714575
+FSW-002,exact,bm25,What is the retreating side in FSW?,What is the retreating side in FSW?,0.35337600274942815,0.0,0.0,0.0
+FSW-002,exact,vector,What is the retreating side in FSW?,What is the retreating side in FSW?,20.497427001828328,0.0,0.0,0.0
+FSW-002,exact,hybrid,What is the retreating side in FSW?,What is the retreating side in FSW?,14.838638999208342,0.0,0.0,0.0
+FSW-002,exact,reranked,What is the retreating side in FSW?,What is the retreating side in FSW?,204.61910200174316,0.0,0.0,0.0
+FSW-003,exact,bm25,What is an FSW bobbin tool?,What is an FSW bobbin tool?,0.3910870000254363,1.0,1.0,1.0
+FSW-003,exact,vector,What is an FSW bobbin tool?,What is an FSW bobbin tool?,17.004409000946907,0.0,0.0,0.0
+FSW-003,exact,hybrid,What is an FSW bobbin tool?,What is an FSW bobbin tool?,15.234384998620953,1.0,0.5,0.6309297535714575
+FSW-003,exact,reranked,What is an FSW bobbin tool?,What is an FSW bobbin tool?,195.72832500125514,1.0,0.5,0.6309297535714575
+FSW-004,exact,bm25,What is dwell time at the start of an FSW weld?,What is dwell time at the start of an FSW weld?,0.4722829980892129,1.0,1.0,1.0
+FSW-004,exact,vector,What is dwell time at the start of an FSW weld?,What is dwell time at the start of an FSW weld?,18.882590000430355,1.0,0.3333333333333333,0.5
+FSW-004,exact,hybrid,What is dwell time at the start of an FSW weld?,What is dwell time at the start of an FSW weld?,11.887036002008244,1.0,0.5,0.6309297535714575
+FSW-004,exact,reranked,What is dwell time at the start of an FSW weld?,What is dwell time at the start of an FSW weld?,190.0084409971896,1.0,0.5,0.6309297535714575
+FSW-005,exact,bm25,What is dwell time at the end of an FSW weld?,What is dwell time at the end of an FSW weld?,0.3532549999363255,1.0,0.5,0.6309297535714575
+FSW-005,exact,vector,What is dwell time at the end of an FSW weld?,What is dwell time at the end of an FSW weld?,12.274977001652587,1.0,0.2,0.38685280723454163
+FSW-005,exact,hybrid,What is dwell time at the end of an FSW weld?,What is dwell time at the end of an FSW weld?,12.287761997868074,1.0,0.5,0.6309297535714575
+FSW-005,exact,reranked,What is dwell time at the end of an FSW weld?,What is dwell time at the end of an FSW weld?,233.1760689994553,1.0,0.5,0.6309297535714575
+FSW-006,exact,bm25,What is tool rotation speed in FSW?,What is tool rotation speed in FSW?,0.43254699994577095,0.0,0.0,0.0
+FSW-006,exact,vector,What is tool rotation speed in FSW?,What is tool rotation speed in FSW?,11.906263000128092,0.0,0.0,0.0
+FSW-006,exact,hybrid,What is tool rotation speed in FSW?,What is tool rotation speed in FSW?,13.503706999472342,0.0,0.0,0.0
+FSW-006,exact,reranked,What is tool rotation speed in FSW?,What is tool rotation speed in FSW?,224.98852699936833,1.0,0.5,0.6309297535714575
+FSW-007,exact,bm25,What does the FSW tool shoulder contact?,What does the FSW tool shoulder contact?,0.45039099859423004,0.0,0.0,0.0
+FSW-007,exact,vector,What does the FSW tool shoulder contact?,What does the FSW tool shoulder contact?,12.31481400100165,0.0,0.0,0.0
+FSW-007,exact,hybrid,What does the FSW tool shoulder contact?,What does the FSW tool shoulder contact?,12.02069200007827,0.0,0.0,0.0
+FSW-007,exact,reranked,What does the FSW tool shoulder contact?,What does the FSW tool shoulder contact?,165.1910249966022,0.0,0.0,0.0
+FSW-008,exact,bm25,Does the scope of ISO 25239-5 include friction stir spot welding?,Does the scope of ISO 25239-5 include friction stir spot welding?,0.3762699998333119,1.0,1.0,1.0
+FSW-008,exact,vector,Does the scope of ISO 25239-5 include friction stir spot welding?,Does the scope of ISO 25239-5 include friction stir spot welding?,15.578383001411567,0.0,0.0,0.0
+FSW-008,exact,hybrid,Does the scope of ISO 25239-5 include friction stir spot welding?,Does the scope of ISO 25239-5 include friction stir spot welding?,13.338020002265694,1.0,0.5,0.6309297535714575
+FSW-008,exact,reranked,Does the scope of ISO 25239-5 include friction stir spot welding?,Does the scope of ISO 25239-5 include friction stir spot welding?,294.4566890000715,1.0,0.5,0.6309297535714575
+FSW-009,exact,bm25,How many satisfactory test welds does the bundled FSW quality preview require for reproducibility testing?,How many satisfactory test welds does the bundled FSW quality preview require for reproducibility testing?,0.40318000174011104,1.0,1.0,1.0
+FSW-009,exact,vector,How many satisfactory test welds does the bundled FSW quality preview require for reproducibility testing?,How many satisfactory test welds does the bundled FSW quality preview require for reproducibility testing?,17.545253002026584,0.0,0.0,0.0
+FSW-009,exact,hybrid,How many satisfactory test welds does the bundled FSW quality preview require for reproducibility testing?,How many satisfactory test welds does the bundled FSW quality preview require for reproducibility testing?,11.894610001036199,1.0,1.0,1.0
+FSW-009,exact,reranked,How many satisfactory test welds does the bundled FSW quality preview require for reproducibility testing?,How many satisfactory test welds does the bundled FSW quality preview require for reproducibility testing?,193.2112460017379,1.0,1.0,1.0
+FSW-010,exact,bm25,Which inspection methods does the FSW quality preview list after welding?,Which inspection methods does the FSW quality preview list after welding?,0.3747160008060746,0.0,0.0,0.0
+FSW-010,exact,vector,Which inspection methods does the FSW quality preview list after welding?,Which inspection methods does the FSW quality preview list after welding?,11.744944000383839,0.0,0.0,0.0
+FSW-010,exact,hybrid,Which inspection methods does the FSW quality preview list after welding?,Which inspection methods does the FSW quality preview list after welding?,11.555842000234406,0.0,0.0,0.0
+FSW-010,exact,reranked,Which inspection methods does the FSW quality preview list after welding?,Which inspection methods does the FSW quality preview list after welding?,587.8481139989162,0.0,0.0,0.0
+FSW-011,paraphrase,bm25,"In friction stir welding, which part of the tool projects into the workpiece?","In friction stir welding, which part of the tool projects into the workpiece?",0.4460929994820617,1.0,1.0,1.0
+FSW-011,paraphrase,vector,"In friction stir welding, which part of the tool projects into the workpiece?","In friction stir welding, which part of the tool projects into the workpiece?",15.59254099993268,0.0,0.0,0.0
+FSW-011,paraphrase,hybrid,"In friction stir welding, which part of the tool projects into the workpiece?","In friction stir welding, which part of the tool projects into the workpiece?",15.970542997820303,1.0,1.0,1.0
+FSW-011,paraphrase,reranked,"In friction stir welding, which part of the tool projects into the workpiece?","In friction stir welding, which part of the tool projects into the workpiece?",214.7562289974303,1.0,1.0,1.0
+FSW-012,paraphrase,bm25,Why does the friction stir process hold the plates firmly against a support during plunging?,Why does the friction stir process hold the plates firmly against a support during plunging?,0.4799880007340107,0.0,0.0,0.0
+FSW-012,paraphrase,vector,Why does the friction stir process hold the plates firmly against a support during plunging?,Why does the friction stir process hold the plates firmly against a support during plunging?,15.271185999154113,0.0,0.0,0.0
+FSW-012,paraphrase,hybrid,Why does the friction stir process hold the plates firmly against a support during plunging?,Why does the friction stir process hold the plates firmly against a support during plunging?,15.663456000766018,0.0,0.0,0.0
+FSW-012,paraphrase,reranked,Why does the friction stir process hold the plates firmly against a support during plunging?,Why does the friction stir process hold the plates firmly against a support during plunging?,264.15836600062903,1.0,1.0,1.0
+FSW-013,paraphrase,bm25,"When FSW equipment is relocated, what repeatability demonstration does the quality preview require?","When FSW equipment is relocated, what repeatability demonstration does the quality preview require?",0.46976900193840265,0.0,0.0,0.0
+FSW-013,paraphrase,vector,"When FSW equipment is relocated, what repeatability demonstration does the quality preview require?","When FSW equipment is relocated, what repeatability demonstration does the quality preview require?",15.928161999909207,0.0,0.0,0.0
+FSW-013,paraphrase,hybrid,"When FSW equipment is relocated, what repeatability demonstration does the quality preview require?","When FSW equipment is relocated, what repeatability demonstration does the quality preview require?",14.161204002448358,0.0,0.0,0.0
+FSW-013,paraphrase,reranked,"When FSW equipment is relocated, what repeatability demonstration does the quality preview require?","When FSW equipment is relocated, what repeatability demonstration does the quality preview require?",187.4643700029992,0.0,0.0,0.0
+FSW-014,paraphrase,bm25,"Before FSW, what contamination should be removed from the parent material?","Before FSW, what contamination should be removed from the parent material?",0.42579400178510696,0.0,0.0,0.0
+FSW-014,paraphrase,vector,"Before FSW, what contamination should be removed from the parent material?","Before FSW, what contamination should be removed from the parent material?",15.095670001755934,0.0,0.0,0.0
+FSW-014,paraphrase,hybrid,"Before FSW, what contamination should be removed from the parent material?","Before FSW, what contamination should be removed from the parent material?",15.920247002213728,0.0,0.0,0.0
+FSW-014,paraphrase,reranked,"Before FSW, what contamination should be removed from the parent material?","Before FSW, what contamination should be removed from the parent material?",207.25294400108396,0.0,0.0,0.0
+FSW-015,paraphrase,bm25,Does friction stir welding join metal by melting it?,Does friction stir welding join metal by melting it?,0.43419999929028563,0.5,0.5,0.38685280723454163
+FSW-015,paraphrase,vector,Does friction stir welding join metal by melting it?,Does friction stir welding join metal by melting it?,15.350286998000229,0.0,0.0,0.0
+FSW-015,paraphrase,hybrid,Does friction stir welding join metal by melting it?,Does friction stir welding join metal by melting it?,14.219485001376597,0.5,0.3333333333333333,0.3065735963827292
+FSW-015,paraphrase,reranked,Does friction stir welding join metal by melting it?,Does friction stir welding join metal by melting it?,186.39689200063003,0.5,1.0,0.6131471927654584
+FSW-016,paraphrase,bm25,Why is a two-shouldered FSW tool described as self-reacting?,Why is a two-shouldered FSW tool described as self-reacting?,0.44362799962982535,1.0,1.0,1.0
+FSW-016,paraphrase,vector,Why is a two-shouldered FSW tool described as self-reacting?,Why is a two-shouldered FSW tool described as self-reacting?,15.356548999989172,0.0,0.0,0.0
+FSW-016,paraphrase,hybrid,Why is a two-shouldered FSW tool described as self-reacting?,Why is a two-shouldered FSW tool described as self-reacting?,16.079622000688687,1.0,1.0,1.0
+FSW-016,paraphrase,reranked,Why is a two-shouldered FSW tool described as self-reacting?,Why is a two-shouldered FSW tool described as self-reacting?,185.85563600208843,1.0,0.25,0.43067655807339306
+FSW-017,paraphrase,bm25,What does the thick-section FSW thesis mean by thick material?,What does the thick-section FSW thesis mean by thick material?,0.458586000604555,1.0,0.5,0.6309297535714575
+FSW-017,paraphrase,vector,What does the thick-section FSW thesis mean by thick material?,What does the thick-section FSW thesis mean by thick material?,15.686108999943826,1.0,0.5,0.6309297535714575
+FSW-017,paraphrase,hybrid,What does the thick-section FSW thesis mean by thick material?,What does the thick-section FSW thesis mean by thick material?,15.95065500077908,1.0,0.5,0.6309297535714575
+FSW-017,paraphrase,reranked,What does the thick-section FSW thesis mean by thick material?,What does the thick-section FSW thesis mean by thick material?,202.9516410002543,1.0,0.3333333333333333,0.5
+FSW-018,paraphrase,bm25,Why should an FSW monitoring method be tested across different aluminium alloys?,Why should an FSW monitoring method be tested across different aluminium alloys?,0.42201699761790223,1.0,0.5,0.6309297535714575
+FSW-018,paraphrase,vector,Why should an FSW monitoring method be tested across different aluminium alloys?,Why should an FSW monitoring method be tested across different aluminium alloys?,15.202816000964958,0.0,0.0,0.0
+FSW-018,paraphrase,hybrid,Why should an FSW monitoring method be tested across different aluminium alloys?,Why should an FSW monitoring method be tested across different aluminium alloys?,14.016427001479315,1.0,0.3333333333333333,0.5
+FSW-018,paraphrase,reranked,Why should an FSW monitoring method be tested across different aluminium alloys?,Why should an FSW monitoring method be tested across different aluminium alloys?,183.98068199894624,1.0,1.0,1.0
+FSW-019,paraphrase,bm25,How were internal voids checked independently in the FSW force-monitoring study?,How were internal voids checked independently in the FSW force-monitoring study?,0.44344799971440807,1.0,0.5,0.6309297535714575
+FSW-019,paraphrase,vector,How were internal voids checked independently in the FSW force-monitoring study?,How were internal voids checked independently in the FSW force-monitoring study?,15.343434999522287,0.0,0.0,0.0
+FSW-019,paraphrase,hybrid,How were internal voids checked independently in the FSW force-monitoring study?,How were internal voids checked independently in the FSW force-monitoring study?,17.10713599823066,1.0,0.3333333333333333,0.5
+FSW-019,paraphrase,reranked,How were internal voids checked independently in the FSW force-monitoring study?,How were internal voids checked independently in the FSW force-monitoring study?,200.41923100143322,0.0,0.0,0.0
+FSW-020,paraphrase,bm25,Which moving parts does the FSW handbook identify for thermal management?,Which moving parts does the FSW handbook identify for thermal management?,0.6049170006008353,1.0,1.0,1.0
+FSW-020,paraphrase,vector,Which moving parts does the FSW handbook identify for thermal management?,Which moving parts does the FSW handbook identify for thermal management?,19.443944001977798,1.0,1.0,1.0
+FSW-020,paraphrase,hybrid,Which moving parts does the FSW handbook identify for thermal management?,Which moving parts does the FSW handbook identify for thermal management?,14.727958001458319,1.0,1.0,1.0
+FSW-020,paraphrase,reranked,Which moving parts does the FSW handbook identify for thermal management?,Which moving parts does the FSW handbook identify for thermal management?,530.298882000352,1.0,1.0,1.0
+FSW-021,synonym,bm25,What is the TMAZ?,What is the TMAZ?,0.45894799768575467,0.0,0.0,0.0
+FSW-021,synonym,vector,What is the TMAZ?,What is the TMAZ?,15.374904996861005,0.0,0.0,0.0
+FSW-021,synonym,hybrid,What is the TMAZ?,What is the TMAZ?,16.702212000382133,0.0,0.0,0.0
+FSW-021,synonym,reranked,What is the TMAZ?,What is the TMAZ?,249.12298699928215,0.0,0.0,0.0
+FSW-022,synonym,bm25,What is the HAZ?,What is the HAZ?,0.4734450012620073,0.0,0.0,0.0
+FSW-022,synonym,vector,What is the HAZ?,What is the HAZ?,15.72122699872125,0.0,0.0,0.0
+FSW-022,synonym,hybrid,What is the HAZ?,What is the HAZ?,14.882633000524947,0.0,0.0,0.0
+FSW-022,synonym,reranked,What is the HAZ?,What is the HAZ?,252.76617299823556,0.0,0.0,0.0
+FSW-023,synonym,bm25,What does axial force mean?,What does axial force mean?,0.45798500286764465,0.0,0.0,0.0
+FSW-023,synonym,vector,What does axial force mean?,What does axial force mean?,15.667092997318832,0.0,0.0,0.0
+FSW-023,synonym,hybrid,What does axial force mean?,What does axial force mean?,14.03051400120603,0.0,0.0,0.0
+FSW-023,synonym,reranked,What does axial force mean?,What does axial force mean?,318.4652800009644,1.0,0.3333333333333333,0.5
+FSW-024,synonym,bm25,What is the anvil used for?,What is the anvil used for?,0.4762799981108401,0.0,0.0,0.0
+FSW-024,synonym,vector,What is the anvil used for?,What is the anvil used for?,15.231400000629947,0.0,0.0,0.0
+FSW-024,synonym,hybrid,What is the anvil used for?,What is the anvil used for?,14.201761998265283,0.0,0.0,0.0
+FSW-024,synonym,reranked,What is the anvil used for?,What is the anvil used for?,233.4990069975902,1.0,0.5,0.6309297535714575
+FSW-025,synonym,bm25,What does travel speed measure?,What does travel speed measure?,0.4668519977713004,0.0,0.0,0.0
+FSW-025,synonym,vector,What does travel speed measure?,What does travel speed measure?,16.11505999971996,0.0,0.0,0.0
+FSW-025,synonym,hybrid,What does travel speed measure?,What does travel speed measure?,13.723357002163539,0.0,0.0,0.0
+FSW-025,synonym,reranked,What does travel speed measure?,What does travel speed measure?,199.07470399994054,0.0,0.0,0.0
+FSW-026,synonym,bm25,Explain the shoulder scroll feature.,Explain the shoulder scroll feature.,0.5024099991715048,1.0,1.0,1.0
+FSW-026,synonym,vector,Explain the shoulder scroll feature.,Explain the shoulder scroll feature.,15.283289001672529,1.0,0.25,0.43067655807339306
+FSW-026,synonym,hybrid,Explain the shoulder scroll feature.,Explain the shoulder scroll feature.,13.832324999384582,1.0,1.0,1.0
+FSW-026,synonym,reranked,Explain the shoulder scroll feature.,Explain the shoulder scroll feature.,157.0533250014705,1.0,0.5,0.6309297535714575
+FSW-027,synonym,bm25,What does dynamically recrystallized zone mean?,What does dynamically recrystallized zone mean?,0.45527999827754684,0.0,0.0,0.0
+FSW-027,synonym,vector,What does dynamically recrystallized zone mean?,What does dynamically recrystallized zone mean?,15.182066003035288,1.0,0.3333333333333333,0.5
+FSW-027,synonym,hybrid,What does dynamically recrystallized zone mean?,What does dynamically recrystallized zone mean?,13.898812998377252,1.0,0.2,0.38685280723454163
+FSW-027,synonym,reranked,What does dynamically recrystallized zone mean?,What does dynamically recrystallized zone mean?,258.69904899809626,1.0,1.0,1.0
+FSW-028,synonym,bm25,Why is the solid-state joining tool called non-consumable?,Why is the solid-state joining tool called non-consumable?,0.5153450001671445,0.5,0.5,0.38685280723454163
+FSW-028,synonym,vector,Why is the solid-state joining tool called non-consumable?,Why is the solid-state joining tool called non-consumable?,15.796539999428205,0.0,0.0,0.0
+FSW-028,synonym,hybrid,Why is the solid-state joining tool called non-consumable?,Why is the solid-state joining tool called non-consumable?,15.146488000027603,0.5,0.5,0.38685280723454163
+FSW-028,synonym,reranked,Why is the solid-state joining tool called non-consumable?,Why is the solid-state joining tool called non-consumable?,178.29331400207593,0.5,0.5,0.38685280723454163
+FSW-029,multihop,bm25,"In FSW, compare the advancing and retreating sides and distinguish tool rotation speed from travel speed.","In FSW, compare the advancing and retreating sides and distinguish tool rotation speed from travel speed.",0.42020399996545166,0.5,1.0,0.6131471927654584
+FSW-029,multihop,vector,"In FSW, compare the advancing and retreating sides and distinguish tool rotation speed from travel speed.","In FSW, compare the advancing and retreating sides and distinguish tool rotation speed from travel speed.",15.589203998388257,0.0,0.0,0.0
+FSW-029,multihop,hybrid,"In FSW, compare the advancing and retreating sides and distinguish tool rotation speed from travel speed.","In FSW, compare the advancing and retreating sides and distinguish tool rotation speed from travel speed.",14.965230999223422,0.5,0.5,0.38685280723454163
+FSW-029,multihop,reranked,"In FSW, compare the advancing and retreating sides and distinguish tool rotation speed from travel speed.","In FSW, compare the advancing and retreating sides and distinguish tool rotation speed from travel speed.",216.57322000100976,0.5,1.0,0.6131471927654584
+FSW-030,multihop,bm25,"In FSW, compare the definitions of HAZ and TMAZ.","In FSW, compare the definitions of HAZ and TMAZ.",0.43951100087724626,0.0,0.0,0.0
+FSW-030,multihop,vector,"In FSW, compare the definitions of HAZ and TMAZ.","In FSW, compare the definitions of HAZ and TMAZ.",17.4812719997135,0.0,0.0,0.0
+FSW-030,multihop,hybrid,"In FSW, compare the definitions of HAZ and TMAZ.","In FSW, compare the definitions of HAZ and TMAZ.",16.13933600310702,0.0,0.0,0.0
+FSW-030,multihop,reranked,"In FSW, compare the definitions of HAZ and TMAZ.","In FSW, compare the definitions of HAZ and TMAZ.",646.6503249976085,0.5,0.5,0.38685280723454163
+FSW-031,multihop,bm25,How do the FSW quality preview requirements differ before and after welding?,How do the FSW quality preview requirements differ before and after welding?,0.4515529981290456,0.0,0.0,0.0
+FSW-031,multihop,vector,How do the FSW quality preview requirements differ before and after welding?,How do the FSW quality preview requirements differ before and after welding?,15.717969999968773,0.0,0.0,0.0
+FSW-031,multihop,hybrid,How do the FSW quality preview requirements differ before and after welding?,How do the FSW quality preview requirements differ before and after welding?,13.885517000744585,0.0,0.0,0.0
+FSW-031,multihop,reranked,How do the FSW quality preview requirements differ before and after welding?,How do the FSW quality preview requirements differ before and after welding?,613.1668919988442,0.0,0.0,0.0
+FSW-032,multihop,bm25,How does the FSW thesis connect marine applications with its thick-section study?,How does the FSW thesis connect marine applications with its thick-section study?,0.4657700010284316,0.5,1.0,0.6131471927654584
+FSW-032,multihop,vector,How does the FSW thesis connect marine applications with its thick-section study?,How does the FSW thesis connect marine applications with its thick-section study?,15.181123999354895,0.5,1.0,0.6131471927654584
+FSW-032,multihop,hybrid,How does the FSW thesis connect marine applications with its thick-section study?,How does the FSW thesis connect marine applications with its thick-section study?,13.597396999102784,0.5,1.0,0.6131471927654584
+FSW-032,multihop,reranked,How does the FSW thesis connect marine applications with its thick-section study?,How does the FSW thesis connect marine applications with its thick-section study?,229.0356600024097,0.5,1.0,0.6131471927654584
+FSW-033,multihop,bm25,"Why are FSW force signals studied, and how did the monitoring paper independently check internal defects?","Why are FSW force signals studied, and how did the monitoring paper independently check internal defects?",0.5044339995947666,0.5,0.5,0.38685280723454163
+FSW-033,multihop,vector,"Why are FSW force signals studied, and how did the monitoring paper independently check internal defects?","Why are FSW force signals studied, and how did the monitoring paper independently check internal defects?",15.967178002028959,0.5,0.3333333333333333,0.3065735963827292
+FSW-033,multihop,hybrid,"Why are FSW force signals studied, and how did the monitoring paper independently check internal defects?","Why are FSW force signals studied, and how did the monitoring paper independently check internal defects?",15.397668998048175,0.5,0.3333333333333333,0.3065735963827292
+FSW-033,multihop,reranked,"Why are FSW force signals studied, and how did the monitoring paper independently check internal defects?","Why are FSW force signals studied, and how did the monitoring paper independently check internal defects?",221.93700700154295,0.5,0.5,0.38685280723454163
+FSW-034,multihop,bm25,Compare a bobbin FSW tool with dual-rotation tooling.,Compare a bobbin FSW tool with dual-rotation tooling.,0.5655620007019024,1.0,1.0,1.0
+FSW-034,multihop,vector,Compare a bobbin FSW tool with dual-rotation tooling.,Compare a bobbin FSW tool with dual-rotation tooling.,16.041169001255184,1.0,0.5,0.6240505200038379
+FSW-034,multihop,hybrid,Compare a bobbin FSW tool with dual-rotation tooling.,Compare a bobbin FSW tool with dual-rotation tooling.,13.854437998816138,1.0,1.0,1.0
+FSW-034,multihop,reranked,Compare a bobbin FSW tool with dual-rotation tooling.,Compare a bobbin FSW tool with dual-rotation tooling.,504.5156499982113,1.0,1.0,1.0
+FSW-035,followup,bm25,How is that different from the retreating side?,"What is the advancing side in FSW?
+Follow-up: How is that different from the retreating side?",0.4601299988280516,0.0,0.0,0.0
+FSW-035,followup,vector,How is that different from the retreating side?,"What is the advancing side in FSW?
+Follow-up: How is that different from the retreating side?",15.690398999140598,0.0,0.0,0.0
+FSW-035,followup,hybrid,How is that different from the retreating side?,"What is the advancing side in FSW?
+Follow-up: How is that different from the retreating side?",15.69877400106634,0.0,0.0,0.0
+FSW-035,followup,reranked,How is that different from the retreating side?,"What is the advancing side in FSW?
+Follow-up: How is that different from the retreating side?",221.3399180000124,0.0,0.0,0.0
+FSW-036,followup,bm25,What about its force direction?,"Explain axial force in FSW.
+Follow-up: What about its force direction?",0.49393399967812,1.0,0.25,0.43067655807339306
+FSW-036,followup,vector,What about its force direction?,"Explain axial force in FSW.
+Follow-up: What about its force direction?",15.625083000486484,0.0,0.0,0.0
+FSW-036,followup,hybrid,What about its force direction?,"Explain axial force in FSW.
+Follow-up: What about its force direction?",13.206368999817641,0.0,0.0,0.0
+FSW-036,followup,reranked,What about its force direction?,"Explain axial force in FSW.
+Follow-up: What about its force direction?",213.17890499994974,0.0,0.0,0.0
+FSW-037,followup,bm25,And when does that interval end?,"What is dwell time at the start of FSW?
+Follow-up: And when does that interval end?",0.446573001681827,1.0,1.0,1.0
+FSW-037,followup,vector,And when does that interval end?,"What is dwell time at the start of FSW?
+Follow-up: And when does that interval end?",15.565469999273773,0.0,0.0,0.0
+FSW-037,followup,hybrid,And when does that interval end?,"What is dwell time at the start of FSW?
+Follow-up: And when does that interval end?",14.85516100001405,1.0,0.5,0.6309297535714575
+FSW-037,followup,reranked,And when does that interval end?,"What is dwell time at the start of FSW?
+Follow-up: And when does that interval end?",225.35021700241487,1.0,0.5,0.6309297535714575
+FSW-038,followup,bm25,Tell me more about the cleaning requirement.,"What does ISO 25239-5 say about pre-weld preparation?
+Follow-up: Tell me more about the cleaning requirement.",0.4732950001198333,1.0,1.0,1.0
+FSW-038,followup,vector,Tell me more about the cleaning requirement.,"What does ISO 25239-5 say about pre-weld preparation?
+Follow-up: Tell me more about the cleaning requirement.",16.451354000309948,1.0,1.0,1.0
+FSW-038,followup,hybrid,Tell me more about the cleaning requirement.,"What does ISO 25239-5 say about pre-weld preparation?
+Follow-up: Tell me more about the cleaning requirement.",14.55452599839191,1.0,1.0,1.0
+FSW-038,followup,reranked,Tell me more about the cleaning requirement.,"What does ISO 25239-5 say about pre-weld preparation?
+Follow-up: Tell me more about the cleaning requirement.",592.6994119981828,1.0,1.0,1.0
+FSW-039,followup,bm25,What about its definition of thick section?,"What materials does the FSW thesis investigate?
+Follow-up: What about its definition of thick section?",0.45672300257137977,0.0,0.0,0.0
+FSW-039,followup,vector,What about its definition of thick section?,"What materials does the FSW thesis investigate?
+Follow-up: What about its definition of thick section?",15.818462998140603,1.0,0.5,0.6309297535714575
+FSW-039,followup,hybrid,What about its definition of thick section?,"What materials does the FSW thesis investigate?
+Follow-up: What about its definition of thick section?",13.886198998079635,1.0,0.25,0.43067655807339306
+FSW-039,followup,reranked,What about its definition of thick section?,"What materials does the FSW thesis investigate?
+Follow-up: What about its definition of thick section?",251.58115000158432,0.0,0.0,0.0
+FSW-040,followup,bm25,And how were internal defects confirmed?,"Explain the FSW force-monitoring paper.
+Follow-up: And how were internal defects confirmed?",0.42656600271584466,1.0,0.2,0.38685280723454163
+FSW-040,followup,vector,And how were internal defects confirmed?,"Explain the FSW force-monitoring paper.
+Follow-up: And how were internal defects confirmed?",15.5133799999021,0.0,0.0,0.0
+FSW-040,followup,hybrid,And how were internal defects confirmed?,"Explain the FSW force-monitoring paper.
+Follow-up: And how were internal defects confirmed?",16.530614997464,0.0,0.0,0.0
+FSW-040,followup,reranked,And how were internal defects confirmed?,"Explain the FSW force-monitoring paper.
+Follow-up: And how were internal defects confirmed?",217.29227199830348,0.0,0.0,0.0

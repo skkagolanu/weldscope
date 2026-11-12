@@ -40,6 +40,25 @@ jobs:
       run: |
         pytest tests/ -v --cov=weldscope --cov-report=xml --cov-report=term-missing --cov-fail-under=90
     
+    - name: Enforce error lint and type checking
+      run: |
+        pylint weldscope/ --errors-only
+        mypy weldscope/ --ignore-missing-imports
+
+    - name: Run corpus retrieval regression gate
+      run: |
+        python scripts/benchmark_retrieval.py --gate benchmarks/fsw-v1/thresholds.json --output artifacts/retrieval
+
+    - name: Preserve benchmark and operational evidence
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: quality-evidence-python-${{ matrix.python-version }}
+        path: |
+          artifacts/retrieval/
+          artifacts/telemetry/
+          coverage.xml
+
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v4
       with:
@@ -67,15 +86,6 @@ jobs:
       run: |
         black --check weldscope/ tests/
     
-    - name: Lint with pylint
-      run: |
-        pylint weldscope/ --disable=C0114,C0115,C0116,R0913,R0914 --max-line-length=120
-      continue-on-error: true
-    
-    - name: Type check with mypy
-      run: |
-        mypy weldscope/ --ignore-missing-imports
-      continue-on-error: true
 
   security:
     runs-on: ubuntu-latest

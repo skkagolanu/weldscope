@@ -15,7 +15,9 @@ class ConversationPlan:
 DOMAIN = re.compile(
     r"\b(fsw|friction.stir|weld\w*|wormholes?|tunnel defects?|heat input|"
     r"tool pins?|tool shoulders?|rotation(?:al)? speed|traverse speed|travel speed|rpm|"
-    r"sensor(?:s| log| data)?|stir zone|nugget zone|flash defects?|kissing bonds?)\b",
+    r"sensor(?:s| log| data)?|stir zone|nugget zone|flash defects?|kissing bonds?|"
+    r"tmaz|haz|axial force|anvil|travel speed|shoulder scroll|bobbin|retreating side|advancing side|"
+    r"dynamically recrystallized zone|solid.state joining|plunge depth|dwell time|faying surfaces?)\b",
     re.I,
 )
 FOLLOW_UP = re.compile(
@@ -123,6 +125,15 @@ def plan_conversation(question, history=None):
     text = re.sub(r"\s+", " ", question.lower()).strip().rstrip(".!? ")
     text = text.replace("what's", "what is").replace("who's", "who is")
     # Current task intent wins over both domain keywords and prior conversation.
+    if re.search(
+        r"\b(?:tell me a joke|write (?:python |javascript )?code|sorting algorithm|"
+        r"(?:private|access|my) .{0,35}password|remaining (?:fatigue )?life|safe to sail)\b",
+        text,
+    ):
+        return ConversationPlan(
+            "out_of_scope",
+            "That request is outside the bundled FSW research corpus. I can discuss the documents, but cannot provide private data, unrelated content or equipment-specific assessments.",
+        )
     if is_recipe_request(text):
         return ConversationPlan(
             "out_of_scope",
@@ -163,9 +174,16 @@ def plan_conversation(question, history=None):
 
     # A self-contained domain question takes precedence over incidental pronouns
     # such as 'that' in a new question. History only resolves implicit follow-ups.
+    topic = _active_topic(history or [])
+    explicit_followup = re.search(
+        r"^(?:and\b|what about\b|how about\b|tell me more\b|"
+        r"how (?:is|does|do) (?:that|it|this|they|those)\b)",
+        text,
+    )
+    if topic and explicit_followup:
+        return ConversationPlan("research", retrieval_query=f"{topic[:500]}\nFollow-up: {question}")
     if DOMAIN.search(text):
         return ConversationPlan("research", retrieval_query=question)
-    topic = _active_topic(history or [])
     if topic and FOLLOW_UP.search(text):
         return ConversationPlan("research", retrieval_query=f"{topic[:500]}\nFollow-up: {question}")
     if re.fullmatch(r"(?:why|why is that|tell me more|explain that|what about it)", text):

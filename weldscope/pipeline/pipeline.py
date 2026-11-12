@@ -1,8 +1,10 @@
 """Conversation-aware RAG orchestration with isolated retrieval queries."""
 
-from typing import Callable, Iterator, Optional, List
+from typing import Callable, Iterator, Optional, List, cast
 from time import perf_counter
 from uuid import uuid4
+from datetime import datetime, timezone
+from weldscope.monitoring.telemetry import record_event
 from weldscope.monitoring.performance import PerformanceMonitor
 from langchain_core.documents import Document
 
@@ -14,6 +16,7 @@ from weldscope.retrieval.retriever import HybridRetriever
 from weldscope.retrieval.reranker import Reranker
 from weldscope.generation.generator import LLMGenerator
 from weldscope.generation.formatter import ResponseFormatter
+from weldscope.generation.validation import check_answer
 from weldscope.observability.tracer import RAGTracer
 
 
@@ -54,17 +57,29 @@ class RAGPipeline:
         sensor_context="",
     ) -> RAGResponse:
         started = perf_counter()
+        request_id = uuid4().hex
         history = completed_history(history or [])
         try:
             if self.tracer:
                 response = self._query_with_tracing(
-                    question, stream, on_chunk, history, sensor_context
+                    question, stream, on_chunk, history, sensor_context, request_id=request_id
                 )
             else:
                 response = self._query_internal(question, stream, on_chunk, history, sensor_context)
         except Exception as error:
+            record_event(
+                self.config.telemetry_path,
+                {
+                    "timestamp": datetime.now(timezone.utc).isoformat(),
+                    "request_id": request_id,
+                    "trace_id": request_id,
+                    "status": "error",
+                    "error_type": type(error).__name__,
+                    "timings": {"total_ms": (perf_counter() - started) * 1000},
+                },
+            )
             self.monitor.record_metrics(
-                uuid4().hex,
+                request_id,
                 0,
                 0,
                 0,
@@ -88,8 +103,31 @@ class RAGPipeline:
         )
         usage = usage if isinstance(usage, dict) else None
         response.metadata["token_usage"] = usage
+        response.metadata["request_id"] = request_id
+        if (
+            not isinstance(response.metadata.get("trace_id"), str)
+            or not response.metadata["trace_id"]
+        ):
+            response.metadata["trace_id"] = request_id
+        record_event(
+            self.config.telemetry_path,
+            {
+                "timestamp": datetime.now(timezone.utc).isoformat(),
+                "request_id": request_id,
+                "trace_id": response.metadata["trace_id"],
+                "status": "success",
+                "route": response.metadata["route"],
+                "timings": timings,
+                "cold": bool(timings["reranker_load_ms"]),
+                "retrieved_count": response.metadata.get("retrieved_count", 0),
+                "reranked_count": response.metadata.get("reranked_count", 0),
+                "model": self.config.generation_model,
+                "token_usage": usage,
+                "answer_check_status": response.metadata.get("answer_checks", {}).get("status"),
+            },
+        )
         self.monitor.record_metrics(
-            uuid4().hex,
+            request_id,
             timings["retrieval_ms"],
             timings["reranking_ms"],
             timings["generation_ms"],
@@ -123,6 +161,7 @@ class RAGPipeline:
         plan = plan_conversation(question, history)
         retrieved_docs = []
         reranked_docs = []
+        answer_checks = {"status": "not_applicable"}
         if plan.kind in {"local", "out_of_scope"}:
             answer = plan.answer
             if plan.kind == "local" and "model" in question.lower():
@@ -169,11 +208,16 @@ class RAGPipeline:
                     if on_chunk:
                         render_started = perf_counter()
                         on_chunk(chunk)
-                        timings["render_ms"] += (perf_counter() - render_started) * 1000
+                        timings["render_ms"] = (timings["render_ms"] or 0.0) + (
+                            perf_counter() - render_started
+                        ) * 1000
                 answer = "".join(chunks)
             else:
                 answer = self.generator.generate(prompt, history=history)
             timings["generation_ms"] = (perf_counter() - generation_started) * 1000
+            answer_checks = check_answer(answer, reranked_docs)
+            if answer_checks["status"] == "withheld":
+                answer = "The generated reply contained invalid source citations and has been withheld. Please rephrase the corpus question."
             if self.tracer:
                 self.tracer.log_generation(
                     prompt, answer, None, (perf_counter() - generation_started) * 1000
@@ -187,20 +231,25 @@ class RAGPipeline:
             latency_ms=(perf_counter() - started) * 1000,
             metadata={
                 "route": plan.kind,
+                "answer_checks": answer_checks,
                 "retrieval_query": plan.retrieval_query,
                 "timings": timings,
             },
         )
 
-    def _query_with_tracing(self, question, stream, on_chunk=None, history=None, sensor_context=""):
-        @self.tracer.trace_query(name="weldscope_pipeline")
+    def _query_with_tracing(
+        self, question, stream, on_chunk=None, history=None, sensor_context="", request_id=None
+    ) -> RAGResponse:
+        assert self.tracer is not None
+
+        @self.tracer.trace_query(name="weldscope_pipeline", metadata={"request_id": request_id})
         def traced_query():
             response = self._query_internal(question, stream, on_chunk, history, sensor_context)
             if self.tracer.client:
                 response.metadata["trace_id"] = self.tracer.client.get_current_trace_id()
             return response
 
-        return traced_query()
+        return cast(RAGResponse, traced_query())
 
     def stream_query(self, question: str, *, history=None) -> Iterator[str]:
         """Legacy chunk API; use query(on_chunk=...) when citations are needed."""

@@ -1,6 +1,6 @@
 """Data models for RAG responses."""
 
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from typing import List, Dict, Any, Optional
 
 
@@ -27,7 +27,7 @@ class RAGResponse:
     confidence: Optional[float] = None
     faithfulness_score: Optional[float] = None
     latency_ms: float = 0.0
-    metadata: Dict[str, Any] = None
+    metadata: Dict[str, Any] = field(default_factory=dict)
 
     def __post_init__(self):
         if self.metadata is None:

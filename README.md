@@ -8,7 +8,7 @@ A research assistant for **friction stir welding (FSW)** defects, causes, and co
 
 - Answers greetings and questions about WeldScope and its sources locally, without inference calls or document search. Other unsupported requests receive a brief local scope refusal, including requests to assess real equipment or handle a live incident.
 - Searches five bundled research PDFs using BM25S keyword retrieval and Chroma semantic search, then reranks passages with a cross-encoder.
-- Uses Groq to generate streamed answers with inspectable source passages. The prompt asks it to abstain when evidence is insufficient; answer quality has not yet been benchmarked.
+- Uses Groq to generate streamed answers with inspectable source passages. The prompt asks it to abstain when evidence is insufficient; retrieval has a provisional 50-case development benchmark; semantic answer quality remains unmeasured.
 - Keeps up to ten completed exchanges within a bounded context budget. Search queries stay separate from chat history and sensor summaries; failed exchanges are excluded.
 - Includes example sensor readings only when requested. The CSV is a static demonstration, not a live feed.
 - Reports raw fusion and reranker scores separately. They are not probabilities; unmeasured response confidence is `None`.
@@ -88,10 +88,10 @@ Optional Langfuse tracing connects query, retrieval and generation spans with fe
 
 `GroundedAnswerEvaluator` provides explicit model-judged scores through the configured generator, with one provider request per example. It validates score ranges and input lengths, and leaves reference recall unknown when no reference is supplied. These are model judgements, not calibrated confidence or RAGAS benchmark results.
 
-A labeled retrieval/answer-quality benchmark, measured quality regression gates, and cache integration remain future work. Software test coverage does not establish RAG answer quality.
+A [50-case FSW development benchmark](docs/evaluation.md) now compares BM25S, vector, hybrid and reranked retrieval, with frozen regression thresholds and reproducible JSON/CSV reports. Labels are provisional page anchors, not independently reviewed relevance judgements. RAGAS remains excluded under the owner’s no-legacy-package rule because its current release requires Community dependencies. Model-judged answer quality and durable hosted trace export remain unverified; software coverage does not establish RAG answer quality.
 
 ## Code layout
 
-`weldscope/` contains configuration, ingestion, retrieval, generation, conversation routing, orchestration, monitoring, tracing and optional evaluation. `app.py` is the Streamlit entrypoint. See [architecture](docs/architecture.md), [Streamlit documentation assessment](docs/streamlit-review.md), [dependency maintenance](docs/dependencies.md), [latency measurements](docs/latency.md), and [hosting recovery](docs/hosting.md).
+`weldscope/` contains configuration, ingestion, retrieval, generation, conversation routing, orchestration, monitoring, tracing and optional evaluation. `app.py` is the Streamlit entrypoint. See [architecture](docs/architecture.md), [Streamlit documentation assessment](docs/streamlit-review.md), [dependency maintenance](docs/dependencies.md), [latency measurements](docs/latency.md), and [hosting recovery](docs/hosting.md), [evaluation](docs/evaluation.md) and [operational telemetry](docs/operations.md).
 
 MIT License · Sai Karthik Kagolanu

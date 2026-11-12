@@ -1,0 +1,27 @@
+{
+  "dataset_sha256": "4d73bc960bdd57cdbe7cdb6ba2a925f2d889bd9a386d7092acc58b0d030a01d4",
+  "routing_accuracy": 1.0,
+  "minimum": {
+    "bm25": {
+      "recall": 0.4575,
+      "mrr": 0.39375,
+      "ndcg": 0.388203
+    },
+    "vector": {
+      "recall": 0.22,
+      "mrr": 0.11875,
+      "ndcg": 0.135579
+    },
+    "hybrid": {
+      "recall": 0.4575,
+      "mrr": 0.314583,
+      "ndcg": 0.335078
+    },
+    "reranked": {
+      "recall": 0.545,
+      "mrr": 0.417917,
+      "ndcg": 0.422726
+    }
+  },
+  "policy": "Fail if a positive-anchor metric falls more than 0.03 absolute below this development baseline, or any routing case changes. Dataset changes require explicit reviewed threshold versioning. Latency is recorded but not gated across different CI hardware."
+}

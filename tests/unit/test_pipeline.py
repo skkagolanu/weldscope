@@ -26,7 +26,7 @@ def mock_retriever():
 def mock_tracer():
     """Create mock tracer."""
     tracer = Mock()
-    tracer.trace_query = lambda name: lambda f: f
+    tracer.trace_query = lambda name, metadata=None: lambda f: f
     return tracer
 
 

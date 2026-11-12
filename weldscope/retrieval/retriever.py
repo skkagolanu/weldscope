@@ -11,10 +11,18 @@ from weldscope.core.exceptions import RetrievalError
 
 
 class HybridRetriever:
-    def __init__(self, vectorstore: Chroma, documents: List[Document], config: RAGConfig):
+    def __init__(
+        self,
+        vectorstore: Chroma,
+        documents: List[Document],
+        config: RAGConfig,
+        *,
+        allowed_sources=None,
+    ):
         self.vectorstore = vectorstore
         self.config = config
         self.documents = documents
+        self.allowed_sources = sorted(set(allowed_sources)) if allowed_sources else None
         self._lock = RLock()
         try:
             if not documents:
@@ -27,8 +35,8 @@ class HybridRetriever:
         except Exception as error:
             raise RetrievalError(f"Failed to initialize hybrid retriever: {error}") from error
 
-    def _merge_results(self, bm25_docs, vector_docs, bm25_weight=0.5):
-        scores = {}
+    def _merge_results(self, bm25_docs, vector_docs, bm25_weight=0.5) -> List[Document]:
+        scores: Dict[Any, tuple[Document, float]] = {}
         for docs, weight in [(bm25_docs, bm25_weight), (vector_docs, 1 - bm25_weight)]:
             for rank, doc in enumerate(docs, 1):
                 # Keep repeated text from different pages independently citable.
@@ -50,7 +58,7 @@ class HybridRetriever:
             )
         return results
 
-    def _lexical(self, query, k, filters=None):
+    def _lexical(self, query, k, filters=None) -> List[Document]:
         indices, _ = self.bm25.retrieve(
             bm25s.tokenize(query, show_progress=False),
             k=len(self.documents) if filters else min(k, len(self.documents)),
@@ -65,6 +73,13 @@ class HybridRetriever:
             ]
         return docs[:k]
 
+    def _vector_filter(self, filters=None):
+        if not self.allowed_sources:
+            return filters
+        corpus = {"source": {"$in": self.allowed_sources}}
+        clauses = [{key: value} for key, value in (filters or {}).items()]
+        return {"$and": [corpus, *clauses]} if clauses else corpus
+
     def retrieve(
         self, query: str, k: Optional[int] = None, filters: Optional[Dict[str, Any]] = None
     ) -> List[Document]:
@@ -76,7 +91,9 @@ class HybridRetriever:
             with self._lock:
                 k = k or self.config.retrieval_k
                 lexical = self._lexical(query, k, filters)
-                semantic = self.vectorstore.similarity_search(query, k=k, filter=filters)
+                semantic = self.vectorstore.similarity_search(
+                    query, k=k, filter=self._vector_filter(filters)
+                )
                 return self._merge_results(lexical, semantic)[:k]
         except Exception as error:
             raise RetrievalError(f"Retrieval failed: {error}") from error
@@ -84,7 +101,13 @@ class HybridRetriever:
     def retrieve_vector_only(self, query: str, k: Optional[int] = None) -> List[Document]:
         try:
             with self._lock:
-                return self.vectorstore.similarity_search(query, k=k or self.config.retrieval_k)
+                return list(
+                    self.vectorstore.similarity_search(
+                        query,
+                        k=k or self.config.retrieval_k,
+                        **({"filter": self._vector_filter()} if self.allowed_sources else {}),
+                    )
+                )
         except Exception as error:
             raise RetrievalError(f"Vector retrieval failed: {error}") from error
 

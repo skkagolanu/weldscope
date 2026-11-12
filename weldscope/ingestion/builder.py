@@ -35,7 +35,7 @@ class VectorStoreBuilder:
 
     def __init__(self, config: RAGConfig):
         self.config = config
-        self._embeddings = None
+        self._embeddings: Optional[LocalEmbeddings] = None
 
     def _get_embeddings(self) -> LocalEmbeddings:
         """Initialize embedding model."""
@@ -114,7 +114,7 @@ class VectorStoreBuilder:
         return vectorstore
 
     def load_vectorstore(
-        self, persist_directory: Optional[str] = None
+        self, persist_directory: Optional[str] = None, *, corpus_directory: Optional[str] = None
     ) -> tuple[Chroma, List[Document]]:
         """Load existing vector store and reconstruct documents."""
         embeddings = self._get_embeddings()
@@ -138,6 +138,22 @@ class VectorStoreBuilder:
                 )
                 documents.append(doc)
 
+        if corpus_directory is not None:
+            current = {
+                path.name: len(PdfReader(path).pages)
+                for path in Path(corpus_directory).glob("*.pdf")
+            }
+            documents = [
+                doc
+                for doc in documents
+                if (
+                    Path(doc.metadata.get("source", "")).name in current
+                    and isinstance(doc.metadata.get("page"), int)
+                    and 0 <= doc.metadata["page"] < current[Path(doc.metadata["source"]).name]
+                )
+            ]
+            if not documents:
+                raise ConfigurationError("No index passages match the bundled PDF corpus")
         return vectorstore, documents
 
     def build_from_pdfs(self, pdf_dir: str, persist_directory: Optional[str] = None) -> Chroma:
