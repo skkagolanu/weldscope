@@ -67,6 +67,20 @@ def test_rerank_empty_documents(reranker):
 
 
 @patch("weldscope.retrieval.reranker.CrossEncoder")
+def test_model_loading_and_prediction_are_separate_per_query(mock_factory, reranker):
+    mock_factory.return_value.predict.return_value = [0.5]
+    documents = [Document(page_content="FSW evidence")]
+    cold, warm = {}, {}
+    reranker.rerank("FSW", documents, timings=cold)
+    reranker.rerank("FSW", documents, timings=warm)
+    assert cold["reranker_load_ms"] > 0
+    assert warm["reranker_load_ms"] == 0
+    assert cold["reranker_compute_ms"] >= 0
+    assert warm["reranker_compute_ms"] >= 0
+    mock_factory.assert_called_once_with(reranker.config.reranker_model, local_files_only=True)
+
+
+@patch("weldscope.retrieval.reranker.CrossEncoder")
 def test_rerank_sorts_by_score(mock_cross_encoder, reranker):
     """Rerank sorts documents by relevance score."""
     mock_model = Mock()

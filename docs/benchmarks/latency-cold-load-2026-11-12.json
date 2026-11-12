@@ -1,0 +1,63 @@
+{
+  "method": "Eight independent Python 3.12 processes; imports excluded from model-constructor timing; downloaded weights already present on disk; second repeat reverses local/online order. No hosted speedup inferred.",
+  "user_reported": {
+    "source": "User-pasted public app output",
+    "question": "what is fsw",
+    "total_ms": 9502,
+    "retrieval_ms": 15,
+    "reranking_including_load_ms": 4442,
+    "generation_ms": 592,
+    "first_text_ms": 9368,
+    "unattributed_ms": 4453
+  },
+  "model_load_measurements": [
+    {
+      "repeat": 0,
+      "model": "SentenceTransformer",
+      "local_files_only": false,
+      "load_ms": 787.585
+    },
+    {
+      "repeat": 0,
+      "model": "CrossEncoder",
+      "local_files_only": false,
+      "load_ms": 2215.408
+    },
+    {
+      "repeat": 0,
+      "model": "SentenceTransformer",
+      "local_files_only": true,
+      "load_ms": 122.37
+    },
+    {
+      "repeat": 0,
+      "model": "CrossEncoder",
+      "local_files_only": true,
+      "load_ms": 134.062
+    },
+    {
+      "repeat": 1,
+      "model": "SentenceTransformer",
+      "local_files_only": true,
+      "load_ms": 119.239
+    },
+    {
+      "repeat": 1,
+      "model": "CrossEncoder",
+      "local_files_only": true,
+      "load_ms": 124.228
+    },
+    {
+      "repeat": 1,
+      "model": "SentenceTransformer",
+      "local_files_only": false,
+      "load_ms": 1545.883
+    },
+    {
+      "repeat": 1,
+      "model": "CrossEncoder",
+      "local_files_only": false,
+      "load_ms": 2146.685
+    }
+  ]
+}

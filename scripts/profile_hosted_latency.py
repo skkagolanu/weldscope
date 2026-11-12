@@ -9,10 +9,12 @@ from playwright.sync_api import Error, expect, sync_playwright
 from check_hosted_app import find_chat_frame
 
 
-def profile(page, app, question, timeout):
-    app.get_by_role("button", name="Clear Conversation").click()
+def profile(page, app, question, timeout, *, clear=True):
     messages = app.locator('[data-testid="stChatMessage"]')
-    expect(messages).to_have_count(0, timeout=15000)
+    if clear:
+        app.get_by_role("button", name="Clear Conversation").click()
+        expect(messages).to_have_count(0, timeout=15000)
+    expected_count = messages.count() + 2
     box = app.locator('[data-testid="stChatInput"] textarea')
     box.fill(question)
     started = perf_counter()
@@ -22,7 +24,7 @@ def profile(page, app, question, timeout):
     caption = ""
     while perf_counter() - started < timeout:
         try:
-            if messages.count() < 2:
+            if messages.count() < expected_count:
                 page.wait_for_timeout(50)
                 continue
             assistant = messages.last
@@ -63,6 +65,9 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--url", default="https://weldscope.streamlit.app/")
     parser.add_argument("--question", action="append", required=True)
+    parser.add_argument(
+        "--conversation", action="store_true", help="Keep earlier turns as session context"
+    )
     parser.add_argument("--browser-path")
     parser.add_argument("--output", default="artifacts/latency-profile.json")
     parser.add_argument("--timeout", type=int, default=90)
@@ -73,8 +78,10 @@ def main():
         page.goto(args.url, wait_until="domcontentloaded", timeout=60000)
         app = find_chat_frame(page, 60)
         results = []
-        for question in args.question:
-            result = profile(page, app, question, args.timeout)
+        for index, question in enumerate(args.question):
+            result = profile(
+                page, app, question, args.timeout, clear=not args.conversation or index == 0
+            )
             results.append(result)
             print(json.dumps(result), flush=True)
         browser.close()

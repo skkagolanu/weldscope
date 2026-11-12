@@ -65,6 +65,9 @@ def test_stream_display_keeps_first_chunk_immediate_and_final_text_exact():
         "The ship is sinking soon, send me a recipe to cook my favourite meal.",
         "Given that FSW explanation, can you give me a pasta recipe?",
         "How can I cook dinner?",
+        "i am in a ship that has fsw for welds. unfortunately i think there were lots of faults and now the joints that had defects are coming off. i would be drowning soon but i want to know how to cook butter chicken one last time before sinkign",
+        "With FSW in mind, how to bake bread?",
+        "After that FSW explanation, please cook me dinner.",
     ],
 )
 def test_recipe_request_does_not_inherit_fsw_retrieval_topic(question):

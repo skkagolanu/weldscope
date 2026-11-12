@@ -28,7 +28,7 @@ def load_config():
 
 @st.cache_resource
 def load_retriever(_config):
-    """Load models and the index only when a research question needs them."""
+    """Load cache-first models and the index only for research (revision 4)."""
     builder = VectorStoreBuilder(_config)
     vectorstore, documents = builder.load_vectorstore()
     return HybridRetriever(vectorstore, documents, _config)
@@ -36,7 +36,7 @@ def load_retriever(_config):
 
 @st.cache_resource
 def load_reranker(_config):
-    """Share model weights; Reranker serializes initialization and inference."""
+    """Share cache-first weights; serialize loading and inference (revision 4)."""
     return Reranker(_config)
 
 
@@ -46,7 +46,7 @@ def release_system(resource):
 
 @st.cache_resource(scope="session", on_release=release_system)
 def initialize_system(_config):
-    """Initialize corpus-only conversation handling (pipeline revision 3)."""
+    """Initialize corpus-only conversation handling (pipeline revision 4)."""
     tracer = None
     if _config.langfuse_enabled:
         tracer = RAGTracer(_config)
@@ -113,8 +113,11 @@ def render_details(message, message_index, tracer):
         if message.get("route") == "research":
             first = t.get("first_token_total_ms")
             first_info = f" · First text {first:.0f} ms" if first is not None else ""
+            load = t.get("initialization_ms", 0) + t.get("reranker_load_ms", 0)
+            load_info = f"Load {load:.0f} ms · " if load else ""
+            rerank = t.get("reranker_compute_ms", t["reranking_ms"])
             st.caption(
-                f"Search {t['retrieval_ms']:.0f} ms · Rerank {t['reranking_ms']:.0f} ms · Generate {t['generation_ms']:.0f} ms{first_info} · Total {t['total_ms']:.0f} ms"
+                f"{load_info}Search {t['retrieval_ms']:.0f} ms · Rerank {rerank:.0f} ms · Generate {t['generation_ms']:.0f} ms{first_info} · Total {t['total_ms']:.0f} ms"
             )
         else:
             st.caption(f"Local reply · Total {t['total_ms']:.0f} ms")

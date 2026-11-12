@@ -38,7 +38,8 @@ def is_recipe_request(text):
         r"\b(?:cook\w*|bak\w*|meals?|dinner|lunch|breakfast|food|pizza|pasta|curry)\b", text
     )
     cooking_instructions = re.search(
-        r"\b(?:how (?:do|can|should) i|help me|teach me|instructions to)\b.{0,80}\b(?:cook|bake)\b",
+        r"\b(?:how to|how (?:do|can|should) i|help me|teach me|instructions to)\b.{0,80}\b(?:cook|bake)\b"
+        r"|\b(?:please |can you |could you )?(?:cook|bake)\s+(?:me |us |a |some |my )",
         text,
     )
     return bool(cooking_instructions or (recipe and (food or not DOMAIN.search(text))))
@@ -160,11 +161,13 @@ def plan_conversation(question, history=None):
     ):
         return ConversationPlan("local", about_weldscope())
 
+    # A self-contained domain question takes precedence over incidental pronouns
+    # such as 'that' in a new question. History only resolves implicit follow-ups.
+    if DOMAIN.search(text):
+        return ConversationPlan("research", retrieval_query=question)
     topic = _active_topic(history or [])
     if topic and FOLLOW_UP.search(text):
         return ConversationPlan("research", retrieval_query=f"{topic[:500]}\nFollow-up: {question}")
-    if DOMAIN.search(text):
-        return ConversationPlan("research", retrieval_query=question)
     if re.fullmatch(r"(?:why|why is that|tell me more|explain that|what about it)", text):
         return ConversationPlan(
             "local", "Which welding process or defect would you like me to explain?"

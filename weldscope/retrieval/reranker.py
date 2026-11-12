@@ -2,11 +2,13 @@
 
 from typing import List, Tuple
 from threading import RLock
+from time import perf_counter
 from langchain_core.documents import Document
 from sentence_transformers import CrossEncoder
 
 from weldscope.core.config import RAGConfig
 from weldscope.core.exceptions import RetrievalError
+from weldscope.core.model_loading import load_cached_model
 
 
 class Reranker:
@@ -21,27 +23,40 @@ class Reranker:
         """Initialize cross-encoder model."""
         if self._model is None:
             try:
-                self._model = CrossEncoder(self.config.reranker_model)
+                self._model = load_cached_model(CrossEncoder, self.config.reranker_model)
             except Exception as e:
                 raise RetrievalError(f"Failed to initialize reranker: {e}")
 
         return self._model
 
-    def rerank(self, query: str, documents: List[Document], top_k: int = None) -> List[Document]:
+    def rerank(
+        self, query: str, documents: List[Document], top_k: int = None, *, timings=None
+    ) -> List[Document]:
         with self._lock:
-            return self._rerank(query, documents, top_k)
+            return self._rerank(query, documents, top_k, timings=timings)
 
-    def _rerank(self, query: str, documents: List[Document], top_k: int = None) -> List[Document]:
+    def _rerank(
+        self, query: str, documents: List[Document], top_k: int = None, *, timings=None
+    ) -> List[Document]:
         """Rerank documents by relevance to query."""
         if not documents:
             return []
 
         try:
+            cold = self._model is None
+            load_started = perf_counter()
             model = self._get_model()
+            if timings is not None:
+                timings["reranker_load_ms"] = (
+                    (perf_counter() - load_started) * 1000 if cold else 0.0
+                )
             top_k = top_k or self.config.retrieval_k
 
             pairs = [[query, doc.page_content] for doc in documents]
+            score_started = perf_counter()
             scores = model.predict(pairs)
+            if timings is not None:
+                timings["reranker_compute_ms"] = (perf_counter() - score_started) * 1000
 
             doc_scores = list(zip(documents, scores))
             doc_scores.sort(key=lambda x: x[1], reverse=True)

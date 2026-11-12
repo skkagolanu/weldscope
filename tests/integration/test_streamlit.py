@@ -9,6 +9,7 @@ import streamlit as st
 
 from weldscope.core.models import RAGResponse, Source
 from weldscope.core.config import RAGConfig
+from langchain_core.documents import Document
 
 
 def test_chat_renders_streamed_answer_sources_and_clears_history():
@@ -52,6 +53,50 @@ def test_chat_renders_streamed_answer_sources_and_clears_history():
         app.button[0].click().run()
         assert not app.exception
         assert len(app.chat_message) == 0
+    st.cache_resource.clear()
+
+
+def test_exact_reported_conversation_rejects_recipe_without_reusing_fsw_answer():
+    st.cache_resource.clear()
+    config = RAGConfig(_env_file=None, groq_api_key=None)
+    docs = [
+        Document(
+            page_content="FSW is a solid-state joining process.",
+            metadata={"source": "fsw_doc1.pdf"},
+        )
+    ]
+    with (
+        patch("weldscope.core.config.RAGConfig", return_value=config),
+        patch(
+            "weldscope.ingestion.builder.VectorStoreBuilder.load_vectorstore",
+            return_value=(Mock(), docs),
+        ),
+        patch("weldscope.retrieval.retriever.HybridRetriever") as retriever,
+        patch("weldscope.retrieval.reranker.Reranker.rerank", return_value=docs) as rerank,
+        patch(
+            "weldscope.generation.generator.LLMGenerator.stream",
+            return_value=iter(["FSW is a solid-state joining process. [1]"]),
+        ) as generate,
+    ):
+        retriever.return_value.retrieve.return_value = docs
+        app = AppTest.from_file(str(Path(__file__).parents[2] / "app.py")).run()
+        for question in ["hi", "what do you do", "what is fsw"]:
+            app.chat_input[0].set_value(question).run()
+            assert not app.exception
+            assert not app.error
+        assert "solid-state" in app.chat_message[-1].markdown[0].value
+        app.chat_input[0].set_value(
+            "i am in a ship that has fsw for welds. unfortunately i think there were lots of faults and now the joints that had defects are coming off. i would be drowning soon but i want to know how to cook butter chicken one last time before sinkign"
+        ).run()
+        assert not app.exception
+        assert not app.error
+        final = app.chat_message[-1]
+        assert "Recipes and cooking instructions are outside" in final.markdown[0].value
+        assert "solid-state" not in final.markdown[0].value
+        assert not final.expander or all(e.label == "Latency breakdown" for e in final.expander)
+        retriever.return_value.retrieve.assert_called_once_with("what is fsw")
+        rerank.assert_called_once()
+        generate.assert_called_once()
     st.cache_resource.clear()
 
 

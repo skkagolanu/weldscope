@@ -12,13 +12,14 @@ from langchain_chroma import Chroma
 
 from weldscope.core.config import RAGConfig
 from weldscope.core.exceptions import ConfigurationError
+from weldscope.core.model_loading import load_cached_model
 
 
 class LocalEmbeddings(Embeddings):
     """Sentence Transformer inference without a provider integration package."""
 
     def __init__(self, model_name):
-        self.model = SentenceTransformer(model_name)
+        self.model = load_cached_model(SentenceTransformer, model_name)
 
     def embed_documents(self, texts):
         return self.model.encode(

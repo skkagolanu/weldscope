@@ -113,6 +113,8 @@ class RAGPipeline:
             initialization_ms=0.0,
             retrieval_ms=0.0,
             reranking_ms=0.0,
+            reranker_load_ms=0.0,
+            reranker_compute_ms=0.0,
             generation_ms=0.0,
             render_ms=0.0,
             first_token_ms=None,
@@ -145,7 +147,10 @@ class RAGPipeline:
                 raise RetrievalError("No documents retrieved")
             rerank_started = perf_counter()
             reranked_docs = self.reranker.rerank(
-                plan.retrieval_query, retrieved_docs, top_k=self.config.rerank_top_k
+                plan.retrieval_query,
+                retrieved_docs,
+                top_k=self.config.rerank_top_k,
+                timings=timings,
             )
             timings["reranking_ms"] = (perf_counter() - rerank_started) * 1000
             context = self._format_context(reranked_docs)

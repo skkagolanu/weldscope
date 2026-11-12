@@ -85,6 +85,11 @@ def test_self_contained_question_does_not_inherit_previous_topic():
     assert plan.retrieval_query == question
 
 
+def test_incidental_pronoun_does_not_override_new_domain_question():
+    question = "Explain FSW joints that develop surface cracks."
+    assert plan_conversation(question, research_history()).retrieval_query == question
+
+
 def test_unrelated_chat_resets_active_research_topic():
     history = research_history() + [
         {"role": "user", "content": "My name is Sam."},

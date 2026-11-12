@@ -6,7 +6,7 @@ The target is a quick response, aiming for two seconds or less where practical. 
 
 A public browser session exercised the actual Streamlit app inside its Community Cloud iframe. Every question starts with Clear Conversation, and the harness waits for the old chat elements to disappear before starting the next timer. It records the first visible answer text, the completed response, backend timing captions and answer length. This prevents an old response from being counted as a fast new one.
 
-Baseline source: `e641e70`. Three successful, fresh-chat requests were measured; global model/cache state was not controlled. The reported nine-second result was not reproduced and is not used as a before/after number.
+Baseline source: `e641e70`. Three successful, fresh-chat requests were measured; global model/cache state was not controlled. Those initial samples did not reproduce the reported nine-second result. The later user-provided full-conversation output below confirms a 9,502 ms response; the initial samples are retained as historical observations.
 
 | Request | Browser first text | Browser complete | Backend pipeline | Search | Rerank | Answer length |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
@@ -30,7 +30,7 @@ A dedicated recipe-task check now runs before maritime context, domain keywords 
 | Bounded streaming redraws | Source inspection showed one full-answer Markdown redraw per incoming token/chunk, inside the generation timer. | Show the first chunk immediately; batch subsequent redraws at 50 ms intervals; always flush the exact final text. | A controlled 1,000-chunk burst used two redraws instead of 1,001. This is a work-count test, not a claim of an equivalent end-to-end speedup. |
 | One successful-turn render | Source inspection showed an unconditional `st.rerun()` after the complete reply was already rendered, repeating the script/history render. | Render citations, timings and feedback in the current run; update sidebar placeholders; keep reruns for Clear Conversation and error recovery. | Successful responses no longer explicitly request a second full-script run. Its individual time saving is not isolated from live provider/network variation. |
 | Concise default answers | The parameter explanation produced 442 words in the baseline; generation time depends on actual output length. | Ask for about 120 words and at most three short bullets by default, while retaining evidence, citations and abstention. Explicit requests for detail remain allowed. | This changes response length policy, not the evidence retrieved. No forced text truncation, evidence removal or reduced reranking was introduced. |
-| Separate timing components | The reported total did not show lazy retriever/model loading, callback rendering or end-to-end first-text time separately. | Add initialization, render-callback and pipeline first-text timings; display generation and total separately, with a per-reply breakdown. | Measurement enables diagnosis; adding timers is not itself a speedup. Cross-encoder cold loading remains part of reranking. |
+| Separate timing components | The reported total did not show lazy retriever/model loading, callback rendering or end-to-end first-text time separately. | Add initialization, render-callback and pipeline first-text timings; display generation and total separately, with a per-reply breakdown. | Measurement enables diagnosis; adding timers is not itself a speedup. The aggregate `reranking_ms` retains cold loading; separate `reranker_load_ms` and `reranker_compute_ms` now identify its components. |
 
 The published default model remains Groq GPT-OSS 20B with low reasoning effort. Hiding reasoning output does not disable reasoning, and Groq does not support `none` effort for GPT-OSS. A larger completion-token ceiling is not evidence that all those tokens are generated. No unsupported reasoning parameter, paid processing tier, semantic cache or model migration was introduced.
 
@@ -54,4 +54,26 @@ The updated app was also exercised in a real **local Streamlit browser**: the sh
 
 A public probe after pushing `a2b2684` still showed the old Search/Rerank/Total caption and a 167-word model-generated research answer to the scenario. Those results are explicitly excluded from the optimized comparison: the hosted process had not visibly applied the new behavior. An owner-side Streamlit reboot was requested to obtain valid hosted after measurements.
 
-Local verification: **153 tests passed, 97.21% package coverage**, a successful browser greeting/scope check, and a warning-free docs build. The final public after comparison remains pending rollout. Do not call these few queries a p95 benchmark or promise a two-second SLA.
+Earlier local verification: **153 tests passed, 97.21% package coverage**, a successful browser greeting/scope check, and a warning-free docs build. The final public after comparison remains pending rollout. Do not call these few queries a p95 benchmark or promise a two-second SLA.
+
+
+## Exact reported conversation and cold-loading correction
+
+The user's deployed conversation was `hi` → `what do you do` → `what is fsw` → a ship/defective-joints story ending with "i want to know how to cook butter chicken one last time before sinkign". The last turn incorrectly repeated the FSW definition. The existing cooking guard recognized "how can I cook", but missed "how to cook". An incidental "that" also made the routing code inherit the earlier FSW search topic. The earlier simplified recipe tests did not cover this exact wording.
+
+The guard now catches explicit "how to cook/bake" tasks before domain keywords or history. A self-contained domain question also takes precedence over incidental pronouns when choosing a retrieval query. The exact four-turn Streamlit regression verifies one retrieval/reranker/provider call for the FSW question and no additional calls or sources for the cooking refusal. No emergency advice is returned.
+
+The user's FSW definition took **9,502 ms** overall: search **15 ms**, reranking including lazy model loading **4,442 ms**, and generation **592 ms**. Another **4,453 ms** was outside those three counters. Retriever initialization is a plausible contributor, but that residual cannot be attributed precisely from the pasted caption alone. The subsequent research request's 99 ms rerank is consistent with a warmed model, without establishing the precise cause of every cold-start millisecond.
+
+Both embedding and reranking constructors now try downloaded files with `local_files_only=True`, falling back to normal loading on an `OSError` such as missing cached files. This avoids redundant Hub checks when usable weights are present. It preserves first-download behavior and does not change model choice, retrieval depth or evidence. The supported parameter is described in the [Sentence Transformers API documentation](https://sbert.net/docs/package_reference/cross_encoder/model.html).
+
+| Constructor, cached weights present | Normal Hub-aware loading, two fresh processes | Local-file loading, two fresh processes |
+| --- | ---: | ---: |
+| Embedding model | 788 / 1,546 ms | 122 / 119 ms |
+| Cross-encoder | 2,215 / 2,147 ms | 134 / 124 ms |
+
+These measurements use eight independent Python processes on the local machine, exclude imports, and reverse mode order in the second repeat. They show constructor savings under these conditions, not a guaranteed hosted total. [Raw measurements and user-reported timings](benchmarks/latency-cold-load-2026-11-12.json) preserve the distinction.
+
+The UI now shows **Load** separately from reranker prediction. The breakdown retains inclusive `reranking_ms` for existing monitoring and adds `reranker_load_ms` and `reranker_compute_ms`. Total and first-text times still include all cold costs; loading was not moved outside the measured request. First-ever downloads, process startup, concurrent requests and provider variation can still exceed two seconds.
+
+Verification for this correction: **162 tests passed, 97.61% package coverage**. The hosted profiler now supports `--conversation` to retain preceding turns while waiting for each new response, rather than accidentally reading an old answer. Public deployment verification is recorded separately when observed.
