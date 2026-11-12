@@ -177,6 +177,9 @@ async def answer_scores(samples, llm, embeddings, *, minimum_interval=0):
                 value = float(result.value)
                 if not math.isfinite(value):
                     raise ValueError("Non-finite score")
+                lower, upper = metric.allowed_values
+                if not lower <= value <= upper:
+                    raise ValueError("Score outside native metric range")
                 row["scores"][name] = value
             except Exception as error:
                 # Raw provider errors may contain request data; retain only the class.

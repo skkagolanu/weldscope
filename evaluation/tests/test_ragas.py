@@ -118,10 +118,6 @@ class NativeRagasTests(unittest.IsolatedAsyncioTestCase):
                 page_id("a.pdf", value)
 
 
-if __name__ == "__main__":
-    unittest.main()
-
-
 class GroqTransportContract(unittest.IsolatedAsyncioTestCase):
     async def test_native_wrapper_uses_one_token_limit_and_structured_json(self):
         import httpx
@@ -158,3 +154,7 @@ class GroqTransportContract(unittest.IsolatedAsyncioTestCase):
                 llm = make_judge(client, "openai/gpt-oss-120b")
                 reply = await llm.agenerate("Return the contract fixture", Reply)
                 self.assertEqual(reply.answer, "fixture")
+
+
+if __name__ == "__main__":
+    unittest.main()
