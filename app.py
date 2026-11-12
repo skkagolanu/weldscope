@@ -54,7 +54,7 @@ def release_system(resource):
 
 @st.cache_resource(scope="session", on_release=release_system)
 def initialize_system(_config):
-    """Initialize corpus-only conversation handling (pipeline revision 5)."""
+    """Initialize corpus-only conversation handling (pipeline revision 6: validate before display)."""
     tracer = None
     if _config.langfuse_enabled:
         tracer = RAGTracer(_config)
@@ -124,7 +124,7 @@ def render_details(message, message_index, tracer):
     if message.get("timings") and "total_ms" in message["timings"]:
         t = message["timings"]
         if message.get("route") == "research":
-            first = t.get("first_token_total_ms")
+            first = t.get("first_visible_ms", t.get("first_token_total_ms"))
             first_info = f" · First text {first:.0f} ms" if first is not None else ""
             load = t.get("initialization_ms", 0) + t.get("reranker_load_ms", 0)
             load_info = f"Load {load:.0f} ms · " if load else ""
@@ -140,7 +140,7 @@ def render_details(message, message_index, tracer):
                 st.code(
                     json.dumps(
                         {
-                            "app_revision": "quality-v1",
+                            "app_revision": "quality-v2",
                             "request_id": message["request_id"],
                             "route": message.get("route"),
                             "timings": t,

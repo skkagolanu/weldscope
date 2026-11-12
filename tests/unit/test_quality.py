@@ -127,3 +127,46 @@ def test_current_corpus_excludes_missing_files_and_out_of_range_pages(tmp_path):
         assert [document.id for document in documents] == ["valid"]
         with pytest.raises(ConfigurationError, match="No index passages"):
             builder.load_vectorstore(str(tmp_path), corpus_directory=str(tmp_path / "absent"))
+
+
+def test_invalid_provider_text_is_never_delivered_before_validation():
+    docs = [Document(page_content="Evidence", metadata={"source": "current.pdf"})]
+    retriever = Mock()
+    retriever.retrieve.return_value = docs
+    pipeline = RAGPipeline(retriever, RAGConfig(telemetry_path=""))
+    pipeline.reranker.rerank = Mock(return_value=docs)
+    delivered = []
+
+    def provider():
+        yield "Unsupported text [99]"
+        assert delivered == []
+
+    pipeline.generator.stream = Mock(return_value=provider())
+    response = pipeline.query("What is FSW?", stream=True, on_chunk=delivered.append)
+    assert delivered == [response.answer]
+    assert "[99]" not in delivered[0]
+    assert response.metadata["answer_checks"]["status"] == "withheld"
+    assert (
+        response.metadata["timings"]["first_visible_ms"]
+        >= response.metadata["timings"]["first_token_total_ms"]
+    )
+
+
+def test_provider_failure_does_not_leak_partial_reply():
+    from weldscope.core.exceptions import GenerationError
+
+    docs = [Document(page_content="Evidence")]
+    retriever = Mock()
+    retriever.retrieve.return_value = docs
+    pipeline = RAGPipeline(retriever, RAGConfig(telemetry_path=""))
+    pipeline.reranker.rerank = Mock(return_value=docs)
+    delivered = []
+
+    def provider():
+        yield "Partial unsupported output"
+        raise GenerationError("Service unavailable")
+
+    pipeline.generator.stream = Mock(return_value=provider())
+    with pytest.raises(GenerationError):
+        pipeline.query("What is FSW?", stream=True, on_chunk=delivered.append)
+    assert not delivered

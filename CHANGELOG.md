@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
+## [Unreleased] - 2026-11-13
+
+- Buffer research output until final citation validation; never deliver invalid provider citations or partial failed replies to UI callbacks.
+- Separate provider first-token timing from post-validation first-visible delivery.
+
 ## [Unreleased] - 2026-11-12
 
 - Adopt native RAGAS quality assessment in a separately locked Python 3.12 environment under the owner-approved offline compatibility exception.

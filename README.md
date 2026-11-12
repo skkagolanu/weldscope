@@ -8,7 +8,7 @@ A research assistant for **friction stir welding (FSW)** defects, causes, and co
 
 - Answers greetings and questions about WeldScope and its sources locally, without inference calls or document search. Other unsupported requests receive a brief local scope refusal, including requests to assess real equipment or handle a live incident.
 - Searches five bundled research PDFs using BM25S keyword retrieval and Chroma semantic search, then reranks passages with a cross-encoder.
-- Uses Groq to generate streamed answers with inspectable source passages. The prompt asks it to abstain when evidence is insufficient; retrieval has a provisional 50-case development benchmark; semantic answer quality remains unmeasured.
+- Uses Groq to generate answers with inspectable source passages. Research output is buffered until citation checks finish, before any answer text is displayed. The prompt asks it to abstain when evidence is insufficient; retrieval has a provisional 50-case development benchmark; semantic answer quality remains unmeasured.
 - Keeps up to ten completed exchanges within a bounded context budget. Search queries stay separate from chat history and sensor summaries; failed exchanges are excluded.
 - Includes example sensor readings only when requested. The CSV is a static demonstration, not a live feed.
 - Reports raw fusion and reranker scores separately. They are not probabilities; unmeasured response confidence is `None`.

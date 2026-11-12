@@ -71,7 +71,7 @@ def test_query_raises_on_no_documents(pipeline):
         pipeline.query("FSW question")
 
 
-def test_query_delivers_chunks_before_generation_completes(pipeline):
+def test_query_delivers_only_after_generation_and_validation(pipeline):
     docs = [Document(page_content="Evidence", metadata={"source": "fsw.pdf"})]
     pipeline.retriever.retrieve.return_value = docs
     pipeline.reranker.rerank.return_value = docs
@@ -79,12 +79,12 @@ def test_query_delivers_chunks_before_generation_completes(pipeline):
 
     def generate():
         yield "First "
-        assert delivered == ["First "]
+        assert delivered == []
         yield "second"
 
     pipeline.generator.stream.return_value = generate()
     response = pipeline.query("FSW question", stream=True, on_chunk=delivered.append)
-    assert delivered == ["First ", "second"]
+    assert delivered == ["First second"]
     assert response.answer == "First second"
     assert response.sources[0].doc_name == "fsw.pdf"
 
@@ -158,7 +158,7 @@ def test_stream_query_yields_chunks(pipeline):
 
     chunks = list(pipeline.stream_query("FSW question"))
 
-    assert chunks == ["chunk1", "chunk2", "chunk3"]
+    assert chunks == ["chunk1chunk2chunk3"]
 
 
 def test_stream_query_raises_on_no_documents(pipeline):

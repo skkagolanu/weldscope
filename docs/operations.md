@@ -11,3 +11,9 @@ With Langfuse configured, a parent observation and correlated retrieval/generati
 **Persistence boundary:** JSONL is persistent on the machine's filesystem, and CI uploads sanitized test events with its benchmark artifact. Streamlit Community Cloud disk is ephemeral; these files and process logs do **not** establish durable retention across rebuilds/reboots. A configured external Langfuse account or another retained log sink is required for durable hosted telemetry. The owner has only confirmed Groq configuration; live external trace export/retention has not been verified. No credentials were requested in chat or committed.
 
 The per-response Latency breakdown includes the current session's request ID, token usage and answer-check status. The public regression harness saves those diagnostics for its own known test turns only; it does not expose or download other users' event logs.
+
+## Display boundary (13 November 2026)
+
+Research provider chunks are buffered internally. Citation checks run on the complete answer before the UI callback receives any research text; invalid citations cause only the withholding message to be delivered. If provider generation fails mid-answer, no partial research reply is delivered. `first_token_ms`/`first_token_total_ms` measure internal provider receipt; `first_visible_ms` measures the later backend delivery after validation, and browser timing remains a separate observation. The UI label uses the delivery counter. These are structural checks, not semantic entailment proof.
+
+The owner explicitly chose local trace verification with hosted Langfuse retention left unverified. Existing real SDK/in-memory-exporter correlation tests and sanitized local event tests remain the available observability evidence. No hosted export/retention claim is made.

@@ -24,7 +24,7 @@ operations
 
 - Hybrid retrieval (BM25 + vector search)
 - Cross-encoder reranking
-- Streaming LLM responses
+- Research output buffered for citation checks before display
 - Source attribution and citations
 - Langfuse observability
 - Performance monitoring

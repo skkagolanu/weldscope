@@ -23,7 +23,7 @@ def inspect_response(app):
     code = timing.locator('[data-testid="stCode"] code')
     expect(code).to_be_visible(timeout=10000)
     diagnostics = json.loads(code.inner_text())
-    assert diagnostics["app_revision"] == "quality-v1", "Updated application not serving"
+    assert diagnostics["app_revision"] == "quality-v2", "Updated application not serving"
     sources = []
     documents = []
     for expander in assistant.locator('[data-testid="stExpander"]').all():

@@ -145,4 +145,4 @@ def test_pipeline_with_streaming(
 
         chunks = list(pipeline.stream_query("FSW query"))
 
-        assert chunks == ["Chunk ", "1", " and ", "2"]
+        assert chunks == ["Chunk 1 and 2"]
