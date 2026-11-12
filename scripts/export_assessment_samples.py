@@ -63,6 +63,24 @@ def main():
                             reference=case["reference_answer"] if case["answerable"] else None,
                             answerable=case["answerable"],
                             contexts=[source.chunk_text for source in response.sources],
+                            sources=[
+                                dict(
+                                    chunk_id=source.chunk_id,
+                                    source=source.doc_name,
+                                    page=(
+                                        (source.page_num + 1)
+                                        if source.page_num is not None
+                                        else None
+                                    ),
+                                )
+                                for source in response.sources
+                            ],
+                            context_sha256=[
+                                hashlib.sha256(source.chunk_text.encode()).hexdigest()
+                                for source in response.sources
+                            ],
+                            timings=response.metadata["timings"],
+                            answer_checks=response.metadata.get("answer_checks"),
                             route=response.metadata["route"],
                             request_id=response.metadata["request_id"],
                             token_usage=response.metadata["token_usage"],
