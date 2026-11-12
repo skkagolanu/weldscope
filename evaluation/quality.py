@@ -98,7 +98,9 @@ async def retrieval_scores(rankings_path, dataset_path, thresholds=None):
     )
 
 
-async def answer_scores(samples, llm, embeddings, *, minimum_interval=0):
+async def answer_scores(
+    samples, llm, embeddings, *, minimum_interval=0, on_progress=None, error_budget=5
+):
     """Use native collections metrics; skipped references and failed metrics stay explicit."""
     from ragas.metrics.collections import (
         AnswerRelevancy,
@@ -187,6 +189,19 @@ async def answer_scores(samples, llm, embeddings, *, minimum_interval=0):
             if minimum_interval:
                 await asyncio.sleep(minimum_interval)
         rows.append(row)
+        if on_progress:
+            on_progress(rows)
+        if sum(len(item["errors"]) for item in rows) >= error_budget:
+            for pending in samples[len(rows) :]:
+                rows.append(
+                    dict(
+                        id=pending["id"],
+                        scores={},
+                        errors={},
+                        skipped={name: "assessment_aborted_after_errors" for name in metrics},
+                    )
+                )
+            break
     summary = {}
     for name in metrics:
         values = [row["scores"][name] for row in rows if name in row["scores"]]

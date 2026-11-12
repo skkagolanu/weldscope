@@ -34,3 +34,5 @@ The removed `GroundedAnswerEvaluator` asked one model prompt for four scores. It
 ## Groq compatibility checks
 
 RAGAS 0.4.3's generic Groq factory attempts to access `client.messages`, which the Groq SDK does not expose. The runner uses Instructor's supported `from_groq` client and RAGAS's public `InstructorLLM` wrapper directly. It also removes the wrapper's default `max_tokens` so Groq receives only `max_completion_tokens`. A real-SDK/mock-HTTP contract test verifies structured response parsing and the outgoing token-limit fields without making a provider call. This changes transport configuration, not any RAGAS metric implementation.
+
+Long semantic runs write an atomic `progress.json` checkpoint after each assessed case. Repeated metric failures stop further judging after the configured error budget (default five); remaining cases are explicitly marked unassessed rather than disappearing from coverage. The final artifact records input/lock/source hashes, model identifiers, request counts and usage reported by provider responses. Missing usage stays unknown.

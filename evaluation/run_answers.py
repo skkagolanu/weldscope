@@ -5,6 +5,7 @@ import asyncio
 import csv
 import json
 import os
+import platform
 from pathlib import Path
 from time import monotonic
 
@@ -17,6 +18,7 @@ class RequestPacer:
         self.last = 0.0
         self.lock = asyncio.Lock()
         self.requests = 0
+        self.usage_reports = 0
         self.usage = {"prompt_tokens": 0, "completion_tokens": 0, "total_tokens": 0}
 
     async def request(self, request):
@@ -30,6 +32,8 @@ class RequestPacer:
         if response.is_success:
             try:
                 usage = response.json().get("usage") or {}
+                if isinstance(usage.get("total_tokens"), int):
+                    self.usage_reports += 1
                 for key in self.usage:
                     value = usage.get(key)
                     if isinstance(value, int):
@@ -78,13 +82,45 @@ async def assess(args):
         async with AsyncGroq(http_client=transport, timeout=60, max_retries=1) as client:
             llm = make_judge(client, args.judge_model)
             embeddings = HuggingFaceEmbeddings(model=args.embedding_model, device="cpu")
-            report = await answer_scores(samples, llm, embeddings)
+
+            def checkpoint(rows):
+                args.output.mkdir(parents=True, exist_ok=True)
+                temporary = args.output / "progress.tmp"
+                temporary.write_text(
+                    json.dumps(
+                        {
+                            "framework": "ragas",
+                            "complete": False,
+                            "status": "in_progress",
+                            "requested_samples": len(samples),
+                            "completed_samples": len(rows),
+                            "results": rows,
+                        },
+                        indent=2,
+                    )
+                    + "\n"
+                )
+                temporary.replace(args.output / "progress.json")
+
+            report = await answer_scores(
+                samples, llm, embeddings, on_progress=checkpoint, error_budget=args.error_budget
+            )
     report.update(
         judge_model=args.judge_model,
         embedding_model=args.embedding_model,
         samples_sha256=digest(args.samples),
         provider_requests=pacer.requests,
-        reported_token_usage=pacer.usage,
+        reported_token_usage=pacer.usage if pacer.usage_reports else None,
+        responses_reporting_usage=pacer.usage_reports,
+        request_interval_seconds=args.request_interval,
+        error_budget=args.error_budget,
+        dataset_sha256=payload.get("dataset_sha256"),
+        generation_model=payload.get("generation_model"),
+        lock_sha256=digest(Path(__file__).parent / "requirements.lock"),
+        runner_sha256=digest(__file__),
+        metrics_runner_sha256=digest(Path(__file__).parent / "quality.py"),
+        python=platform.python_version(),
+        source_commit=os.environ.get("GITHUB_SHA"),
         limitations="Model-judged, provisional development labels; no human calibration or universal factual guarantee. Native scope rubric uses 1-5; other metrics retain their native scales.",
     )
     return report
@@ -100,7 +136,10 @@ def main():
     )
     parser.add_argument("--limit", type=int, choices=range(1, 51), default=50)
     parser.add_argument("--request-interval", type=float, default=2.1)
+    parser.add_argument("--error-budget", type=int, default=5)
     args = parser.parse_args()
+    if args.error_budget < 1:
+        parser.error("Error budget must be positive")
     if args.request_interval < 0:
         parser.error("Request interval must be non-negative")
     report = asyncio.run(assess(args))

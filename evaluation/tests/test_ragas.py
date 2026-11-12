@@ -111,6 +111,26 @@ class NativeRagasTests(unittest.IsolatedAsyncioTestCase):
         self.assertEqual(report["summary"]["faithfulness"]["skipped"], 1)
         self.assertEqual(report["summary"]["scope_adherence"]["mean"], 5)
 
+    async def test_checkpoint_and_error_budget_preserve_unassessed_cases(self):
+        checkpoints = []
+        samples = [
+            dict(id=str(i), question="FSW?", response="Answer", contexts=["Evidence"])
+            for i in range(3)
+        ]
+        report = await answer_scores(
+            samples,
+            JudgeStub(),
+            EmbeddingStub(),
+            on_progress=lambda rows: checkpoints.append(len(rows)),
+            error_budget=1,
+        )
+        self.assertEqual(checkpoints, [1])
+        self.assertFalse(report["complete"])
+        self.assertEqual(len(report["results"]), 3)
+        self.assertEqual(
+            report["results"][1]["skipped"]["faithfulness"], "assessment_aborted_after_errors"
+        )
+
     def test_page_identifiers_are_validated(self):
         self.assertEqual(page_id("data/a.pdf", 2), "a.pdf#page=2")
         for value in [0, -1, True, "2"]:
