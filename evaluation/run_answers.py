@@ -38,6 +38,22 @@ class RequestPacer:
                 pass
 
 
+def make_judge(client, model):
+    from instructor import Mode, from_groq
+    from ragas.llms import InstructorLLM
+
+    options = dict(temperature=0, max_completion_tokens=4096)
+    if model.startswith("openai/gpt-oss-"):
+        options.update(reasoning_effort="low", include_reasoning=False)
+    # RAGAS 0.4.3's generic Groq factory incorrectly expects client.messages.
+    # Use the supported Instructor Groq client and public RAGAS wrapper directly.
+    llm = InstructorLLM(
+        client=from_groq(client, mode=Mode.JSON), model=model, provider="groq", **options
+    )
+    llm.model_args.pop("max_tokens", None)
+    return llm
+
+
 async def assess(args):
     if not os.environ.get("GROQ_API_KEY"):
         return dict(
@@ -49,7 +65,6 @@ async def assess(args):
         )
     import httpx
     from groq import AsyncGroq
-    from ragas.llms import llm_factory
     from ragas.embeddings.huggingface_provider import HuggingFaceEmbeddings
 
     payload = json.loads(args.samples.read_text())
@@ -61,10 +76,7 @@ async def assess(args):
         event_hooks={"request": [pacer.request], "response": [pacer.response]}
     ) as transport:
         async with AsyncGroq(http_client=transport, timeout=60, max_retries=1) as client:
-            options = dict(temperature=0, max_completion_tokens=4096)
-            if args.judge_model.startswith("openai/gpt-oss-"):
-                options.update(reasoning_effort="low", include_reasoning=False)
-            llm = llm_factory(args.judge_model, provider="groq", client=client, **options)
+            llm = make_judge(client, args.judge_model)
             embeddings = HuggingFaceEmbeddings(model=args.embedding_model, device="cpu")
             report = await answer_scores(samples, llm, embeddings)
     report.update(

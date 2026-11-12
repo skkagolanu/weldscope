@@ -120,3 +120,41 @@ class NativeRagasTests(unittest.IsolatedAsyncioTestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class GroqTransportContract(unittest.IsolatedAsyncioTestCase):
+    async def test_native_wrapper_uses_one_token_limit_and_structured_json(self):
+        import httpx
+        from groq import AsyncGroq
+        from pydantic import BaseModel
+        from evaluation.run_answers import make_judge
+
+        class Reply(BaseModel):
+            answer: str
+
+        def handle(request):
+            body = json.loads(request.content)
+            self.assertIn("max_completion_tokens", body)
+            self.assertNotIn("max_tokens", body)
+            return httpx.Response(
+                200,
+                json={
+                    "id": "contract-test",
+                    "created": 0,
+                    "model": "openai/gpt-oss-120b",
+                    "object": "chat.completion",
+                    "choices": [
+                        {
+                            "index": 0,
+                            "finish_reason": "stop",
+                            "message": {"role": "assistant", "content": '{"answer":"fixture"}'},
+                        }
+                    ],
+                },
+            )
+
+        async with httpx.AsyncClient(transport=httpx.MockTransport(handle)) as transport:
+            async with AsyncGroq(api_key="local-test-placeholder", http_client=transport) as client:
+                llm = make_judge(client, "openai/gpt-oss-120b")
+                reply = await llm.agenerate("Return the contract fixture", Reply)
+                self.assertEqual(reply.answer, "fixture")
