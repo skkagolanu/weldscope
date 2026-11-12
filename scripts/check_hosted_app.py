@@ -48,6 +48,16 @@ def main():
                 expect(app.locator('[data-testid="stChatMessage"]').last).to_contain_text(
                     "Hi! I'm WeldScope", timeout=30000
                 )
+                expect(app.get_by_text("Local reply · Total", exact=False).last).to_be_visible(
+                    timeout=10000
+                )
+                chat_input.fill(
+                    "I am on a ship that was friction stir welded and we might sink soon."
+                )
+                chat_input.press("Enter")
+                expect(app.locator('[data-testid="stChatMessage"]').last).to_contain_text(
+                    "I can't assess a real vessel's condition", timeout=10000
+                )
             print(
                 "Healthy: rendered chat"
                 + ("" if args.startup_only else " and local greeting")

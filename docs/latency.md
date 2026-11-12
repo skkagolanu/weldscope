@@ -44,4 +44,8 @@ The script submits real requests to the deployed app. Research questions consume
 
 ## Post-deployment results
 
-Pending verification of this update on the hosted app. Do not read the local refusal timing as a browser measurement or call a three-query sample a p95 benchmark.
+The updated app was also exercised in a real **local Streamlit browser**: the ship scenario completed in **880.8 ms**, with first visible text at 878.7 ms and a backend pipeline caption of 0 ms (rounded). This is a local-browser result, not a hosted speedup percentage.
+
+A public probe after pushing `a2b2684` still showed the old Search/Rerank/Total caption and a 167-word model-generated research answer to the scenario. Those results are explicitly excluded from the optimized comparison: the hosted process had not visibly applied the new behavior. An owner-side Streamlit reboot was requested to obtain valid hosted after measurements.
+
+Local verification: **148 tests passed, 97.18% package coverage**, a successful browser greeting/scope check, and a warning-free docs build. The final public after comparison remains pending rollout. Do not call these few queries a p95 benchmark or promise a two-second SLA.
