@@ -44,6 +44,7 @@ def run(dataset_path, output, gate=None):
         store, documents = VectorStoreBuilder(config).load_vectorstore(
             str(index), corpus_directory=str(ROOT / "data")
         )
+        raw_count = len(store.get(include=[])["ids"])
         sources = sorted({doc.metadata["source"] for doc in documents})
         retriever = HybridRetriever(store, documents, config, allowed_sources=sources)
         reranker = Reranker(config)

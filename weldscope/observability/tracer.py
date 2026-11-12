@@ -37,9 +37,8 @@ class RAGTracer:
             @wraps(func)
             def wrapper(*args, **kwargs):
                 # SDK decorates a generator as a context manager; exercised by the real-span integration test.
-                with self.client.start_as_current_observation(
-                    name=name, metadata=metadata
-                ):  # pylint: disable=not-context-manager
+                # pylint: disable-next=not-context-manager
+                with self.client.start_as_current_observation(name=name, metadata=metadata):
                     return func(*args, **kwargs)
 
             return wrapper
