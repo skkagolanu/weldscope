@@ -1,5 +1,7 @@
 # Hosting status and deployment
 
+**13 November source update:** `quality-v3` removes HF runtime dependencies and model downloads, retains Groq generation, and loads a rebuilt current-PDF index. Hosted verification of this specific revision is recorded in [latest maintenance](maintenance-2026-11-13.md); older observations below do not establish its deployment. Remove any old `EMBEDDING_MODEL`, `RERANKER_MODEL`, or `VECTORSTORE_PATH` overrides to use the bundled defaults.
+
 Public URL: https://weldscope.streamlit.app/
 
 Source: https://github.com/skkagolanu/weldscope
@@ -17,7 +19,7 @@ The updated source uses Groq directly for generation. Greetings and app/source e
 1. In Community Cloud, verify the source is `skkagolanu/weldscope`, branch `main`, entrypoint `app.py`.
 2. Use **Python 3.12**. If the existing deployment uses another Python version, Streamlit requires deleting and redeploying it to change the interpreter. Preserve its settings first, and reuse `weldscope` as the subdomain.
 3. Add the root-level Groq settings from the [README](https://github.com/skkagolanu/weldscope#configure-groq-generation) in the app's Secrets settings. Add the key privately; no credentials need to be shared in chat.
-4. Wait for dependency installation and model downloads. Confirm the WeldScope header and a local reply to “hi.” Then submit a welding question, inspect its source passages, ask a follow-up, and clear the conversation.
+4. Wait for dependency installation and bundled asset loading. Confirm the WeldScope header and a local reply to “hi.” Then submit a welding question, inspect its source passages, ask a follow-up, and clear the conversation.
 5. If the deployment remains on the old heading, inspect its source coordinates and build logs before calling it updated. A successful GitHub workflow alone is not proof of the deployed version.
 
 [Streamlit app settings](https://docs.streamlit.io/deploy/streamlit-community-cloud/manage-your-app/app-settings) · [Changing Python](https://docs.streamlit.io/deploy/streamlit-community-cloud/manage-your-app/upgrade-python) · [Changing GitHub coordinates](https://docs.streamlit.io/deploy/streamlit-community-cloud/manage-your-app/rename-your-app)

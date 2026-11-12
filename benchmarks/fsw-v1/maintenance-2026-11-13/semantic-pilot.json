@@ -1,0 +1,117 @@
+{
+  "framework": "ragas",
+  "ragas_version": "0.4.3",
+  "complete": true,
+  "metric_classes": {
+    "faithfulness": "Faithfulness",
+    "answer_relevancy": "AnswerRelevancy",
+    "context_precision": "ContextPrecision",
+    "context_recall": "ContextRecall",
+    "factual_correctness": "FactualCorrectness",
+    "scope_adherence": "DomainSpecificRubrics"
+  },
+  "summary": {
+    "faithfulness": {
+      "mean": 1.0,
+      "scored": 1,
+      "failed": 0,
+      "skipped": 0
+    },
+    "answer_relevancy": {
+      "mean": 0.3151584544676042,
+      "scored": 1,
+      "failed": 0,
+      "skipped": 0
+    },
+    "context_precision": {
+      "mean": 0.0,
+      "scored": 1,
+      "failed": 0,
+      "skipped": 0
+    },
+    "context_recall": {
+      "mean": 0.0,
+      "scored": 1,
+      "failed": 0,
+      "skipped": 0
+    },
+    "factual_correctness": {
+      "mean": 0.67,
+      "scored": 1,
+      "failed": 0,
+      "skipped": 0
+    },
+    "scope_adherence": {
+      "mean": 5.0,
+      "scored": 1,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "id": "FSW-001",
+      "scores": {
+        "faithfulness": 1.0,
+        "answer_relevancy": 0.3151584544676042,
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "factual_correctness": 0.67,
+        "scope_adherence": 5.0
+      },
+      "errors": {},
+      "skipped": {}
+    }
+  ],
+  "assessment_fingerprint": "70cb332bcb54fb8f7f9c7f6e98da2148a2b33d10edd5314dcdc12b5ae35959bd",
+  "binding": {
+    "samples_sha256": "2cfb7f43ac68e240f53ac767abb3f532060ec16c26394a750ee0e66465340ce7",
+    "selected_ids": [
+      "FSW-001"
+    ],
+    "judge_model": "openai/gpt-oss-120b",
+    "embedding_model": "sentence-transformers/paraphrase-MiniLM-L3-v2",
+    "metrics_runner_sha256": "a9ad651de0f3c9fdc21a36cf669d42c8877e5901e47bf471dca71269d4ec9179",
+    "dependency_lock_sha256": "920ab4a8831d7ecb27f6460109bb1d40d7a5e12457ce50c1da5036a7c58bbb30",
+    "judge_options": {
+      "temperature": 0,
+      "max_completion_tokens": 4096,
+      "max_retries": 2,
+      "reasoning_effort": "low",
+      "include_reasoning": false
+    }
+  },
+  "resumed_from_sha256": null,
+  "judge_model": "openai/gpt-oss-120b",
+  "embedding_model": "sentence-transformers/paraphrase-MiniLM-L3-v2",
+  "samples_sha256": "2cfb7f43ac68e240f53ac767abb3f532060ec16c26394a750ee0e66465340ce7",
+  "provider_requests": 14,
+  "reported_token_usage": {
+    "prompt_tokens": 14978,
+    "completion_tokens": 2292,
+    "total_tokens": 17270
+  },
+  "responses_reporting_usage": 14,
+  "provider_status_counts": {
+    "200": 14
+  },
+  "observed_token_limit_per_minute": 8000,
+  "request_interval_seconds": 2.1,
+  "error_budget": 5,
+  "token_budget": 35000,
+  "tokens_per_minute": 6000,
+  "deferred_reason": null,
+  "dataset_sha256": "4d73bc960bdd57cdbe7cdb6ba2a925f2d889bd9a386d7092acc58b0d030a01d4",
+  "generation_model": "openai/gpt-oss-20b",
+  "lock_sha256": "920ab4a8831d7ecb27f6460109bb1d40d7a5e12457ce50c1da5036a7c58bbb30",
+  "runner_sha256": "47c7905e60d02da64826df04d1b438d38641af6ad1ceed9b779a4d5a85dacf6a",
+  "metrics_runner_sha256": "a9ad651de0f3c9fdc21a36cf669d42c8877e5901e47bf471dca71269d4ec9179",
+  "python": "3.12.16",
+  "source_commit": "a96ef479857a72de315d344b6b61b7e47df7623a",
+  "selected_cases": 1,
+  "selected_categories": [
+    "unknown"
+  ],
+  "coverage_policy": "Report descriptive quality only from complete eligible metrics; a pilot is integration evidence, not a population quality estimate.",
+  "limitations": "Model-judged, provisional development labels; no human calibration or universal factual guarantee. Native scope rubric uses 1-5; other metrics retain their native scales."
+}

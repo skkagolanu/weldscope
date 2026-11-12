@@ -28,14 +28,16 @@ def page_id(source, page):
     return f"{Path(source).name}#page={page}"
 
 
-async def retrieval_scores(rankings_path, dataset_path, thresholds=None):
+async def retrieval_scores(rankings_path, dataset_path, thresholds=None, *, variants=None):
     rankings = json.loads(Path(rankings_path).read_text())
     dataset = json.loads(Path(dataset_path).read_text())
     dataset_hash = digest(dataset_path)
     if rankings["provenance"]["dataset_sha256"] != dataset_hash:
         raise ValueError("Ranking and dataset fingerprints differ")
     cases = {case["id"]: case for case in dataset["cases"] if case["answerable"]}
-    expected_variants = {"bm25", "vector", "hybrid", "reranked"}
+    expected_variants = (
+        set(variants) if variants is not None else {"bm25", "vector", "hybrid", "reranked"}
+    )
     seen = set()
     rows = []
     metrics = {

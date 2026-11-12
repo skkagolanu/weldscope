@@ -41,10 +41,10 @@ def run(dataset_path, output):
             raise ValueError(f"Corpus changed: {name}; review and version the dataset")
     config = RAGConfig(_env_file=None, groq_api_key=None, langfuse_enabled=False)
     start = perf_counter()
-    # Chroma may migrate its SQLite file on open: never mutate the shipped index.
+    # Isolate benchmarking artifacts from the shipped read-only index.
     with tempfile.TemporaryDirectory(prefix="weldscope-benchmark-") as temporary:
         index = Path(temporary) / "index"
-        shutil.copytree(ROOT / "vectorstore", index)
+        shutil.copytree(ROOT / "indexes/fsw-v2", index)
         store, documents = VectorStoreBuilder(config).load_vectorstore(
             str(index), corpus_directory=str(ROOT / "data")
         )
@@ -110,7 +110,7 @@ def run(dataset_path, output):
     provenance = dict(
         timestamp=datetime.now(timezone.utc).isoformat(),
         dataset_sha256=digest(dataset_path),
-        index_sha256=digest(ROOT / "vectorstore/chroma.sqlite3"),
+        index_sha256=digest(ROOT / "indexes/fsw-v2/vectors.npy"),
         python=platform.python_version(),
         platform=platform.platform(),
         cpu=platform.processor(),
@@ -128,7 +128,7 @@ def run(dataset_path, output):
         models={"embedding": config.embedding_model, "reranker": config.reranker_model},
         packages={
             name: importlib.metadata.version(name)
-            for name in ["bm25s", "chromadb", "sentence-transformers", "torch", "langchain-chroma"]
+            for name in ["bm25s", "numpy", "onnxruntime", "onnxruntime-extensions"]
         },
     )
     report = dict(

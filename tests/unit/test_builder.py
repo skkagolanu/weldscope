@@ -30,7 +30,7 @@ def test_builder_initialization(builder, config):
 
 @patch("weldscope.ingestion.builder.LocalEmbeddings")
 def test_get_embeddings_initializes_model(mock_embeddings, builder):
-    """Get embeddings initializes HuggingFace model."""
+    """Get embeddings initializes the bundled ONNX model."""
     mock_embeddings.return_value = Mock()
 
     embeddings = builder._get_embeddings()
@@ -104,7 +104,7 @@ def test_split_documents_uses_config_params(mock_splitter, builder):
     )
 
 
-@patch("weldscope.ingestion.builder.Chroma")
+@patch("weldscope.ingestion.builder.NumpyVectorStore")
 @patch("weldscope.ingestion.builder.LocalEmbeddings")
 def test_build_vectorstore_creates_chroma(mock_embeddings, mock_chroma, builder):
     """Build vectorstore creates Chroma instance."""
@@ -118,7 +118,7 @@ def test_build_vectorstore_creates_chroma(mock_embeddings, mock_chroma, builder)
     mock_chroma.from_documents.assert_called_once()
 
 
-@patch("weldscope.ingestion.builder.Chroma")
+@patch("weldscope.ingestion.builder.NumpyVectorStore")
 @patch("weldscope.ingestion.builder.LocalEmbeddings")
 def test_build_vectorstore_uses_persist_directory(mock_embeddings, mock_chroma, builder):
     """Build vectorstore uses specified persist directory."""
@@ -132,7 +132,7 @@ def test_build_vectorstore_uses_persist_directory(mock_embeddings, mock_chroma, 
     assert call_args[1]["persist_directory"] == "/custom/path"
 
 
-@patch("weldscope.ingestion.builder.Chroma")
+@patch("weldscope.ingestion.builder.NumpyVectorStore")
 @patch("weldscope.ingestion.builder.LocalEmbeddings")
 def test_load_vectorstore_raises_on_missing_directory(
     mock_embeddings, mock_chroma, builder, tmp_path
@@ -145,7 +145,7 @@ def test_load_vectorstore_raises_on_missing_directory(
         builder.load_vectorstore(str(nonexistent))
 
 
-@patch("weldscope.ingestion.builder.Chroma")
+@patch("weldscope.ingestion.builder.NumpyVectorStore")
 @patch("weldscope.ingestion.builder.LocalEmbeddings")
 def test_load_vectorstore_loads_existing(mock_embeddings, mock_chroma, builder, tmp_path):
     """Load vectorstore loads existing Chroma instance."""
@@ -210,7 +210,7 @@ def test_native_pdf_loading_and_stable_chunk_ids(builder, tmp_path):
     docs = [Document(page_content="Evidence", metadata={"source": "paper.pdf", "page": 0})]
     with (
         patch("weldscope.ingestion.builder.LocalEmbeddings"),
-        patch("weldscope.ingestion.builder.Chroma") as chroma,
+        patch("weldscope.ingestion.builder.NumpyVectorStore") as chroma,
     ):
         builder.build_vectorstore(docs)
         first = chroma.from_documents.call_args.kwargs["ids"]

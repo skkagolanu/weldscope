@@ -35,7 +35,8 @@ COPY README.md ./README.md
 
 # Create directories for data
 COPY data/ ./data/
-COPY vectorstore/ ./vectorstore/
+COPY indexes/ ./indexes/
+COPY models/ ./models/
 
 # Expose Streamlit port
 EXPOSE 8501

@@ -34,7 +34,7 @@ def mock_vectorstore_data():
     }
 
 
-@patch("weldscope.ingestion.builder.Chroma")
+@patch("weldscope.ingestion.builder.NumpyVectorStore")
 @patch("weldscope.ingestion.builder.LocalEmbeddings")
 def test_full_pipeline_integration(
     mock_embeddings, mock_chroma, config, mock_vectorstore_data, tmp_path
@@ -92,7 +92,7 @@ def test_full_pipeline_integration(
         assert response.metadata["reranked_count"] == 1
 
 
-@patch("weldscope.ingestion.builder.Chroma")
+@patch("weldscope.ingestion.builder.NumpyVectorStore")
 @patch("weldscope.ingestion.builder.LocalEmbeddings")
 def test_pipeline_handles_empty_results(mock_embeddings, mock_chroma, config, tmp_path):
     """Test pipeline handles empty retrieval results gracefully."""
@@ -111,7 +111,7 @@ def test_pipeline_handles_empty_results(mock_embeddings, mock_chroma, config, tm
     assert len(documents) == 0
 
 
-@patch("weldscope.ingestion.builder.Chroma")
+@patch("weldscope.ingestion.builder.NumpyVectorStore")
 @patch("weldscope.ingestion.builder.LocalEmbeddings")
 def test_pipeline_with_streaming(
     mock_embeddings, mock_chroma, config, mock_vectorstore_data, tmp_path

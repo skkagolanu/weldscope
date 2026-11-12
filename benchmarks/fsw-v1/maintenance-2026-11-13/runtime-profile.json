@@ -1,0 +1,3692 @@
+{
+  "provenance": {
+    "dataset_sha256": "4d73bc960bdd57cdbe7cdb6ba2a925f2d889bd9a386d7092acc58b0d030a01d4",
+    "index_sha256": "dcf21f263aaf4e8cc969685d0daf62bed12c97df9661fc5e4810a1c8f8f7de34"
+  },
+  "results": [
+    {
+      "id": "FSW-001",
+      "variant": "production5to3",
+      "category": "exact",
+      "latency_ms": 207.70715099934023,
+      "timings": {
+        "reranker_load_ms": 103.2428480029921,
+        "reranker_compute_ms": 95.84825600177282
+      },
+      "retrieved": [
+        {
+          "id": "10cb4366572a93c6de7e624dfac9a90c0bb440cca49cd607934ac0e702dbc0d9",
+          "source": "fsw_doc2.pdf",
+          "page": 146
+        },
+        {
+          "id": "e7d04598569fe6dd2241338ded2884c2279caedbcb225b1f7a3a2ea1bbe3c5ae",
+          "source": "fsw_doc2.pdf",
+          "page": 31
+        },
+        {
+          "id": "0c41e91600b701c91f410ca003a5c845a17a5a055fbfea8698fad6a7e9c1fa4e",
+          "source": "fsw_doc4.pdf",
+          "page": 187
+        }
+      ]
+    },
+    {
+      "id": "FSW-001",
+      "variant": "pool20to3",
+      "category": "exact",
+      "latency_ms": 459.9889360033558,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 454.242041996622
+      },
+      "retrieved": [
+        {
+          "id": "aa33e6b12eec3bbf157369d8f0af34af6584c5d7159bd29676658962ae95126a",
+          "source": "fsw_doc3.pdf",
+          "page": 1
+        },
+        {
+          "id": "7672a3232fc85ae4e877862c0afffe07fbe47266fb717386dfe243b12afadf40",
+          "source": "fsw_doc2.pdf",
+          "page": 11
+        },
+        {
+          "id": "10cb4366572a93c6de7e624dfac9a90c0bb440cca49cd607934ac0e702dbc0d9",
+          "source": "fsw_doc2.pdf",
+          "page": 146
+        }
+      ]
+    },
+    {
+      "id": "FSW-001",
+      "variant": "pool20to5",
+      "category": "exact",
+      "latency_ms": 460.8425600017654,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 451.0107780006365
+      },
+      "retrieved": [
+        {
+          "id": "aa33e6b12eec3bbf157369d8f0af34af6584c5d7159bd29676658962ae95126a",
+          "source": "fsw_doc3.pdf",
+          "page": 1
+        },
+        {
+          "id": "7672a3232fc85ae4e877862c0afffe07fbe47266fb717386dfe243b12afadf40",
+          "source": "fsw_doc2.pdf",
+          "page": 11
+        },
+        {
+          "id": "10cb4366572a93c6de7e624dfac9a90c0bb440cca49cd607934ac0e702dbc0d9",
+          "source": "fsw_doc2.pdf",
+          "page": 146
+        },
+        {
+          "id": "e7d04598569fe6dd2241338ded2884c2279caedbcb225b1f7a3a2ea1bbe3c5ae",
+          "source": "fsw_doc2.pdf",
+          "page": 31
+        },
+        {
+          "id": "af784ed226881d9b1180e651e5a223a61b80a51c9335ef78cac1a0055a038e24",
+          "source": "fsw_doc3.pdf",
+          "page": 4
+        }
+      ]
+    },
+    {
+      "id": "FSW-002",
+      "variant": "production5to3",
+      "category": "exact",
+      "latency_ms": 143.59656799933873,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 137.81297500099754
+      },
+      "retrieved": [
+        {
+          "id": "e7d04598569fe6dd2241338ded2884c2279caedbcb225b1f7a3a2ea1bbe3c5ae",
+          "source": "fsw_doc2.pdf",
+          "page": 31
+        },
+        {
+          "id": "10cb4366572a93c6de7e624dfac9a90c0bb440cca49cd607934ac0e702dbc0d9",
+          "source": "fsw_doc2.pdf",
+          "page": 146
+        },
+        {
+          "id": "4d0f013e9f565e591977be9aeb1227d3c403b2d09412cd7c23151c400d23e0e6",
+          "source": "fsw_doc4.pdf",
+          "page": 279
+        }
+      ]
+    },
+    {
+      "id": "FSW-002",
+      "variant": "pool20to3",
+      "category": "exact",
+      "latency_ms": 450.66013500036206,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 444.3694299989147
+      },
+      "retrieved": [
+        {
+          "id": "e7d04598569fe6dd2241338ded2884c2279caedbcb225b1f7a3a2ea1bbe3c5ae",
+          "source": "fsw_doc2.pdf",
+          "page": 31
+        },
+        {
+          "id": "10cb4366572a93c6de7e624dfac9a90c0bb440cca49cd607934ac0e702dbc0d9",
+          "source": "fsw_doc2.pdf",
+          "page": 146
+        },
+        {
+          "id": "2ff9eae774b0aa924ae3fc41aadc8ef09132515dc52bb7a87eccefd3f2662b3a",
+          "source": "fsw_doc2.pdf",
+          "page": 56
+        }
+      ]
+    },
+    {
+      "id": "FSW-002",
+      "variant": "pool20to5",
+      "category": "exact",
+      "latency_ms": 450.6808540027123,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 443.49107799644116
+      },
+      "retrieved": [
+        {
+          "id": "e7d04598569fe6dd2241338ded2884c2279caedbcb225b1f7a3a2ea1bbe3c5ae",
+          "source": "fsw_doc2.pdf",
+          "page": 31
+        },
+        {
+          "id": "10cb4366572a93c6de7e624dfac9a90c0bb440cca49cd607934ac0e702dbc0d9",
+          "source": "fsw_doc2.pdf",
+          "page": 146
+        },
+        {
+          "id": "2ff9eae774b0aa924ae3fc41aadc8ef09132515dc52bb7a87eccefd3f2662b3a",
+          "source": "fsw_doc2.pdf",
+          "page": 56
+        },
+        {
+          "id": "e6c6d3f597bef3d5c86bb1510976ebef8983b5f0ea486d878f674e71e02e3446",
+          "source": "fsw_doc4.pdf",
+          "page": 280
+        },
+        {
+          "id": "0c41e91600b701c91f410ca003a5c845a17a5a055fbfea8698fad6a7e9c1fa4e",
+          "source": "fsw_doc4.pdf",
+          "page": 187
+        }
+      ]
+    },
+    {
+      "id": "FSW-003",
+      "variant": "production5to3",
+      "category": "exact",
+      "latency_ms": 136.3737189967651,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 132.61211699864361
+      },
+      "retrieved": [
+        {
+          "id": "e5116e5d45df056fb2732214224e41aa7d8ffde7556580c89c8f557d66098700",
+          "source": "fsw_doc4.pdf",
+          "page": 75
+        },
+        {
+          "id": "7672a3232fc85ae4e877862c0afffe07fbe47266fb717386dfe243b12afadf40",
+          "source": "fsw_doc2.pdf",
+          "page": 11
+        },
+        {
+          "id": "2aac65bfc3631e874a03bb560fe991de36f23b82374b005c774df5ef398d0ed7",
+          "source": "fsw_doc2.pdf",
+          "page": 151
+        }
+      ]
+    },
+    {
+      "id": "FSW-003",
+      "variant": "pool20to3",
+      "category": "exact",
+      "latency_ms": 458.3912849993794,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 451.06786899850704
+      },
+      "retrieved": [
+        {
+          "id": "e5116e5d45df056fb2732214224e41aa7d8ffde7556580c89c8f557d66098700",
+          "source": "fsw_doc4.pdf",
+          "page": 75
+        },
+        {
+          "id": "7672a3232fc85ae4e877862c0afffe07fbe47266fb717386dfe243b12afadf40",
+          "source": "fsw_doc2.pdf",
+          "page": 11
+        },
+        {
+          "id": "9e03aa13d1145dc6cce7abf47ca846f4c64812919950b8255c241220df873236",
+          "source": "fsw_doc2.pdf",
+          "page": 33
+        }
+      ]
+    },
+    {
+      "id": "FSW-003",
+      "variant": "pool20to5",
+      "category": "exact",
+      "latency_ms": 456.95439399423776,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 453.0253190023359
+      },
+      "retrieved": [
+        {
+          "id": "e5116e5d45df056fb2732214224e41aa7d8ffde7556580c89c8f557d66098700",
+          "source": "fsw_doc4.pdf",
+          "page": 75
+        },
+        {
+          "id": "7672a3232fc85ae4e877862c0afffe07fbe47266fb717386dfe243b12afadf40",
+          "source": "fsw_doc2.pdf",
+          "page": 11
+        },
+        {
+          "id": "9e03aa13d1145dc6cce7abf47ca846f4c64812919950b8255c241220df873236",
+          "source": "fsw_doc2.pdf",
+          "page": 33
+        },
+        {
+          "id": "2aac65bfc3631e874a03bb560fe991de36f23b82374b005c774df5ef398d0ed7",
+          "source": "fsw_doc2.pdf",
+          "page": 151
+        },
+        {
+          "id": "b28762fa3e7fc6cc27f6c9861d410a645d6d7224cac7eb19deb0be6670f9181e",
+          "source": "fsw_doc4.pdf",
+          "page": 120
+        }
+      ]
+    },
+    {
+      "id": "FSW-004",
+      "variant": "production5to3",
+      "category": "exact",
+      "latency_ms": 156.10176399786724,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 147.35355700395303
+      },
+      "retrieved": [
+        {
+          "id": "a32b8b654a1e8f51024822802893702c4e9a00a81598b3fa10f3262e1d63c481",
+          "source": "fsw_doc2.pdf",
+          "page": 58
+        },
+        {
+          "id": "8cd7ce42a4c78ab0ac24a8438e94c114b37b55fa7c7d51675f16864dc22ed216",
+          "source": "fsw_doc2.pdf",
+          "page": 11
+        },
+        {
+          "id": "2da6193b48206445f52abbe3860395a74cf12cbca9e8e88e1f1c2b123e1b68f9",
+          "source": "fsw_doc2.pdf",
+          "page": 14
+        }
+      ]
+    },
+    {
+      "id": "FSW-004",
+      "variant": "pool20to3",
+      "category": "exact",
+      "latency_ms": 470.67829099978553,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 465.69542399811326
+      },
+      "retrieved": [
+        {
+          "id": "a32b8b654a1e8f51024822802893702c4e9a00a81598b3fa10f3262e1d63c481",
+          "source": "fsw_doc2.pdf",
+          "page": 58
+        },
+        {
+          "id": "8cd7ce42a4c78ab0ac24a8438e94c114b37b55fa7c7d51675f16864dc22ed216",
+          "source": "fsw_doc2.pdf",
+          "page": 11
+        },
+        {
+          "id": "2da6193b48206445f52abbe3860395a74cf12cbca9e8e88e1f1c2b123e1b68f9",
+          "source": "fsw_doc2.pdf",
+          "page": 14
+        }
+      ]
+    },
+    {
+      "id": "FSW-004",
+      "variant": "pool20to5",
+      "category": "exact",
+      "latency_ms": 470.6704349955544,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 464.1406610026024
+      },
+      "retrieved": [
+        {
+          "id": "a32b8b654a1e8f51024822802893702c4e9a00a81598b3fa10f3262e1d63c481",
+          "source": "fsw_doc2.pdf",
+          "page": 58
+        },
+        {
+          "id": "8cd7ce42a4c78ab0ac24a8438e94c114b37b55fa7c7d51675f16864dc22ed216",
+          "source": "fsw_doc2.pdf",
+          "page": 11
+        },
+        {
+          "id": "2da6193b48206445f52abbe3860395a74cf12cbca9e8e88e1f1c2b123e1b68f9",
+          "source": "fsw_doc2.pdf",
+          "page": 14
+        },
+        {
+          "id": "d940cdf8dd926c1927b2dd9a704ec576bbf519346cf1996eb92d0a00e7967ef3",
+          "source": "fsw_doc4.pdf",
+          "page": 72
+        },
+        {
+          "id": "09b02a4719506c595a0c110355a8093c2249c883783c1ad01e1bf67a8ee87907",
+          "source": "fsw_doc2.pdf",
+          "page": 63
+        }
+      ]
+    },
+    {
+      "id": "FSW-005",
+      "variant": "production5to3",
+      "category": "exact",
+      "latency_ms": 145.31290000013541,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 136.2894980047713
+      },
+      "retrieved": [
+        {
+          "id": "a32b8b654a1e8f51024822802893702c4e9a00a81598b3fa10f3262e1d63c481",
+          "source": "fsw_doc2.pdf",
+          "page": 58
+        },
+        {
+          "id": "8cd7ce42a4c78ab0ac24a8438e94c114b37b55fa7c7d51675f16864dc22ed216",
+          "source": "fsw_doc2.pdf",
+          "page": 11
+        },
+        {
+          "id": "2da6193b48206445f52abbe3860395a74cf12cbca9e8e88e1f1c2b123e1b68f9",
+          "source": "fsw_doc2.pdf",
+          "page": 14
+        }
+      ]
+    },
+    {
+      "id": "FSW-005",
+      "variant": "pool20to3",
+      "category": "exact",
+      "latency_ms": 499.56872800248675,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 493.54835000121966
+      },
+      "retrieved": [
+        {
+          "id": "a32b8b654a1e8f51024822802893702c4e9a00a81598b3fa10f3262e1d63c481",
+          "source": "fsw_doc2.pdf",
+          "page": 58
+        },
+        {
+          "id": "8cd7ce42a4c78ab0ac24a8438e94c114b37b55fa7c7d51675f16864dc22ed216",
+          "source": "fsw_doc2.pdf",
+          "page": 11
+        },
+        {
+          "id": "2da6193b48206445f52abbe3860395a74cf12cbca9e8e88e1f1c2b123e1b68f9",
+          "source": "fsw_doc2.pdf",
+          "page": 14
+        }
+      ]
+    },
+    {
+      "id": "FSW-005",
+      "variant": "pool20to5",
+      "category": "exact",
+      "latency_ms": 503.1125079985941,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 497.3345060061547
+      },
+      "retrieved": [
+        {
+          "id": "a32b8b654a1e8f51024822802893702c4e9a00a81598b3fa10f3262e1d63c481",
+          "source": "fsw_doc2.pdf",
+          "page": 58
+        },
+        {
+          "id": "8cd7ce42a4c78ab0ac24a8438e94c114b37b55fa7c7d51675f16864dc22ed216",
+          "source": "fsw_doc2.pdf",
+          "page": 11
+        },
+        {
+          "id": "2da6193b48206445f52abbe3860395a74cf12cbca9e8e88e1f1c2b123e1b68f9",
+          "source": "fsw_doc2.pdf",
+          "page": 14
+        },
+        {
+          "id": "f86de0ee8397d1b392d8b969b4bc15822b8d811fc52d06c9f877fe7a5178248c",
+          "source": "fsw_doc2.pdf",
+          "page": 159
+        },
+        {
+          "id": "d940cdf8dd926c1927b2dd9a704ec576bbf519346cf1996eb92d0a00e7967ef3",
+          "source": "fsw_doc4.pdf",
+          "page": 72
+        }
+      ]
+    },
+    {
+      "id": "FSW-006",
+      "variant": "production5to3",
+      "category": "exact",
+      "latency_ms": 138.22251099918503,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 131.64816099742893
+      },
+      "retrieved": [
+        {
+          "id": "4a882bf5af50a9aa00fe1ac29235014f866912696440fd5a5143f088c146f524",
+          "source": "fsw_doc2.pdf",
+          "page": 57
+        },
+        {
+          "id": "030750e61db958214ba3482ea337d8d023e7930e57c7b06597600582c031c1e9",
+          "source": "fsw_doc2.pdf",
+          "page": 55
+        },
+        {
+          "id": "09b02a4719506c595a0c110355a8093c2249c883783c1ad01e1bf67a8ee87907",
+          "source": "fsw_doc2.pdf",
+          "page": 63
+        }
+      ]
+    },
+    {
+      "id": "FSW-006",
+      "variant": "pool20to3",
+      "category": "exact",
+      "latency_ms": 460.3966360009508,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 456.76276499580126
+      },
+      "retrieved": [
+        {
+          "id": "4a882bf5af50a9aa00fe1ac29235014f866912696440fd5a5143f088c146f524",
+          "source": "fsw_doc2.pdf",
+          "page": 57
+        },
+        {
+          "id": "32e43aa3c56780af84c566455a39fad35581e0bc8e491d9982bc855a6098b25b",
+          "source": "fsw_doc2.pdf",
+          "page": 12
+        },
+        {
+          "id": "63191c49204e0d62527d00bfec7ea04eddb77e132aaeac370b1436403b950eb1",
+          "source": "fsw_doc2.pdf",
+          "page": 58
+        }
+      ]
+    },
+    {
+      "id": "FSW-006",
+      "variant": "pool20to5",
+      "category": "exact",
+      "latency_ms": 471.8355369986966,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 466.55862799525494
+      },
+      "retrieved": [
+        {
+          "id": "4a882bf5af50a9aa00fe1ac29235014f866912696440fd5a5143f088c146f524",
+          "source": "fsw_doc2.pdf",
+          "page": 57
+        },
+        {
+          "id": "32e43aa3c56780af84c566455a39fad35581e0bc8e491d9982bc855a6098b25b",
+          "source": "fsw_doc2.pdf",
+          "page": 12
+        },
+        {
+          "id": "63191c49204e0d62527d00bfec7ea04eddb77e132aaeac370b1436403b950eb1",
+          "source": "fsw_doc2.pdf",
+          "page": 58
+        },
+        {
+          "id": "030750e61db958214ba3482ea337d8d023e7930e57c7b06597600582c031c1e9",
+          "source": "fsw_doc2.pdf",
+          "page": 55
+        },
+        {
+          "id": "f3b4bb4db7801ab9bddb9003af8aae16e07353856bcd4e0fd7d8cc5024e27ed6",
+          "source": "fsw_doc2.pdf",
+          "page": 133
+        }
+      ]
+    },
+    {
+      "id": "FSW-007",
+      "variant": "production5to3",
+      "category": "exact",
+      "latency_ms": 125.08257800072897,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 119.87628100177972
+      },
+      "retrieved": [
+        {
+          "id": "22fb73ebe2e9cbe2bac33aaf54b8a574b92be4f81965a0255faad40dcc0f4c35",
+          "source": "fsw_doc3.pdf",
+          "page": 1
+        },
+        {
+          "id": "a02fc56e46415c1c2cb309bf2c76bcfefb7286cd712284a524989a3901867939",
+          "source": "fsw_doc2.pdf",
+          "page": 11
+        },
+        {
+          "id": "6c3df0cd38868f8c1a6c1a994b0d8156bfc21726a51d7c48a5d18dff440ee612",
+          "source": "fsw_doc4.pdf",
+          "page": 84
+        }
+      ]
+    },
+    {
+      "id": "FSW-007",
+      "variant": "pool20to3",
+      "category": "exact",
+      "latency_ms": 436.3248509980622,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 432.7091739978641
+      },
+      "retrieved": [
+        {
+          "id": "34a14346da382f498fb6b7b8802960e858c41025a69f8c68ec581d558b4d0364",
+          "source": "fsw_doc2.pdf",
+          "page": 14
+        },
+        {
+          "id": "22fb73ebe2e9cbe2bac33aaf54b8a574b92be4f81965a0255faad40dcc0f4c35",
+          "source": "fsw_doc3.pdf",
+          "page": 1
+        },
+        {
+          "id": "95af4083e7cd72cbf873d19becf2f8ab5762d2d672deb3fd23d53b7ef3f86a49",
+          "source": "fsw_doc2.pdf",
+          "page": 131
+        }
+      ]
+    },
+    {
+      "id": "FSW-007",
+      "variant": "pool20to5",
+      "category": "exact",
+      "latency_ms": 437.9219910042593,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 430.6491089955671
+      },
+      "retrieved": [
+        {
+          "id": "34a14346da382f498fb6b7b8802960e858c41025a69f8c68ec581d558b4d0364",
+          "source": "fsw_doc2.pdf",
+          "page": 14
+        },
+        {
+          "id": "22fb73ebe2e9cbe2bac33aaf54b8a574b92be4f81965a0255faad40dcc0f4c35",
+          "source": "fsw_doc3.pdf",
+          "page": 1
+        },
+        {
+          "id": "95af4083e7cd72cbf873d19becf2f8ab5762d2d672deb3fd23d53b7ef3f86a49",
+          "source": "fsw_doc2.pdf",
+          "page": 131
+        },
+        {
+          "id": "a02fc56e46415c1c2cb309bf2c76bcfefb7286cd712284a524989a3901867939",
+          "source": "fsw_doc2.pdf",
+          "page": 11
+        },
+        {
+          "id": "6c3df0cd38868f8c1a6c1a994b0d8156bfc21726a51d7c48a5d18dff440ee612",
+          "source": "fsw_doc4.pdf",
+          "page": 84
+        }
+      ]
+    },
+    {
+      "id": "FSW-008",
+      "variant": "production5to3",
+      "category": "exact",
+      "latency_ms": 172.63766300311545,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 166.56405699905008
+      },
+      "retrieved": [
+        {
+          "id": "98561b3cf2544cdce77463703c40e935bafcb82e663e73a8409ebc3f7e122e43",
+          "source": "fsw_doc1.pdf",
+          "page": 7
+        },
+        {
+          "id": "7c2a1612a01fbbc60cbb1b7d8483afd310580d27e81c949d8a54d34819cb47b8",
+          "source": "fsw_doc2.pdf",
+          "page": 166
+        },
+        {
+          "id": "c362a5f49f4a7140f8fc5aedc964920b2c8d6bcfeb4ecdd64f3281f5a239bd07",
+          "source": "fsw_doc2.pdf",
+          "page": 166
+        }
+      ]
+    },
+    {
+      "id": "FSW-008",
+      "variant": "pool20to3",
+      "category": "exact",
+      "latency_ms": 535.6597530044382,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 529.1675890039187
+      },
+      "retrieved": [
+        {
+          "id": "2a22e3bd67ccfd04cb5a5826aec12b851e1f4fdb4c17caa52fd7ee34397d4ad5",
+          "source": "fsw_doc1.pdf",
+          "page": 1
+        },
+        {
+          "id": "98561b3cf2544cdce77463703c40e935bafcb82e663e73a8409ebc3f7e122e43",
+          "source": "fsw_doc1.pdf",
+          "page": 7
+        },
+        {
+          "id": "84b2fc39249becc82b232d699c2106c01d4190eab00f26e64fafaaa613800587",
+          "source": "fsw_doc2.pdf",
+          "page": 109
+        }
+      ]
+    },
+    {
+      "id": "FSW-008",
+      "variant": "pool20to5",
+      "category": "exact",
+      "latency_ms": 536.4807520018076,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 530.7352419986273
+      },
+      "retrieved": [
+        {
+          "id": "2a22e3bd67ccfd04cb5a5826aec12b851e1f4fdb4c17caa52fd7ee34397d4ad5",
+          "source": "fsw_doc1.pdf",
+          "page": 1
+        },
+        {
+          "id": "98561b3cf2544cdce77463703c40e935bafcb82e663e73a8409ebc3f7e122e43",
+          "source": "fsw_doc1.pdf",
+          "page": 7
+        },
+        {
+          "id": "84b2fc39249becc82b232d699c2106c01d4190eab00f26e64fafaaa613800587",
+          "source": "fsw_doc2.pdf",
+          "page": 109
+        },
+        {
+          "id": "1c65882d8e61c30f646d939ec0cc5a5ac3dbb79ea77ad3ab0006b6b0903236da",
+          "source": "fsw_doc1.pdf",
+          "page": 7
+        },
+        {
+          "id": "7c2a1612a01fbbc60cbb1b7d8483afd310580d27e81c949d8a54d34819cb47b8",
+          "source": "fsw_doc2.pdf",
+          "page": 166
+        }
+      ]
+    },
+    {
+      "id": "FSW-009",
+      "variant": "production5to3",
+      "category": "exact",
+      "latency_ms": 160.9040350012947,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 154.5485379974707
+      },
+      "retrieved": [
+        {
+          "id": "6a86b7c2990c5727358bf124c7d0f0d341fe8fbe21ce248d791894d450ba8f71",
+          "source": "fsw_doc1.pdf",
+          "page": 9
+        },
+        {
+          "id": "0470490059ef17896db24a4095f1a3ae7b03de57d223d3621fdeb851c8461248",
+          "source": "fsw_doc2.pdf",
+          "page": 93
+        },
+        {
+          "id": "822e0624b366087fdd7d8cc2d4caba86b946618018f7577c1ae49b65aa5fbea5",
+          "source": "fsw_doc2.pdf",
+          "page": 39
+        }
+      ]
+    },
+    {
+      "id": "FSW-009",
+      "variant": "pool20to3",
+      "category": "exact",
+      "latency_ms": 532.0769319951069,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 525.0823840033263
+      },
+      "retrieved": [
+        {
+          "id": "0982307bbf87d14e021dd72579b680e20454d24b4b8364caff2f2e848567b52a",
+          "source": "fsw_doc1.pdf",
+          "page": 9
+        },
+        {
+          "id": "6a86b7c2990c5727358bf124c7d0f0d341fe8fbe21ce248d791894d450ba8f71",
+          "source": "fsw_doc1.pdf",
+          "page": 9
+        },
+        {
+          "id": "78ede5486cd4cd748d718c6ab76110fc2c2931746a8d397bf4569c08c7a825e8",
+          "source": "fsw_doc2.pdf",
+          "page": 94
+        }
+      ]
+    },
+    {
+      "id": "FSW-009",
+      "variant": "pool20to5",
+      "category": "exact",
+      "latency_ms": 532.3139460015227,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 525.9254569973564
+      },
+      "retrieved": [
+        {
+          "id": "0982307bbf87d14e021dd72579b680e20454d24b4b8364caff2f2e848567b52a",
+          "source": "fsw_doc1.pdf",
+          "page": 9
+        },
+        {
+          "id": "6a86b7c2990c5727358bf124c7d0f0d341fe8fbe21ce248d791894d450ba8f71",
+          "source": "fsw_doc1.pdf",
+          "page": 9
+        },
+        {
+          "id": "78ede5486cd4cd748d718c6ab76110fc2c2931746a8d397bf4569c08c7a825e8",
+          "source": "fsw_doc2.pdf",
+          "page": 94
+        },
+        {
+          "id": "0470490059ef17896db24a4095f1a3ae7b03de57d223d3621fdeb851c8461248",
+          "source": "fsw_doc2.pdf",
+          "page": 93
+        },
+        {
+          "id": "fdfbbc5f82115b6a2c6a4ac1dfeb6b95ca462c79dd8b12027e8689b5935c2120",
+          "source": "fsw_doc5.pdf",
+          "page": 11
+        }
+      ]
+    },
+    {
+      "id": "FSW-010",
+      "variant": "production5to3",
+      "category": "exact",
+      "latency_ms": 145.7286570002907,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 139.30924899614183
+      },
+      "retrieved": [
+        {
+          "id": "65e68fcbfd85a2d1130b999eed51855e7352d702bc4c180ccff21f91db130f62",
+          "source": "fsw_doc3.pdf",
+          "page": 8
+        },
+        {
+          "id": "1c65882d8e61c30f646d939ec0cc5a5ac3dbb79ea77ad3ab0006b6b0903236da",
+          "source": "fsw_doc1.pdf",
+          "page": 7
+        },
+        {
+          "id": "ebdb712283d47f401a64be552028dfffadc617403af2ba36908f8d82589c6c3f",
+          "source": "fsw_doc2.pdf",
+          "page": 78
+        }
+      ]
+    },
+    {
+      "id": "FSW-010",
+      "variant": "pool20to3",
+      "category": "exact",
+      "latency_ms": 565.4055799968773,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 557.4778369991691
+      },
+      "retrieved": [
+        {
+          "id": "65e68fcbfd85a2d1130b999eed51855e7352d702bc4c180ccff21f91db130f62",
+          "source": "fsw_doc3.pdf",
+          "page": 8
+        },
+        {
+          "id": "43c82660a6f83c40ce13081d04bd71e2ac7af1c1bec2104aa7228c9d65301b6d",
+          "source": "fsw_doc2.pdf",
+          "page": 168
+        },
+        {
+          "id": "1c65882d8e61c30f646d939ec0cc5a5ac3dbb79ea77ad3ab0006b6b0903236da",
+          "source": "fsw_doc1.pdf",
+          "page": 7
+        }
+      ]
+    },
+    {
+      "id": "FSW-010",
+      "variant": "pool20to5",
+      "category": "exact",
+      "latency_ms": 567.7338550012792,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 559.9807100006728
+      },
+      "retrieved": [
+        {
+          "id": "65e68fcbfd85a2d1130b999eed51855e7352d702bc4c180ccff21f91db130f62",
+          "source": "fsw_doc3.pdf",
+          "page": 8
+        },
+        {
+          "id": "43c82660a6f83c40ce13081d04bd71e2ac7af1c1bec2104aa7228c9d65301b6d",
+          "source": "fsw_doc2.pdf",
+          "page": 168
+        },
+        {
+          "id": "1c65882d8e61c30f646d939ec0cc5a5ac3dbb79ea77ad3ab0006b6b0903236da",
+          "source": "fsw_doc1.pdf",
+          "page": 7
+        },
+        {
+          "id": "ebdb712283d47f401a64be552028dfffadc617403af2ba36908f8d82589c6c3f",
+          "source": "fsw_doc2.pdf",
+          "page": 78
+        },
+        {
+          "id": "a327d99f7dc8038ab0ecfb5fb0facfcd8b6ab996438bbc3ef53c92706d12dfa5",
+          "source": "fsw_doc2.pdf",
+          "page": 167
+        }
+      ]
+    },
+    {
+      "id": "FSW-011",
+      "variant": "production5to3",
+      "category": "paraphrase",
+      "latency_ms": 133.41712200053735,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 123.49971799994819
+      },
+      "retrieved": [
+        {
+          "id": "8110dfab5c61af83f8c70dc21a6236a0fed7726033588383e73ab8946b566b06",
+          "source": "fsw_doc2.pdf",
+          "page": 11
+        },
+        {
+          "id": "4e2ad08a696c4d548d9e7358023f7eaa1e6596c442829767e685c51056f9cc42",
+          "source": "fsw_doc2.pdf",
+          "page": 121
+        },
+        {
+          "id": "11b3b4de85141ce9b7cd3c674a32dda113c30f90022b83ed12b7a276293981fb",
+          "source": "fsw_doc2.pdf",
+          "page": 121
+        }
+      ]
+    },
+    {
+      "id": "FSW-011",
+      "variant": "pool20to3",
+      "category": "paraphrase",
+      "latency_ms": 480.4683979964466,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 473.46154599654255
+      },
+      "retrieved": [
+        {
+          "id": "8110dfab5c61af83f8c70dc21a6236a0fed7726033588383e73ab8946b566b06",
+          "source": "fsw_doc2.pdf",
+          "page": 11
+        },
+        {
+          "id": "64e76ecc2cdee3a4e05d95e31985d2c0e70522a8672f77d6bef5982c83d7fbac",
+          "source": "fsw_doc2.pdf",
+          "page": 14
+        },
+        {
+          "id": "34f924d8a0209f5bc808f8928559f1033a5b5e298a320510e2de056c0974f3d9",
+          "source": "fsw_doc2.pdf",
+          "page": 16
+        }
+      ]
+    },
+    {
+      "id": "FSW-011",
+      "variant": "pool20to5",
+      "category": "paraphrase",
+      "latency_ms": 489.3594709938043,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 481.65907499787863
+      },
+      "retrieved": [
+        {
+          "id": "8110dfab5c61af83f8c70dc21a6236a0fed7726033588383e73ab8946b566b06",
+          "source": "fsw_doc2.pdf",
+          "page": 11
+        },
+        {
+          "id": "64e76ecc2cdee3a4e05d95e31985d2c0e70522a8672f77d6bef5982c83d7fbac",
+          "source": "fsw_doc2.pdf",
+          "page": 14
+        },
+        {
+          "id": "34f924d8a0209f5bc808f8928559f1033a5b5e298a320510e2de056c0974f3d9",
+          "source": "fsw_doc2.pdf",
+          "page": 16
+        },
+        {
+          "id": "4e2ad08a696c4d548d9e7358023f7eaa1e6596c442829767e685c51056f9cc42",
+          "source": "fsw_doc2.pdf",
+          "page": 121
+        },
+        {
+          "id": "2ece3c3da7edcaa421086a7cd0a2b56fe755f4c218ab931414db9e91b8d46e6b",
+          "source": "fsw_doc2.pdf",
+          "page": 19
+        }
+      ]
+    },
+    {
+      "id": "FSW-012",
+      "variant": "production5to3",
+      "category": "paraphrase",
+      "latency_ms": 154.1439730062848,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 148.1265109978267
+      },
+      "retrieved": [
+        {
+          "id": "11b3b4de85141ce9b7cd3c674a32dda113c30f90022b83ed12b7a276293981fb",
+          "source": "fsw_doc2.pdf",
+          "page": 121
+        },
+        {
+          "id": "4e2ad08a696c4d548d9e7358023f7eaa1e6596c442829767e685c51056f9cc42",
+          "source": "fsw_doc2.pdf",
+          "page": 121
+        },
+        {
+          "id": "56a7bcfd6874a6d7b29bc464a1cfaba7ff32bcd6933b8ba2ac3af5f2ad57b2b8",
+          "source": "fsw_doc2.pdf",
+          "page": 30
+        }
+      ]
+    },
+    {
+      "id": "FSW-012",
+      "variant": "pool20to3",
+      "category": "paraphrase",
+      "latency_ms": 508.93887400161475,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 501.97905999812065
+      },
+      "retrieved": [
+        {
+          "id": "34a14346da382f498fb6b7b8802960e858c41025a69f8c68ec581d558b4d0364",
+          "source": "fsw_doc2.pdf",
+          "page": 14
+        },
+        {
+          "id": "11b3b4de85141ce9b7cd3c674a32dda113c30f90022b83ed12b7a276293981fb",
+          "source": "fsw_doc2.pdf",
+          "page": 121
+        },
+        {
+          "id": "ac4ee5c911a5e7356d90d1f711ec463a33ea2ee45b22625bc9940a6e81bc682e",
+          "source": "fsw_doc2.pdf",
+          "page": 19
+        }
+      ]
+    },
+    {
+      "id": "FSW-012",
+      "variant": "pool20to5",
+      "category": "paraphrase",
+      "latency_ms": 517.2171929953038,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 510.2016559976619
+      },
+      "retrieved": [
+        {
+          "id": "34a14346da382f498fb6b7b8802960e858c41025a69f8c68ec581d558b4d0364",
+          "source": "fsw_doc2.pdf",
+          "page": 14
+        },
+        {
+          "id": "11b3b4de85141ce9b7cd3c674a32dda113c30f90022b83ed12b7a276293981fb",
+          "source": "fsw_doc2.pdf",
+          "page": 121
+        },
+        {
+          "id": "ac4ee5c911a5e7356d90d1f711ec463a33ea2ee45b22625bc9940a6e81bc682e",
+          "source": "fsw_doc2.pdf",
+          "page": 19
+        },
+        {
+          "id": "4e2ad08a696c4d548d9e7358023f7eaa1e6596c442829767e685c51056f9cc42",
+          "source": "fsw_doc2.pdf",
+          "page": 121
+        },
+        {
+          "id": "ab3d9f82414c9c6d0c2716070d6de6b23f4c5014dd83cc6b3f5206d1fef84622",
+          "source": "fsw_doc2.pdf",
+          "page": 51
+        }
+      ]
+    },
+    {
+      "id": "FSW-013",
+      "variant": "production5to3",
+      "category": "paraphrase",
+      "latency_ms": 158.77826399810147,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 148.74908000638243
+      },
+      "retrieved": [
+        {
+          "id": "1978d0c3c57a1f0328e46a98981b694b84e1b49a4a1570c7a7608f0faaddc111",
+          "source": "fsw_doc2.pdf",
+          "page": 53
+        },
+        {
+          "id": "7ff271410786c682f94ccee5901f4c8c674132a97fcf3d38ad89971f692de061",
+          "source": "fsw_doc1.pdf",
+          "page": 8
+        },
+        {
+          "id": "c1fe271545690c86a15809a7ba9983028c224a077236f3f08dabf519b3385e90",
+          "source": "fsw_doc2.pdf",
+          "page": 143
+        }
+      ]
+    },
+    {
+      "id": "FSW-013",
+      "variant": "pool20to3",
+      "category": "paraphrase",
+      "latency_ms": 510.14210299763363,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 502.126314000634
+      },
+      "retrieved": [
+        {
+          "id": "1978d0c3c57a1f0328e46a98981b694b84e1b49a4a1570c7a7608f0faaddc111",
+          "source": "fsw_doc2.pdf",
+          "page": 53
+        },
+        {
+          "id": "5681cc0d67c55d209f971a1099cbf896a9eaa6d51a82dde60ef6eceb1f7fe975",
+          "source": "fsw_doc2.pdf",
+          "page": 145
+        },
+        {
+          "id": "7ff271410786c682f94ccee5901f4c8c674132a97fcf3d38ad89971f692de061",
+          "source": "fsw_doc1.pdf",
+          "page": 8
+        }
+      ]
+    },
+    {
+      "id": "FSW-013",
+      "variant": "pool20to5",
+      "category": "paraphrase",
+      "latency_ms": 511.64588499523234,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 501.60257600509794
+      },
+      "retrieved": [
+        {
+          "id": "1978d0c3c57a1f0328e46a98981b694b84e1b49a4a1570c7a7608f0faaddc111",
+          "source": "fsw_doc2.pdf",
+          "page": 53
+        },
+        {
+          "id": "5681cc0d67c55d209f971a1099cbf896a9eaa6d51a82dde60ef6eceb1f7fe975",
+          "source": "fsw_doc2.pdf",
+          "page": 145
+        },
+        {
+          "id": "7ff271410786c682f94ccee5901f4c8c674132a97fcf3d38ad89971f692de061",
+          "source": "fsw_doc1.pdf",
+          "page": 8
+        },
+        {
+          "id": "da86111e295692cc35cfdfb2d70b6dd2fa9a839b0f2108746dc6d54fd205ba1d",
+          "source": "fsw_doc2.pdf",
+          "page": 149
+        },
+        {
+          "id": "c568e08510e6222a221492dcdd9566c14efcf18673a4170602aea0f86bafc4f8",
+          "source": "fsw_doc2.pdf",
+          "page": 89
+        }
+      ]
+    },
+    {
+      "id": "FSW-014",
+      "variant": "production5to3",
+      "category": "paraphrase",
+      "latency_ms": 160.42907600058243,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 152.70046799560077
+      },
+      "retrieved": [
+        {
+          "id": "a03f5358fd3596efa6ff47ca80c340c19dc42ad2179791a757369dd8eed07430",
+          "source": "fsw_doc2.pdf",
+          "page": 168
+        },
+        {
+          "id": "2f8ac77482553204235002393ffb50f9aaa06bc90e5c55ec4e66fd0cba071a6e",
+          "source": "fsw_doc2.pdf",
+          "page": 17
+        },
+        {
+          "id": "ede02e0aa3aa0caf79fb4755da4de71f32bc20af009c472e1561a914aa1d657d",
+          "source": "fsw_doc2.pdf",
+          "page": 75
+        }
+      ]
+    },
+    {
+      "id": "FSW-014",
+      "variant": "pool20to3",
+      "category": "paraphrase",
+      "latency_ms": 531.7077559957397,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 526.1008870002115
+      },
+      "retrieved": [
+        {
+          "id": "fe306766c088359bb463a181a3d7698fe79753f6f701d10b7e909a2ec3f6f7b1",
+          "source": "fsw_doc2.pdf",
+          "page": 113
+        },
+        {
+          "id": "01d9e7ac711981cf3d2220ef7e7b03e9109ef38119ec3c170a64d2b1c2248e3a",
+          "source": "fsw_doc4.pdf",
+          "page": 114
+        },
+        {
+          "id": "efeb357c9def928fd9cbdf2cfcae29a029bc059697f22f24282de310be6f7dde",
+          "source": "fsw_doc4.pdf",
+          "page": 90
+        }
+      ]
+    },
+    {
+      "id": "FSW-014",
+      "variant": "pool20to5",
+      "category": "paraphrase",
+      "latency_ms": 525.8213190027163,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 519.6591450003325
+      },
+      "retrieved": [
+        {
+          "id": "fe306766c088359bb463a181a3d7698fe79753f6f701d10b7e909a2ec3f6f7b1",
+          "source": "fsw_doc2.pdf",
+          "page": 113
+        },
+        {
+          "id": "01d9e7ac711981cf3d2220ef7e7b03e9109ef38119ec3c170a64d2b1c2248e3a",
+          "source": "fsw_doc4.pdf",
+          "page": 114
+        },
+        {
+          "id": "efeb357c9def928fd9cbdf2cfcae29a029bc059697f22f24282de310be6f7dde",
+          "source": "fsw_doc4.pdf",
+          "page": 90
+        },
+        {
+          "id": "7dbe8eae889d5b5b7e6847c8501d13f12d6588d47c44f968aaf7c0972ea9e232",
+          "source": "fsw_doc2.pdf",
+          "page": 34
+        },
+        {
+          "id": "8cc70063ad8393743806d86881213917a959779e85e9e3e734adffbd57784b78",
+          "source": "fsw_doc4.pdf",
+          "page": 187
+        }
+      ]
+    },
+    {
+      "id": "FSW-015",
+      "variant": "production5to3",
+      "category": "paraphrase",
+      "latency_ms": 116.63579100422794,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 110.37307899823645
+      },
+      "retrieved": [
+        {
+          "id": "3a92c7ec9e0441a6400c31e6872c325422efe13513c7975a5615a3650a19c9c8",
+          "source": "fsw_doc2.pdf",
+          "page": 13
+        },
+        {
+          "id": "2973015d2a388c37fd7b408850645cf3c4ba22d08c69905050b421f78b4a8484",
+          "source": "fsw_doc1.pdf",
+          "page": 5
+        },
+        {
+          "id": "45a87e522afc4b40d375e788cc6ec12322b1316b2f4e6f44fb10c70183ab3095",
+          "source": "fsw_doc4.pdf",
+          "page": 304
+        }
+      ]
+    },
+    {
+      "id": "FSW-015",
+      "variant": "pool20to3",
+      "category": "paraphrase",
+      "latency_ms": 431.02884600375546,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 425.89183899690397
+      },
+      "retrieved": [
+        {
+          "id": "3a92c7ec9e0441a6400c31e6872c325422efe13513c7975a5615a3650a19c9c8",
+          "source": "fsw_doc2.pdf",
+          "page": 13
+        },
+        {
+          "id": "ef636475ac6e90084fedcb28e002f45bb58e61c4cee05448dceb11eb45f2e9bf",
+          "source": "fsw_doc2.pdf",
+          "page": 34
+        },
+        {
+          "id": "84adda81127da47554c84cc25262489f675e347e845fc3a1da3b9a43c0995dd0",
+          "source": "fsw_doc3.pdf",
+          "page": 11
+        }
+      ]
+    },
+    {
+      "id": "FSW-015",
+      "variant": "pool20to5",
+      "category": "paraphrase",
+      "latency_ms": 439.85938500554767,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 432.62629699893296
+      },
+      "retrieved": [
+        {
+          "id": "3a92c7ec9e0441a6400c31e6872c325422efe13513c7975a5615a3650a19c9c8",
+          "source": "fsw_doc2.pdf",
+          "page": 13
+        },
+        {
+          "id": "ef636475ac6e90084fedcb28e002f45bb58e61c4cee05448dceb11eb45f2e9bf",
+          "source": "fsw_doc2.pdf",
+          "page": 34
+        },
+        {
+          "id": "84adda81127da47554c84cc25262489f675e347e845fc3a1da3b9a43c0995dd0",
+          "source": "fsw_doc3.pdf",
+          "page": 11
+        },
+        {
+          "id": "2973015d2a388c37fd7b408850645cf3c4ba22d08c69905050b421f78b4a8484",
+          "source": "fsw_doc1.pdf",
+          "page": 5
+        },
+        {
+          "id": "34e5ce0bbb2b190895455f21405a3a91280704b9436b409cf10fd8b3bf8494d0",
+          "source": "fsw_doc3.pdf",
+          "page": 9
+        }
+      ]
+    },
+    {
+      "id": "FSW-016",
+      "variant": "production5to3",
+      "category": "paraphrase",
+      "latency_ms": 153.40943800401874,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 146.42862599430373
+      },
+      "retrieved": [
+        {
+          "id": "9e03aa13d1145dc6cce7abf47ca846f4c64812919950b8255c241220df873236",
+          "source": "fsw_doc2.pdf",
+          "page": 33
+        },
+        {
+          "id": "7672a3232fc85ae4e877862c0afffe07fbe47266fb717386dfe243b12afadf40",
+          "source": "fsw_doc2.pdf",
+          "page": 11
+        },
+        {
+          "id": "8110dfab5c61af83f8c70dc21a6236a0fed7726033588383e73ab8946b566b06",
+          "source": "fsw_doc2.pdf",
+          "page": 11
+        }
+      ]
+    },
+    {
+      "id": "FSW-016",
+      "variant": "pool20to3",
+      "category": "paraphrase",
+      "latency_ms": 498.8880529999733,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 492.47462800121866
+      },
+      "retrieved": [
+        {
+          "id": "0a2ec7d8c1b4efe4b8825f66864db03fcd8730072b78de26f878dabf31e82cdb",
+          "source": "fsw_doc2.pdf",
+          "page": 27
+        },
+        {
+          "id": "b1a93160ed4257c3595b4412bd88843dece3132ff2c1c43181a46da26c39f173",
+          "source": "fsw_doc2.pdf",
+          "page": 27
+        },
+        {
+          "id": "9e03aa13d1145dc6cce7abf47ca846f4c64812919950b8255c241220df873236",
+          "source": "fsw_doc2.pdf",
+          "page": 33
+        }
+      ]
+    },
+    {
+      "id": "FSW-016",
+      "variant": "pool20to5",
+      "category": "paraphrase",
+      "latency_ms": 499.0177469953778,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 494.8568449981394
+      },
+      "retrieved": [
+        {
+          "id": "0a2ec7d8c1b4efe4b8825f66864db03fcd8730072b78de26f878dabf31e82cdb",
+          "source": "fsw_doc2.pdf",
+          "page": 27
+        },
+        {
+          "id": "b1a93160ed4257c3595b4412bd88843dece3132ff2c1c43181a46da26c39f173",
+          "source": "fsw_doc2.pdf",
+          "page": 27
+        },
+        {
+          "id": "9e03aa13d1145dc6cce7abf47ca846f4c64812919950b8255c241220df873236",
+          "source": "fsw_doc2.pdf",
+          "page": 33
+        },
+        {
+          "id": "7672a3232fc85ae4e877862c0afffe07fbe47266fb717386dfe243b12afadf40",
+          "source": "fsw_doc2.pdf",
+          "page": 11
+        },
+        {
+          "id": "1074c60dd5ef54e98942bb06a00b5fdc5b225a02f34f7b98538ead6b33d5e8aa",
+          "source": "fsw_doc2.pdf",
+          "page": 54
+        }
+      ]
+    },
+    {
+      "id": "FSW-017",
+      "variant": "production5to3",
+      "category": "paraphrase",
+      "latency_ms": 141.25845600210596,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 135.25720500183525
+      },
+      "retrieved": [
+        {
+          "id": "e8744ff6ea51f136f1ee0e932ca3b427910f3f8dd4640d78cb83117f47b279e3",
+          "source": "fsw_doc4.pdf",
+          "page": 109
+        },
+        {
+          "id": "a36fa0d55bf57ff4668f7fb208ef1c214af679336694349cd6958c0791251342",
+          "source": "fsw_doc4.pdf",
+          "page": 27
+        },
+        {
+          "id": "8cce5b293a1209b38d7a8ea8c65fb32f67ab3ce1248c26a0829377d0a499b2cf",
+          "source": "fsw_doc4.pdf",
+          "page": 101
+        }
+      ]
+    },
+    {
+      "id": "FSW-017",
+      "variant": "pool20to3",
+      "category": "paraphrase",
+      "latency_ms": 493.61336400033906,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 484.1538819964626
+      },
+      "retrieved": [
+        {
+          "id": "e8744ff6ea51f136f1ee0e932ca3b427910f3f8dd4640d78cb83117f47b279e3",
+          "source": "fsw_doc4.pdf",
+          "page": 109
+        },
+        {
+          "id": "01d9e7ac711981cf3d2220ef7e7b03e9109ef38119ec3c170a64d2b1c2248e3a",
+          "source": "fsw_doc4.pdf",
+          "page": 114
+        },
+        {
+          "id": "a36fa0d55bf57ff4668f7fb208ef1c214af679336694349cd6958c0791251342",
+          "source": "fsw_doc4.pdf",
+          "page": 27
+        }
+      ]
+    },
+    {
+      "id": "FSW-017",
+      "variant": "pool20to5",
+      "category": "paraphrase",
+      "latency_ms": 491.01373700250406,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 484.6543429957819
+      },
+      "retrieved": [
+        {
+          "id": "e8744ff6ea51f136f1ee0e932ca3b427910f3f8dd4640d78cb83117f47b279e3",
+          "source": "fsw_doc4.pdf",
+          "page": 109
+        },
+        {
+          "id": "01d9e7ac711981cf3d2220ef7e7b03e9109ef38119ec3c170a64d2b1c2248e3a",
+          "source": "fsw_doc4.pdf",
+          "page": 114
+        },
+        {
+          "id": "a36fa0d55bf57ff4668f7fb208ef1c214af679336694349cd6958c0791251342",
+          "source": "fsw_doc4.pdf",
+          "page": 27
+        },
+        {
+          "id": "8cce5b293a1209b38d7a8ea8c65fb32f67ab3ce1248c26a0829377d0a499b2cf",
+          "source": "fsw_doc4.pdf",
+          "page": 101
+        },
+        {
+          "id": "97e8d9a6aa5d490db4b7afe962e86ea04c99e60b352867f72f1a0a82d9b43a28",
+          "source": "fsw_doc4.pdf",
+          "page": 111
+        }
+      ]
+    },
+    {
+      "id": "FSW-018",
+      "variant": "production5to3",
+      "category": "paraphrase",
+      "latency_ms": 141.72313699964434,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 136.22475099691655
+      },
+      "retrieved": [
+        {
+          "id": "9a56a3d9db4dee2e2875af8c231321d5db166b71af347a8dcb73296b62bce486",
+          "source": "fsw_doc5.pdf",
+          "page": 2
+        },
+        {
+          "id": "ae042a2347a6d17e4e72af41b82ebfb124b0847fc2d17a0527411f7f9c58a123",
+          "source": "fsw_doc2.pdf",
+          "page": 97
+        },
+        {
+          "id": "0470490059ef17896db24a4095f1a3ae7b03de57d223d3621fdeb851c8461248",
+          "source": "fsw_doc2.pdf",
+          "page": 93
+        }
+      ]
+    },
+    {
+      "id": "FSW-018",
+      "variant": "pool20to3",
+      "category": "paraphrase",
+      "latency_ms": 462.8190639996319,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 456.90226199803874
+      },
+      "retrieved": [
+        {
+          "id": "9a56a3d9db4dee2e2875af8c231321d5db166b71af347a8dcb73296b62bce486",
+          "source": "fsw_doc5.pdf",
+          "page": 2
+        },
+        {
+          "id": "ae042a2347a6d17e4e72af41b82ebfb124b0847fc2d17a0527411f7f9c58a123",
+          "source": "fsw_doc2.pdf",
+          "page": 97
+        },
+        {
+          "id": "4d6929adc2aa9d7344ad3d01d82452279f6041adf1a4806f3027f8c93e302d17",
+          "source": "fsw_doc2.pdf",
+          "page": 37
+        }
+      ]
+    },
+    {
+      "id": "FSW-018",
+      "variant": "pool20to5",
+      "category": "paraphrase",
+      "latency_ms": 471.94311500061303,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 465.5445870012045
+      },
+      "retrieved": [
+        {
+          "id": "9a56a3d9db4dee2e2875af8c231321d5db166b71af347a8dcb73296b62bce486",
+          "source": "fsw_doc5.pdf",
+          "page": 2
+        },
+        {
+          "id": "ae042a2347a6d17e4e72af41b82ebfb124b0847fc2d17a0527411f7f9c58a123",
+          "source": "fsw_doc2.pdf",
+          "page": 97
+        },
+        {
+          "id": "4d6929adc2aa9d7344ad3d01d82452279f6041adf1a4806f3027f8c93e302d17",
+          "source": "fsw_doc2.pdf",
+          "page": 37
+        },
+        {
+          "id": "0470490059ef17896db24a4095f1a3ae7b03de57d223d3621fdeb851c8461248",
+          "source": "fsw_doc2.pdf",
+          "page": 93
+        },
+        {
+          "id": "653e5a6f960fbcb838d6110f0537b0497521671cb27e3d6f526c26f4579db65b",
+          "source": "fsw_doc2.pdf",
+          "page": 96
+        }
+      ]
+    },
+    {
+      "id": "FSW-019",
+      "variant": "production5to3",
+      "category": "paraphrase",
+      "latency_ms": 170.87654799979646,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 161.37054799764883
+      },
+      "retrieved": [
+        {
+          "id": "9a56a3d9db4dee2e2875af8c231321d5db166b71af347a8dcb73296b62bce486",
+          "source": "fsw_doc5.pdf",
+          "page": 2
+        },
+        {
+          "id": "bfce0233ecfb60b00a84233632fa81be35e4fa2c27cc005f8657f374e102b074",
+          "source": "fsw_doc4.pdf",
+          "page": 267
+        },
+        {
+          "id": "ad77918e94f4f4158d833967791648796ede43591b6776a8f8cb7a694aafb7bf",
+          "source": "fsw_doc5.pdf",
+          "page": 3
+        }
+      ]
+    },
+    {
+      "id": "FSW-019",
+      "variant": "pool20to3",
+      "category": "paraphrase",
+      "latency_ms": 525.9125419979682,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 516.0142160020769
+      },
+      "retrieved": [
+        {
+          "id": "9a56a3d9db4dee2e2875af8c231321d5db166b71af347a8dcb73296b62bce486",
+          "source": "fsw_doc5.pdf",
+          "page": 2
+        },
+        {
+          "id": "2ced246565fb86dbcafa11a0c4ef2362991620dc22cbc5c9c2c2fda836c1fda4",
+          "source": "fsw_doc5.pdf",
+          "page": 1
+        },
+        {
+          "id": "a327d99f7dc8038ab0ecfb5fb0facfcd8b6ab996438bbc3ef53c92706d12dfa5",
+          "source": "fsw_doc2.pdf",
+          "page": 167
+        }
+      ]
+    },
+    {
+      "id": "FSW-019",
+      "variant": "pool20to5",
+      "category": "paraphrase",
+      "latency_ms": 526.1454179999419,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 519.4575460045598
+      },
+      "retrieved": [
+        {
+          "id": "9a56a3d9db4dee2e2875af8c231321d5db166b71af347a8dcb73296b62bce486",
+          "source": "fsw_doc5.pdf",
+          "page": 2
+        },
+        {
+          "id": "2ced246565fb86dbcafa11a0c4ef2362991620dc22cbc5c9c2c2fda836c1fda4",
+          "source": "fsw_doc5.pdf",
+          "page": 1
+        },
+        {
+          "id": "a327d99f7dc8038ab0ecfb5fb0facfcd8b6ab996438bbc3ef53c92706d12dfa5",
+          "source": "fsw_doc2.pdf",
+          "page": 167
+        },
+        {
+          "id": "bfce0233ecfb60b00a84233632fa81be35e4fa2c27cc005f8657f374e102b074",
+          "source": "fsw_doc4.pdf",
+          "page": 267
+        },
+        {
+          "id": "ad77918e94f4f4158d833967791648796ede43591b6776a8f8cb7a694aafb7bf",
+          "source": "fsw_doc5.pdf",
+          "page": 3
+        }
+      ]
+    },
+    {
+      "id": "FSW-020",
+      "variant": "production5to3",
+      "category": "paraphrase",
+      "latency_ms": 154.98643700266257,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 145.63541999814333
+      },
+      "retrieved": [
+        {
+          "id": "438a8169159d6737dbec022b97d789af579d5180a1f067d0177f2a68398c813a",
+          "source": "fsw_doc2.pdf",
+          "page": 19
+        },
+        {
+          "id": "28f709e40eea627e3c711e237287d7bf4000654b679aa87f8b14e67147b02783",
+          "source": "fsw_doc2.pdf",
+          "page": 69
+        },
+        {
+          "id": "d02abe1002fd41dd295a165091987e52c9344e26ef92bd8d76cc59c1203fba67",
+          "source": "fsw_doc2.pdf",
+          "page": 20
+        }
+      ]
+    },
+    {
+      "id": "FSW-020",
+      "variant": "pool20to3",
+      "category": "paraphrase",
+      "latency_ms": 580.3332860014052,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 572.5187160060159
+      },
+      "retrieved": [
+        {
+          "id": "438a8169159d6737dbec022b97d789af579d5180a1f067d0177f2a68398c813a",
+          "source": "fsw_doc2.pdf",
+          "page": 19
+        },
+        {
+          "id": "222f48133cb3871e210a943d2634a3d9f00d5373953b6760113fc6e0e9b0f3ad",
+          "source": "fsw_doc2.pdf",
+          "page": 126
+        },
+        {
+          "id": "a4766d5beed19474cdc25a1355666487a6fd16d91fbfe60f54717009af1ca18b",
+          "source": "fsw_doc2.pdf",
+          "page": 49
+        }
+      ]
+    },
+    {
+      "id": "FSW-020",
+      "variant": "pool20to5",
+      "category": "paraphrase",
+      "latency_ms": 579.5638060008059,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 571.5992740006186
+      },
+      "retrieved": [
+        {
+          "id": "438a8169159d6737dbec022b97d789af579d5180a1f067d0177f2a68398c813a",
+          "source": "fsw_doc2.pdf",
+          "page": 19
+        },
+        {
+          "id": "222f48133cb3871e210a943d2634a3d9f00d5373953b6760113fc6e0e9b0f3ad",
+          "source": "fsw_doc2.pdf",
+          "page": 126
+        },
+        {
+          "id": "a4766d5beed19474cdc25a1355666487a6fd16d91fbfe60f54717009af1ca18b",
+          "source": "fsw_doc2.pdf",
+          "page": 49
+        },
+        {
+          "id": "aeafb3d731f186c0f19a2974ec74807f55e3e18f3bd959dde1e4a948e07ee002",
+          "source": "fsw_doc2.pdf",
+          "page": 17
+        },
+        {
+          "id": "34f924d8a0209f5bc808f8928559f1033a5b5e298a320510e2de056c0974f3d9",
+          "source": "fsw_doc2.pdf",
+          "page": 16
+        }
+      ]
+    },
+    {
+      "id": "FSW-021",
+      "variant": "production5to3",
+      "category": "synonym",
+      "latency_ms": 167.7263640012825,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 158.36830300395377
+      },
+      "retrieved": [
+        {
+          "id": "a952f3c25e233bd9bd7dd54b7d4088265035900bad4492addbdef1d72362725a",
+          "source": "fsw_doc2.pdf",
+          "page": 17
+        },
+        {
+          "id": "35b02cd7d2f387ef2121460c3035d943f0805dae0e9aa1500d78627e17577a34",
+          "source": "fsw_doc4.pdf",
+          "page": 275
+        },
+        {
+          "id": "0ec71fb90e27fdee37049ce2e443cf966674053504565670f08553f404cd0890",
+          "source": "fsw_doc2.pdf",
+          "page": 37
+        }
+      ]
+    },
+    {
+      "id": "FSW-021",
+      "variant": "pool20to3",
+      "category": "synonym",
+      "latency_ms": 540.6870549995801,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 534.9387590031256
+      },
+      "retrieved": [
+        {
+          "id": "a952f3c25e233bd9bd7dd54b7d4088265035900bad4492addbdef1d72362725a",
+          "source": "fsw_doc2.pdf",
+          "page": 17
+        },
+        {
+          "id": "2d1eb89d45fa5a87be93a546ecaf2b6617d1b2ad13865a93ac2b675c0e6ba5e9",
+          "source": "fsw_doc3.pdf",
+          "page": 2
+        },
+        {
+          "id": "cc3a25c64e18c3eb67031e6dea223c98687162f1fb03a07367e47b243599202d",
+          "source": "fsw_doc4.pdf",
+          "page": 87
+        }
+      ]
+    },
+    {
+      "id": "FSW-021",
+      "variant": "pool20to5",
+      "category": "synonym",
+      "latency_ms": 546.9458490042598,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 540.7318379948265
+      },
+      "retrieved": [
+        {
+          "id": "a952f3c25e233bd9bd7dd54b7d4088265035900bad4492addbdef1d72362725a",
+          "source": "fsw_doc2.pdf",
+          "page": 17
+        },
+        {
+          "id": "2d1eb89d45fa5a87be93a546ecaf2b6617d1b2ad13865a93ac2b675c0e6ba5e9",
+          "source": "fsw_doc3.pdf",
+          "page": 2
+        },
+        {
+          "id": "cc3a25c64e18c3eb67031e6dea223c98687162f1fb03a07367e47b243599202d",
+          "source": "fsw_doc4.pdf",
+          "page": 87
+        },
+        {
+          "id": "35b02cd7d2f387ef2121460c3035d943f0805dae0e9aa1500d78627e17577a34",
+          "source": "fsw_doc4.pdf",
+          "page": 275
+        },
+        {
+          "id": "0ec71fb90e27fdee37049ce2e443cf966674053504565670f08553f404cd0890",
+          "source": "fsw_doc2.pdf",
+          "page": 37
+        }
+      ]
+    },
+    {
+      "id": "FSW-022",
+      "variant": "production5to3",
+      "category": "synonym",
+      "latency_ms": 151.53481699962867,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 148.42252699600067
+      },
+      "retrieved": [
+        {
+          "id": "0ec71fb90e27fdee37049ce2e443cf966674053504565670f08553f404cd0890",
+          "source": "fsw_doc2.pdf",
+          "page": 37
+        },
+        {
+          "id": "123741ba9975ef92f84b8dfd0f2a6dae178a19f15783a0d40ab79c3a4b9701ff",
+          "source": "fsw_doc4.pdf",
+          "page": 90
+        },
+        {
+          "id": "529c4317ee72be7c666a60e69257749c61c7cfa513bbcd3c2c2433c4b4c51887",
+          "source": "fsw_doc4.pdf",
+          "page": 303
+        }
+      ]
+    },
+    {
+      "id": "FSW-022",
+      "variant": "pool20to3",
+      "category": "synonym",
+      "latency_ms": 530.727328005014,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 526.7286719972617
+      },
+      "retrieved": [
+        {
+          "id": "a7950a37afbc698fa6079f816111fc952b356708f0139c06cffc636da00ac3d9",
+          "source": "fsw_doc4.pdf",
+          "page": 89
+        },
+        {
+          "id": "0ec71fb90e27fdee37049ce2e443cf966674053504565670f08553f404cd0890",
+          "source": "fsw_doc2.pdf",
+          "page": 37
+        },
+        {
+          "id": "cbe0975be97e8860c7e2083a6765e9efac7f0794b5d1f5518c5b37577e07aac4",
+          "source": "fsw_doc4.pdf",
+          "page": 275
+        }
+      ]
+    },
+    {
+      "id": "FSW-022",
+      "variant": "pool20to5",
+      "category": "synonym",
+      "latency_ms": 530.7782330055488,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 527.2079119968112
+      },
+      "retrieved": [
+        {
+          "id": "a7950a37afbc698fa6079f816111fc952b356708f0139c06cffc636da00ac3d9",
+          "source": "fsw_doc4.pdf",
+          "page": 89
+        },
+        {
+          "id": "0ec71fb90e27fdee37049ce2e443cf966674053504565670f08553f404cd0890",
+          "source": "fsw_doc2.pdf",
+          "page": 37
+        },
+        {
+          "id": "cbe0975be97e8860c7e2083a6765e9efac7f0794b5d1f5518c5b37577e07aac4",
+          "source": "fsw_doc4.pdf",
+          "page": 275
+        },
+        {
+          "id": "123741ba9975ef92f84b8dfd0f2a6dae178a19f15783a0d40ab79c3a4b9701ff",
+          "source": "fsw_doc4.pdf",
+          "page": 90
+        },
+        {
+          "id": "06a64fe9041818e582cb861f3e4beb3fa3d3dfc1e68bbb07ae5b2d10f34a57fe",
+          "source": "fsw_doc4.pdf",
+          "page": 277
+        }
+      ]
+    },
+    {
+      "id": "FSW-023",
+      "variant": "production5to3",
+      "category": "synonym",
+      "latency_ms": 150.49843700398924,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 147.33876699756365
+      },
+      "retrieved": [
+        {
+          "id": "c334c9ff6db5ad143146bae141a40c414702293e6269c2811602f9c871fc6052",
+          "source": "fsw_doc2.pdf",
+          "page": 57
+        },
+        {
+          "id": "020fe75c94e134ff5507c879719f69964b3ec62c997dfbb32c6ccfb9f7698bf4",
+          "source": "fsw_doc2.pdf",
+          "page": 146
+        },
+        {
+          "id": "de7897eb1151996ca90c217aaac537f60157ea55243be92a34347c2de4b06540",
+          "source": "fsw_doc2.pdf",
+          "page": 57
+        }
+      ]
+    },
+    {
+      "id": "FSW-023",
+      "variant": "pool20to3",
+      "category": "synonym",
+      "latency_ms": 520.9865750002791,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 516.8732730016927
+      },
+      "retrieved": [
+        {
+          "id": "c334c9ff6db5ad143146bae141a40c414702293e6269c2811602f9c871fc6052",
+          "source": "fsw_doc2.pdf",
+          "page": 57
+        },
+        {
+          "id": "020fe75c94e134ff5507c879719f69964b3ec62c997dfbb32c6ccfb9f7698bf4",
+          "source": "fsw_doc2.pdf",
+          "page": 146
+        },
+        {
+          "id": "7672a3232fc85ae4e877862c0afffe07fbe47266fb717386dfe243b12afadf40",
+          "source": "fsw_doc2.pdf",
+          "page": 11
+        }
+      ]
+    },
+    {
+      "id": "FSW-023",
+      "variant": "pool20to5",
+      "category": "synonym",
+      "latency_ms": 525.5679740002961,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 521.7705060058506
+      },
+      "retrieved": [
+        {
+          "id": "c334c9ff6db5ad143146bae141a40c414702293e6269c2811602f9c871fc6052",
+          "source": "fsw_doc2.pdf",
+          "page": 57
+        },
+        {
+          "id": "020fe75c94e134ff5507c879719f69964b3ec62c997dfbb32c6ccfb9f7698bf4",
+          "source": "fsw_doc2.pdf",
+          "page": 146
+        },
+        {
+          "id": "7672a3232fc85ae4e877862c0afffe07fbe47266fb717386dfe243b12afadf40",
+          "source": "fsw_doc2.pdf",
+          "page": 11
+        },
+        {
+          "id": "df38b55951869643cb6b1916f059665c0f341d402df3309b5b6005725c283240",
+          "source": "fsw_doc5.pdf",
+          "page": 2
+        },
+        {
+          "id": "de7897eb1151996ca90c217aaac537f60157ea55243be92a34347c2de4b06540",
+          "source": "fsw_doc2.pdf",
+          "page": 57
+        }
+      ]
+    },
+    {
+      "id": "FSW-024",
+      "variant": "production5to3",
+      "category": "synonym",
+      "latency_ms": 161.42334100004518,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 157.87638400070136
+      },
+      "retrieved": [
+        {
+          "id": "a624c5c9e579f50f3ac9fc8b84722b94d4caad528f66d5913c0e975c3f3dbeec",
+          "source": "fsw_doc2.pdf",
+          "page": 19
+        },
+        {
+          "id": "7481b5508b28fdf75b22908f063d6a4239be008f4da485f899925170f08cbe9a",
+          "source": "fsw_doc2.pdf",
+          "page": 19
+        },
+        {
+          "id": "6079e4abe1d779ef2ba19d73e6b523a6dfc79119f7471c74ea3b6088d5c5e613",
+          "source": "fsw_doc2.pdf",
+          "page": 31
+        }
+      ]
+    },
+    {
+      "id": "FSW-024",
+      "variant": "pool20to3",
+      "category": "synonym",
+      "latency_ms": 480.33463599858806,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 472.8374839978642
+      },
+      "retrieved": [
+        {
+          "id": "a624c5c9e579f50f3ac9fc8b84722b94d4caad528f66d5913c0e975c3f3dbeec",
+          "source": "fsw_doc2.pdf",
+          "page": 19
+        },
+        {
+          "id": "7672a3232fc85ae4e877862c0afffe07fbe47266fb717386dfe243b12afadf40",
+          "source": "fsw_doc2.pdf",
+          "page": 11
+        },
+        {
+          "id": "7481b5508b28fdf75b22908f063d6a4239be008f4da485f899925170f08cbe9a",
+          "source": "fsw_doc2.pdf",
+          "page": 19
+        }
+      ]
+    },
+    {
+      "id": "FSW-024",
+      "variant": "pool20to5",
+      "category": "synonym",
+      "latency_ms": 483.81278199667577,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 474.754294999002
+      },
+      "retrieved": [
+        {
+          "id": "a624c5c9e579f50f3ac9fc8b84722b94d4caad528f66d5913c0e975c3f3dbeec",
+          "source": "fsw_doc2.pdf",
+          "page": 19
+        },
+        {
+          "id": "7672a3232fc85ae4e877862c0afffe07fbe47266fb717386dfe243b12afadf40",
+          "source": "fsw_doc2.pdf",
+          "page": 11
+        },
+        {
+          "id": "7481b5508b28fdf75b22908f063d6a4239be008f4da485f899925170f08cbe9a",
+          "source": "fsw_doc2.pdf",
+          "page": 19
+        },
+        {
+          "id": "6079e4abe1d779ef2ba19d73e6b523a6dfc79119f7471c74ea3b6088d5c5e613",
+          "source": "fsw_doc2.pdf",
+          "page": 31
+        },
+        {
+          "id": "438a8169159d6737dbec022b97d789af579d5180a1f067d0177f2a68398c813a",
+          "source": "fsw_doc2.pdf",
+          "page": 19
+        }
+      ]
+    },
+    {
+      "id": "FSW-025",
+      "variant": "production5to3",
+      "category": "synonym",
+      "latency_ms": 142.64195700525306,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 139.60967599996366
+      },
+      "retrieved": [
+        {
+          "id": "4a882bf5af50a9aa00fe1ac29235014f866912696440fd5a5143f088c146f524",
+          "source": "fsw_doc2.pdf",
+          "page": 57
+        },
+        {
+          "id": "dc85c8a216babe159eb525e6cca05dbc5c6ac9311fb33bf71c3771b1eceac134",
+          "source": "fsw_doc2.pdf",
+          "page": 127
+        },
+        {
+          "id": "9ba006e46a18d7b1e9af238dfdfeefde4876175be27402c0fb56a26f68d907c7",
+          "source": "fsw_doc4.pdf",
+          "page": 73
+        }
+      ]
+    },
+    {
+      "id": "FSW-025",
+      "variant": "pool20to3",
+      "category": "synonym",
+      "latency_ms": 483.37999700015644,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 476.30722299800254
+      },
+      "retrieved": [
+        {
+          "id": "4a882bf5af50a9aa00fe1ac29235014f866912696440fd5a5143f088c146f524",
+          "source": "fsw_doc2.pdf",
+          "page": 57
+        },
+        {
+          "id": "dc85c8a216babe159eb525e6cca05dbc5c6ac9311fb33bf71c3771b1eceac134",
+          "source": "fsw_doc2.pdf",
+          "page": 127
+        },
+        {
+          "id": "030750e61db958214ba3482ea337d8d023e7930e57c7b06597600582c031c1e9",
+          "source": "fsw_doc2.pdf",
+          "page": 55
+        }
+      ]
+    },
+    {
+      "id": "FSW-025",
+      "variant": "pool20to5",
+      "category": "synonym",
+      "latency_ms": 485.4044900057488,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 478.1729969981825
+      },
+      "retrieved": [
+        {
+          "id": "4a882bf5af50a9aa00fe1ac29235014f866912696440fd5a5143f088c146f524",
+          "source": "fsw_doc2.pdf",
+          "page": 57
+        },
+        {
+          "id": "dc85c8a216babe159eb525e6cca05dbc5c6ac9311fb33bf71c3771b1eceac134",
+          "source": "fsw_doc2.pdf",
+          "page": 127
+        },
+        {
+          "id": "030750e61db958214ba3482ea337d8d023e7930e57c7b06597600582c031c1e9",
+          "source": "fsw_doc2.pdf",
+          "page": 55
+        },
+        {
+          "id": "c6e81de4a49e5f04e6837fd704b50febd14a1fc75d1349daf667df3bc6450db5",
+          "source": "fsw_doc3.pdf",
+          "page": 7
+        },
+        {
+          "id": "d077fb4176585d587d5f4824896c57e4f4466a98bfc65b1bcc3c021652ddd37f",
+          "source": "fsw_doc2.pdf",
+          "page": 58
+        }
+      ]
+    },
+    {
+      "id": "FSW-026",
+      "variant": "production5to3",
+      "category": "synonym",
+      "latency_ms": 122.76596399897244,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 115.62407000019448
+      },
+      "retrieved": [
+        {
+          "id": "f607aca4c50d4c931d5df3b4c1c159a2f0414f578d7473cd7dfb07251db8d4cb",
+          "source": "fsw_doc4.pdf",
+          "page": 84
+        },
+        {
+          "id": "46ae72328cb7a3893fc3e1f61a8507e7db334f6888294713659b6ebb1ef4d35e",
+          "source": "fsw_doc2.pdf",
+          "page": 29
+        },
+        {
+          "id": "6c3df0cd38868f8c1a6c1a994b0d8156bfc21726a51d7c48a5d18dff440ee612",
+          "source": "fsw_doc4.pdf",
+          "page": 84
+        }
+      ]
+    },
+    {
+      "id": "FSW-026",
+      "variant": "pool20to3",
+      "category": "synonym",
+      "latency_ms": 450.10263199947076,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 443.20447600330226
+      },
+      "retrieved": [
+        {
+          "id": "f607aca4c50d4c931d5df3b4c1c159a2f0414f578d7473cd7dfb07251db8d4cb",
+          "source": "fsw_doc4.pdf",
+          "page": 84
+        },
+        {
+          "id": "46ae72328cb7a3893fc3e1f61a8507e7db334f6888294713659b6ebb1ef4d35e",
+          "source": "fsw_doc2.pdf",
+          "page": 29
+        },
+        {
+          "id": "6c3df0cd38868f8c1a6c1a994b0d8156bfc21726a51d7c48a5d18dff440ee612",
+          "source": "fsw_doc4.pdf",
+          "page": 84
+        }
+      ]
+    },
+    {
+      "id": "FSW-026",
+      "variant": "pool20to5",
+      "category": "synonym",
+      "latency_ms": 444.51582800684264,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 441.17209300020477
+      },
+      "retrieved": [
+        {
+          "id": "f607aca4c50d4c931d5df3b4c1c159a2f0414f578d7473cd7dfb07251db8d4cb",
+          "source": "fsw_doc4.pdf",
+          "page": 84
+        },
+        {
+          "id": "46ae72328cb7a3893fc3e1f61a8507e7db334f6888294713659b6ebb1ef4d35e",
+          "source": "fsw_doc2.pdf",
+          "page": 29
+        },
+        {
+          "id": "6c3df0cd38868f8c1a6c1a994b0d8156bfc21726a51d7c48a5d18dff440ee612",
+          "source": "fsw_doc4.pdf",
+          "page": 84
+        },
+        {
+          "id": "697a4193a93ac8d54230a2ead492dadd0d8aadb044eb478c32feb682c3313783",
+          "source": "fsw_doc2.pdf",
+          "page": 29
+        },
+        {
+          "id": "9ed6ed4ba2e776b240b1a301d5e58a90fd517247cccd7c1f7bee0bdc0bbbdddd",
+          "source": "fsw_doc4.pdf",
+          "page": 82
+        }
+      ]
+    },
+    {
+      "id": "FSW-027",
+      "variant": "production5to3",
+      "category": "synonym",
+      "latency_ms": 173.00221300683916,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 166.65503200056264
+      },
+      "retrieved": [
+        {
+          "id": "2d1eb89d45fa5a87be93a546ecaf2b6617d1b2ad13865a93ac2b675c0e6ba5e9",
+          "source": "fsw_doc3.pdf",
+          "page": 2
+        },
+        {
+          "id": "9554ce25a84a93ad8c3b9fcebb195a73d992e72c1cc90c72a5f8f463b775f7c9",
+          "source": "fsw_doc2.pdf",
+          "page": 17
+        },
+        {
+          "id": "305eb996dd26df26e0f87fc75e3c8558aa486bbed3ec931bab6598afa72e1a1d",
+          "source": "fsw_doc4.pdf",
+          "page": 36
+        }
+      ]
+    },
+    {
+      "id": "FSW-027",
+      "variant": "pool20to3",
+      "category": "synonym",
+      "latency_ms": 545.8820549974917,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 540.1848750043428
+      },
+      "retrieved": [
+        {
+          "id": "2d1eb89d45fa5a87be93a546ecaf2b6617d1b2ad13865a93ac2b675c0e6ba5e9",
+          "source": "fsw_doc3.pdf",
+          "page": 2
+        },
+        {
+          "id": "9554ce25a84a93ad8c3b9fcebb195a73d992e72c1cc90c72a5f8f463b775f7c9",
+          "source": "fsw_doc2.pdf",
+          "page": 17
+        },
+        {
+          "id": "4eaeccfcac45701c000140e39195e912a48d3a23d8ce93263ac9090bdb570685",
+          "source": "fsw_doc3.pdf",
+          "page": 2
+        }
+      ]
+    },
+    {
+      "id": "FSW-027",
+      "variant": "pool20to5",
+      "category": "synonym",
+      "latency_ms": 568.7202219996834,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 562.6633769934415
+      },
+      "retrieved": [
+        {
+          "id": "2d1eb89d45fa5a87be93a546ecaf2b6617d1b2ad13865a93ac2b675c0e6ba5e9",
+          "source": "fsw_doc3.pdf",
+          "page": 2
+        },
+        {
+          "id": "9554ce25a84a93ad8c3b9fcebb195a73d992e72c1cc90c72a5f8f463b775f7c9",
+          "source": "fsw_doc2.pdf",
+          "page": 17
+        },
+        {
+          "id": "4eaeccfcac45701c000140e39195e912a48d3a23d8ce93263ac9090bdb570685",
+          "source": "fsw_doc3.pdf",
+          "page": 2
+        },
+        {
+          "id": "0ec71fb90e27fdee37049ce2e443cf966674053504565670f08553f404cd0890",
+          "source": "fsw_doc2.pdf",
+          "page": 37
+        },
+        {
+          "id": "305eb996dd26df26e0f87fc75e3c8558aa486bbed3ec931bab6598afa72e1a1d",
+          "source": "fsw_doc4.pdf",
+          "page": 36
+        }
+      ]
+    },
+    {
+      "id": "FSW-028",
+      "variant": "production5to3",
+      "category": "synonym",
+      "latency_ms": 168.68919500120683,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 161.5979249982047
+      },
+      "retrieved": [
+        {
+          "id": "4a8f19700209a84e8a8894a7cf2e44014b8c140db1f054fd42e39fe57270fe19",
+          "source": "fsw_doc4.pdf",
+          "page": 68
+        },
+        {
+          "id": "39d78318cf6a166cdca79134b73486d1b7c6f367748634d0c9adefd6373ea6ba",
+          "source": "fsw_doc4.pdf",
+          "page": 26
+        },
+        {
+          "id": "8ee6c168a0381d0709a559006a6aa8a1503ea7ebd5729df4f4315b60a8e55c8e",
+          "source": "fsw_doc2.pdf",
+          "page": 121
+        }
+      ]
+    },
+    {
+      "id": "FSW-028",
+      "variant": "pool20to3",
+      "category": "synonym",
+      "latency_ms": 545.6987739962642,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 539.6355669945478
+      },
+      "retrieved": [
+        {
+          "id": "4a8f19700209a84e8a8894a7cf2e44014b8c140db1f054fd42e39fe57270fe19",
+          "source": "fsw_doc4.pdf",
+          "page": 68
+        },
+        {
+          "id": "39d78318cf6a166cdca79134b73486d1b7c6f367748634d0c9adefd6373ea6ba",
+          "source": "fsw_doc4.pdf",
+          "page": 26
+        },
+        {
+          "id": "0e4e20a2a10d18af884dbdc36af65e5b58b922f9ac2c433703772ff0ee791268",
+          "source": "fsw_doc2.pdf",
+          "page": 46
+        }
+      ]
+    },
+    {
+      "id": "FSW-028",
+      "variant": "pool20to5",
+      "category": "synonym",
+      "latency_ms": 530.8840469951974,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 523.6600990028819
+      },
+      "retrieved": [
+        {
+          "id": "4a8f19700209a84e8a8894a7cf2e44014b8c140db1f054fd42e39fe57270fe19",
+          "source": "fsw_doc4.pdf",
+          "page": 68
+        },
+        {
+          "id": "39d78318cf6a166cdca79134b73486d1b7c6f367748634d0c9adefd6373ea6ba",
+          "source": "fsw_doc4.pdf",
+          "page": 26
+        },
+        {
+          "id": "0e4e20a2a10d18af884dbdc36af65e5b58b922f9ac2c433703772ff0ee791268",
+          "source": "fsw_doc2.pdf",
+          "page": 46
+        },
+        {
+          "id": "a580dde653c94fea74e19f3ecfe61feb4b701cc53f2ee921e055ffcf77f9c87b",
+          "source": "fsw_doc2.pdf",
+          "page": 13
+        },
+        {
+          "id": "8ee6c168a0381d0709a559006a6aa8a1503ea7ebd5729df4f4315b60a8e55c8e",
+          "source": "fsw_doc2.pdf",
+          "page": 121
+        }
+      ]
+    },
+    {
+      "id": "FSW-029",
+      "variant": "production5to3",
+      "category": "multihop",
+      "latency_ms": 167.1522440010449,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 158.07166499871528
+      },
+      "retrieved": [
+        {
+          "id": "32e43aa3c56780af84c566455a39fad35581e0bc8e491d9982bc855a6098b25b",
+          "source": "fsw_doc2.pdf",
+          "page": 12
+        },
+        {
+          "id": "af784ed226881d9b1180e651e5a223a61b80a51c9335ef78cac1a0055a038e24",
+          "source": "fsw_doc3.pdf",
+          "page": 4
+        },
+        {
+          "id": "4a882bf5af50a9aa00fe1ac29235014f866912696440fd5a5143f088c146f524",
+          "source": "fsw_doc2.pdf",
+          "page": 57
+        }
+      ]
+    },
+    {
+      "id": "FSW-029",
+      "variant": "pool20to3",
+      "category": "multihop",
+      "latency_ms": 549.7473700015689,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 539.4795699976385
+      },
+      "retrieved": [
+        {
+          "id": "32e43aa3c56780af84c566455a39fad35581e0bc8e491d9982bc855a6098b25b",
+          "source": "fsw_doc2.pdf",
+          "page": 12
+        },
+        {
+          "id": "aa33e6b12eec3bbf157369d8f0af34af6584c5d7159bd29676658962ae95126a",
+          "source": "fsw_doc3.pdf",
+          "page": 1
+        },
+        {
+          "id": "af784ed226881d9b1180e651e5a223a61b80a51c9335ef78cac1a0055a038e24",
+          "source": "fsw_doc3.pdf",
+          "page": 4
+        }
+      ]
+    },
+    {
+      "id": "FSW-029",
+      "variant": "pool20to5",
+      "category": "multihop",
+      "latency_ms": 543.031596003857,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 535.9253279966651
+      },
+      "retrieved": [
+        {
+          "id": "32e43aa3c56780af84c566455a39fad35581e0bc8e491d9982bc855a6098b25b",
+          "source": "fsw_doc2.pdf",
+          "page": 12
+        },
+        {
+          "id": "aa33e6b12eec3bbf157369d8f0af34af6584c5d7159bd29676658962ae95126a",
+          "source": "fsw_doc3.pdf",
+          "page": 1
+        },
+        {
+          "id": "af784ed226881d9b1180e651e5a223a61b80a51c9335ef78cac1a0055a038e24",
+          "source": "fsw_doc3.pdf",
+          "page": 4
+        },
+        {
+          "id": "4a882bf5af50a9aa00fe1ac29235014f866912696440fd5a5143f088c146f524",
+          "source": "fsw_doc2.pdf",
+          "page": 57
+        },
+        {
+          "id": "10cb4366572a93c6de7e624dfac9a90c0bb440cca49cd607934ac0e702dbc0d9",
+          "source": "fsw_doc2.pdf",
+          "page": 146
+        }
+      ]
+    },
+    {
+      "id": "FSW-030",
+      "variant": "production5to3",
+      "category": "multihop",
+      "latency_ms": 250.06570199911948,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 244.29817099735374
+      },
+      "retrieved": [
+        {
+          "id": "0ec71fb90e27fdee37049ce2e443cf966674053504565670f08553f404cd0890",
+          "source": "fsw_doc2.pdf",
+          "page": 37
+        },
+        {
+          "id": "c89a3541dcd244d7be1b79e5e9121247159c9887843baa87737bc6aede77bc5f",
+          "source": "fsw_doc4.pdf",
+          "page": 276
+        },
+        {
+          "id": "b1be13452699afbca7401722a8bac494806e44a33be2f70eac06c4c3adb29989",
+          "source": "fsw_doc4.pdf",
+          "page": 213
+        }
+      ]
+    },
+    {
+      "id": "FSW-030",
+      "variant": "pool20to3",
+      "category": "multihop",
+      "latency_ms": 681.4021940008388,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 674.6583080021082
+      },
+      "retrieved": [
+        {
+          "id": "0ec71fb90e27fdee37049ce2e443cf966674053504565670f08553f404cd0890",
+          "source": "fsw_doc2.pdf",
+          "page": 37
+        },
+        {
+          "id": "a952f3c25e233bd9bd7dd54b7d4088265035900bad4492addbdef1d72362725a",
+          "source": "fsw_doc2.pdf",
+          "page": 17
+        },
+        {
+          "id": "4eaeccfcac45701c000140e39195e912a48d3a23d8ce93263ac9090bdb570685",
+          "source": "fsw_doc3.pdf",
+          "page": 2
+        }
+      ]
+    },
+    {
+      "id": "FSW-030",
+      "variant": "pool20to5",
+      "category": "multihop",
+      "latency_ms": 682.3084949937765,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 673.6577250048867
+      },
+      "retrieved": [
+        {
+          "id": "0ec71fb90e27fdee37049ce2e443cf966674053504565670f08553f404cd0890",
+          "source": "fsw_doc2.pdf",
+          "page": 37
+        },
+        {
+          "id": "a952f3c25e233bd9bd7dd54b7d4088265035900bad4492addbdef1d72362725a",
+          "source": "fsw_doc2.pdf",
+          "page": 17
+        },
+        {
+          "id": "4eaeccfcac45701c000140e39195e912a48d3a23d8ce93263ac9090bdb570685",
+          "source": "fsw_doc3.pdf",
+          "page": 2
+        },
+        {
+          "id": "a7950a37afbc698fa6079f816111fc952b356708f0139c06cffc636da00ac3d9",
+          "source": "fsw_doc4.pdf",
+          "page": 89
+        },
+        {
+          "id": "c89a3541dcd244d7be1b79e5e9121247159c9887843baa87737bc6aede77bc5f",
+          "source": "fsw_doc4.pdf",
+          "page": 276
+        }
+      ]
+    },
+    {
+      "id": "FSW-031",
+      "variant": "production5to3",
+      "category": "multihop",
+      "latency_ms": 154.6783130033873,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 147.16367799701402
+      },
+      "retrieved": [
+        {
+          "id": "a03f5358fd3596efa6ff47ca80c340c19dc42ad2179791a757369dd8eed07430",
+          "source": "fsw_doc2.pdf",
+          "page": 168
+        },
+        {
+          "id": "6b22dc6ea2530d6de6bbec9cee40288bbaa45d4781bc935614edf51a2805511a",
+          "source": "fsw_doc2.pdf",
+          "page": 43
+        },
+        {
+          "id": "acf1d57a597c18f7679a45c210b064ea19f4d3f1f7570def4811ca9400a161da",
+          "source": "fsw_doc2.pdf",
+          "page": 77
+        }
+      ]
+    },
+    {
+      "id": "FSW-031",
+      "variant": "pool20to3",
+      "category": "multihop",
+      "latency_ms": 573.8490930016269,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 566.0224610037403
+      },
+      "retrieved": [
+        {
+          "id": "a03f5358fd3596efa6ff47ca80c340c19dc42ad2179791a757369dd8eed07430",
+          "source": "fsw_doc2.pdf",
+          "page": 168
+        },
+        {
+          "id": "6b22dc6ea2530d6de6bbec9cee40288bbaa45d4781bc935614edf51a2805511a",
+          "source": "fsw_doc2.pdf",
+          "page": 43
+        },
+        {
+          "id": "acf1d57a597c18f7679a45c210b064ea19f4d3f1f7570def4811ca9400a161da",
+          "source": "fsw_doc2.pdf",
+          "page": 77
+        }
+      ]
+    },
+    {
+      "id": "FSW-031",
+      "variant": "pool20to5",
+      "category": "multihop",
+      "latency_ms": 566.0193439980503,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 560.3454189986223
+      },
+      "retrieved": [
+        {
+          "id": "a03f5358fd3596efa6ff47ca80c340c19dc42ad2179791a757369dd8eed07430",
+          "source": "fsw_doc2.pdf",
+          "page": 168
+        },
+        {
+          "id": "6b22dc6ea2530d6de6bbec9cee40288bbaa45d4781bc935614edf51a2805511a",
+          "source": "fsw_doc2.pdf",
+          "page": 43
+        },
+        {
+          "id": "acf1d57a597c18f7679a45c210b064ea19f4d3f1f7570def4811ca9400a161da",
+          "source": "fsw_doc2.pdf",
+          "page": 77
+        },
+        {
+          "id": "1c65882d8e61c30f646d939ec0cc5a5ac3dbb79ea77ad3ab0006b6b0903236da",
+          "source": "fsw_doc1.pdf",
+          "page": 7
+        },
+        {
+          "id": "db87e6cc547095ce11502d41d25471874c22d9b0d23189628d98f34024f6854d",
+          "source": "fsw_doc2.pdf",
+          "page": 115
+        }
+      ]
+    },
+    {
+      "id": "FSW-032",
+      "variant": "production5to3",
+      "category": "multihop",
+      "latency_ms": 143.94949599954998,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 138.01749500271399
+      },
+      "retrieved": [
+        {
+          "id": "a36fa0d55bf57ff4668f7fb208ef1c214af679336694349cd6958c0791251342",
+          "source": "fsw_doc4.pdf",
+          "page": 27
+        },
+        {
+          "id": "14164a5c71fafe29cb8442d77cede4cbb9b3f8e2c16ef3d37ca25dfb62342f0c",
+          "source": "fsw_doc4.pdf",
+          "page": 99
+        },
+        {
+          "id": "3872704960d5be12e74385005dad74cbaafe5486bfe46df54b82db98748fe00b",
+          "source": "fsw_doc4.pdf",
+          "page": 99
+        }
+      ]
+    },
+    {
+      "id": "FSW-032",
+      "variant": "pool20to3",
+      "category": "multihop",
+      "latency_ms": 536.3204180030152,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 530.6960870002513
+      },
+      "retrieved": [
+        {
+          "id": "a36fa0d55bf57ff4668f7fb208ef1c214af679336694349cd6958c0791251342",
+          "source": "fsw_doc4.pdf",
+          "page": 27
+        },
+        {
+          "id": "14164a5c71fafe29cb8442d77cede4cbb9b3f8e2c16ef3d37ca25dfb62342f0c",
+          "source": "fsw_doc4.pdf",
+          "page": 99
+        },
+        {
+          "id": "3872704960d5be12e74385005dad74cbaafe5486bfe46df54b82db98748fe00b",
+          "source": "fsw_doc4.pdf",
+          "page": 99
+        }
+      ]
+    },
+    {
+      "id": "FSW-032",
+      "variant": "pool20to5",
+      "category": "multihop",
+      "latency_ms": 540.7805489958264,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 530.9394910000265
+      },
+      "retrieved": [
+        {
+          "id": "a36fa0d55bf57ff4668f7fb208ef1c214af679336694349cd6958c0791251342",
+          "source": "fsw_doc4.pdf",
+          "page": 27
+        },
+        {
+          "id": "14164a5c71fafe29cb8442d77cede4cbb9b3f8e2c16ef3d37ca25dfb62342f0c",
+          "source": "fsw_doc4.pdf",
+          "page": 99
+        },
+        {
+          "id": "3872704960d5be12e74385005dad74cbaafe5486bfe46df54b82db98748fe00b",
+          "source": "fsw_doc4.pdf",
+          "page": 99
+        },
+        {
+          "id": "b8163a7db75080e2ed792976ac2c084c46ed06d6634f8df96c2b47820e9eccfc",
+          "source": "fsw_doc4.pdf",
+          "page": 97
+        },
+        {
+          "id": "1935926df08ce870afa397b4a483598a9748a39269d598823df6a431d6cbf52f",
+          "source": "fsw_doc4.pdf",
+          "page": 11
+        }
+      ]
+    },
+    {
+      "id": "FSW-033",
+      "variant": "production5to3",
+      "category": "multihop",
+      "latency_ms": 162.66251899651252,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 152.7508380022482
+      },
+      "retrieved": [
+        {
+          "id": "ad77918e94f4f4158d833967791648796ede43591b6776a8f8cb7a694aafb7bf",
+          "source": "fsw_doc5.pdf",
+          "page": 3
+        },
+        {
+          "id": "9a56a3d9db4dee2e2875af8c231321d5db166b71af347a8dcb73296b62bce486",
+          "source": "fsw_doc5.pdf",
+          "page": 2
+        },
+        {
+          "id": "262e49d30d4e147c4773d500b869d379b4150c96c36d14c9595f7ad649aae343",
+          "source": "fsw_doc2.pdf",
+          "page": 68
+        }
+      ]
+    },
+    {
+      "id": "FSW-033",
+      "variant": "pool20to3",
+      "category": "multihop",
+      "latency_ms": 545.0458240011358,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 535.0678700051503
+      },
+      "retrieved": [
+        {
+          "id": "ad77918e94f4f4158d833967791648796ede43591b6776a8f8cb7a694aafb7bf",
+          "source": "fsw_doc5.pdf",
+          "page": 3
+        },
+        {
+          "id": "df38b55951869643cb6b1916f059665c0f341d402df3309b5b6005725c283240",
+          "source": "fsw_doc5.pdf",
+          "page": 2
+        },
+        {
+          "id": "9a56a3d9db4dee2e2875af8c231321d5db166b71af347a8dcb73296b62bce486",
+          "source": "fsw_doc5.pdf",
+          "page": 2
+        }
+      ]
+    },
+    {
+      "id": "FSW-033",
+      "variant": "pool20to5",
+      "category": "multihop",
+      "latency_ms": 545.2065229983418,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 534.8666089994367
+      },
+      "retrieved": [
+        {
+          "id": "ad77918e94f4f4158d833967791648796ede43591b6776a8f8cb7a694aafb7bf",
+          "source": "fsw_doc5.pdf",
+          "page": 3
+        },
+        {
+          "id": "df38b55951869643cb6b1916f059665c0f341d402df3309b5b6005725c283240",
+          "source": "fsw_doc5.pdf",
+          "page": 2
+        },
+        {
+          "id": "9a56a3d9db4dee2e2875af8c231321d5db166b71af347a8dcb73296b62bce486",
+          "source": "fsw_doc5.pdf",
+          "page": 2
+        },
+        {
+          "id": "2744d96b62afaa902c054bcfae418445fd7a2a600acb7b6e9c58024cf4eeae07",
+          "source": "fsw_doc5.pdf",
+          "page": 11
+        },
+        {
+          "id": "262e49d30d4e147c4773d500b869d379b4150c96c36d14c9595f7ad649aae343",
+          "source": "fsw_doc2.pdf",
+          "page": 68
+        }
+      ]
+    },
+    {
+      "id": "FSW-034",
+      "variant": "production5to3",
+      "category": "multihop",
+      "latency_ms": 147.41132999915862,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 138.75482899311464
+      },
+      "retrieved": [
+        {
+          "id": "7672a3232fc85ae4e877862c0afffe07fbe47266fb717386dfe243b12afadf40",
+          "source": "fsw_doc2.pdf",
+          "page": 11
+        },
+        {
+          "id": "c05c3527ddc72e6c25a73c331d87338c3acb78a1f1441733d362355ebda0f0f3",
+          "source": "fsw_doc2.pdf",
+          "page": 30
+        },
+        {
+          "id": "e5116e5d45df056fb2732214224e41aa7d8ffde7556580c89c8f557d66098700",
+          "source": "fsw_doc4.pdf",
+          "page": 75
+        }
+      ]
+    },
+    {
+      "id": "FSW-034",
+      "variant": "pool20to3",
+      "category": "multihop",
+      "latency_ms": 549.905673993635,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 539.7437729989178
+      },
+      "retrieved": [
+        {
+          "id": "7672a3232fc85ae4e877862c0afffe07fbe47266fb717386dfe243b12afadf40",
+          "source": "fsw_doc2.pdf",
+          "page": 11
+        },
+        {
+          "id": "c05c3527ddc72e6c25a73c331d87338c3acb78a1f1441733d362355ebda0f0f3",
+          "source": "fsw_doc2.pdf",
+          "page": 30
+        },
+        {
+          "id": "e5116e5d45df056fb2732214224e41aa7d8ffde7556580c89c8f557d66098700",
+          "source": "fsw_doc4.pdf",
+          "page": 75
+        }
+      ]
+    },
+    {
+      "id": "FSW-034",
+      "variant": "pool20to5",
+      "category": "multihop",
+      "latency_ms": 546.270300001197,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 536.838070001977
+      },
+      "retrieved": [
+        {
+          "id": "7672a3232fc85ae4e877862c0afffe07fbe47266fb717386dfe243b12afadf40",
+          "source": "fsw_doc2.pdf",
+          "page": 11
+        },
+        {
+          "id": "c05c3527ddc72e6c25a73c331d87338c3acb78a1f1441733d362355ebda0f0f3",
+          "source": "fsw_doc2.pdf",
+          "page": 30
+        },
+        {
+          "id": "e5116e5d45df056fb2732214224e41aa7d8ffde7556580c89c8f557d66098700",
+          "source": "fsw_doc4.pdf",
+          "page": 75
+        },
+        {
+          "id": "a92d3652380f661d039c19d59bca3e1ea1a26d684881d8e7e335af0feec6bfa9",
+          "source": "fsw_doc2.pdf",
+          "page": 90
+        },
+        {
+          "id": "40c1cc8c9c921e91052d472521dc30b8c2758bbd79c266a25f1d01c99ecf1e72",
+          "source": "fsw_doc4.pdf",
+          "page": 161
+        }
+      ]
+    },
+    {
+      "id": "FSW-035",
+      "variant": "production5to3",
+      "category": "followup",
+      "latency_ms": 172.39958799473243,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 162.2807479943731
+      },
+      "retrieved": [
+        {
+          "id": "e7d04598569fe6dd2241338ded2884c2279caedbcb225b1f7a3a2ea1bbe3c5ae",
+          "source": "fsw_doc2.pdf",
+          "page": 31
+        },
+        {
+          "id": "10cb4366572a93c6de7e624dfac9a90c0bb440cca49cd607934ac0e702dbc0d9",
+          "source": "fsw_doc2.pdf",
+          "page": 146
+        },
+        {
+          "id": "e6c6d3f597bef3d5c86bb1510976ebef8983b5f0ea486d878f674e71e02e3446",
+          "source": "fsw_doc4.pdf",
+          "page": 280
+        }
+      ]
+    },
+    {
+      "id": "FSW-035",
+      "variant": "pool20to3",
+      "category": "followup",
+      "latency_ms": 562.2477479992085,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 555.3785260053701
+      },
+      "retrieved": [
+        {
+          "id": "aa33e6b12eec3bbf157369d8f0af34af6584c5d7159bd29676658962ae95126a",
+          "source": "fsw_doc3.pdf",
+          "page": 1
+        },
+        {
+          "id": "e7d04598569fe6dd2241338ded2884c2279caedbcb225b1f7a3a2ea1bbe3c5ae",
+          "source": "fsw_doc2.pdf",
+          "page": 31
+        },
+        {
+          "id": "10cb4366572a93c6de7e624dfac9a90c0bb440cca49cd607934ac0e702dbc0d9",
+          "source": "fsw_doc2.pdf",
+          "page": 146
+        }
+      ]
+    },
+    {
+      "id": "FSW-035",
+      "variant": "pool20to5",
+      "category": "followup",
+      "latency_ms": 559.0919540045434,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 551.6225450046477
+      },
+      "retrieved": [
+        {
+          "id": "aa33e6b12eec3bbf157369d8f0af34af6584c5d7159bd29676658962ae95126a",
+          "source": "fsw_doc3.pdf",
+          "page": 1
+        },
+        {
+          "id": "e7d04598569fe6dd2241338ded2884c2279caedbcb225b1f7a3a2ea1bbe3c5ae",
+          "source": "fsw_doc2.pdf",
+          "page": 31
+        },
+        {
+          "id": "10cb4366572a93c6de7e624dfac9a90c0bb440cca49cd607934ac0e702dbc0d9",
+          "source": "fsw_doc2.pdf",
+          "page": 146
+        },
+        {
+          "id": "14a3e9b1cbce8db5c6025f6626d50b78520d4882b700d57b1e62dd0d3a6b4e1d",
+          "source": "fsw_doc4.pdf",
+          "page": 232
+        },
+        {
+          "id": "c7b6dedf52322e15b05e49a274bb7c29935c25bb14d9214a4537002451e9a7d5",
+          "source": "fsw_doc2.pdf",
+          "page": 18
+        }
+      ]
+    },
+    {
+      "id": "FSW-036",
+      "variant": "production5to3",
+      "category": "followup",
+      "latency_ms": 169.17231999832438,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 162.51376499712933
+      },
+      "retrieved": [
+        {
+          "id": "020fe75c94e134ff5507c879719f69964b3ec62c997dfbb32c6ccfb9f7698bf4",
+          "source": "fsw_doc2.pdf",
+          "page": 146
+        },
+        {
+          "id": "c334c9ff6db5ad143146bae141a40c414702293e6269c2811602f9c871fc6052",
+          "source": "fsw_doc2.pdf",
+          "page": 57
+        },
+        {
+          "id": "10cb4366572a93c6de7e624dfac9a90c0bb440cca49cd607934ac0e702dbc0d9",
+          "source": "fsw_doc2.pdf",
+          "page": 146
+        }
+      ]
+    },
+    {
+      "id": "FSW-036",
+      "variant": "pool20to3",
+      "category": "followup",
+      "latency_ms": 544.7395750015858,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 538.9485500054434
+      },
+      "retrieved": [
+        {
+          "id": "020fe75c94e134ff5507c879719f69964b3ec62c997dfbb32c6ccfb9f7698bf4",
+          "source": "fsw_doc2.pdf",
+          "page": 146
+        },
+        {
+          "id": "c334c9ff6db5ad143146bae141a40c414702293e6269c2811602f9c871fc6052",
+          "source": "fsw_doc2.pdf",
+          "page": 57
+        },
+        {
+          "id": "e8a18cb92d84fb83d50113dc568d1031b5804657bd987ee2e4dd9b37fb8e63de",
+          "source": "fsw_doc2.pdf",
+          "page": 48
+        }
+      ]
+    },
+    {
+      "id": "FSW-036",
+      "variant": "pool20to5",
+      "category": "followup",
+      "latency_ms": 546.0396660055267,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 539.9580640005297
+      },
+      "retrieved": [
+        {
+          "id": "020fe75c94e134ff5507c879719f69964b3ec62c997dfbb32c6ccfb9f7698bf4",
+          "source": "fsw_doc2.pdf",
+          "page": 146
+        },
+        {
+          "id": "c334c9ff6db5ad143146bae141a40c414702293e6269c2811602f9c871fc6052",
+          "source": "fsw_doc2.pdf",
+          "page": 57
+        },
+        {
+          "id": "e8a18cb92d84fb83d50113dc568d1031b5804657bd987ee2e4dd9b37fb8e63de",
+          "source": "fsw_doc2.pdf",
+          "page": 48
+        },
+        {
+          "id": "de7897eb1151996ca90c217aaac537f60157ea55243be92a34347c2de4b06540",
+          "source": "fsw_doc2.pdf",
+          "page": 57
+        },
+        {
+          "id": "10cb4366572a93c6de7e624dfac9a90c0bb440cca49cd607934ac0e702dbc0d9",
+          "source": "fsw_doc2.pdf",
+          "page": 146
+        }
+      ]
+    },
+    {
+      "id": "FSW-037",
+      "variant": "production5to3",
+      "category": "followup",
+      "latency_ms": 169.90586800238816,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 163.67152000020724
+      },
+      "retrieved": [
+        {
+          "id": "a32b8b654a1e8f51024822802893702c4e9a00a81598b3fa10f3262e1d63c481",
+          "source": "fsw_doc2.pdf",
+          "page": 58
+        },
+        {
+          "id": "8cd7ce42a4c78ab0ac24a8438e94c114b37b55fa7c7d51675f16864dc22ed216",
+          "source": "fsw_doc2.pdf",
+          "page": 11
+        },
+        {
+          "id": "d940cdf8dd926c1927b2dd9a704ec576bbf519346cf1996eb92d0a00e7967ef3",
+          "source": "fsw_doc4.pdf",
+          "page": 72
+        }
+      ]
+    },
+    {
+      "id": "FSW-037",
+      "variant": "pool20to3",
+      "category": "followup",
+      "latency_ms": 563.790248001169,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 556.6038000033586
+      },
+      "retrieved": [
+        {
+          "id": "a32b8b654a1e8f51024822802893702c4e9a00a81598b3fa10f3262e1d63c481",
+          "source": "fsw_doc2.pdf",
+          "page": 58
+        },
+        {
+          "id": "8cd7ce42a4c78ab0ac24a8438e94c114b37b55fa7c7d51675f16864dc22ed216",
+          "source": "fsw_doc2.pdf",
+          "page": 11
+        },
+        {
+          "id": "2da6193b48206445f52abbe3860395a74cf12cbca9e8e88e1f1c2b123e1b68f9",
+          "source": "fsw_doc2.pdf",
+          "page": 14
+        }
+      ]
+    },
+    {
+      "id": "FSW-037",
+      "variant": "pool20to5",
+      "category": "followup",
+      "latency_ms": 552.0783430038136,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 544.6702379995259
+      },
+      "retrieved": [
+        {
+          "id": "a32b8b654a1e8f51024822802893702c4e9a00a81598b3fa10f3262e1d63c481",
+          "source": "fsw_doc2.pdf",
+          "page": 58
+        },
+        {
+          "id": "8cd7ce42a4c78ab0ac24a8438e94c114b37b55fa7c7d51675f16864dc22ed216",
+          "source": "fsw_doc2.pdf",
+          "page": 11
+        },
+        {
+          "id": "2da6193b48206445f52abbe3860395a74cf12cbca9e8e88e1f1c2b123e1b68f9",
+          "source": "fsw_doc2.pdf",
+          "page": 14
+        },
+        {
+          "id": "531e19fedd915713e366465c3aa4c0bcdc26adf77d10d9305a381668f75f15b5",
+          "source": "fsw_doc2.pdf",
+          "page": 83
+        },
+        {
+          "id": "0c4c6d1a40d67576db4c79aad3933fd98ca6e4aaaec473ee6eced85a90fa603e",
+          "source": "fsw_doc3.pdf",
+          "page": 8
+        }
+      ]
+    },
+    {
+      "id": "FSW-038",
+      "variant": "production5to3",
+      "category": "followup",
+      "latency_ms": 256.482196993602,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 246.09492200397654
+      },
+      "retrieved": [
+        {
+          "id": "8fc85d42702bec828ebba03621c2a3cf83a3d9b2855c8b4ff80e46925d2008d5",
+          "source": "fsw_doc1.pdf",
+          "page": 10
+        },
+        {
+          "id": "33d344bfb47778e568f8c2304903db2296d366dc44b81e3499c153c01e592674",
+          "source": "fsw_doc1.pdf",
+          "page": 10
+        },
+        {
+          "id": "6000f090bb799e754f76c51df99d2e3f9947630ae5213a8422cab7c87022c7c1",
+          "source": "fsw_doc1.pdf",
+          "page": 3
+        }
+      ]
+    },
+    {
+      "id": "FSW-038",
+      "variant": "pool20to3",
+      "category": "followup",
+      "latency_ms": 731.0234850010602,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 724.1580900008557
+      },
+      "retrieved": [
+        {
+          "id": "8fc85d42702bec828ebba03621c2a3cf83a3d9b2855c8b4ff80e46925d2008d5",
+          "source": "fsw_doc1.pdf",
+          "page": 10
+        },
+        {
+          "id": "c5a1155de47dcd9eb5cd83166f33a8404ec8381022c0dd64351ad6020f589005",
+          "source": "fsw_doc1.pdf",
+          "page": 11
+        },
+        {
+          "id": "33d344bfb47778e568f8c2304903db2296d366dc44b81e3499c153c01e592674",
+          "source": "fsw_doc1.pdf",
+          "page": 10
+        }
+      ]
+    },
+    {
+      "id": "FSW-038",
+      "variant": "pool20to5",
+      "category": "followup",
+      "latency_ms": 726.853863998258,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 719.2303440024261
+      },
+      "retrieved": [
+        {
+          "id": "8fc85d42702bec828ebba03621c2a3cf83a3d9b2855c8b4ff80e46925d2008d5",
+          "source": "fsw_doc1.pdf",
+          "page": 10
+        },
+        {
+          "id": "c5a1155de47dcd9eb5cd83166f33a8404ec8381022c0dd64351ad6020f589005",
+          "source": "fsw_doc1.pdf",
+          "page": 11
+        },
+        {
+          "id": "33d344bfb47778e568f8c2304903db2296d366dc44b81e3499c153c01e592674",
+          "source": "fsw_doc1.pdf",
+          "page": 10
+        },
+        {
+          "id": "5e1ecd235147a38c023b51f78d710c43949b683c8d0a2989accafd2274dfd33d",
+          "source": "fsw_doc2.pdf",
+          "page": 110
+        },
+        {
+          "id": "0982307bbf87d14e021dd72579b680e20454d24b4b8364caff2f2e848567b52a",
+          "source": "fsw_doc1.pdf",
+          "page": 9
+        }
+      ]
+    },
+    {
+      "id": "FSW-039",
+      "variant": "production5to3",
+      "category": "followup",
+      "latency_ms": 145.8335779971094,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 135.73729099880438
+      },
+      "retrieved": [
+        {
+          "id": "e8744ff6ea51f136f1ee0e932ca3b427910f3f8dd4640d78cb83117f47b279e3",
+          "source": "fsw_doc4.pdf",
+          "page": 109
+        },
+        {
+          "id": "a36fa0d55bf57ff4668f7fb208ef1c214af679336694349cd6958c0791251342",
+          "source": "fsw_doc4.pdf",
+          "page": 27
+        },
+        {
+          "id": "1a9e5bde561ddc41a76b98dc7f83564300ae7389c36bcc6bd29200eb22c4ba50",
+          "source": "fsw_doc4.pdf",
+          "page": 117
+        }
+      ]
+    },
+    {
+      "id": "FSW-039",
+      "variant": "pool20to3",
+      "category": "followup",
+      "latency_ms": 539.5021949952934,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 533.2606439988012
+      },
+      "retrieved": [
+        {
+          "id": "e8744ff6ea51f136f1ee0e932ca3b427910f3f8dd4640d78cb83117f47b279e3",
+          "source": "fsw_doc4.pdf",
+          "page": 109
+        },
+        {
+          "id": "87ee03ebc756acbc820c3372acbda42694e51979e72a1fbfc38be6425a8510bd",
+          "source": "fsw_doc4.pdf",
+          "page": 11
+        },
+        {
+          "id": "97e8d9a6aa5d490db4b7afe962e86ea04c99e60b352867f72f1a0a82d9b43a28",
+          "source": "fsw_doc4.pdf",
+          "page": 111
+        }
+      ]
+    },
+    {
+      "id": "FSW-039",
+      "variant": "pool20to5",
+      "category": "followup",
+      "latency_ms": 542.120543999772,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 531.7011700026342
+      },
+      "retrieved": [
+        {
+          "id": "e8744ff6ea51f136f1ee0e932ca3b427910f3f8dd4640d78cb83117f47b279e3",
+          "source": "fsw_doc4.pdf",
+          "page": 109
+        },
+        {
+          "id": "87ee03ebc756acbc820c3372acbda42694e51979e72a1fbfc38be6425a8510bd",
+          "source": "fsw_doc4.pdf",
+          "page": 11
+        },
+        {
+          "id": "97e8d9a6aa5d490db4b7afe962e86ea04c99e60b352867f72f1a0a82d9b43a28",
+          "source": "fsw_doc4.pdf",
+          "page": 111
+        },
+        {
+          "id": "4b7b41dec77f609d764e15b0b6e41ce1bc1a63d5bc9591eab7074eb9db38df63",
+          "source": "fsw_doc4.pdf",
+          "page": 110
+        },
+        {
+          "id": "01d9e7ac711981cf3d2220ef7e7b03e9109ef38119ec3c170a64d2b1c2248e3a",
+          "source": "fsw_doc4.pdf",
+          "page": 114
+        }
+      ]
+    },
+    {
+      "id": "FSW-040",
+      "variant": "production5to3",
+      "category": "followup",
+      "latency_ms": 172.98864799522562,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 166.42548100207932
+      },
+      "retrieved": [
+        {
+          "id": "ad77918e94f4f4158d833967791648796ede43591b6776a8f8cb7a694aafb7bf",
+          "source": "fsw_doc5.pdf",
+          "page": 3
+        },
+        {
+          "id": "f7c9de06c48ee94bf389ef45d61feebad815f90bc954192b106210fd00d5408f",
+          "source": "fsw_doc3.pdf",
+          "page": 2
+        },
+        {
+          "id": "ebdb712283d47f401a64be552028dfffadc617403af2ba36908f8d82589c6c3f",
+          "source": "fsw_doc2.pdf",
+          "page": 78
+        }
+      ]
+    },
+    {
+      "id": "FSW-040",
+      "variant": "pool20to3",
+      "category": "followup",
+      "latency_ms": 570.6983960044454,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 560.8026660047472
+      },
+      "retrieved": [
+        {
+          "id": "2ced246565fb86dbcafa11a0c4ef2362991620dc22cbc5c9c2c2fda836c1fda4",
+          "source": "fsw_doc5.pdf",
+          "page": 1
+        },
+        {
+          "id": "df38b55951869643cb6b1916f059665c0f341d402df3309b5b6005725c283240",
+          "source": "fsw_doc5.pdf",
+          "page": 2
+        },
+        {
+          "id": "ad77918e94f4f4158d833967791648796ede43591b6776a8f8cb7a694aafb7bf",
+          "source": "fsw_doc5.pdf",
+          "page": 3
+        }
+      ]
+    },
+    {
+      "id": "FSW-040",
+      "variant": "pool20to5",
+      "category": "followup",
+      "latency_ms": 569.802300997253,
+      "timings": {
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 560.003262005921
+      },
+      "retrieved": [
+        {
+          "id": "2ced246565fb86dbcafa11a0c4ef2362991620dc22cbc5c9c2c2fda836c1fda4",
+          "source": "fsw_doc5.pdf",
+          "page": 1
+        },
+        {
+          "id": "df38b55951869643cb6b1916f059665c0f341d402df3309b5b6005725c283240",
+          "source": "fsw_doc5.pdf",
+          "page": 2
+        },
+        {
+          "id": "ad77918e94f4f4158d833967791648796ede43591b6776a8f8cb7a694aafb7bf",
+          "source": "fsw_doc5.pdf",
+          "page": 3
+        },
+        {
+          "id": "9a56a3d9db4dee2e2875af8c231321d5db166b71af347a8dcb73296b62bce486",
+          "source": "fsw_doc5.pdf",
+          "page": 2
+        },
+        {
+          "id": "0c4c6d1a40d67576db4c79aad3933fd98ca6e4aaaec473ee6eced85a90fa603e",
+          "source": "fsw_doc3.pdf",
+          "page": 8
+        }
+      ]
+    }
+  ],
+  "initialization_ms": 266.3680289988406,
+  "import_ms": 433.8275580012123,
+  "peak_rss_mb": 413.73046875,
+  "all_thread_affinities": [
+    [
+      0,
+      1
+    ],
+    [
+      0,
+      1
+    ],
+    [
+      0,
+      1
+    ],
+    [
+      0,
+      1
+    ],
+    [
+      0,
+      1
+    ]
+  ],
+  "limitations": "Local two-core process, one run, fixed variant order, excludes Groq generation and hosted network. First row includes reranker initialization; warm summaries omit it.",
+  "cold_retrieval_ms": 474.07517999818083,
+  "summary": {
+    "pool20to5": {
+      "mean_ms": 524.4091703001686,
+      "p95_ms": 682.3084949937765,
+      "samples": 40
+    },
+    "production5to3": {
+      "mean_ms": 157.9641725131809,
+      "p95_ms": 250.06570199911948,
+      "samples": 39
+    },
+    "pool20to3": {
+      "mean_ms": 523.4768671249185,
+      "p95_ms": 681.4021940008388,
+      "samples": 40
+    }
+  }
+}

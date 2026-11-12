@@ -1,0 +1,25 @@
+{
+  "version": "fsw-v2",
+  "metric": "squared_l2",
+  "embedding": "bundled FP32 MiniLM-L3 ONNX, mean pooling, 128 tokens, unnormalized",
+  "chunks": 2124,
+  "files": {
+    "chunks.json": "473426a500d0f6afaaa0b380a2a95143192d6ee1d5061db0cc6f432c39940ea8",
+    "vectors.npy": "5061a71e5d061d9a12a2ae6ebff0d63ccc9182a2130b91c0dc35919e71adf0cc"
+  },
+  "corpus": {
+    "fsw_doc1.pdf": "985f46ce0f21904406bcff0022c7aa0c09c1e7d5ab296ec9747a5e0a1dc9c845",
+    "fsw_doc2.pdf": "947b49d2588a41d40825785b771b28a7de895bc3f27235243ec39e21c086dc94",
+    "fsw_doc3.pdf": "79809aef2d8b8e4d597651464486141b6109bf08cff5783dac74a62dc7b2a6de",
+    "fsw_doc4.pdf": "c0ffe68bbaceb7cec022d2aa79c3712acfbebcc0f1d0d530273bb6d74cd6f9aa",
+    "fsw_doc5.pdf": "ec91b2860c1b4d01367a0fda2042de4dd8e3631c6a583bbb2bb1edd4c9254bbc"
+  },
+  "models": {
+    "models/embedding/config.json": "1e8fde880c3a8132e8fd3b5d0d164119ae97011e171e8cc5f8398908326edf08",
+    "models/embedding/model.onnx": "52a79256bc926e9961c5e51ca8f4285726332e7285d3184024ff965ab23e71a6",
+    "models/embedding/vocab.txt": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3",
+    "models/reranker/config.json": "801fab82063365f0f29f471b4acf62065ee5b59ef6acce6c503d460b81fae358",
+    "models/reranker/model.onnx": "4c4616ab436326959952d40c14784d5ada0124b73c107597a624186693e808a7",
+    "models/reranker/vocab.txt": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3"
+  }
+}

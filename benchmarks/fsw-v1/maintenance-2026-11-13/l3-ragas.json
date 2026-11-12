@@ -1,0 +1,5705 @@
+{
+  "timestamp": "2026-11-12T20:53:58.757869+00:00",
+  "framework": "ragas",
+  "ragas_version": "0.4.3",
+  "dataset_sha256": "4d73bc960bdd57cdbe7cdb6ba2a925f2d889bd9a386d7092acc58b0d030a01d4",
+  "rankings_sha256": "08cd9410009431b51a46c0f6c4a274dca824e841e278c6a1ae07c8f9b88b6452",
+  "lock_sha256": "dfe37adb15822f490d12cd4465b8f3a7e0fd3d3980e8f9c412a49eac2258ba7d",
+  "evaluator_sha256": "07a43e8ef7c2c619522540ba853841d64511bbbccb4335df10617fc6c05ddd98",
+  "metric_classes": {
+    "id_context_precision": "IDBasedContextPrecision",
+    "id_context_recall": "IDBasedContextRecall"
+  },
+  "protocol": "Native ID-based set precision/recall over unique physical PDF pages in top-five chunks; provisional positive anchors, not exhaustive relevance labels. No MRR/nDCG or semantic scores implied.",
+  "model_provider_calls": 0,
+  "answerable_cases": 40,
+  "results": [
+    {
+      "id": "FSW-001",
+      "variant": "existing-hnsw-l2/vector5",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-001",
+      "variant": "existing-hnsw-l2/hybrid5",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-001",
+      "variant": "existing-hnsw-l2/production5to3",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-001",
+      "variant": "existing-hnsw-l2/pool20to3",
+      "category": "exact",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-001",
+      "variant": "existing-hnsw-l2/pool20to5",
+      "category": "exact",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-002",
+      "variant": "existing-hnsw-l2/vector5",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-002",
+      "variant": "existing-hnsw-l2/hybrid5",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-002",
+      "variant": "existing-hnsw-l2/production5to3",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-002",
+      "variant": "existing-hnsw-l2/pool20to3",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-002",
+      "variant": "existing-hnsw-l2/pool20to5",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-003",
+      "variant": "existing-hnsw-l2/vector5",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-003",
+      "variant": "existing-hnsw-l2/hybrid5",
+      "category": "exact",
+      "id_context_precision": 0.25,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-003",
+      "variant": "existing-hnsw-l2/production5to3",
+      "category": "exact",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-003",
+      "variant": "existing-hnsw-l2/pool20to3",
+      "category": "exact",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-003",
+      "variant": "existing-hnsw-l2/pool20to5",
+      "category": "exact",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-004",
+      "variant": "existing-hnsw-l2/vector5",
+      "category": "exact",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-004",
+      "variant": "existing-hnsw-l2/hybrid5",
+      "category": "exact",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-004",
+      "variant": "existing-hnsw-l2/production5to3",
+      "category": "exact",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-004",
+      "variant": "existing-hnsw-l2/pool20to3",
+      "category": "exact",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-004",
+      "variant": "existing-hnsw-l2/pool20to5",
+      "category": "exact",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-005",
+      "variant": "existing-hnsw-l2/vector5",
+      "category": "exact",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-005",
+      "variant": "existing-hnsw-l2/hybrid5",
+      "category": "exact",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-005",
+      "variant": "existing-hnsw-l2/production5to3",
+      "category": "exact",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-005",
+      "variant": "existing-hnsw-l2/pool20to3",
+      "category": "exact",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-005",
+      "variant": "existing-hnsw-l2/pool20to5",
+      "category": "exact",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-006",
+      "variant": "existing-hnsw-l2/vector5",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-006",
+      "variant": "existing-hnsw-l2/hybrid5",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-006",
+      "variant": "existing-hnsw-l2/production5to3",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-006",
+      "variant": "existing-hnsw-l2/pool20to3",
+      "category": "exact",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-006",
+      "variant": "existing-hnsw-l2/pool20to5",
+      "category": "exact",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-007",
+      "variant": "existing-hnsw-l2/vector5",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-007",
+      "variant": "existing-hnsw-l2/hybrid5",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-007",
+      "variant": "existing-hnsw-l2/production5to3",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-007",
+      "variant": "existing-hnsw-l2/pool20to3",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-007",
+      "variant": "existing-hnsw-l2/pool20to5",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-008",
+      "variant": "existing-hnsw-l2/vector5",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-008",
+      "variant": "existing-hnsw-l2/hybrid5",
+      "category": "exact",
+      "id_context_precision": 0.25,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-008",
+      "variant": "existing-hnsw-l2/production5to3",
+      "category": "exact",
+      "id_context_precision": 0.5,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-008",
+      "variant": "existing-hnsw-l2/pool20to3",
+      "category": "exact",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-008",
+      "variant": "existing-hnsw-l2/pool20to5",
+      "category": "exact",
+      "id_context_precision": 0.25,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-009",
+      "variant": "existing-hnsw-l2/vector5",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-009",
+      "variant": "existing-hnsw-l2/hybrid5",
+      "category": "exact",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-009",
+      "variant": "existing-hnsw-l2/production5to3",
+      "category": "exact",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-009",
+      "variant": "existing-hnsw-l2/pool20to3",
+      "category": "exact",
+      "id_context_precision": 0.5,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-009",
+      "variant": "existing-hnsw-l2/pool20to5",
+      "category": "exact",
+      "id_context_precision": 0.25,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-010",
+      "variant": "existing-hnsw-l2/vector5",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-010",
+      "variant": "existing-hnsw-l2/hybrid5",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-010",
+      "variant": "existing-hnsw-l2/production5to3",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-010",
+      "variant": "existing-hnsw-l2/pool20to3",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-010",
+      "variant": "existing-hnsw-l2/pool20to5",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-011",
+      "variant": "existing-hnsw-l2/vector5",
+      "category": "paraphrase",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-011",
+      "variant": "existing-hnsw-l2/hybrid5",
+      "category": "paraphrase",
+      "id_context_precision": 0.25,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-011",
+      "variant": "existing-hnsw-l2/production5to3",
+      "category": "paraphrase",
+      "id_context_precision": 0.5,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-011",
+      "variant": "existing-hnsw-l2/pool20to3",
+      "category": "paraphrase",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-011",
+      "variant": "existing-hnsw-l2/pool20to5",
+      "category": "paraphrase",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-012",
+      "variant": "existing-hnsw-l2/vector5",
+      "category": "paraphrase",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-012",
+      "variant": "existing-hnsw-l2/hybrid5",
+      "category": "paraphrase",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-012",
+      "variant": "existing-hnsw-l2/production5to3",
+      "category": "paraphrase",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-012",
+      "variant": "existing-hnsw-l2/pool20to3",
+      "category": "paraphrase",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-012",
+      "variant": "existing-hnsw-l2/pool20to5",
+      "category": "paraphrase",
+      "id_context_precision": 0.25,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-013",
+      "variant": "existing-hnsw-l2/vector5",
+      "category": "paraphrase",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-013",
+      "variant": "existing-hnsw-l2/hybrid5",
+      "category": "paraphrase",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-013",
+      "variant": "existing-hnsw-l2/production5to3",
+      "category": "paraphrase",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-013",
+      "variant": "existing-hnsw-l2/pool20to3",
+      "category": "paraphrase",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-013",
+      "variant": "existing-hnsw-l2/pool20to5",
+      "category": "paraphrase",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-014",
+      "variant": "existing-hnsw-l2/vector5",
+      "category": "paraphrase",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-014",
+      "variant": "existing-hnsw-l2/hybrid5",
+      "category": "paraphrase",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-014",
+      "variant": "existing-hnsw-l2/production5to3",
+      "category": "paraphrase",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-014",
+      "variant": "existing-hnsw-l2/pool20to3",
+      "category": "paraphrase",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-014",
+      "variant": "existing-hnsw-l2/pool20to5",
+      "category": "paraphrase",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-015",
+      "variant": "existing-hnsw-l2/vector5",
+      "category": "paraphrase",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-015",
+      "variant": "existing-hnsw-l2/hybrid5",
+      "category": "paraphrase",
+      "id_context_precision": 0.2,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-015",
+      "variant": "existing-hnsw-l2/production5to3",
+      "category": "paraphrase",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-015",
+      "variant": "existing-hnsw-l2/pool20to3",
+      "category": "paraphrase",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-015",
+      "variant": "existing-hnsw-l2/pool20to5",
+      "category": "paraphrase",
+      "id_context_precision": 0.2,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-016",
+      "variant": "existing-hnsw-l2/vector5",
+      "category": "paraphrase",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-016",
+      "variant": "existing-hnsw-l2/hybrid5",
+      "category": "paraphrase",
+      "id_context_precision": 0.25,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-016",
+      "variant": "existing-hnsw-l2/production5to3",
+      "category": "paraphrase",
+      "id_context_precision": 0.5,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-016",
+      "variant": "existing-hnsw-l2/pool20to3",
+      "category": "paraphrase",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-016",
+      "variant": "existing-hnsw-l2/pool20to5",
+      "category": "paraphrase",
+      "id_context_precision": 0.25,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-017",
+      "variant": "existing-hnsw-l2/vector5",
+      "category": "paraphrase",
+      "id_context_precision": 0.25,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-017",
+      "variant": "existing-hnsw-l2/hybrid5",
+      "category": "paraphrase",
+      "id_context_precision": 0.25,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-017",
+      "variant": "existing-hnsw-l2/production5to3",
+      "category": "paraphrase",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-017",
+      "variant": "existing-hnsw-l2/pool20to3",
+      "category": "paraphrase",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-017",
+      "variant": "existing-hnsw-l2/pool20to5",
+      "category": "paraphrase",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-018",
+      "variant": "existing-hnsw-l2/vector5",
+      "category": "paraphrase",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-018",
+      "variant": "existing-hnsw-l2/hybrid5",
+      "category": "paraphrase",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-018",
+      "variant": "existing-hnsw-l2/production5to3",
+      "category": "paraphrase",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-018",
+      "variant": "existing-hnsw-l2/pool20to3",
+      "category": "paraphrase",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-018",
+      "variant": "existing-hnsw-l2/pool20to5",
+      "category": "paraphrase",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-019",
+      "variant": "existing-hnsw-l2/vector5",
+      "category": "paraphrase",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-019",
+      "variant": "existing-hnsw-l2/hybrid5",
+      "category": "paraphrase",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-019",
+      "variant": "existing-hnsw-l2/production5to3",
+      "category": "paraphrase",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-019",
+      "variant": "existing-hnsw-l2/pool20to3",
+      "category": "paraphrase",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-019",
+      "variant": "existing-hnsw-l2/pool20to5",
+      "category": "paraphrase",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-020",
+      "variant": "existing-hnsw-l2/vector5",
+      "category": "paraphrase",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-020",
+      "variant": "existing-hnsw-l2/hybrid5",
+      "category": "paraphrase",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-020",
+      "variant": "existing-hnsw-l2/production5to3",
+      "category": "paraphrase",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-020",
+      "variant": "existing-hnsw-l2/pool20to3",
+      "category": "paraphrase",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-020",
+      "variant": "existing-hnsw-l2/pool20to5",
+      "category": "paraphrase",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-021",
+      "variant": "existing-hnsw-l2/vector5",
+      "category": "synonym",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-021",
+      "variant": "existing-hnsw-l2/hybrid5",
+      "category": "synonym",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-021",
+      "variant": "existing-hnsw-l2/production5to3",
+      "category": "synonym",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-021",
+      "variant": "existing-hnsw-l2/pool20to3",
+      "category": "synonym",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-021",
+      "variant": "existing-hnsw-l2/pool20to5",
+      "category": "synonym",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-022",
+      "variant": "existing-hnsw-l2/vector5",
+      "category": "synonym",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-022",
+      "variant": "existing-hnsw-l2/hybrid5",
+      "category": "synonym",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-022",
+      "variant": "existing-hnsw-l2/production5to3",
+      "category": "synonym",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-022",
+      "variant": "existing-hnsw-l2/pool20to3",
+      "category": "synonym",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-022",
+      "variant": "existing-hnsw-l2/pool20to5",
+      "category": "synonym",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-023",
+      "variant": "existing-hnsw-l2/vector5",
+      "category": "synonym",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-023",
+      "variant": "existing-hnsw-l2/hybrid5",
+      "category": "synonym",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-023",
+      "variant": "existing-hnsw-l2/production5to3",
+      "category": "synonym",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-023",
+      "variant": "existing-hnsw-l2/pool20to3",
+      "category": "synonym",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-023",
+      "variant": "existing-hnsw-l2/pool20to5",
+      "category": "synonym",
+      "id_context_precision": 0.25,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-024",
+      "variant": "existing-hnsw-l2/vector5",
+      "category": "synonym",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-024",
+      "variant": "existing-hnsw-l2/hybrid5",
+      "category": "synonym",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-024",
+      "variant": "existing-hnsw-l2/production5to3",
+      "category": "synonym",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-024",
+      "variant": "existing-hnsw-l2/pool20to3",
+      "category": "synonym",
+      "id_context_precision": 0.5,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-024",
+      "variant": "existing-hnsw-l2/pool20to5",
+      "category": "synonym",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-025",
+      "variant": "existing-hnsw-l2/vector5",
+      "category": "synonym",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-025",
+      "variant": "existing-hnsw-l2/hybrid5",
+      "category": "synonym",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-025",
+      "variant": "existing-hnsw-l2/production5to3",
+      "category": "synonym",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-025",
+      "variant": "existing-hnsw-l2/pool20to3",
+      "category": "synonym",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-025",
+      "variant": "existing-hnsw-l2/pool20to5",
+      "category": "synonym",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-026",
+      "variant": "existing-hnsw-l2/vector5",
+      "category": "synonym",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-026",
+      "variant": "existing-hnsw-l2/hybrid5",
+      "category": "synonym",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-026",
+      "variant": "existing-hnsw-l2/production5to3",
+      "category": "synonym",
+      "id_context_precision": 0.5,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-026",
+      "variant": "existing-hnsw-l2/pool20to3",
+      "category": "synonym",
+      "id_context_precision": 0.5,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-026",
+      "variant": "existing-hnsw-l2/pool20to5",
+      "category": "synonym",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-027",
+      "variant": "existing-hnsw-l2/vector5",
+      "category": "synonym",
+      "id_context_precision": 0.25,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-027",
+      "variant": "existing-hnsw-l2/hybrid5",
+      "category": "synonym",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-027",
+      "variant": "existing-hnsw-l2/production5to3",
+      "category": "synonym",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-027",
+      "variant": "existing-hnsw-l2/pool20to3",
+      "category": "synonym",
+      "id_context_precision": 0.5,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-027",
+      "variant": "existing-hnsw-l2/pool20to5",
+      "category": "synonym",
+      "id_context_precision": 0.25,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-028",
+      "variant": "existing-hnsw-l2/vector5",
+      "category": "synonym",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-028",
+      "variant": "existing-hnsw-l2/hybrid5",
+      "category": "synonym",
+      "id_context_precision": 0.2,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-028",
+      "variant": "existing-hnsw-l2/production5to3",
+      "category": "synonym",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-028",
+      "variant": "existing-hnsw-l2/pool20to3",
+      "category": "synonym",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-028",
+      "variant": "existing-hnsw-l2/pool20to5",
+      "category": "synonym",
+      "id_context_precision": 0.2,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-029",
+      "variant": "existing-hnsw-l2/vector5",
+      "category": "multihop",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-029",
+      "variant": "existing-hnsw-l2/hybrid5",
+      "category": "multihop",
+      "id_context_precision": 0.2,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-029",
+      "variant": "existing-hnsw-l2/production5to3",
+      "category": "multihop",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-029",
+      "variant": "existing-hnsw-l2/pool20to3",
+      "category": "multihop",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-029",
+      "variant": "existing-hnsw-l2/pool20to5",
+      "category": "multihop",
+      "id_context_precision": 0.2,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-030",
+      "variant": "existing-hnsw-l2/vector5",
+      "category": "multihop",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-030",
+      "variant": "existing-hnsw-l2/hybrid5",
+      "category": "multihop",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-030",
+      "variant": "existing-hnsw-l2/production5to3",
+      "category": "multihop",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-030",
+      "variant": "existing-hnsw-l2/pool20to3",
+      "category": "multihop",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-030",
+      "variant": "existing-hnsw-l2/pool20to5",
+      "category": "multihop",
+      "id_context_precision": 0.2,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-031",
+      "variant": "existing-hnsw-l2/vector5",
+      "category": "multihop",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-031",
+      "variant": "existing-hnsw-l2/hybrid5",
+      "category": "multihop",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-031",
+      "variant": "existing-hnsw-l2/production5to3",
+      "category": "multihop",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-031",
+      "variant": "existing-hnsw-l2/pool20to3",
+      "category": "multihop",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-031",
+      "variant": "existing-hnsw-l2/pool20to5",
+      "category": "multihop",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-032",
+      "variant": "existing-hnsw-l2/vector5",
+      "category": "multihop",
+      "id_context_precision": 0.25,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-032",
+      "variant": "existing-hnsw-l2/hybrid5",
+      "category": "multihop",
+      "id_context_precision": 0.25,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-032",
+      "variant": "existing-hnsw-l2/production5to3",
+      "category": "multihop",
+      "id_context_precision": 0.5,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-032",
+      "variant": "existing-hnsw-l2/pool20to3",
+      "category": "multihop",
+      "id_context_precision": 0.5,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-032",
+      "variant": "existing-hnsw-l2/pool20to5",
+      "category": "multihop",
+      "id_context_precision": 0.25,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-033",
+      "variant": "existing-hnsw-l2/vector5",
+      "category": "multihop",
+      "id_context_precision": 0.2,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-033",
+      "variant": "existing-hnsw-l2/hybrid5",
+      "category": "multihop",
+      "id_context_precision": 0.2,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-033",
+      "variant": "existing-hnsw-l2/production5to3",
+      "category": "multihop",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-033",
+      "variant": "existing-hnsw-l2/pool20to3",
+      "category": "multihop",
+      "id_context_precision": 0.5,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-033",
+      "variant": "existing-hnsw-l2/pool20to5",
+      "category": "multihop",
+      "id_context_precision": 0.25,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-034",
+      "variant": "existing-hnsw-l2/vector5",
+      "category": "multihop",
+      "id_context_precision": 0.4,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-034",
+      "variant": "existing-hnsw-l2/hybrid5",
+      "category": "multihop",
+      "id_context_precision": 0.5,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-034",
+      "variant": "existing-hnsw-l2/production5to3",
+      "category": "multihop",
+      "id_context_precision": 0.6666666666666666,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-034",
+      "variant": "existing-hnsw-l2/pool20to3",
+      "category": "multihop",
+      "id_context_precision": 0.6666666666666666,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-034",
+      "variant": "existing-hnsw-l2/pool20to5",
+      "category": "multihop",
+      "id_context_precision": 0.4,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-035",
+      "variant": "existing-hnsw-l2/vector5",
+      "category": "followup",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-035",
+      "variant": "existing-hnsw-l2/hybrid5",
+      "category": "followup",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-035",
+      "variant": "existing-hnsw-l2/production5to3",
+      "category": "followup",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-035",
+      "variant": "existing-hnsw-l2/pool20to3",
+      "category": "followup",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-035",
+      "variant": "existing-hnsw-l2/pool20to5",
+      "category": "followup",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-036",
+      "variant": "existing-hnsw-l2/vector5",
+      "category": "followup",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-036",
+      "variant": "existing-hnsw-l2/hybrid5",
+      "category": "followup",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-036",
+      "variant": "existing-hnsw-l2/production5to3",
+      "category": "followup",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-036",
+      "variant": "existing-hnsw-l2/pool20to3",
+      "category": "followup",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-036",
+      "variant": "existing-hnsw-l2/pool20to5",
+      "category": "followup",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-037",
+      "variant": "existing-hnsw-l2/vector5",
+      "category": "followup",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-037",
+      "variant": "existing-hnsw-l2/hybrid5",
+      "category": "followup",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-037",
+      "variant": "existing-hnsw-l2/production5to3",
+      "category": "followup",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-037",
+      "variant": "existing-hnsw-l2/pool20to3",
+      "category": "followup",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-037",
+      "variant": "existing-hnsw-l2/pool20to5",
+      "category": "followup",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-038",
+      "variant": "existing-hnsw-l2/vector5",
+      "category": "followup",
+      "id_context_precision": 0.25,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-038",
+      "variant": "existing-hnsw-l2/hybrid5",
+      "category": "followup",
+      "id_context_precision": 0.25,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-038",
+      "variant": "existing-hnsw-l2/production5to3",
+      "category": "followup",
+      "id_context_precision": 0.5,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-038",
+      "variant": "existing-hnsw-l2/pool20to3",
+      "category": "followup",
+      "id_context_precision": 0.5,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-038",
+      "variant": "existing-hnsw-l2/pool20to5",
+      "category": "followup",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-039",
+      "variant": "existing-hnsw-l2/vector5",
+      "category": "followup",
+      "id_context_precision": 0.25,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-039",
+      "variant": "existing-hnsw-l2/hybrid5",
+      "category": "followup",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-039",
+      "variant": "existing-hnsw-l2/production5to3",
+      "category": "followup",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-039",
+      "variant": "existing-hnsw-l2/pool20to3",
+      "category": "followup",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-039",
+      "variant": "existing-hnsw-l2/pool20to5",
+      "category": "followup",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-040",
+      "variant": "existing-hnsw-l2/vector5",
+      "category": "followup",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-040",
+      "variant": "existing-hnsw-l2/hybrid5",
+      "category": "followup",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-040",
+      "variant": "existing-hnsw-l2/production5to3",
+      "category": "followup",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-040",
+      "variant": "existing-hnsw-l2/pool20to3",
+      "category": "followup",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-040",
+      "variant": "existing-hnsw-l2/pool20to5",
+      "category": "followup",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-001",
+      "variant": "existing-exact-cosine/vector5",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-001",
+      "variant": "existing-exact-cosine/hybrid5",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-001",
+      "variant": "existing-exact-cosine/production5to3",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-001",
+      "variant": "existing-exact-cosine/pool20to3",
+      "category": "exact",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-001",
+      "variant": "existing-exact-cosine/pool20to5",
+      "category": "exact",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-002",
+      "variant": "existing-exact-cosine/vector5",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-002",
+      "variant": "existing-exact-cosine/hybrid5",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-002",
+      "variant": "existing-exact-cosine/production5to3",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-002",
+      "variant": "existing-exact-cosine/pool20to3",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-002",
+      "variant": "existing-exact-cosine/pool20to5",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-003",
+      "variant": "existing-exact-cosine/vector5",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-003",
+      "variant": "existing-exact-cosine/hybrid5",
+      "category": "exact",
+      "id_context_precision": 0.25,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-003",
+      "variant": "existing-exact-cosine/production5to3",
+      "category": "exact",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-003",
+      "variant": "existing-exact-cosine/pool20to3",
+      "category": "exact",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-003",
+      "variant": "existing-exact-cosine/pool20to5",
+      "category": "exact",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-004",
+      "variant": "existing-exact-cosine/vector5",
+      "category": "exact",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-004",
+      "variant": "existing-exact-cosine/hybrid5",
+      "category": "exact",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-004",
+      "variant": "existing-exact-cosine/production5to3",
+      "category": "exact",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-004",
+      "variant": "existing-exact-cosine/pool20to3",
+      "category": "exact",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-004",
+      "variant": "existing-exact-cosine/pool20to5",
+      "category": "exact",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-005",
+      "variant": "existing-exact-cosine/vector5",
+      "category": "exact",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-005",
+      "variant": "existing-exact-cosine/hybrid5",
+      "category": "exact",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-005",
+      "variant": "existing-exact-cosine/production5to3",
+      "category": "exact",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-005",
+      "variant": "existing-exact-cosine/pool20to3",
+      "category": "exact",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-005",
+      "variant": "existing-exact-cosine/pool20to5",
+      "category": "exact",
+      "id_context_precision": 0.25,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-006",
+      "variant": "existing-exact-cosine/vector5",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-006",
+      "variant": "existing-exact-cosine/hybrid5",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-006",
+      "variant": "existing-exact-cosine/production5to3",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-006",
+      "variant": "existing-exact-cosine/pool20to3",
+      "category": "exact",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-006",
+      "variant": "existing-exact-cosine/pool20to5",
+      "category": "exact",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-007",
+      "variant": "existing-exact-cosine/vector5",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-007",
+      "variant": "existing-exact-cosine/hybrid5",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-007",
+      "variant": "existing-exact-cosine/production5to3",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-007",
+      "variant": "existing-exact-cosine/pool20to3",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-007",
+      "variant": "existing-exact-cosine/pool20to5",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-008",
+      "variant": "existing-exact-cosine/vector5",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-008",
+      "variant": "existing-exact-cosine/hybrid5",
+      "category": "exact",
+      "id_context_precision": 0.25,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-008",
+      "variant": "existing-exact-cosine/production5to3",
+      "category": "exact",
+      "id_context_precision": 0.5,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-008",
+      "variant": "existing-exact-cosine/pool20to3",
+      "category": "exact",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-008",
+      "variant": "existing-exact-cosine/pool20to5",
+      "category": "exact",
+      "id_context_precision": 0.25,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-009",
+      "variant": "existing-exact-cosine/vector5",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-009",
+      "variant": "existing-exact-cosine/hybrid5",
+      "category": "exact",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-009",
+      "variant": "existing-exact-cosine/production5to3",
+      "category": "exact",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-009",
+      "variant": "existing-exact-cosine/pool20to3",
+      "category": "exact",
+      "id_context_precision": 0.5,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-009",
+      "variant": "existing-exact-cosine/pool20to5",
+      "category": "exact",
+      "id_context_precision": 0.25,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-010",
+      "variant": "existing-exact-cosine/vector5",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-010",
+      "variant": "existing-exact-cosine/hybrid5",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-010",
+      "variant": "existing-exact-cosine/production5to3",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-010",
+      "variant": "existing-exact-cosine/pool20to3",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-010",
+      "variant": "existing-exact-cosine/pool20to5",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-011",
+      "variant": "existing-exact-cosine/vector5",
+      "category": "paraphrase",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-011",
+      "variant": "existing-exact-cosine/hybrid5",
+      "category": "paraphrase",
+      "id_context_precision": 0.25,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-011",
+      "variant": "existing-exact-cosine/production5to3",
+      "category": "paraphrase",
+      "id_context_precision": 0.5,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-011",
+      "variant": "existing-exact-cosine/pool20to3",
+      "category": "paraphrase",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-011",
+      "variant": "existing-exact-cosine/pool20to5",
+      "category": "paraphrase",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-012",
+      "variant": "existing-exact-cosine/vector5",
+      "category": "paraphrase",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-012",
+      "variant": "existing-exact-cosine/hybrid5",
+      "category": "paraphrase",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-012",
+      "variant": "existing-exact-cosine/production5to3",
+      "category": "paraphrase",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-012",
+      "variant": "existing-exact-cosine/pool20to3",
+      "category": "paraphrase",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-012",
+      "variant": "existing-exact-cosine/pool20to5",
+      "category": "paraphrase",
+      "id_context_precision": 0.25,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-013",
+      "variant": "existing-exact-cosine/vector5",
+      "category": "paraphrase",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-013",
+      "variant": "existing-exact-cosine/hybrid5",
+      "category": "paraphrase",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-013",
+      "variant": "existing-exact-cosine/production5to3",
+      "category": "paraphrase",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-013",
+      "variant": "existing-exact-cosine/pool20to3",
+      "category": "paraphrase",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-013",
+      "variant": "existing-exact-cosine/pool20to5",
+      "category": "paraphrase",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-014",
+      "variant": "existing-exact-cosine/vector5",
+      "category": "paraphrase",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-014",
+      "variant": "existing-exact-cosine/hybrid5",
+      "category": "paraphrase",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-014",
+      "variant": "existing-exact-cosine/production5to3",
+      "category": "paraphrase",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-014",
+      "variant": "existing-exact-cosine/pool20to3",
+      "category": "paraphrase",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-014",
+      "variant": "existing-exact-cosine/pool20to5",
+      "category": "paraphrase",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-015",
+      "variant": "existing-exact-cosine/vector5",
+      "category": "paraphrase",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-015",
+      "variant": "existing-exact-cosine/hybrid5",
+      "category": "paraphrase",
+      "id_context_precision": 0.2,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-015",
+      "variant": "existing-exact-cosine/production5to3",
+      "category": "paraphrase",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-015",
+      "variant": "existing-exact-cosine/pool20to3",
+      "category": "paraphrase",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-015",
+      "variant": "existing-exact-cosine/pool20to5",
+      "category": "paraphrase",
+      "id_context_precision": 0.2,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-016",
+      "variant": "existing-exact-cosine/vector5",
+      "category": "paraphrase",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-016",
+      "variant": "existing-exact-cosine/hybrid5",
+      "category": "paraphrase",
+      "id_context_precision": 0.25,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-016",
+      "variant": "existing-exact-cosine/production5to3",
+      "category": "paraphrase",
+      "id_context_precision": 0.5,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-016",
+      "variant": "existing-exact-cosine/pool20to3",
+      "category": "paraphrase",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-016",
+      "variant": "existing-exact-cosine/pool20to5",
+      "category": "paraphrase",
+      "id_context_precision": 0.25,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-017",
+      "variant": "existing-exact-cosine/vector5",
+      "category": "paraphrase",
+      "id_context_precision": 0.25,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-017",
+      "variant": "existing-exact-cosine/hybrid5",
+      "category": "paraphrase",
+      "id_context_precision": 0.25,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-017",
+      "variant": "existing-exact-cosine/production5to3",
+      "category": "paraphrase",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-017",
+      "variant": "existing-exact-cosine/pool20to3",
+      "category": "paraphrase",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-017",
+      "variant": "existing-exact-cosine/pool20to5",
+      "category": "paraphrase",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-018",
+      "variant": "existing-exact-cosine/vector5",
+      "category": "paraphrase",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-018",
+      "variant": "existing-exact-cosine/hybrid5",
+      "category": "paraphrase",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-018",
+      "variant": "existing-exact-cosine/production5to3",
+      "category": "paraphrase",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-018",
+      "variant": "existing-exact-cosine/pool20to3",
+      "category": "paraphrase",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-018",
+      "variant": "existing-exact-cosine/pool20to5",
+      "category": "paraphrase",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-019",
+      "variant": "existing-exact-cosine/vector5",
+      "category": "paraphrase",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-019",
+      "variant": "existing-exact-cosine/hybrid5",
+      "category": "paraphrase",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-019",
+      "variant": "existing-exact-cosine/production5to3",
+      "category": "paraphrase",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-019",
+      "variant": "existing-exact-cosine/pool20to3",
+      "category": "paraphrase",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-019",
+      "variant": "existing-exact-cosine/pool20to5",
+      "category": "paraphrase",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-020",
+      "variant": "existing-exact-cosine/vector5",
+      "category": "paraphrase",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-020",
+      "variant": "existing-exact-cosine/hybrid5",
+      "category": "paraphrase",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-020",
+      "variant": "existing-exact-cosine/production5to3",
+      "category": "paraphrase",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-020",
+      "variant": "existing-exact-cosine/pool20to3",
+      "category": "paraphrase",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-020",
+      "variant": "existing-exact-cosine/pool20to5",
+      "category": "paraphrase",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-021",
+      "variant": "existing-exact-cosine/vector5",
+      "category": "synonym",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-021",
+      "variant": "existing-exact-cosine/hybrid5",
+      "category": "synonym",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-021",
+      "variant": "existing-exact-cosine/production5to3",
+      "category": "synonym",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-021",
+      "variant": "existing-exact-cosine/pool20to3",
+      "category": "synonym",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-021",
+      "variant": "existing-exact-cosine/pool20to5",
+      "category": "synonym",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-022",
+      "variant": "existing-exact-cosine/vector5",
+      "category": "synonym",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-022",
+      "variant": "existing-exact-cosine/hybrid5",
+      "category": "synonym",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-022",
+      "variant": "existing-exact-cosine/production5to3",
+      "category": "synonym",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-022",
+      "variant": "existing-exact-cosine/pool20to3",
+      "category": "synonym",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-022",
+      "variant": "existing-exact-cosine/pool20to5",
+      "category": "synonym",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-023",
+      "variant": "existing-exact-cosine/vector5",
+      "category": "synonym",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-023",
+      "variant": "existing-exact-cosine/hybrid5",
+      "category": "synonym",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-023",
+      "variant": "existing-exact-cosine/production5to3",
+      "category": "synonym",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-023",
+      "variant": "existing-exact-cosine/pool20to3",
+      "category": "synonym",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-023",
+      "variant": "existing-exact-cosine/pool20to5",
+      "category": "synonym",
+      "id_context_precision": 0.25,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-024",
+      "variant": "existing-exact-cosine/vector5",
+      "category": "synonym",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-024",
+      "variant": "existing-exact-cosine/hybrid5",
+      "category": "synonym",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-024",
+      "variant": "existing-exact-cosine/production5to3",
+      "category": "synonym",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-024",
+      "variant": "existing-exact-cosine/pool20to3",
+      "category": "synonym",
+      "id_context_precision": 0.5,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-024",
+      "variant": "existing-exact-cosine/pool20to5",
+      "category": "synonym",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-025",
+      "variant": "existing-exact-cosine/vector5",
+      "category": "synonym",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-025",
+      "variant": "existing-exact-cosine/hybrid5",
+      "category": "synonym",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-025",
+      "variant": "existing-exact-cosine/production5to3",
+      "category": "synonym",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-025",
+      "variant": "existing-exact-cosine/pool20to3",
+      "category": "synonym",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-025",
+      "variant": "existing-exact-cosine/pool20to5",
+      "category": "synonym",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-026",
+      "variant": "existing-exact-cosine/vector5",
+      "category": "synonym",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-026",
+      "variant": "existing-exact-cosine/hybrid5",
+      "category": "synonym",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-026",
+      "variant": "existing-exact-cosine/production5to3",
+      "category": "synonym",
+      "id_context_precision": 0.5,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-026",
+      "variant": "existing-exact-cosine/pool20to3",
+      "category": "synonym",
+      "id_context_precision": 0.5,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-026",
+      "variant": "existing-exact-cosine/pool20to5",
+      "category": "synonym",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-027",
+      "variant": "existing-exact-cosine/vector5",
+      "category": "synonym",
+      "id_context_precision": 0.25,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-027",
+      "variant": "existing-exact-cosine/hybrid5",
+      "category": "synonym",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-027",
+      "variant": "existing-exact-cosine/production5to3",
+      "category": "synonym",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-027",
+      "variant": "existing-exact-cosine/pool20to3",
+      "category": "synonym",
+      "id_context_precision": 0.5,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-027",
+      "variant": "existing-exact-cosine/pool20to5",
+      "category": "synonym",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-028",
+      "variant": "existing-exact-cosine/vector5",
+      "category": "synonym",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-028",
+      "variant": "existing-exact-cosine/hybrid5",
+      "category": "synonym",
+      "id_context_precision": 0.2,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-028",
+      "variant": "existing-exact-cosine/production5to3",
+      "category": "synonym",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-028",
+      "variant": "existing-exact-cosine/pool20to3",
+      "category": "synonym",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-028",
+      "variant": "existing-exact-cosine/pool20to5",
+      "category": "synonym",
+      "id_context_precision": 0.2,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-029",
+      "variant": "existing-exact-cosine/vector5",
+      "category": "multihop",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-029",
+      "variant": "existing-exact-cosine/hybrid5",
+      "category": "multihop",
+      "id_context_precision": 0.2,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-029",
+      "variant": "existing-exact-cosine/production5to3",
+      "category": "multihop",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-029",
+      "variant": "existing-exact-cosine/pool20to3",
+      "category": "multihop",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-029",
+      "variant": "existing-exact-cosine/pool20to5",
+      "category": "multihop",
+      "id_context_precision": 0.2,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-030",
+      "variant": "existing-exact-cosine/vector5",
+      "category": "multihop",
+      "id_context_precision": 0.2,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-030",
+      "variant": "existing-exact-cosine/hybrid5",
+      "category": "multihop",
+      "id_context_precision": 0.2,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-030",
+      "variant": "existing-exact-cosine/production5to3",
+      "category": "multihop",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-030",
+      "variant": "existing-exact-cosine/pool20to3",
+      "category": "multihop",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-030",
+      "variant": "existing-exact-cosine/pool20to5",
+      "category": "multihop",
+      "id_context_precision": 0.2,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-031",
+      "variant": "existing-exact-cosine/vector5",
+      "category": "multihop",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-031",
+      "variant": "existing-exact-cosine/hybrid5",
+      "category": "multihop",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-031",
+      "variant": "existing-exact-cosine/production5to3",
+      "category": "multihop",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-031",
+      "variant": "existing-exact-cosine/pool20to3",
+      "category": "multihop",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-031",
+      "variant": "existing-exact-cosine/pool20to5",
+      "category": "multihop",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-032",
+      "variant": "existing-exact-cosine/vector5",
+      "category": "multihop",
+      "id_context_precision": 0.25,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-032",
+      "variant": "existing-exact-cosine/hybrid5",
+      "category": "multihop",
+      "id_context_precision": 0.25,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-032",
+      "variant": "existing-exact-cosine/production5to3",
+      "category": "multihop",
+      "id_context_precision": 0.5,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-032",
+      "variant": "existing-exact-cosine/pool20to3",
+      "category": "multihop",
+      "id_context_precision": 0.5,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-032",
+      "variant": "existing-exact-cosine/pool20to5",
+      "category": "multihop",
+      "id_context_precision": 0.25,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-033",
+      "variant": "existing-exact-cosine/vector5",
+      "category": "multihop",
+      "id_context_precision": 0.2,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-033",
+      "variant": "existing-exact-cosine/hybrid5",
+      "category": "multihop",
+      "id_context_precision": 0.25,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-033",
+      "variant": "existing-exact-cosine/production5to3",
+      "category": "multihop",
+      "id_context_precision": 0.5,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-033",
+      "variant": "existing-exact-cosine/pool20to3",
+      "category": "multihop",
+      "id_context_precision": 0.5,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-033",
+      "variant": "existing-exact-cosine/pool20to5",
+      "category": "multihop",
+      "id_context_precision": 0.25,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-034",
+      "variant": "existing-exact-cosine/vector5",
+      "category": "multihop",
+      "id_context_precision": 0.2,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-034",
+      "variant": "existing-exact-cosine/hybrid5",
+      "category": "multihop",
+      "id_context_precision": 0.5,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-034",
+      "variant": "existing-exact-cosine/production5to3",
+      "category": "multihop",
+      "id_context_precision": 0.6666666666666666,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-034",
+      "variant": "existing-exact-cosine/pool20to3",
+      "category": "multihop",
+      "id_context_precision": 0.6666666666666666,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-034",
+      "variant": "existing-exact-cosine/pool20to5",
+      "category": "multihop",
+      "id_context_precision": 0.4,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-035",
+      "variant": "existing-exact-cosine/vector5",
+      "category": "followup",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-035",
+      "variant": "existing-exact-cosine/hybrid5",
+      "category": "followup",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-035",
+      "variant": "existing-exact-cosine/production5to3",
+      "category": "followup",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-035",
+      "variant": "existing-exact-cosine/pool20to3",
+      "category": "followup",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-035",
+      "variant": "existing-exact-cosine/pool20to5",
+      "category": "followup",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-036",
+      "variant": "existing-exact-cosine/vector5",
+      "category": "followup",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-036",
+      "variant": "existing-exact-cosine/hybrid5",
+      "category": "followup",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-036",
+      "variant": "existing-exact-cosine/production5to3",
+      "category": "followup",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-036",
+      "variant": "existing-exact-cosine/pool20to3",
+      "category": "followup",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-036",
+      "variant": "existing-exact-cosine/pool20to5",
+      "category": "followup",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-037",
+      "variant": "existing-exact-cosine/vector5",
+      "category": "followup",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-037",
+      "variant": "existing-exact-cosine/hybrid5",
+      "category": "followup",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-037",
+      "variant": "existing-exact-cosine/production5to3",
+      "category": "followup",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-037",
+      "variant": "existing-exact-cosine/pool20to3",
+      "category": "followup",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-037",
+      "variant": "existing-exact-cosine/pool20to5",
+      "category": "followup",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-038",
+      "variant": "existing-exact-cosine/vector5",
+      "category": "followup",
+      "id_context_precision": 0.25,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-038",
+      "variant": "existing-exact-cosine/hybrid5",
+      "category": "followup",
+      "id_context_precision": 0.25,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-038",
+      "variant": "existing-exact-cosine/production5to3",
+      "category": "followup",
+      "id_context_precision": 0.5,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-038",
+      "variant": "existing-exact-cosine/pool20to3",
+      "category": "followup",
+      "id_context_precision": 0.5,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-038",
+      "variant": "existing-exact-cosine/pool20to5",
+      "category": "followup",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-039",
+      "variant": "existing-exact-cosine/vector5",
+      "category": "followup",
+      "id_context_precision": 0.25,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-039",
+      "variant": "existing-exact-cosine/hybrid5",
+      "category": "followup",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-039",
+      "variant": "existing-exact-cosine/production5to3",
+      "category": "followup",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-039",
+      "variant": "existing-exact-cosine/pool20to3",
+      "category": "followup",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-039",
+      "variant": "existing-exact-cosine/pool20to5",
+      "category": "followup",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-040",
+      "variant": "existing-exact-cosine/vector5",
+      "category": "followup",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-040",
+      "variant": "existing-exact-cosine/hybrid5",
+      "category": "followup",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-040",
+      "variant": "existing-exact-cosine/production5to3",
+      "category": "followup",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-040",
+      "variant": "existing-exact-cosine/pool20to3",
+      "category": "followup",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-040",
+      "variant": "existing-exact-cosine/pool20to5",
+      "category": "followup",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-001",
+      "variant": "l3-clean-500/vector5",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-001",
+      "variant": "l3-clean-500/hybrid5",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-001",
+      "variant": "l3-clean-500/production5to3",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-001",
+      "variant": "l3-clean-500/pool20to3",
+      "category": "exact",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-001",
+      "variant": "l3-clean-500/pool20to5",
+      "category": "exact",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-002",
+      "variant": "l3-clean-500/vector5",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-002",
+      "variant": "l3-clean-500/hybrid5",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-002",
+      "variant": "l3-clean-500/production5to3",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-002",
+      "variant": "l3-clean-500/pool20to3",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-002",
+      "variant": "l3-clean-500/pool20to5",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-003",
+      "variant": "l3-clean-500/vector5",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-003",
+      "variant": "l3-clean-500/hybrid5",
+      "category": "exact",
+      "id_context_precision": 0.25,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-003",
+      "variant": "l3-clean-500/production5to3",
+      "category": "exact",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-003",
+      "variant": "l3-clean-500/pool20to3",
+      "category": "exact",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-003",
+      "variant": "l3-clean-500/pool20to5",
+      "category": "exact",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-004",
+      "variant": "l3-clean-500/vector5",
+      "category": "exact",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-004",
+      "variant": "l3-clean-500/hybrid5",
+      "category": "exact",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-004",
+      "variant": "l3-clean-500/production5to3",
+      "category": "exact",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-004",
+      "variant": "l3-clean-500/pool20to3",
+      "category": "exact",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-004",
+      "variant": "l3-clean-500/pool20to5",
+      "category": "exact",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-005",
+      "variant": "l3-clean-500/vector5",
+      "category": "exact",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-005",
+      "variant": "l3-clean-500/hybrid5",
+      "category": "exact",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-005",
+      "variant": "l3-clean-500/production5to3",
+      "category": "exact",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-005",
+      "variant": "l3-clean-500/pool20to3",
+      "category": "exact",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-005",
+      "variant": "l3-clean-500/pool20to5",
+      "category": "exact",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-006",
+      "variant": "l3-clean-500/vector5",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-006",
+      "variant": "l3-clean-500/hybrid5",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-006",
+      "variant": "l3-clean-500/production5to3",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-006",
+      "variant": "l3-clean-500/pool20to3",
+      "category": "exact",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-006",
+      "variant": "l3-clean-500/pool20to5",
+      "category": "exact",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-007",
+      "variant": "l3-clean-500/vector5",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-007",
+      "variant": "l3-clean-500/hybrid5",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-007",
+      "variant": "l3-clean-500/production5to3",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-007",
+      "variant": "l3-clean-500/pool20to3",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-007",
+      "variant": "l3-clean-500/pool20to5",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-008",
+      "variant": "l3-clean-500/vector5",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-008",
+      "variant": "l3-clean-500/hybrid5",
+      "category": "exact",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-008",
+      "variant": "l3-clean-500/production5to3",
+      "category": "exact",
+      "id_context_precision": 0.5,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-008",
+      "variant": "l3-clean-500/pool20to3",
+      "category": "exact",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-008",
+      "variant": "l3-clean-500/pool20to5",
+      "category": "exact",
+      "id_context_precision": 0.25,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-009",
+      "variant": "l3-clean-500/vector5",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-009",
+      "variant": "l3-clean-500/hybrid5",
+      "category": "exact",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-009",
+      "variant": "l3-clean-500/production5to3",
+      "category": "exact",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-009",
+      "variant": "l3-clean-500/pool20to3",
+      "category": "exact",
+      "id_context_precision": 0.5,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-009",
+      "variant": "l3-clean-500/pool20to5",
+      "category": "exact",
+      "id_context_precision": 0.25,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-010",
+      "variant": "l3-clean-500/vector5",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-010",
+      "variant": "l3-clean-500/hybrid5",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-010",
+      "variant": "l3-clean-500/production5to3",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-010",
+      "variant": "l3-clean-500/pool20to3",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-010",
+      "variant": "l3-clean-500/pool20to5",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-011",
+      "variant": "l3-clean-500/vector5",
+      "category": "paraphrase",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-011",
+      "variant": "l3-clean-500/hybrid5",
+      "category": "paraphrase",
+      "id_context_precision": 0.25,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-011",
+      "variant": "l3-clean-500/production5to3",
+      "category": "paraphrase",
+      "id_context_precision": 0.5,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-011",
+      "variant": "l3-clean-500/pool20to3",
+      "category": "paraphrase",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-011",
+      "variant": "l3-clean-500/pool20to5",
+      "category": "paraphrase",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-012",
+      "variant": "l3-clean-500/vector5",
+      "category": "paraphrase",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-012",
+      "variant": "l3-clean-500/hybrid5",
+      "category": "paraphrase",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-012",
+      "variant": "l3-clean-500/production5to3",
+      "category": "paraphrase",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-012",
+      "variant": "l3-clean-500/pool20to3",
+      "category": "paraphrase",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-012",
+      "variant": "l3-clean-500/pool20to5",
+      "category": "paraphrase",
+      "id_context_precision": 0.25,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-013",
+      "variant": "l3-clean-500/vector5",
+      "category": "paraphrase",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-013",
+      "variant": "l3-clean-500/hybrid5",
+      "category": "paraphrase",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-013",
+      "variant": "l3-clean-500/production5to3",
+      "category": "paraphrase",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-013",
+      "variant": "l3-clean-500/pool20to3",
+      "category": "paraphrase",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-013",
+      "variant": "l3-clean-500/pool20to5",
+      "category": "paraphrase",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-014",
+      "variant": "l3-clean-500/vector5",
+      "category": "paraphrase",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-014",
+      "variant": "l3-clean-500/hybrid5",
+      "category": "paraphrase",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-014",
+      "variant": "l3-clean-500/production5to3",
+      "category": "paraphrase",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-014",
+      "variant": "l3-clean-500/pool20to3",
+      "category": "paraphrase",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-014",
+      "variant": "l3-clean-500/pool20to5",
+      "category": "paraphrase",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-015",
+      "variant": "l3-clean-500/vector5",
+      "category": "paraphrase",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-015",
+      "variant": "l3-clean-500/hybrid5",
+      "category": "paraphrase",
+      "id_context_precision": 0.2,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-015",
+      "variant": "l3-clean-500/production5to3",
+      "category": "paraphrase",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-015",
+      "variant": "l3-clean-500/pool20to3",
+      "category": "paraphrase",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-015",
+      "variant": "l3-clean-500/pool20to5",
+      "category": "paraphrase",
+      "id_context_precision": 0.2,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-016",
+      "variant": "l3-clean-500/vector5",
+      "category": "paraphrase",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-016",
+      "variant": "l3-clean-500/hybrid5",
+      "category": "paraphrase",
+      "id_context_precision": 0.25,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-016",
+      "variant": "l3-clean-500/production5to3",
+      "category": "paraphrase",
+      "id_context_precision": 0.5,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-016",
+      "variant": "l3-clean-500/pool20to3",
+      "category": "paraphrase",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-016",
+      "variant": "l3-clean-500/pool20to5",
+      "category": "paraphrase",
+      "id_context_precision": 0.25,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-017",
+      "variant": "l3-clean-500/vector5",
+      "category": "paraphrase",
+      "id_context_precision": 0.25,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-017",
+      "variant": "l3-clean-500/hybrid5",
+      "category": "paraphrase",
+      "id_context_precision": 0.25,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-017",
+      "variant": "l3-clean-500/production5to3",
+      "category": "paraphrase",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-017",
+      "variant": "l3-clean-500/pool20to3",
+      "category": "paraphrase",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-017",
+      "variant": "l3-clean-500/pool20to5",
+      "category": "paraphrase",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-018",
+      "variant": "l3-clean-500/vector5",
+      "category": "paraphrase",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-018",
+      "variant": "l3-clean-500/hybrid5",
+      "category": "paraphrase",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-018",
+      "variant": "l3-clean-500/production5to3",
+      "category": "paraphrase",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-018",
+      "variant": "l3-clean-500/pool20to3",
+      "category": "paraphrase",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-018",
+      "variant": "l3-clean-500/pool20to5",
+      "category": "paraphrase",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-019",
+      "variant": "l3-clean-500/vector5",
+      "category": "paraphrase",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-019",
+      "variant": "l3-clean-500/hybrid5",
+      "category": "paraphrase",
+      "id_context_precision": 0.25,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-019",
+      "variant": "l3-clean-500/production5to3",
+      "category": "paraphrase",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-019",
+      "variant": "l3-clean-500/pool20to3",
+      "category": "paraphrase",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-019",
+      "variant": "l3-clean-500/pool20to5",
+      "category": "paraphrase",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-020",
+      "variant": "l3-clean-500/vector5",
+      "category": "paraphrase",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-020",
+      "variant": "l3-clean-500/hybrid5",
+      "category": "paraphrase",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-020",
+      "variant": "l3-clean-500/production5to3",
+      "category": "paraphrase",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-020",
+      "variant": "l3-clean-500/pool20to3",
+      "category": "paraphrase",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-020",
+      "variant": "l3-clean-500/pool20to5",
+      "category": "paraphrase",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-021",
+      "variant": "l3-clean-500/vector5",
+      "category": "synonym",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-021",
+      "variant": "l3-clean-500/hybrid5",
+      "category": "synonym",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-021",
+      "variant": "l3-clean-500/production5to3",
+      "category": "synonym",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-021",
+      "variant": "l3-clean-500/pool20to3",
+      "category": "synonym",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-021",
+      "variant": "l3-clean-500/pool20to5",
+      "category": "synonym",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-022",
+      "variant": "l3-clean-500/vector5",
+      "category": "synonym",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-022",
+      "variant": "l3-clean-500/hybrid5",
+      "category": "synonym",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-022",
+      "variant": "l3-clean-500/production5to3",
+      "category": "synonym",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-022",
+      "variant": "l3-clean-500/pool20to3",
+      "category": "synonym",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-022",
+      "variant": "l3-clean-500/pool20to5",
+      "category": "synonym",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-023",
+      "variant": "l3-clean-500/vector5",
+      "category": "synonym",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-023",
+      "variant": "l3-clean-500/hybrid5",
+      "category": "synonym",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-023",
+      "variant": "l3-clean-500/production5to3",
+      "category": "synonym",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-023",
+      "variant": "l3-clean-500/pool20to3",
+      "category": "synonym",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-023",
+      "variant": "l3-clean-500/pool20to5",
+      "category": "synonym",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-024",
+      "variant": "l3-clean-500/vector5",
+      "category": "synonym",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-024",
+      "variant": "l3-clean-500/hybrid5",
+      "category": "synonym",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-024",
+      "variant": "l3-clean-500/production5to3",
+      "category": "synonym",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-024",
+      "variant": "l3-clean-500/pool20to3",
+      "category": "synonym",
+      "id_context_precision": 0.5,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-024",
+      "variant": "l3-clean-500/pool20to5",
+      "category": "synonym",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-025",
+      "variant": "l3-clean-500/vector5",
+      "category": "synonym",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-025",
+      "variant": "l3-clean-500/hybrid5",
+      "category": "synonym",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-025",
+      "variant": "l3-clean-500/production5to3",
+      "category": "synonym",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-025",
+      "variant": "l3-clean-500/pool20to3",
+      "category": "synonym",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-025",
+      "variant": "l3-clean-500/pool20to5",
+      "category": "synonym",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-026",
+      "variant": "l3-clean-500/vector5",
+      "category": "synonym",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-026",
+      "variant": "l3-clean-500/hybrid5",
+      "category": "synonym",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-026",
+      "variant": "l3-clean-500/production5to3",
+      "category": "synonym",
+      "id_context_precision": 0.5,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-026",
+      "variant": "l3-clean-500/pool20to3",
+      "category": "synonym",
+      "id_context_precision": 0.5,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-026",
+      "variant": "l3-clean-500/pool20to5",
+      "category": "synonym",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-027",
+      "variant": "l3-clean-500/vector5",
+      "category": "synonym",
+      "id_context_precision": 0.25,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-027",
+      "variant": "l3-clean-500/hybrid5",
+      "category": "synonym",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-027",
+      "variant": "l3-clean-500/production5to3",
+      "category": "synonym",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-027",
+      "variant": "l3-clean-500/pool20to3",
+      "category": "synonym",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-027",
+      "variant": "l3-clean-500/pool20to5",
+      "category": "synonym",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-028",
+      "variant": "l3-clean-500/vector5",
+      "category": "synonym",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-028",
+      "variant": "l3-clean-500/hybrid5",
+      "category": "synonym",
+      "id_context_precision": 0.2,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-028",
+      "variant": "l3-clean-500/production5to3",
+      "category": "synonym",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-028",
+      "variant": "l3-clean-500/pool20to3",
+      "category": "synonym",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-028",
+      "variant": "l3-clean-500/pool20to5",
+      "category": "synonym",
+      "id_context_precision": 0.2,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-029",
+      "variant": "l3-clean-500/vector5",
+      "category": "multihop",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-029",
+      "variant": "l3-clean-500/hybrid5",
+      "category": "multihop",
+      "id_context_precision": 0.2,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-029",
+      "variant": "l3-clean-500/production5to3",
+      "category": "multihop",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-029",
+      "variant": "l3-clean-500/pool20to3",
+      "category": "multihop",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-029",
+      "variant": "l3-clean-500/pool20to5",
+      "category": "multihop",
+      "id_context_precision": 0.2,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-030",
+      "variant": "l3-clean-500/vector5",
+      "category": "multihop",
+      "id_context_precision": 0.2,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-030",
+      "variant": "l3-clean-500/hybrid5",
+      "category": "multihop",
+      "id_context_precision": 0.2,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-030",
+      "variant": "l3-clean-500/production5to3",
+      "category": "multihop",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-030",
+      "variant": "l3-clean-500/pool20to3",
+      "category": "multihop",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-030",
+      "variant": "l3-clean-500/pool20to5",
+      "category": "multihop",
+      "id_context_precision": 0.2,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-031",
+      "variant": "l3-clean-500/vector5",
+      "category": "multihop",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-031",
+      "variant": "l3-clean-500/hybrid5",
+      "category": "multihop",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-031",
+      "variant": "l3-clean-500/production5to3",
+      "category": "multihop",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-031",
+      "variant": "l3-clean-500/pool20to3",
+      "category": "multihop",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-031",
+      "variant": "l3-clean-500/pool20to5",
+      "category": "multihop",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-032",
+      "variant": "l3-clean-500/vector5",
+      "category": "multihop",
+      "id_context_precision": 0.25,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-032",
+      "variant": "l3-clean-500/hybrid5",
+      "category": "multihop",
+      "id_context_precision": 0.25,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-032",
+      "variant": "l3-clean-500/production5to3",
+      "category": "multihop",
+      "id_context_precision": 0.5,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-032",
+      "variant": "l3-clean-500/pool20to3",
+      "category": "multihop",
+      "id_context_precision": 0.5,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-032",
+      "variant": "l3-clean-500/pool20to5",
+      "category": "multihop",
+      "id_context_precision": 0.25,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-033",
+      "variant": "l3-clean-500/vector5",
+      "category": "multihop",
+      "id_context_precision": 0.2,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-033",
+      "variant": "l3-clean-500/hybrid5",
+      "category": "multihop",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-033",
+      "variant": "l3-clean-500/production5to3",
+      "category": "multihop",
+      "id_context_precision": 0.5,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-033",
+      "variant": "l3-clean-500/pool20to3",
+      "category": "multihop",
+      "id_context_precision": 0.5,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-033",
+      "variant": "l3-clean-500/pool20to5",
+      "category": "multihop",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-034",
+      "variant": "l3-clean-500/vector5",
+      "category": "multihop",
+      "id_context_precision": 0.2,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-034",
+      "variant": "l3-clean-500/hybrid5",
+      "category": "multihop",
+      "id_context_precision": 0.5,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-034",
+      "variant": "l3-clean-500/production5to3",
+      "category": "multihop",
+      "id_context_precision": 0.6666666666666666,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-034",
+      "variant": "l3-clean-500/pool20to3",
+      "category": "multihop",
+      "id_context_precision": 0.6666666666666666,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-034",
+      "variant": "l3-clean-500/pool20to5",
+      "category": "multihop",
+      "id_context_precision": 0.4,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-035",
+      "variant": "l3-clean-500/vector5",
+      "category": "followup",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-035",
+      "variant": "l3-clean-500/hybrid5",
+      "category": "followup",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-035",
+      "variant": "l3-clean-500/production5to3",
+      "category": "followup",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-035",
+      "variant": "l3-clean-500/pool20to3",
+      "category": "followup",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-035",
+      "variant": "l3-clean-500/pool20to5",
+      "category": "followup",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-036",
+      "variant": "l3-clean-500/vector5",
+      "category": "followup",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-036",
+      "variant": "l3-clean-500/hybrid5",
+      "category": "followup",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-036",
+      "variant": "l3-clean-500/production5to3",
+      "category": "followup",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-036",
+      "variant": "l3-clean-500/pool20to3",
+      "category": "followup",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-036",
+      "variant": "l3-clean-500/pool20to5",
+      "category": "followup",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-037",
+      "variant": "l3-clean-500/vector5",
+      "category": "followup",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-037",
+      "variant": "l3-clean-500/hybrid5",
+      "category": "followup",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-037",
+      "variant": "l3-clean-500/production5to3",
+      "category": "followup",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-037",
+      "variant": "l3-clean-500/pool20to3",
+      "category": "followup",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-037",
+      "variant": "l3-clean-500/pool20to5",
+      "category": "followup",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-038",
+      "variant": "l3-clean-500/vector5",
+      "category": "followup",
+      "id_context_precision": 0.25,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-038",
+      "variant": "l3-clean-500/hybrid5",
+      "category": "followup",
+      "id_context_precision": 0.25,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-038",
+      "variant": "l3-clean-500/production5to3",
+      "category": "followup",
+      "id_context_precision": 0.5,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-038",
+      "variant": "l3-clean-500/pool20to3",
+      "category": "followup",
+      "id_context_precision": 0.5,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-038",
+      "variant": "l3-clean-500/pool20to5",
+      "category": "followup",
+      "id_context_precision": 0.25,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-039",
+      "variant": "l3-clean-500/vector5",
+      "category": "followup",
+      "id_context_precision": 0.25,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-039",
+      "variant": "l3-clean-500/hybrid5",
+      "category": "followup",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-039",
+      "variant": "l3-clean-500/production5to3",
+      "category": "followup",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-039",
+      "variant": "l3-clean-500/pool20to3",
+      "category": "followup",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-039",
+      "variant": "l3-clean-500/pool20to5",
+      "category": "followup",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-040",
+      "variant": "l3-clean-500/vector5",
+      "category": "followup",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-040",
+      "variant": "l3-clean-500/hybrid5",
+      "category": "followup",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-040",
+      "variant": "l3-clean-500/production5to3",
+      "category": "followup",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-040",
+      "variant": "l3-clean-500/pool20to3",
+      "category": "followup",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-040",
+      "variant": "l3-clean-500/pool20to5",
+      "category": "followup",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-001",
+      "variant": "l3-clean-1000/vector5",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-001",
+      "variant": "l3-clean-1000/hybrid5",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-001",
+      "variant": "l3-clean-1000/production5to3",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-001",
+      "variant": "l3-clean-1000/pool20to3",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-001",
+      "variant": "l3-clean-1000/pool20to5",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-002",
+      "variant": "l3-clean-1000/vector5",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-002",
+      "variant": "l3-clean-1000/hybrid5",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-002",
+      "variant": "l3-clean-1000/production5to3",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-002",
+      "variant": "l3-clean-1000/pool20to3",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-002",
+      "variant": "l3-clean-1000/pool20to5",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-003",
+      "variant": "l3-clean-1000/vector5",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-003",
+      "variant": "l3-clean-1000/hybrid5",
+      "category": "exact",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-003",
+      "variant": "l3-clean-1000/production5to3",
+      "category": "exact",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-003",
+      "variant": "l3-clean-1000/pool20to3",
+      "category": "exact",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-003",
+      "variant": "l3-clean-1000/pool20to5",
+      "category": "exact",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-004",
+      "variant": "l3-clean-1000/vector5",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-004",
+      "variant": "l3-clean-1000/hybrid5",
+      "category": "exact",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-004",
+      "variant": "l3-clean-1000/production5to3",
+      "category": "exact",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-004",
+      "variant": "l3-clean-1000/pool20to3",
+      "category": "exact",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-004",
+      "variant": "l3-clean-1000/pool20to5",
+      "category": "exact",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-005",
+      "variant": "l3-clean-1000/vector5",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-005",
+      "variant": "l3-clean-1000/hybrid5",
+      "category": "exact",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-005",
+      "variant": "l3-clean-1000/production5to3",
+      "category": "exact",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-005",
+      "variant": "l3-clean-1000/pool20to3",
+      "category": "exact",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-005",
+      "variant": "l3-clean-1000/pool20to5",
+      "category": "exact",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-006",
+      "variant": "l3-clean-1000/vector5",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-006",
+      "variant": "l3-clean-1000/hybrid5",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-006",
+      "variant": "l3-clean-1000/production5to3",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-006",
+      "variant": "l3-clean-1000/pool20to3",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-006",
+      "variant": "l3-clean-1000/pool20to5",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-007",
+      "variant": "l3-clean-1000/vector5",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-007",
+      "variant": "l3-clean-1000/hybrid5",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-007",
+      "variant": "l3-clean-1000/production5to3",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-007",
+      "variant": "l3-clean-1000/pool20to3",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-007",
+      "variant": "l3-clean-1000/pool20to5",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-008",
+      "variant": "l3-clean-1000/vector5",
+      "category": "exact",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-008",
+      "variant": "l3-clean-1000/hybrid5",
+      "category": "exact",
+      "id_context_precision": 0.25,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-008",
+      "variant": "l3-clean-1000/production5to3",
+      "category": "exact",
+      "id_context_precision": 0.5,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-008",
+      "variant": "l3-clean-1000/pool20to3",
+      "category": "exact",
+      "id_context_precision": 0.5,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-008",
+      "variant": "l3-clean-1000/pool20to5",
+      "category": "exact",
+      "id_context_precision": 0.25,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-009",
+      "variant": "l3-clean-1000/vector5",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-009",
+      "variant": "l3-clean-1000/hybrid5",
+      "category": "exact",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-009",
+      "variant": "l3-clean-1000/production5to3",
+      "category": "exact",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-009",
+      "variant": "l3-clean-1000/pool20to3",
+      "category": "exact",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-009",
+      "variant": "l3-clean-1000/pool20to5",
+      "category": "exact",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-010",
+      "variant": "l3-clean-1000/vector5",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-010",
+      "variant": "l3-clean-1000/hybrid5",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-010",
+      "variant": "l3-clean-1000/production5to3",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-010",
+      "variant": "l3-clean-1000/pool20to3",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-010",
+      "variant": "l3-clean-1000/pool20to5",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-011",
+      "variant": "l3-clean-1000/vector5",
+      "category": "paraphrase",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-011",
+      "variant": "l3-clean-1000/hybrid5",
+      "category": "paraphrase",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-011",
+      "variant": "l3-clean-1000/production5to3",
+      "category": "paraphrase",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-011",
+      "variant": "l3-clean-1000/pool20to3",
+      "category": "paraphrase",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-011",
+      "variant": "l3-clean-1000/pool20to5",
+      "category": "paraphrase",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-012",
+      "variant": "l3-clean-1000/vector5",
+      "category": "paraphrase",
+      "id_context_precision": 0.25,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-012",
+      "variant": "l3-clean-1000/hybrid5",
+      "category": "paraphrase",
+      "id_context_precision": 0.25,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-012",
+      "variant": "l3-clean-1000/production5to3",
+      "category": "paraphrase",
+      "id_context_precision": 0.5,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-012",
+      "variant": "l3-clean-1000/pool20to3",
+      "category": "paraphrase",
+      "id_context_precision": 0.5,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-012",
+      "variant": "l3-clean-1000/pool20to5",
+      "category": "paraphrase",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-013",
+      "variant": "l3-clean-1000/vector5",
+      "category": "paraphrase",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-013",
+      "variant": "l3-clean-1000/hybrid5",
+      "category": "paraphrase",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-013",
+      "variant": "l3-clean-1000/production5to3",
+      "category": "paraphrase",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-013",
+      "variant": "l3-clean-1000/pool20to3",
+      "category": "paraphrase",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-013",
+      "variant": "l3-clean-1000/pool20to5",
+      "category": "paraphrase",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-014",
+      "variant": "l3-clean-1000/vector5",
+      "category": "paraphrase",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-014",
+      "variant": "l3-clean-1000/hybrid5",
+      "category": "paraphrase",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-014",
+      "variant": "l3-clean-1000/production5to3",
+      "category": "paraphrase",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-014",
+      "variant": "l3-clean-1000/pool20to3",
+      "category": "paraphrase",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-014",
+      "variant": "l3-clean-1000/pool20to5",
+      "category": "paraphrase",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-015",
+      "variant": "l3-clean-1000/vector5",
+      "category": "paraphrase",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-015",
+      "variant": "l3-clean-1000/hybrid5",
+      "category": "paraphrase",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-015",
+      "variant": "l3-clean-1000/production5to3",
+      "category": "paraphrase",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-015",
+      "variant": "l3-clean-1000/pool20to3",
+      "category": "paraphrase",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-015",
+      "variant": "l3-clean-1000/pool20to5",
+      "category": "paraphrase",
+      "id_context_precision": 0.25,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-016",
+      "variant": "l3-clean-1000/vector5",
+      "category": "paraphrase",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-016",
+      "variant": "l3-clean-1000/hybrid5",
+      "category": "paraphrase",
+      "id_context_precision": 0.25,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-016",
+      "variant": "l3-clean-1000/production5to3",
+      "category": "paraphrase",
+      "id_context_precision": 0.5,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-016",
+      "variant": "l3-clean-1000/pool20to3",
+      "category": "paraphrase",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-016",
+      "variant": "l3-clean-1000/pool20to5",
+      "category": "paraphrase",
+      "id_context_precision": 0.25,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-017",
+      "variant": "l3-clean-1000/vector5",
+      "category": "paraphrase",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-017",
+      "variant": "l3-clean-1000/hybrid5",
+      "category": "paraphrase",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-017",
+      "variant": "l3-clean-1000/production5to3",
+      "category": "paraphrase",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-017",
+      "variant": "l3-clean-1000/pool20to3",
+      "category": "paraphrase",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-017",
+      "variant": "l3-clean-1000/pool20to5",
+      "category": "paraphrase",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-018",
+      "variant": "l3-clean-1000/vector5",
+      "category": "paraphrase",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-018",
+      "variant": "l3-clean-1000/hybrid5",
+      "category": "paraphrase",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-018",
+      "variant": "l3-clean-1000/production5to3",
+      "category": "paraphrase",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-018",
+      "variant": "l3-clean-1000/pool20to3",
+      "category": "paraphrase",
+      "id_context_precision": 0.5,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-018",
+      "variant": "l3-clean-1000/pool20to5",
+      "category": "paraphrase",
+      "id_context_precision": 0.25,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-019",
+      "variant": "l3-clean-1000/vector5",
+      "category": "paraphrase",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-019",
+      "variant": "l3-clean-1000/hybrid5",
+      "category": "paraphrase",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-019",
+      "variant": "l3-clean-1000/production5to3",
+      "category": "paraphrase",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-019",
+      "variant": "l3-clean-1000/pool20to3",
+      "category": "paraphrase",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-019",
+      "variant": "l3-clean-1000/pool20to5",
+      "category": "paraphrase",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-020",
+      "variant": "l3-clean-1000/vector5",
+      "category": "paraphrase",
+      "id_context_precision": 0.25,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-020",
+      "variant": "l3-clean-1000/hybrid5",
+      "category": "paraphrase",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-020",
+      "variant": "l3-clean-1000/production5to3",
+      "category": "paraphrase",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-020",
+      "variant": "l3-clean-1000/pool20to3",
+      "category": "paraphrase",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-020",
+      "variant": "l3-clean-1000/pool20to5",
+      "category": "paraphrase",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-021",
+      "variant": "l3-clean-1000/vector5",
+      "category": "synonym",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-021",
+      "variant": "l3-clean-1000/hybrid5",
+      "category": "synonym",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-021",
+      "variant": "l3-clean-1000/production5to3",
+      "category": "synonym",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-021",
+      "variant": "l3-clean-1000/pool20to3",
+      "category": "synonym",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-021",
+      "variant": "l3-clean-1000/pool20to5",
+      "category": "synonym",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-022",
+      "variant": "l3-clean-1000/vector5",
+      "category": "synonym",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-022",
+      "variant": "l3-clean-1000/hybrid5",
+      "category": "synonym",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-022",
+      "variant": "l3-clean-1000/production5to3",
+      "category": "synonym",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-022",
+      "variant": "l3-clean-1000/pool20to3",
+      "category": "synonym",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-022",
+      "variant": "l3-clean-1000/pool20to5",
+      "category": "synonym",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-023",
+      "variant": "l3-clean-1000/vector5",
+      "category": "synonym",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-023",
+      "variant": "l3-clean-1000/hybrid5",
+      "category": "synonym",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-023",
+      "variant": "l3-clean-1000/production5to3",
+      "category": "synonym",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-023",
+      "variant": "l3-clean-1000/pool20to3",
+      "category": "synonym",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-023",
+      "variant": "l3-clean-1000/pool20to5",
+      "category": "synonym",
+      "id_context_precision": 0.25,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-024",
+      "variant": "l3-clean-1000/vector5",
+      "category": "synonym",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-024",
+      "variant": "l3-clean-1000/hybrid5",
+      "category": "synonym",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-024",
+      "variant": "l3-clean-1000/production5to3",
+      "category": "synonym",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-024",
+      "variant": "l3-clean-1000/pool20to3",
+      "category": "synonym",
+      "id_context_precision": 0.5,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-024",
+      "variant": "l3-clean-1000/pool20to5",
+      "category": "synonym",
+      "id_context_precision": 0.25,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-025",
+      "variant": "l3-clean-1000/vector5",
+      "category": "synonym",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-025",
+      "variant": "l3-clean-1000/hybrid5",
+      "category": "synonym",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-025",
+      "variant": "l3-clean-1000/production5to3",
+      "category": "synonym",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-025",
+      "variant": "l3-clean-1000/pool20to3",
+      "category": "synonym",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-025",
+      "variant": "l3-clean-1000/pool20to5",
+      "category": "synonym",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-026",
+      "variant": "l3-clean-1000/vector5",
+      "category": "synonym",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-026",
+      "variant": "l3-clean-1000/hybrid5",
+      "category": "synonym",
+      "id_context_precision": 0.25,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-026",
+      "variant": "l3-clean-1000/production5to3",
+      "category": "synonym",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-026",
+      "variant": "l3-clean-1000/pool20to3",
+      "category": "synonym",
+      "id_context_precision": 0.5,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-026",
+      "variant": "l3-clean-1000/pool20to5",
+      "category": "synonym",
+      "id_context_precision": 0.25,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-027",
+      "variant": "l3-clean-1000/vector5",
+      "category": "synonym",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-027",
+      "variant": "l3-clean-1000/hybrid5",
+      "category": "synonym",
+      "id_context_precision": 0.25,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-027",
+      "variant": "l3-clean-1000/production5to3",
+      "category": "synonym",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-027",
+      "variant": "l3-clean-1000/pool20to3",
+      "category": "synonym",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-027",
+      "variant": "l3-clean-1000/pool20to5",
+      "category": "synonym",
+      "id_context_precision": 0.25,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-028",
+      "variant": "l3-clean-1000/vector5",
+      "category": "synonym",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-028",
+      "variant": "l3-clean-1000/hybrid5",
+      "category": "synonym",
+      "id_context_precision": 0.2,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-028",
+      "variant": "l3-clean-1000/production5to3",
+      "category": "synonym",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-028",
+      "variant": "l3-clean-1000/pool20to3",
+      "category": "synonym",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-028",
+      "variant": "l3-clean-1000/pool20to5",
+      "category": "synonym",
+      "id_context_precision": 0.25,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-029",
+      "variant": "l3-clean-1000/vector5",
+      "category": "multihop",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-029",
+      "variant": "l3-clean-1000/hybrid5",
+      "category": "multihop",
+      "id_context_precision": 0.2,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-029",
+      "variant": "l3-clean-1000/production5to3",
+      "category": "multihop",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-029",
+      "variant": "l3-clean-1000/pool20to3",
+      "category": "multihop",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-029",
+      "variant": "l3-clean-1000/pool20to5",
+      "category": "multihop",
+      "id_context_precision": 0.2,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-030",
+      "variant": "l3-clean-1000/vector5",
+      "category": "multihop",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-030",
+      "variant": "l3-clean-1000/hybrid5",
+      "category": "multihop",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-030",
+      "variant": "l3-clean-1000/production5to3",
+      "category": "multihop",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-030",
+      "variant": "l3-clean-1000/pool20to3",
+      "category": "multihop",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-030",
+      "variant": "l3-clean-1000/pool20to5",
+      "category": "multihop",
+      "id_context_precision": 0.2,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-031",
+      "variant": "l3-clean-1000/vector5",
+      "category": "multihop",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-031",
+      "variant": "l3-clean-1000/hybrid5",
+      "category": "multihop",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-031",
+      "variant": "l3-clean-1000/production5to3",
+      "category": "multihop",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-031",
+      "variant": "l3-clean-1000/pool20to3",
+      "category": "multihop",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-031",
+      "variant": "l3-clean-1000/pool20to5",
+      "category": "multihop",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-032",
+      "variant": "l3-clean-1000/vector5",
+      "category": "multihop",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-032",
+      "variant": "l3-clean-1000/hybrid5",
+      "category": "multihop",
+      "id_context_precision": 0.25,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-032",
+      "variant": "l3-clean-1000/production5to3",
+      "category": "multihop",
+      "id_context_precision": 0.5,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-032",
+      "variant": "l3-clean-1000/pool20to3",
+      "category": "multihop",
+      "id_context_precision": 0.5,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-032",
+      "variant": "l3-clean-1000/pool20to5",
+      "category": "multihop",
+      "id_context_precision": 0.25,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-033",
+      "variant": "l3-clean-1000/vector5",
+      "category": "multihop",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-033",
+      "variant": "l3-clean-1000/hybrid5",
+      "category": "multihop",
+      "id_context_precision": 0.2,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-033",
+      "variant": "l3-clean-1000/production5to3",
+      "category": "multihop",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-033",
+      "variant": "l3-clean-1000/pool20to3",
+      "category": "multihop",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-033",
+      "variant": "l3-clean-1000/pool20to5",
+      "category": "multihop",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-034",
+      "variant": "l3-clean-1000/vector5",
+      "category": "multihop",
+      "id_context_precision": 0.4,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-034",
+      "variant": "l3-clean-1000/hybrid5",
+      "category": "multihop",
+      "id_context_precision": 0.4,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-034",
+      "variant": "l3-clean-1000/production5to3",
+      "category": "multihop",
+      "id_context_precision": 0.6666666666666666,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-034",
+      "variant": "l3-clean-1000/pool20to3",
+      "category": "multihop",
+      "id_context_precision": 0.6666666666666666,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-034",
+      "variant": "l3-clean-1000/pool20to5",
+      "category": "multihop",
+      "id_context_precision": 0.5,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-035",
+      "variant": "l3-clean-1000/vector5",
+      "category": "followup",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-035",
+      "variant": "l3-clean-1000/hybrid5",
+      "category": "followup",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-035",
+      "variant": "l3-clean-1000/production5to3",
+      "category": "followup",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-035",
+      "variant": "l3-clean-1000/pool20to3",
+      "category": "followup",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-035",
+      "variant": "l3-clean-1000/pool20to5",
+      "category": "followup",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-036",
+      "variant": "l3-clean-1000/vector5",
+      "category": "followup",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-036",
+      "variant": "l3-clean-1000/hybrid5",
+      "category": "followup",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-036",
+      "variant": "l3-clean-1000/production5to3",
+      "category": "followup",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-036",
+      "variant": "l3-clean-1000/pool20to3",
+      "category": "followup",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-036",
+      "variant": "l3-clean-1000/pool20to5",
+      "category": "followup",
+      "id_context_precision": 0.25,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-037",
+      "variant": "l3-clean-1000/vector5",
+      "category": "followup",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-037",
+      "variant": "l3-clean-1000/hybrid5",
+      "category": "followup",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-037",
+      "variant": "l3-clean-1000/production5to3",
+      "category": "followup",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-037",
+      "variant": "l3-clean-1000/pool20to3",
+      "category": "followup",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-037",
+      "variant": "l3-clean-1000/pool20to5",
+      "category": "followup",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-038",
+      "variant": "l3-clean-1000/vector5",
+      "category": "followup",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-038",
+      "variant": "l3-clean-1000/hybrid5",
+      "category": "followup",
+      "id_context_precision": 0.25,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-038",
+      "variant": "l3-clean-1000/production5to3",
+      "category": "followup",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-038",
+      "variant": "l3-clean-1000/pool20to3",
+      "category": "followup",
+      "id_context_precision": 0.5,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-038",
+      "variant": "l3-clean-1000/pool20to5",
+      "category": "followup",
+      "id_context_precision": 0.25,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-039",
+      "variant": "l3-clean-1000/vector5",
+      "category": "followup",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-039",
+      "variant": "l3-clean-1000/hybrid5",
+      "category": "followup",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-039",
+      "variant": "l3-clean-1000/production5to3",
+      "category": "followup",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-039",
+      "variant": "l3-clean-1000/pool20to3",
+      "category": "followup",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-039",
+      "variant": "l3-clean-1000/pool20to5",
+      "category": "followup",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-040",
+      "variant": "l3-clean-1000/vector5",
+      "category": "followup",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-040",
+      "variant": "l3-clean-1000/hybrid5",
+      "category": "followup",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-040",
+      "variant": "l3-clean-1000/production5to3",
+      "category": "followup",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-040",
+      "variant": "l3-clean-1000/pool20to3",
+      "category": "followup",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-040",
+      "variant": "l3-clean-1000/pool20to5",
+      "category": "followup",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    }
+  ],
+  "summary": {
+    "existing-hnsw-l2/vector5": {
+      "id_context_precision": 0.06958333333333333,
+      "id_context_recall": 0.25
+    },
+    "existing-hnsw-l2/hybrid5": {
+      "id_context_precision": 0.12958333333333333,
+      "id_context_recall": 0.4875
+    },
+    "existing-hnsw-l2/production5to3": {
+      "id_context_precision": 0.20833333333333331,
+      "id_context_recall": 0.4625
+    },
+    "existing-hnsw-l2/pool20to3": {
+      "id_context_precision": 0.24583333333333332,
+      "id_context_recall": 0.55
+    },
+    "existing-hnsw-l2/pool20to5": {
+      "id_context_precision": 0.155,
+      "id_context_recall": 0.575
+    },
+    "existing-exact-cosine/vector5": {
+      "id_context_precision": 0.06958333333333333,
+      "id_context_recall": 0.25
+    },
+    "existing-exact-cosine/hybrid5": {
+      "id_context_precision": 0.13583333333333333,
+      "id_context_recall": 0.5
+    },
+    "existing-exact-cosine/production5to3": {
+      "id_context_precision": 0.22083333333333333,
+      "id_context_recall": 0.475
+    },
+    "existing-exact-cosine/pool20to3": {
+      "id_context_precision": 0.24583333333333332,
+      "id_context_recall": 0.55
+    },
+    "existing-exact-cosine/pool20to5": {
+      "id_context_precision": 0.15833333333333333,
+      "id_context_recall": 0.575
+    },
+    "l3-clean-500/vector5": {
+      "id_context_precision": 0.06958333333333333,
+      "id_context_recall": 0.25
+    },
+    "l3-clean-500/hybrid5": {
+      "id_context_precision": 0.14125000000000001,
+      "id_context_recall": 0.5
+    },
+    "l3-clean-500/production5to3": {
+      "id_context_precision": 0.22083333333333333,
+      "id_context_recall": 0.475
+    },
+    "l3-clean-500/pool20to3": {
+      "id_context_precision": 0.24166666666666667,
+      "id_context_recall": 0.55
+    },
+    "l3-clean-500/pool20to5": {
+      "id_context_precision": 0.1525,
+      "id_context_recall": 0.575
+    },
+    "l3-clean-1000/vector5": {
+      "id_context_precision": 0.0475,
+      "id_context_recall": 0.2
+    },
+    "l3-clean-1000/hybrid5": {
+      "id_context_precision": 0.12375,
+      "id_context_recall": 0.5
+    },
+    "l3-clean-1000/production5to3": {
+      "id_context_precision": 0.19166666666666665,
+      "id_context_recall": 0.45
+    },
+    "l3-clean-1000/pool20to3": {
+      "id_context_precision": 0.22916666666666666,
+      "id_context_recall": 0.5125
+    },
+    "l3-clean-1000/pool20to5": {
+      "id_context_precision": 0.15916666666666668,
+      "id_context_recall": 0.575
+    }
+  },
+  "gate": {
+    "evaluated": false,
+    "passed": true,
+    "failures": []
+  }
+}

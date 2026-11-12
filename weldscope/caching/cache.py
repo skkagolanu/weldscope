@@ -4,7 +4,7 @@ from typing import Optional, Dict, Any, List, Tuple
 from dataclasses import dataclass
 from datetime import datetime, timedelta
 import hashlib
-from sentence_transformers import SentenceTransformer
+from weldscope.core.local_models import LocalModel
 
 from weldscope.core.models import RAGResponse
 
@@ -28,7 +28,7 @@ class QueryCache:
         similarity_threshold: float = 0.95,
         ttl_seconds: int = 3600,
         max_entries: int = 1000,
-        embedding_model: str = "sentence-transformers/paraphrase-MiniLM-L3-v2",
+        embedding_model: str = "embedding",
     ):
         self.similarity_threshold = similarity_threshold
         self.ttl_seconds = ttl_seconds
@@ -36,13 +36,13 @@ class QueryCache:
         self.cache: Dict[str, CacheEntry] = {}
         self.hits = 0
         self.misses = 0
-        self._embedder: Optional[SentenceTransformer] = None
+        self._embedder: Optional[LocalModel] = None
         self.embedding_model = embedding_model
 
-    def _get_embedder(self) -> SentenceTransformer:
+    def _get_embedder(self) -> LocalModel:
         """Lazy load embedding model."""
         if self._embedder is None:
-            self._embedder = SentenceTransformer(self.embedding_model)
+            self._embedder = LocalModel(self.embedding_model)
         return self._embedder
 
     def _compute_embedding(self, text: str) -> List[float]:

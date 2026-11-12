@@ -84,3 +84,6 @@ artifacts/
 
 # Isolated RAGAS assessment environment
 .venv-eval/
+
+.venv-hffree/
+!models/**/*.onnx

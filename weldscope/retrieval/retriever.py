@@ -1,10 +1,10 @@
-"""Hybrid retrieval using maintained BM25S and Chroma integrations."""
+"""Hybrid retrieval using maintained BM25S and NumpyVectorStore integrations."""
 
 from threading import RLock
 from typing import List, Optional, Dict, Any
 import bm25s
 from langchain_core.documents import Document
-from langchain_chroma import Chroma
+from weldscope.ingestion.store import NumpyVectorStore
 
 from weldscope.core.config import RAGConfig
 from weldscope.core.exceptions import RetrievalError
@@ -13,7 +13,7 @@ from weldscope.core.exceptions import RetrievalError
 class HybridRetriever:
     def __init__(
         self,
-        vectorstore: Chroma,
+        vectorstore: NumpyVectorStore,
         documents: List[Document],
         config: RAGConfig,
         *,

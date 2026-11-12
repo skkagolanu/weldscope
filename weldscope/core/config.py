@@ -14,14 +14,14 @@ class RAGConfig(BaseSettings):
     temperature: float = Field(default=0.05, ge=0.0, le=1.0)
     max_tokens: int = Field(default=1024, ge=1, le=4096)
 
-    embedding_model: str = Field(default="sentence-transformers/paraphrase-MiniLM-L3-v2")
+    embedding_model: str = Field(default="embedding")
 
     chunk_size: int = Field(default=500, ge=100, le=2000)
     chunk_overlap: int = Field(default=50, ge=0, le=500)
 
     retrieval_k: int = Field(default=5, ge=1, le=20)
     rerank_top_k: int = Field(default=3, ge=1, le=10)
-    reranker_model: str = Field(default="cross-encoder/ms-marco-MiniLM-L-6-v2")
+    reranker_model: str = Field(default="reranker")
 
     max_latency_ms: int = Field(default=2000, ge=100)
 
@@ -29,7 +29,7 @@ class RAGConfig(BaseSettings):
     langfuse_public_key: Optional[SecretStr] = None
     langfuse_secret_key: Optional[SecretStr] = None
 
-    vectorstore_path: str = "./vectorstore"
+    vectorstore_path: str = "./indexes/fsw-v2"
     telemetry_path: str = "artifacts/telemetry/events.jsonl"
     trace_content: bool = False
 

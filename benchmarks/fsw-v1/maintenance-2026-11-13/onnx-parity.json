@@ -1,0 +1,13 @@
+{
+  "protocol": "52 questions/edge inputs, existing cached PyTorch models vs exported FP32 ONNX, tokenizer comparison before inference; reranking paired with long evidence",
+  "embedding": {
+    "tokenization_mismatches": 0,
+    "max_abs_error": 5.364418029785156e-07
+  },
+  "reranker": {
+    "tokenization_mismatches": 0,
+    "max_abs_error": 5.7220458984375e-06
+  },
+  "network": "original weights were already cached; no replacement model downloaded",
+  "runtime": "ONNX Runtime 1.31.1; ORT Extensions 0.15.2"
+}

@@ -47,8 +47,8 @@
 ### Observability (`weldscope/observability/`)
 - **tracer.py**: Langfuse integration for tracing
 
-### Evaluation (`weldscope/evaluation/`)
-- **evaluator.py**: Explicit model-judged grounded answer evaluation
+### Evaluation (`evaluation/`)
+- Native RAGAS metrics and quota-aware Groq judging in an isolated offline environment.
 
 ## Data Flow
 
@@ -62,13 +62,13 @@
 ## Key Design Decisions
 
 ### Hybrid Retrieval
-Combines BM25 (keyword) and vector (semantic) search for better recall.
+Combines BM25S keyword search and exact local vector search over bundled ONNX embeddings. Development-set comparisons measure each configuration; hybrid is not assumed to always improve recall.
 
 ### Cross-Encoder Reranking
-Improves precision by scoring query-document pairs.
+Scores query-document pairs locally with a bundled ONNX cross-encoder. Production retains five candidates and three passages pending hosted cost/quality evidence.
 
 ### Streaming Responses
-Provides real-time feedback for better UX.
+Provider chunks are accumulated privately. Research output is delivered only after structural citation validation; provider first-token and first-visible timings remain separate.
 
 ### Modular Architecture
 Each component is independently testable and replaceable.

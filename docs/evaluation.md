@@ -1,5 +1,7 @@
 # Evaluation and quality gates
 
+**Current 13 November status:** see [maintenance results](maintenance-2026-11-13.md) for the rebuilt HF-free runtime, configuration/model comparisons and successful semantic pilot. The older dated runs below preserve their original index and metric definitions.
+
 ## Active framework: RAGAS
 
 Following the owner’s explicit request and approval of an offline-only dependency exception, **RAGAS 0.4.3 is now the quality-assessment framework**. The old custom model judge and custom retrieval score implementation were removed. Runtime guards and software acceptance tests remain ordinary application checks. RAGAS is isolated from Streamlit; [setup, metrics and commands](https://github.com/skkagolanu/weldscope/blob/main/evaluation/README.md).
@@ -57,7 +59,7 @@ Application type checking (`mypy`) and error-level lint (`pylint --errors-only`)
 
 ## Citation and support diagnostics
 
-Research replies are checked for invalid citation numbers/ranges, missing citations, and numerical tokens absent from the retrieved passages. Invalid references cause the **final** answer to be withheld. Missing references or numerical-support gaps produce a review warning. Valid numbers do not prove valid claims: these checks **do not establish semantic entailment, factual correctness or citation correctness**. An abstention recognizer is also heuristic. Streamed text can appear before the final validation finishes; this is not a pre-output content guarantee.
+Research replies are checked for invalid citation numbers/ranges, missing citations, and numerical tokens absent from the retrieved passages. Invalid references cause the **final** answer to be withheld. Missing references or numerical-support gaps produce a review warning. Valid numbers do not prove valid claims: these checks **do not establish semantic entailment, factual correctness or citation correctness**. An abstention recognizer is also heuristic. Research text is now buffered until these structural checks finish; invalid citations and failed-provider partial replies are never delivered to the UI. This pre-output structural check does not prove semantic factual support.
 
 The exact greeting → purpose → FSW → ship/butter-chicken conversation is covered by a Streamlit regression. Domain synonyms such as HAZ, TMAZ, axial force, anvil and shoulder scroll now route to research. Tests also preserve explicit follow-ups and reject unrelated tasks that merely include the word FSW.
 
@@ -69,7 +71,7 @@ The now-retired `GroundedAnswerEvaluator` was a simple model judge, not an equiv
 
 ## Hosted verification
 
-`python scripts/hosted_regression.py --output artifacts/hosted-regression.json` exercises the real public app, detects its `quality-v1` diagnostics, runs the exact four-turn conversation, makes live Groq research requests, checks domain synonyms/follow-ups, and records reported token usage, timing, source page identifiers and structural checks. Provider usage is consumed only by research turns. Cold-start state cannot be forced without owner controls; each observed model-load time is retained rather than relabelled as generation latency. The dated observed result is recorded in the hosting report when available.
+`python scripts/hosted_regression.py --output artifacts/hosted-regression.json` exercises the real public app, detects its current `quality-v3` diagnostics, runs the exact four-turn conversation, makes live Groq research requests, checks domain synonyms/follow-ups, and records reported token usage, timing, source page identifiers and structural checks. Provider usage is consumed only by research turns. Cold-start state cannot be forced without owner controls; each observed model-load time is retained rather than relabelled as generation latency. The dated observed result is recorded in the hosting report when available.
 
 The manual **Hosted Research Regression** GitHub Actions workflow runs this same browser test and preserves its JSON even on failure. It is not scheduled on every push: live research requests consume the deployed provider quota. The daily basic health check remains provider-free when its local routes behave correctly.
 

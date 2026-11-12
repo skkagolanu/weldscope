@@ -46,7 +46,7 @@ async def assess(args):
         )
     import httpx
     from groq import AsyncGroq
-    from ragas.embeddings.huggingface_provider import HuggingFaceEmbeddings
+    from evaluation.embeddings import LocalRagasEmbeddings
 
     payload = json.loads(args.samples.read_text())
     samples = payload["samples"][: args.limit]
@@ -65,6 +65,10 @@ async def assess(args):
         metrics_runner_sha256=digest(Path(__file__).parent / "quality.py"),
         dependency_lock_sha256=digest(Path(__file__).parent / "requirements.lock"),
         judge_options=judge_options(args.judge_model),
+        embedding_artifacts={
+            name: digest(Path("models/embedding") / name)
+            for name in ["model.onnx", "vocab.txt", "config.json"]
+        },
     )
     fingerprint = (
         __import__("hashlib").sha256(json.dumps(binding, sort_keys=True).encode()).hexdigest()
@@ -79,7 +83,7 @@ async def assess(args):
     async with httpx.AsyncClient(transport=QuotaTransport(pacer)) as transport:
         async with AsyncGroq(http_client=transport, timeout=60, max_retries=0) as client:
             llm = make_judge(client, args.judge_model)
-            embeddings = HuggingFaceEmbeddings(model=args.embedding_model, device="cpu")
+            embeddings = LocalRagasEmbeddings(model=args.embedding_model)
 
             def checkpoint(rows):
                 args.output.mkdir(parents=True, exist_ok=True)
@@ -151,9 +155,7 @@ def main():
     parser.add_argument("--samples", type=Path, required=True)
     parser.add_argument("--output", type=Path, default=Path("artifacts/ragas-answers"))
     parser.add_argument("--judge-model", required=True)
-    parser.add_argument(
-        "--embedding-model", default="sentence-transformers/paraphrase-MiniLM-L3-v2"
-    )
+    parser.add_argument("--embedding-model", default="embedding")
     parser.add_argument("--limit", type=int, choices=range(1, 51), default=50)
     parser.add_argument("--request-interval", type=float, default=2.1)
     parser.add_argument("--error-budget", type=int, default=5)

@@ -1,0 +1,5 @@
+{
+  "max_length": 512,
+  "origin": "cross-encoder/ms-marco-MiniLM-L-6-v2",
+  "activation": "Identity()"
+}

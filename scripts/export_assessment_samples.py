@@ -55,7 +55,7 @@ def main():
     args.output.parent.mkdir(parents=True, exist_ok=True)
     with tempfile.TemporaryDirectory(prefix="weldscope-answer-samples-") as directory:
         copied = Path(directory) / "index"
-        shutil.copytree(ROOT / "vectorstore", copied)
+        shutil.copytree(ROOT / "indexes/fsw-v2", copied)
         store, docs = VectorStoreBuilder(config).load_vectorstore(
             str(copied), corpus_directory=str(ROOT / "data")
         )

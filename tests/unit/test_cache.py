@@ -42,7 +42,7 @@ def test_cache_initialization(cache):
     assert cache.misses == 0
 
 
-@patch("weldscope.caching.cache.SentenceTransformer")
+@patch("weldscope.caching.cache.LocalModel")
 def test_compute_embedding(mock_transformer, cache):
     """Computes embedding for text."""
     mock_model = Mock()
@@ -91,7 +91,7 @@ def test_is_expired(cache):
     assert cache._is_expired(old_entry)
 
 
-@patch("weldscope.caching.cache.SentenceTransformer")
+@patch("weldscope.caching.cache.LocalModel")
 def test_put_and_get_exact_match(mock_transformer, cache, sample_response):
     """Caches and retrieves exact match."""
     mock_model = Mock()
@@ -108,7 +108,7 @@ def test_put_and_get_exact_match(mock_transformer, cache, sample_response):
     assert cache.misses == 0
 
 
-@patch("weldscope.caching.cache.SentenceTransformer")
+@patch("weldscope.caching.cache.LocalModel")
 def test_get_cache_miss(mock_transformer, cache):
     """Returns None on cache miss."""
     mock_model = Mock()
@@ -122,7 +122,7 @@ def test_get_cache_miss(mock_transformer, cache):
     assert cache.misses == 1
 
 
-@patch("weldscope.caching.cache.SentenceTransformer")
+@patch("weldscope.caching.cache.LocalModel")
 def test_get_similar_query(mock_transformer, cache, sample_response):
     """Retrieves response for similar query."""
     mock_model = Mock()
@@ -141,7 +141,7 @@ def test_get_similar_query(mock_transformer, cache, sample_response):
     assert cache.hits == 1
 
 
-@patch("weldscope.caching.cache.SentenceTransformer")
+@patch("weldscope.caching.cache.LocalModel")
 def test_get_dissimilar_query(mock_transformer, cache, sample_response):
     """Returns None for dissimilar query."""
     mock_model = Mock()
@@ -216,7 +216,7 @@ def test_get_stats_empty(cache):
     assert stats["total_requests"] == 0
 
 
-@patch("weldscope.caching.cache.SentenceTransformer")
+@patch("weldscope.caching.cache.LocalModel")
 def test_expired_entries_removed_on_get(mock_transformer, cache, sample_response):
     """Expired entries are removed during get."""
     mock_model = Mock()

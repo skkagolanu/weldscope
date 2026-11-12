@@ -29,7 +29,7 @@ def load_config():
 
 @st.cache_resource
 def load_retriever(_config):
-    """Load cache-first models and the index only for research (revision 5)."""
+    """Load cache-first models and the index only for research (revision 7)."""
     builder = VectorStoreBuilder(_config)
     vectorstore, documents = builder.load_vectorstore(
         corpus_directory=str(Path(__file__).parent / "data")
@@ -44,7 +44,7 @@ def load_retriever(_config):
 
 @st.cache_resource
 def load_reranker(_config):
-    """Share cache-first weights; serialize loading and inference (revision 5)."""
+    """Share cache-first weights; serialize loading and inference (revision 7)."""
     return Reranker(_config)
 
 
@@ -54,7 +54,7 @@ def release_system(resource):
 
 @st.cache_resource(scope="session", on_release=release_system)
 def initialize_system(_config):
-    """Initialize corpus-only conversation handling (pipeline revision 6: validate before display)."""
+    """Initialize corpus-only conversation handling (pipeline revision 7: validate before display)."""
     tracer = None
     if _config.langfuse_enabled:
         tracer = RAGTracer(_config)
@@ -140,7 +140,7 @@ def render_details(message, message_index, tracer):
                 st.code(
                     json.dumps(
                         {
-                            "app_revision": "quality-v2",
+                            "app_revision": "quality-v3",
                             "request_id": message["request_id"],
                             "route": message.get("route"),
                             "timings": t,

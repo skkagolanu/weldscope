@@ -4,6 +4,11 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased] - 2026-11-13
 
+- Remove HF packages/services, Torch and Chroma from the application; bundle numerically verified ONNX embedding/reranker assets and a fresh five-PDF JSON/NumPy index.
+- Retain mandatory HF dependencies only in the explicitly approved offline RAGAS environment; use local ONNX embeddings for native metrics.
+- Compare alternative encoders/chunk sizes and actual 5→3 versus 20→3/5 configurations with saved native RAGAS rankings, resource and latency evidence.
+- Complete a quota-paced semantic pilot; support bounded Retry-After handling, token reservations and fingerprint-bound metric checkpoint resumption.
+
 - Buffer research output until final citation validation; never deliver invalid provider citations or partial failed replies to UI callbacks.
 - Separate provider first-token timing from post-validation first-visible delivery.
 

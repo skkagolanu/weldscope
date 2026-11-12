@@ -1,0 +1,6005 @@
+{
+  "provenance": {
+    "timestamp": "2026-11-12T20:52:46.821264+00:00",
+    "dataset_sha256": "4d73bc960bdd57cdbe7cdb6ba2a925f2d889bd9a386d7092acc58b0d030a01d4",
+    "index_sha256": "5061a71e5d061d9a12a2ae6ebff0d63ccc9182a2130b91c0dc35919e71adf0cc",
+    "python": "3.12.15",
+    "platform": "Linux-7.3.1-1-cachyos-x86_64-with-glibc2.44",
+    "cpu": "",
+    "logical_cpus": 16,
+    "source_commit": "550168a781f731cef0d6fc1ab605134a8c6d4f16",
+    "source_dirty": true,
+    "source_hashes": {
+      "scripts/benchmark_retrieval.py": "298d063b0567e789885a3edf8bbd35fa66922d44fa842d9c272f8dbfb23c9ea2",
+      "weldscope/__init__.py": "55230353f3d96c038594f6370d9a80b695d13dbbcd6531acf9a6f9be3a333310",
+      "weldscope/caching/__init__.py": "ebb5b0a51f4fef77391696d3765ae8b0a2a33e5995cf0875ecfe020c4569a5f0",
+      "weldscope/caching/cache.py": "14d12485eebac9811f74c977a252f905de4ec0976f1afd3293f02cb44dec14be",
+      "weldscope/conversation.py": "6068f056b9181e3ede7a720020f8b1602d0d42e4b1cb86ee49b7b9d164fcb4ad",
+      "weldscope/core/__init__.py": "3b3b84227ec2638d7a058b3cf5a086a25164f9f59e2de530530f910a4c33223c",
+      "weldscope/core/config.py": "b98be3f0a830eaac7dcefbae6652d6cde461167e09a0cb9647850559038e917c",
+      "weldscope/core/exceptions.py": "0ece556a3f519400766cf84d0ec9474127004eb2071364bb5369120cdd5b54a1",
+      "weldscope/core/local_models.py": "fd037a51f415f431de28fc75c12a4a68a541752165bba0cc9f5b082dd8248fad",
+      "weldscope/core/model_loading.py": "28a660744ca604dfbc9aa21898ce04c59443203af1d9f65219d8da6e0e9416ae",
+      "weldscope/core/models.py": "dc59cd229414559fbf998997144f6cdec5eac3e0d7ca0ae668489bfcee60e561",
+      "weldscope/evaluation/__init__.py": "386747671eb9764e740a1224c26bd18cf6b76edc42c25d5449180d31a612f691",
+      "weldscope/generation/__init__.py": "67efcd39afc9d98b766c5a1616167231f8aa1862b88a824f3a758dedfcaf7044",
+      "weldscope/generation/formatter.py": "2f9d7355e9f528dd61fdf8499b27a4a623b371384b737f91613a07fcb63977a3",
+      "weldscope/generation/generator.py": "ef9c4839e353304a1c317bcdc01076697df4cbcde775934e6e3c8b3c990e17b2",
+      "weldscope/generation/validation.py": "a58474a91006eca523b60b6b0f42cefb9321abc84fcefadf221e9857c13cdaf9",
+      "weldscope/ingestion/__init__.py": "4a435862819781fcb1f5506145fdc5922d5166546866d5daccd563396c85f6e7",
+      "weldscope/ingestion/builder.py": "bbe82d1d46f9643225d77e07379e402bb824af6b54c3d29767ddc0e41f23fe34",
+      "weldscope/ingestion/store.py": "b6fe939c4ada6fafe6eaa250cc2d36b239da959bdc0cc1518bc1284cde18757c",
+      "weldscope/monitoring/__init__.py": "bb8f58f661eb7aff363888042498c328a1684a499a153caa5e547f87abcd7c8a",
+      "weldscope/monitoring/performance.py": "f5eb404bd25f1d35fccbf928006dea3f23fd986489810f8fae0cda9cd00045af",
+      "weldscope/monitoring/telemetry.py": "d0b90075a4d8f8fb8973bd3291a8940e8230ac7e3e04ddabf4aaedf18d2f5bd1",
+      "weldscope/observability/__init__.py": "f68720b9f683da0b305db4e229a28c13ce9ad92c7f2ca5f95fa7861c974d41cc",
+      "weldscope/observability/tracer.py": "47369a94d711fe79135059837526c3eab1637143d87cbeb80119319c3f87f749",
+      "weldscope/pipeline/__init__.py": "1105e754d3d6a8d00d5c724433effeb3fd2907edcd8890d49dd87b14a045e716",
+      "weldscope/pipeline/pipeline.py": "c9578a268d74c58dd7deaa2a20d8835661a8330f90d90802e8735b11d0b3a2a3",
+      "weldscope/retrieval/__init__.py": "c8016681ac327760d94ac354f4b08e0663897b66a94aa66f32e7d4c455fef273",
+      "weldscope/retrieval/reranker.py": "dc7cc4cfae91e90f36d0d38162dfa58b82134bfcb7b9d74b491de1f143d169eb",
+      "weldscope/retrieval/retriever.py": "88a881055d332a39b09bd923486270fb9445ec54220fb87e3dcba9a994d2036b",
+      "weldscope/streaming.py": "8980c5d14e9493279be5c89bd2a004b19d193783393c269e54e844ac3c781fbd"
+    },
+    "models": {
+      "embedding": "embedding",
+      "reranker": "reranker"
+    },
+    "packages": {
+      "bm25s": "0.3.16",
+      "numpy": "2.5.4",
+      "onnxruntime": "1.31.1",
+      "onnxruntime-extensions": "0.15.2"
+    }
+  },
+  "protocol": {
+    "k": 5,
+    "rerank_candidate_k": 20,
+    "labels": "provisional positive physical-PDF-page anchors; duplicate-page gains suppressed",
+    "independent_expert_review": false,
+    "held_out": false,
+    "model_provider_calls": 0,
+    "runtime_rerank_depth": 3,
+    "runtime_candidate_k": 5,
+    "note": "Reranked variant uses a 20-candidate research ablation; production uses 5 candidates -> 3 passages. Latency includes first-query caches/model loading where incurred and is not randomized or a hosted SLA."
+  },
+  "corpus_chunks": 2124,
+  "total_index_chunks": 2124,
+  "excluded_stale_chunks": 0,
+  "categories": {
+    "exact": 10,
+    "paraphrase": 10,
+    "synonym": 8,
+    "multihop": 6,
+    "followup": 6,
+    "negative": 10
+  },
+  "initialization_ms": 269.1685539975879,
+  "routing_accuracy": 1,
+  "routing": [
+    {
+      "id": "FSW-001",
+      "expected": "research",
+      "actual": "research",
+      "correct": true
+    },
+    {
+      "id": "FSW-002",
+      "expected": "research",
+      "actual": "research",
+      "correct": true
+    },
+    {
+      "id": "FSW-003",
+      "expected": "research",
+      "actual": "research",
+      "correct": true
+    },
+    {
+      "id": "FSW-004",
+      "expected": "research",
+      "actual": "research",
+      "correct": true
+    },
+    {
+      "id": "FSW-005",
+      "expected": "research",
+      "actual": "research",
+      "correct": true
+    },
+    {
+      "id": "FSW-006",
+      "expected": "research",
+      "actual": "research",
+      "correct": true
+    },
+    {
+      "id": "FSW-007",
+      "expected": "research",
+      "actual": "research",
+      "correct": true
+    },
+    {
+      "id": "FSW-008",
+      "expected": "research",
+      "actual": "research",
+      "correct": true
+    },
+    {
+      "id": "FSW-009",
+      "expected": "research",
+      "actual": "research",
+      "correct": true
+    },
+    {
+      "id": "FSW-010",
+      "expected": "research",
+      "actual": "research",
+      "correct": true
+    },
+    {
+      "id": "FSW-011",
+      "expected": "research",
+      "actual": "research",
+      "correct": true
+    },
+    {
+      "id": "FSW-012",
+      "expected": "research",
+      "actual": "research",
+      "correct": true
+    },
+    {
+      "id": "FSW-013",
+      "expected": "research",
+      "actual": "research",
+      "correct": true
+    },
+    {
+      "id": "FSW-014",
+      "expected": "research",
+      "actual": "research",
+      "correct": true
+    },
+    {
+      "id": "FSW-015",
+      "expected": "research",
+      "actual": "research",
+      "correct": true
+    },
+    {
+      "id": "FSW-016",
+      "expected": "research",
+      "actual": "research",
+      "correct": true
+    },
+    {
+      "id": "FSW-017",
+      "expected": "research",
+      "actual": "research",
+      "correct": true
+    },
+    {
+      "id": "FSW-018",
+      "expected": "research",
+      "actual": "research",
+      "correct": true
+    },
+    {
+      "id": "FSW-019",
+      "expected": "research",
+      "actual": "research",
+      "correct": true
+    },
+    {
+      "id": "FSW-020",
+      "expected": "research",
+      "actual": "research",
+      "correct": true
+    },
+    {
+      "id": "FSW-021",
+      "expected": "research",
+      "actual": "research",
+      "correct": true
+    },
+    {
+      "id": "FSW-022",
+      "expected": "research",
+      "actual": "research",
+      "correct": true
+    },
+    {
+      "id": "FSW-023",
+      "expected": "research",
+      "actual": "research",
+      "correct": true
+    },
+    {
+      "id": "FSW-024",
+      "expected": "research",
+      "actual": "research",
+      "correct": true
+    },
+    {
+      "id": "FSW-025",
+      "expected": "research",
+      "actual": "research",
+      "correct": true
+    },
+    {
+      "id": "FSW-026",
+      "expected": "research",
+      "actual": "research",
+      "correct": true
+    },
+    {
+      "id": "FSW-027",
+      "expected": "research",
+      "actual": "research",
+      "correct": true
+    },
+    {
+      "id": "FSW-028",
+      "expected": "research",
+      "actual": "research",
+      "correct": true
+    },
+    {
+      "id": "FSW-029",
+      "expected": "research",
+      "actual": "research",
+      "correct": true
+    },
+    {
+      "id": "FSW-030",
+      "expected": "research",
+      "actual": "research",
+      "correct": true
+    },
+    {
+      "id": "FSW-031",
+      "expected": "research",
+      "actual": "research",
+      "correct": true
+    },
+    {
+      "id": "FSW-032",
+      "expected": "research",
+      "actual": "research",
+      "correct": true
+    },
+    {
+      "id": "FSW-033",
+      "expected": "research",
+      "actual": "research",
+      "correct": true
+    },
+    {
+      "id": "FSW-034",
+      "expected": "research",
+      "actual": "research",
+      "correct": true
+    },
+    {
+      "id": "FSW-035",
+      "expected": "research",
+      "actual": "research",
+      "correct": true
+    },
+    {
+      "id": "FSW-036",
+      "expected": "research",
+      "actual": "research",
+      "correct": true
+    },
+    {
+      "id": "FSW-037",
+      "expected": "research",
+      "actual": "research",
+      "correct": true
+    },
+    {
+      "id": "FSW-038",
+      "expected": "research",
+      "actual": "research",
+      "correct": true
+    },
+    {
+      "id": "FSW-039",
+      "expected": "research",
+      "actual": "research",
+      "correct": true
+    },
+    {
+      "id": "FSW-040",
+      "expected": "research",
+      "actual": "research",
+      "correct": true
+    },
+    {
+      "id": "FSW-041",
+      "expected": "out_of_scope",
+      "actual": "out_of_scope",
+      "correct": true
+    },
+    {
+      "id": "FSW-042",
+      "expected": "out_of_scope",
+      "actual": "out_of_scope",
+      "correct": true
+    },
+    {
+      "id": "FSW-043",
+      "expected": "out_of_scope",
+      "actual": "out_of_scope",
+      "correct": true
+    },
+    {
+      "id": "FSW-044",
+      "expected": "out_of_scope",
+      "actual": "out_of_scope",
+      "correct": true
+    },
+    {
+      "id": "FSW-045",
+      "expected": "out_of_scope",
+      "actual": "out_of_scope",
+      "correct": true
+    },
+    {
+      "id": "FSW-046",
+      "expected": "out_of_scope",
+      "actual": "out_of_scope",
+      "correct": true
+    },
+    {
+      "id": "FSW-047",
+      "expected": "research",
+      "actual": "research",
+      "correct": true
+    },
+    {
+      "id": "FSW-048",
+      "expected": "out_of_scope",
+      "actual": "out_of_scope",
+      "correct": true
+    },
+    {
+      "id": "FSW-049",
+      "expected": "out_of_scope",
+      "actual": "out_of_scope",
+      "correct": true
+    },
+    {
+      "id": "FSW-050",
+      "expected": "out_of_scope",
+      "actual": "out_of_scope",
+      "correct": true
+    }
+  ],
+  "summary": {
+    "bm25": {
+      "mean_latency_ms": 0.24325740087078884,
+      "observed_p95_latency_ms": 0.30367100407602265,
+      "cases": 40
+    },
+    "vector": {
+      "mean_latency_ms": 3.6332618998130783,
+      "observed_p95_latency_ms": 4.133661001105793,
+      "cases": 40
+    },
+    "hybrid": {
+      "mean_latency_ms": 3.025433999937377,
+      "observed_p95_latency_ms": 3.8626619934802875,
+      "cases": 40
+    },
+    "reranked": {
+      "mean_latency_ms": 303.5850580006809,
+      "observed_p95_latency_ms": 400.4865620008786,
+      "cases": 40
+    }
+  },
+  "results": [
+    {
+      "id": "FSW-001",
+      "category": "exact",
+      "variant": "bm25",
+      "question": "What is the advancing side in FSW?",
+      "retrieval_query": "What is the advancing side in FSW?",
+      "latency_ms": 0.316896999720484,
+      "retrieved": [
+        {
+          "id": "e7d04598569fe6dd2241338ded2884c2279caedbcb225b1f7a3a2ea1bbe3c5ae",
+          "source": "fsw_doc2.pdf",
+          "page": 31
+        },
+        {
+          "id": "10cb4366572a93c6de7e624dfac9a90c0bb440cca49cd607934ac0e702dbc0d9",
+          "source": "fsw_doc2.pdf",
+          "page": 146
+        },
+        {
+          "id": "0c41e91600b701c91f410ca003a5c845a17a5a055fbfea8698fad6a7e9c1fa4e",
+          "source": "fsw_doc4.pdf",
+          "page": 187
+        },
+        {
+          "id": "aa33e6b12eec3bbf157369d8f0af34af6584c5d7159bd29676658962ae95126a",
+          "source": "fsw_doc3.pdf",
+          "page": 1
+        },
+        {
+          "id": "af784ed226881d9b1180e651e5a223a61b80a51c9335ef78cac1a0055a038e24",
+          "source": "fsw_doc3.pdf",
+          "page": 4
+        }
+      ]
+    },
+    {
+      "id": "FSW-001",
+      "category": "exact",
+      "variant": "vector",
+      "question": "What is the advancing side in FSW?",
+      "retrieval_query": "What is the advancing side in FSW?",
+      "latency_ms": 12.553193999337964,
+      "retrieved": [
+        {
+          "id": "f5a5bd98b805e102715044f951e9de11bd9751a3f00a3a8c1cb67a611af4b3c9",
+          "source": "fsw_doc2.pdf",
+          "page": 22
+        },
+        {
+          "id": "aad7dd359c8333eed74aecf8a07831bd43af87d951b69754f7147e6491bf5d17",
+          "source": "fsw_doc1.pdf",
+          "page": 5
+        },
+        {
+          "id": "030750e61db958214ba3482ea337d8d023e7930e57c7b06597600582c031c1e9",
+          "source": "fsw_doc2.pdf",
+          "page": 55
+        },
+        {
+          "id": "09b02a4719506c595a0c110355a8093c2249c883783c1ad01e1bf67a8ee87907",
+          "source": "fsw_doc2.pdf",
+          "page": 63
+        },
+        {
+          "id": "e70e9c0b417bdbd66f00495aa9de32b01541d8d557e85346ab827f129a7670f6",
+          "source": "fsw_doc2.pdf",
+          "page": 22
+        }
+      ]
+    },
+    {
+      "id": "FSW-001",
+      "category": "exact",
+      "variant": "hybrid",
+      "question": "What is the advancing side in FSW?",
+      "retrieval_query": "What is the advancing side in FSW?",
+      "latency_ms": 2.9395640012808144,
+      "retrieved": [
+        {
+          "id": "e7d04598569fe6dd2241338ded2884c2279caedbcb225b1f7a3a2ea1bbe3c5ae",
+          "source": "fsw_doc2.pdf",
+          "page": 31
+        },
+        {
+          "id": "f5a5bd98b805e102715044f951e9de11bd9751a3f00a3a8c1cb67a611af4b3c9",
+          "source": "fsw_doc2.pdf",
+          "page": 22
+        },
+        {
+          "id": "10cb4366572a93c6de7e624dfac9a90c0bb440cca49cd607934ac0e702dbc0d9",
+          "source": "fsw_doc2.pdf",
+          "page": 146
+        },
+        {
+          "id": "aad7dd359c8333eed74aecf8a07831bd43af87d951b69754f7147e6491bf5d17",
+          "source": "fsw_doc1.pdf",
+          "page": 5
+        },
+        {
+          "id": "0c41e91600b701c91f410ca003a5c845a17a5a055fbfea8698fad6a7e9c1fa4e",
+          "source": "fsw_doc4.pdf",
+          "page": 187
+        }
+      ]
+    },
+    {
+      "id": "FSW-001",
+      "category": "exact",
+      "variant": "reranked",
+      "question": "What is the advancing side in FSW?",
+      "retrieval_query": "What is the advancing side in FSW?",
+      "latency_ms": 400.4865620008786,
+      "retrieved": [
+        {
+          "id": "aa33e6b12eec3bbf157369d8f0af34af6584c5d7159bd29676658962ae95126a",
+          "source": "fsw_doc3.pdf",
+          "page": 1
+        },
+        {
+          "id": "7672a3232fc85ae4e877862c0afffe07fbe47266fb717386dfe243b12afadf40",
+          "source": "fsw_doc2.pdf",
+          "page": 11
+        },
+        {
+          "id": "10cb4366572a93c6de7e624dfac9a90c0bb440cca49cd607934ac0e702dbc0d9",
+          "source": "fsw_doc2.pdf",
+          "page": 146
+        },
+        {
+          "id": "e7d04598569fe6dd2241338ded2884c2279caedbcb225b1f7a3a2ea1bbe3c5ae",
+          "source": "fsw_doc2.pdf",
+          "page": 31
+        },
+        {
+          "id": "af784ed226881d9b1180e651e5a223a61b80a51c9335ef78cac1a0055a038e24",
+          "source": "fsw_doc3.pdf",
+          "page": 4
+        }
+      ]
+    },
+    {
+      "id": "FSW-002",
+      "category": "exact",
+      "variant": "bm25",
+      "question": "What is the retreating side in FSW?",
+      "retrieval_query": "What is the retreating side in FSW?",
+      "latency_ms": 0.21930300135863945,
+      "retrieved": [
+        {
+          "id": "10cb4366572a93c6de7e624dfac9a90c0bb440cca49cd607934ac0e702dbc0d9",
+          "source": "fsw_doc2.pdf",
+          "page": 146
+        },
+        {
+          "id": "e7d04598569fe6dd2241338ded2884c2279caedbcb225b1f7a3a2ea1bbe3c5ae",
+          "source": "fsw_doc2.pdf",
+          "page": 31
+        },
+        {
+          "id": "4d0f013e9f565e591977be9aeb1227d3c403b2d09412cd7c23151c400d23e0e6",
+          "source": "fsw_doc4.pdf",
+          "page": 279
+        },
+        {
+          "id": "0c41e91600b701c91f410ca003a5c845a17a5a055fbfea8698fad6a7e9c1fa4e",
+          "source": "fsw_doc4.pdf",
+          "page": 187
+        },
+        {
+          "id": "3239a3ba0a07fbf72c7799428fa0f2c46c94ea7a8e2d52cd384549e12343b7db",
+          "source": "fsw_doc4.pdf",
+          "page": 69
+        }
+      ]
+    },
+    {
+      "id": "FSW-002",
+      "category": "exact",
+      "variant": "vector",
+      "question": "What is the retreating side in FSW?",
+      "retrieval_query": "What is the retreating side in FSW?",
+      "latency_ms": 4.054924000229221,
+      "retrieved": [
+        {
+          "id": "e70e9c0b417bdbd66f00495aa9de32b01541d8d557e85346ab827f129a7670f6",
+          "source": "fsw_doc2.pdf",
+          "page": 22
+        },
+        {
+          "id": "de7897eb1151996ca90c217aaac537f60157ea55243be92a34347c2de4b06540",
+          "source": "fsw_doc2.pdf",
+          "page": 57
+        },
+        {
+          "id": "da86111e295692cc35cfdfb2d70b6dd2fa9a839b0f2108746dc6d54fd205ba1d",
+          "source": "fsw_doc2.pdf",
+          "page": 149
+        },
+        {
+          "id": "09b02a4719506c595a0c110355a8093c2249c883783c1ad01e1bf67a8ee87907",
+          "source": "fsw_doc2.pdf",
+          "page": 63
+        },
+        {
+          "id": "34a14346da382f498fb6b7b8802960e858c41025a69f8c68ec581d558b4d0364",
+          "source": "fsw_doc2.pdf",
+          "page": 14
+        }
+      ]
+    },
+    {
+      "id": "FSW-002",
+      "category": "exact",
+      "variant": "hybrid",
+      "question": "What is the retreating side in FSW?",
+      "retrieval_query": "What is the retreating side in FSW?",
+      "latency_ms": 3.082492999965325,
+      "retrieved": [
+        {
+          "id": "10cb4366572a93c6de7e624dfac9a90c0bb440cca49cd607934ac0e702dbc0d9",
+          "source": "fsw_doc2.pdf",
+          "page": 146
+        },
+        {
+          "id": "e70e9c0b417bdbd66f00495aa9de32b01541d8d557e85346ab827f129a7670f6",
+          "source": "fsw_doc2.pdf",
+          "page": 22
+        },
+        {
+          "id": "e7d04598569fe6dd2241338ded2884c2279caedbcb225b1f7a3a2ea1bbe3c5ae",
+          "source": "fsw_doc2.pdf",
+          "page": 31
+        },
+        {
+          "id": "de7897eb1151996ca90c217aaac537f60157ea55243be92a34347c2de4b06540",
+          "source": "fsw_doc2.pdf",
+          "page": 57
+        },
+        {
+          "id": "4d0f013e9f565e591977be9aeb1227d3c403b2d09412cd7c23151c400d23e0e6",
+          "source": "fsw_doc4.pdf",
+          "page": 279
+        }
+      ]
+    },
+    {
+      "id": "FSW-002",
+      "category": "exact",
+      "variant": "reranked",
+      "question": "What is the retreating side in FSW?",
+      "retrieval_query": "What is the retreating side in FSW?",
+      "latency_ms": 293.45520599599695,
+      "retrieved": [
+        {
+          "id": "e7d04598569fe6dd2241338ded2884c2279caedbcb225b1f7a3a2ea1bbe3c5ae",
+          "source": "fsw_doc2.pdf",
+          "page": 31
+        },
+        {
+          "id": "10cb4366572a93c6de7e624dfac9a90c0bb440cca49cd607934ac0e702dbc0d9",
+          "source": "fsw_doc2.pdf",
+          "page": 146
+        },
+        {
+          "id": "2ff9eae774b0aa924ae3fc41aadc8ef09132515dc52bb7a87eccefd3f2662b3a",
+          "source": "fsw_doc2.pdf",
+          "page": 56
+        },
+        {
+          "id": "e6c6d3f597bef3d5c86bb1510976ebef8983b5f0ea486d878f674e71e02e3446",
+          "source": "fsw_doc4.pdf",
+          "page": 280
+        },
+        {
+          "id": "0c41e91600b701c91f410ca003a5c845a17a5a055fbfea8698fad6a7e9c1fa4e",
+          "source": "fsw_doc4.pdf",
+          "page": 187
+        }
+      ]
+    },
+    {
+      "id": "FSW-003",
+      "category": "exact",
+      "variant": "bm25",
+      "question": "What is an FSW bobbin tool?",
+      "retrieval_query": "What is an FSW bobbin tool?",
+      "latency_ms": 0.30367100407602265,
+      "retrieved": [
+        {
+          "id": "7672a3232fc85ae4e877862c0afffe07fbe47266fb717386dfe243b12afadf40",
+          "source": "fsw_doc2.pdf",
+          "page": 11
+        },
+        {
+          "id": "ca827698988384bf4528090a004d174452defb650c2492f56fa3df80b72c9346",
+          "source": "fsw_doc4.pdf",
+          "page": 75
+        },
+        {
+          "id": "e5116e5d45df056fb2732214224e41aa7d8ffde7556580c89c8f557d66098700",
+          "source": "fsw_doc4.pdf",
+          "page": 75
+        },
+        {
+          "id": "ed556b0793d04fa3436b2e34f2882efb65a54e0ff658c72273a10dce6cea7679",
+          "source": "fsw_doc2.pdf",
+          "page": 73
+        },
+        {
+          "id": "fe398d706e282ebfff80455218cc8c66f32549359f1237691042ec0e2c50f4c2",
+          "source": "fsw_doc2.pdf",
+          "page": 74
+        }
+      ]
+    },
+    {
+      "id": "FSW-003",
+      "category": "exact",
+      "variant": "vector",
+      "question": "What is an FSW bobbin tool?",
+      "retrieval_query": "What is an FSW bobbin tool?",
+      "latency_ms": 2.6258229991071858,
+      "retrieved": [
+        {
+          "id": "e5116e5d45df056fb2732214224e41aa7d8ffde7556580c89c8f557d66098700",
+          "source": "fsw_doc4.pdf",
+          "page": 75
+        },
+        {
+          "id": "2aac65bfc3631e874a03bb560fe991de36f23b82374b005c774df5ef398d0ed7",
+          "source": "fsw_doc2.pdf",
+          "page": 151
+        },
+        {
+          "id": "0e4e20a2a10d18af884dbdc36af65e5b58b922f9ac2c433703772ff0ee791268",
+          "source": "fsw_doc2.pdf",
+          "page": 46
+        },
+        {
+          "id": "4fb47cd57cb60d465a961f8de1d3e3db51bededb91575c2e18a3352c2f885e23",
+          "source": "fsw_doc2.pdf",
+          "page": 113
+        },
+        {
+          "id": "da86111e295692cc35cfdfb2d70b6dd2fa9a839b0f2108746dc6d54fd205ba1d",
+          "source": "fsw_doc2.pdf",
+          "page": 149
+        }
+      ]
+    },
+    {
+      "id": "FSW-003",
+      "category": "exact",
+      "variant": "hybrid",
+      "question": "What is an FSW bobbin tool?",
+      "retrieval_query": "What is an FSW bobbin tool?",
+      "latency_ms": 2.4101679955492727,
+      "retrieved": [
+        {
+          "id": "e5116e5d45df056fb2732214224e41aa7d8ffde7556580c89c8f557d66098700",
+          "source": "fsw_doc4.pdf",
+          "page": 75
+        },
+        {
+          "id": "7672a3232fc85ae4e877862c0afffe07fbe47266fb717386dfe243b12afadf40",
+          "source": "fsw_doc2.pdf",
+          "page": 11
+        },
+        {
+          "id": "ca827698988384bf4528090a004d174452defb650c2492f56fa3df80b72c9346",
+          "source": "fsw_doc4.pdf",
+          "page": 75
+        },
+        {
+          "id": "2aac65bfc3631e874a03bb560fe991de36f23b82374b005c774df5ef398d0ed7",
+          "source": "fsw_doc2.pdf",
+          "page": 151
+        },
+        {
+          "id": "0e4e20a2a10d18af884dbdc36af65e5b58b922f9ac2c433703772ff0ee791268",
+          "source": "fsw_doc2.pdf",
+          "page": 46
+        }
+      ]
+    },
+    {
+      "id": "FSW-003",
+      "category": "exact",
+      "variant": "reranked",
+      "question": "What is an FSW bobbin tool?",
+      "retrieval_query": "What is an FSW bobbin tool?",
+      "latency_ms": 288.3100269973511,
+      "retrieved": [
+        {
+          "id": "e5116e5d45df056fb2732214224e41aa7d8ffde7556580c89c8f557d66098700",
+          "source": "fsw_doc4.pdf",
+          "page": 75
+        },
+        {
+          "id": "7672a3232fc85ae4e877862c0afffe07fbe47266fb717386dfe243b12afadf40",
+          "source": "fsw_doc2.pdf",
+          "page": 11
+        },
+        {
+          "id": "9e03aa13d1145dc6cce7abf47ca846f4c64812919950b8255c241220df873236",
+          "source": "fsw_doc2.pdf",
+          "page": 33
+        },
+        {
+          "id": "2aac65bfc3631e874a03bb560fe991de36f23b82374b005c774df5ef398d0ed7",
+          "source": "fsw_doc2.pdf",
+          "page": 151
+        },
+        {
+          "id": "b28762fa3e7fc6cc27f6c9861d410a645d6d7224cac7eb19deb0be6670f9181e",
+          "source": "fsw_doc4.pdf",
+          "page": 120
+        }
+      ]
+    },
+    {
+      "id": "FSW-004",
+      "category": "exact",
+      "variant": "bm25",
+      "question": "What is dwell time at the start of an FSW weld?",
+      "retrieval_query": "What is dwell time at the start of an FSW weld?",
+      "latency_ms": 0.23059399973135442,
+      "retrieved": [
+        {
+          "id": "8cd7ce42a4c78ab0ac24a8438e94c114b37b55fa7c7d51675f16864dc22ed216",
+          "source": "fsw_doc2.pdf",
+          "page": 11
+        },
+        {
+          "id": "a32b8b654a1e8f51024822802893702c4e9a00a81598b3fa10f3262e1d63c481",
+          "source": "fsw_doc2.pdf",
+          "page": 58
+        },
+        {
+          "id": "09b02a4719506c595a0c110355a8093c2249c883783c1ad01e1bf67a8ee87907",
+          "source": "fsw_doc2.pdf",
+          "page": 63
+        },
+        {
+          "id": "2da6193b48206445f52abbe3860395a74cf12cbca9e8e88e1f1c2b123e1b68f9",
+          "source": "fsw_doc2.pdf",
+          "page": 14
+        },
+        {
+          "id": "a6357383fbac0452cf02d9bfbf48e9a1768a42ef1077fa9842e981a77b58ace1",
+          "source": "fsw_doc4.pdf",
+          "page": 143
+        }
+      ]
+    },
+    {
+      "id": "FSW-004",
+      "category": "exact",
+      "variant": "vector",
+      "question": "What is dwell time at the start of an FSW weld?",
+      "retrieval_query": "What is dwell time at the start of an FSW weld?",
+      "latency_ms": 3.4806629992090166,
+      "retrieved": [
+        {
+          "id": "a32b8b654a1e8f51024822802893702c4e9a00a81598b3fa10f3262e1d63c481",
+          "source": "fsw_doc2.pdf",
+          "page": 58
+        },
+        {
+          "id": "d940cdf8dd926c1927b2dd9a704ec576bbf519346cf1996eb92d0a00e7967ef3",
+          "source": "fsw_doc4.pdf",
+          "page": 72
+        },
+        {
+          "id": "8cd7ce42a4c78ab0ac24a8438e94c114b37b55fa7c7d51675f16864dc22ed216",
+          "source": "fsw_doc2.pdf",
+          "page": 11
+        },
+        {
+          "id": "d491c8654cc4d9e8b27c26dc90af1f780fbcf83e3a9916367f7a19486ce8c709",
+          "source": "fsw_doc2.pdf",
+          "page": 53
+        },
+        {
+          "id": "e713abe5932b479ee5a1d755485ee45f71b37f34b5785c85ba338beb27278234",
+          "source": "fsw_doc5.pdf",
+          "page": 2
+        }
+      ]
+    },
+    {
+      "id": "FSW-004",
+      "category": "exact",
+      "variant": "hybrid",
+      "question": "What is dwell time at the start of an FSW weld?",
+      "retrieval_query": "What is dwell time at the start of an FSW weld?",
+      "latency_ms": 2.8659050003625453,
+      "retrieved": [
+        {
+          "id": "a32b8b654a1e8f51024822802893702c4e9a00a81598b3fa10f3262e1d63c481",
+          "source": "fsw_doc2.pdf",
+          "page": 58
+        },
+        {
+          "id": "8cd7ce42a4c78ab0ac24a8438e94c114b37b55fa7c7d51675f16864dc22ed216",
+          "source": "fsw_doc2.pdf",
+          "page": 11
+        },
+        {
+          "id": "d940cdf8dd926c1927b2dd9a704ec576bbf519346cf1996eb92d0a00e7967ef3",
+          "source": "fsw_doc4.pdf",
+          "page": 72
+        },
+        {
+          "id": "09b02a4719506c595a0c110355a8093c2249c883783c1ad01e1bf67a8ee87907",
+          "source": "fsw_doc2.pdf",
+          "page": 63
+        },
+        {
+          "id": "2da6193b48206445f52abbe3860395a74cf12cbca9e8e88e1f1c2b123e1b68f9",
+          "source": "fsw_doc2.pdf",
+          "page": 14
+        }
+      ]
+    },
+    {
+      "id": "FSW-004",
+      "category": "exact",
+      "variant": "reranked",
+      "question": "What is dwell time at the start of an FSW weld?",
+      "retrieval_query": "What is dwell time at the start of an FSW weld?",
+      "latency_ms": 292.5651480036322,
+      "retrieved": [
+        {
+          "id": "a32b8b654a1e8f51024822802893702c4e9a00a81598b3fa10f3262e1d63c481",
+          "source": "fsw_doc2.pdf",
+          "page": 58
+        },
+        {
+          "id": "8cd7ce42a4c78ab0ac24a8438e94c114b37b55fa7c7d51675f16864dc22ed216",
+          "source": "fsw_doc2.pdf",
+          "page": 11
+        },
+        {
+          "id": "2da6193b48206445f52abbe3860395a74cf12cbca9e8e88e1f1c2b123e1b68f9",
+          "source": "fsw_doc2.pdf",
+          "page": 14
+        },
+        {
+          "id": "d940cdf8dd926c1927b2dd9a704ec576bbf519346cf1996eb92d0a00e7967ef3",
+          "source": "fsw_doc4.pdf",
+          "page": 72
+        },
+        {
+          "id": "09b02a4719506c595a0c110355a8093c2249c883783c1ad01e1bf67a8ee87907",
+          "source": "fsw_doc2.pdf",
+          "page": 63
+        }
+      ]
+    },
+    {
+      "id": "FSW-005",
+      "category": "exact",
+      "variant": "bm25",
+      "question": "What is dwell time at the end of an FSW weld?",
+      "retrieval_query": "What is dwell time at the end of an FSW weld?",
+      "latency_ms": 0.24569299421273172,
+      "retrieved": [
+        {
+          "id": "a32b8b654a1e8f51024822802893702c4e9a00a81598b3fa10f3262e1d63c481",
+          "source": "fsw_doc2.pdf",
+          "page": 58
+        },
+        {
+          "id": "8cd7ce42a4c78ab0ac24a8438e94c114b37b55fa7c7d51675f16864dc22ed216",
+          "source": "fsw_doc2.pdf",
+          "page": 11
+        },
+        {
+          "id": "2da6193b48206445f52abbe3860395a74cf12cbca9e8e88e1f1c2b123e1b68f9",
+          "source": "fsw_doc2.pdf",
+          "page": 14
+        },
+        {
+          "id": "a6357383fbac0452cf02d9bfbf48e9a1768a42ef1077fa9842e981a77b58ace1",
+          "source": "fsw_doc4.pdf",
+          "page": 143
+        },
+        {
+          "id": "f7bd53fe3ad7ea2a3ffb77ff6dceec84e025fb0ea2c7e8aa8e4c3537133fe693",
+          "source": "fsw_doc4.pdf",
+          "page": 150
+        }
+      ]
+    },
+    {
+      "id": "FSW-005",
+      "category": "exact",
+      "variant": "vector",
+      "question": "What is dwell time at the end of an FSW weld?",
+      "retrieval_query": "What is dwell time at the end of an FSW weld?",
+      "latency_ms": 3.4728780010482296,
+      "retrieved": [
+        {
+          "id": "a32b8b654a1e8f51024822802893702c4e9a00a81598b3fa10f3262e1d63c481",
+          "source": "fsw_doc2.pdf",
+          "page": 58
+        },
+        {
+          "id": "d940cdf8dd926c1927b2dd9a704ec576bbf519346cf1996eb92d0a00e7967ef3",
+          "source": "fsw_doc4.pdf",
+          "page": 72
+        },
+        {
+          "id": "e713abe5932b479ee5a1d755485ee45f71b37f34b5785c85ba338beb27278234",
+          "source": "fsw_doc5.pdf",
+          "page": 2
+        },
+        {
+          "id": "d491c8654cc4d9e8b27c26dc90af1f780fbcf83e3a9916367f7a19486ce8c709",
+          "source": "fsw_doc2.pdf",
+          "page": 53
+        },
+        {
+          "id": "8cd7ce42a4c78ab0ac24a8438e94c114b37b55fa7c7d51675f16864dc22ed216",
+          "source": "fsw_doc2.pdf",
+          "page": 11
+        }
+      ]
+    },
+    {
+      "id": "FSW-005",
+      "category": "exact",
+      "variant": "hybrid",
+      "question": "What is dwell time at the end of an FSW weld?",
+      "retrieval_query": "What is dwell time at the end of an FSW weld?",
+      "latency_ms": 3.1541979988105595,
+      "retrieved": [
+        {
+          "id": "a32b8b654a1e8f51024822802893702c4e9a00a81598b3fa10f3262e1d63c481",
+          "source": "fsw_doc2.pdf",
+          "page": 58
+        },
+        {
+          "id": "8cd7ce42a4c78ab0ac24a8438e94c114b37b55fa7c7d51675f16864dc22ed216",
+          "source": "fsw_doc2.pdf",
+          "page": 11
+        },
+        {
+          "id": "d940cdf8dd926c1927b2dd9a704ec576bbf519346cf1996eb92d0a00e7967ef3",
+          "source": "fsw_doc4.pdf",
+          "page": 72
+        },
+        {
+          "id": "2da6193b48206445f52abbe3860395a74cf12cbca9e8e88e1f1c2b123e1b68f9",
+          "source": "fsw_doc2.pdf",
+          "page": 14
+        },
+        {
+          "id": "e713abe5932b479ee5a1d755485ee45f71b37f34b5785c85ba338beb27278234",
+          "source": "fsw_doc5.pdf",
+          "page": 2
+        }
+      ]
+    },
+    {
+      "id": "FSW-005",
+      "category": "exact",
+      "variant": "reranked",
+      "question": "What is dwell time at the end of an FSW weld?",
+      "retrieval_query": "What is dwell time at the end of an FSW weld?",
+      "latency_ms": 307.75164799706545,
+      "retrieved": [
+        {
+          "id": "a32b8b654a1e8f51024822802893702c4e9a00a81598b3fa10f3262e1d63c481",
+          "source": "fsw_doc2.pdf",
+          "page": 58
+        },
+        {
+          "id": "8cd7ce42a4c78ab0ac24a8438e94c114b37b55fa7c7d51675f16864dc22ed216",
+          "source": "fsw_doc2.pdf",
+          "page": 11
+        },
+        {
+          "id": "2da6193b48206445f52abbe3860395a74cf12cbca9e8e88e1f1c2b123e1b68f9",
+          "source": "fsw_doc2.pdf",
+          "page": 14
+        },
+        {
+          "id": "f86de0ee8397d1b392d8b969b4bc15822b8d811fc52d06c9f877fe7a5178248c",
+          "source": "fsw_doc2.pdf",
+          "page": 159
+        },
+        {
+          "id": "d940cdf8dd926c1927b2dd9a704ec576bbf519346cf1996eb92d0a00e7967ef3",
+          "source": "fsw_doc4.pdf",
+          "page": 72
+        }
+      ]
+    },
+    {
+      "id": "FSW-006",
+      "category": "exact",
+      "variant": "bm25",
+      "question": "What is tool rotation speed in FSW?",
+      "retrieval_query": "What is tool rotation speed in FSW?",
+      "latency_ms": 0.2313049990334548,
+      "retrieved": [
+        {
+          "id": "4a882bf5af50a9aa00fe1ac29235014f866912696440fd5a5143f088c146f524",
+          "source": "fsw_doc2.pdf",
+          "page": 57
+        },
+        {
+          "id": "09b02a4719506c595a0c110355a8093c2249c883783c1ad01e1bf67a8ee87907",
+          "source": "fsw_doc2.pdf",
+          "page": 63
+        },
+        {
+          "id": "ed556b0793d04fa3436b2e34f2882efb65a54e0ff658c72273a10dce6cea7679",
+          "source": "fsw_doc2.pdf",
+          "page": 73
+        },
+        {
+          "id": "fe398d706e282ebfff80455218cc8c66f32549359f1237691042ec0e2c50f4c2",
+          "source": "fsw_doc2.pdf",
+          "page": 74
+        },
+        {
+          "id": "9401f078904e4aea4664b4827d8bfaf454a8dc957d79a18cdbec9662558b0e18",
+          "source": "fsw_doc2.pdf",
+          "page": 55
+        }
+      ]
+    },
+    {
+      "id": "FSW-006",
+      "category": "exact",
+      "variant": "vector",
+      "question": "What is tool rotation speed in FSW?",
+      "retrieval_query": "What is tool rotation speed in FSW?",
+      "latency_ms": 3.085809999902267,
+      "retrieved": [
+        {
+          "id": "4a882bf5af50a9aa00fe1ac29235014f866912696440fd5a5143f088c146f524",
+          "source": "fsw_doc2.pdf",
+          "page": 57
+        },
+        {
+          "id": "030750e61db958214ba3482ea337d8d023e7930e57c7b06597600582c031c1e9",
+          "source": "fsw_doc2.pdf",
+          "page": 55
+        },
+        {
+          "id": "09b02a4719506c595a0c110355a8093c2249c883783c1ad01e1bf67a8ee87907",
+          "source": "fsw_doc2.pdf",
+          "page": 63
+        },
+        {
+          "id": "a7321eede13cecdf876ad8c0940d3a177866a299dcbbbe1db88274a10609154b",
+          "source": "fsw_doc2.pdf",
+          "page": 30
+        },
+        {
+          "id": "510e261a4c705a85fe04704b8805f311100b280bc9617d772e33469a06b56ecb",
+          "source": "fsw_doc2.pdf",
+          "page": 31
+        }
+      ]
+    },
+    {
+      "id": "FSW-006",
+      "category": "exact",
+      "variant": "hybrid",
+      "question": "What is tool rotation speed in FSW?",
+      "retrieval_query": "What is tool rotation speed in FSW?",
+      "latency_ms": 2.611695999803487,
+      "retrieved": [
+        {
+          "id": "4a882bf5af50a9aa00fe1ac29235014f866912696440fd5a5143f088c146f524",
+          "source": "fsw_doc2.pdf",
+          "page": 57
+        },
+        {
+          "id": "09b02a4719506c595a0c110355a8093c2249c883783c1ad01e1bf67a8ee87907",
+          "source": "fsw_doc2.pdf",
+          "page": 63
+        },
+        {
+          "id": "030750e61db958214ba3482ea337d8d023e7930e57c7b06597600582c031c1e9",
+          "source": "fsw_doc2.pdf",
+          "page": 55
+        },
+        {
+          "id": "ed556b0793d04fa3436b2e34f2882efb65a54e0ff658c72273a10dce6cea7679",
+          "source": "fsw_doc2.pdf",
+          "page": 73
+        },
+        {
+          "id": "fe398d706e282ebfff80455218cc8c66f32549359f1237691042ec0e2c50f4c2",
+          "source": "fsw_doc2.pdf",
+          "page": 74
+        }
+      ]
+    },
+    {
+      "id": "FSW-006",
+      "category": "exact",
+      "variant": "reranked",
+      "question": "What is tool rotation speed in FSW?",
+      "retrieval_query": "What is tool rotation speed in FSW?",
+      "latency_ms": 278.1197689982946,
+      "retrieved": [
+        {
+          "id": "4a882bf5af50a9aa00fe1ac29235014f866912696440fd5a5143f088c146f524",
+          "source": "fsw_doc2.pdf",
+          "page": 57
+        },
+        {
+          "id": "32e43aa3c56780af84c566455a39fad35581e0bc8e491d9982bc855a6098b25b",
+          "source": "fsw_doc2.pdf",
+          "page": 12
+        },
+        {
+          "id": "63191c49204e0d62527d00bfec7ea04eddb77e132aaeac370b1436403b950eb1",
+          "source": "fsw_doc2.pdf",
+          "page": 58
+        },
+        {
+          "id": "030750e61db958214ba3482ea337d8d023e7930e57c7b06597600582c031c1e9",
+          "source": "fsw_doc2.pdf",
+          "page": 55
+        },
+        {
+          "id": "f3b4bb4db7801ab9bddb9003af8aae16e07353856bcd4e0fd7d8cc5024e27ed6",
+          "source": "fsw_doc2.pdf",
+          "page": 133
+        }
+      ]
+    },
+    {
+      "id": "FSW-007",
+      "category": "exact",
+      "variant": "bm25",
+      "question": "What does the FSW tool shoulder contact?",
+      "retrieval_query": "What does the FSW tool shoulder contact?",
+      "latency_ms": 0.2251030018669553,
+      "retrieved": [
+        {
+          "id": "7020e134469bc1d44f25a285d0ffbf36ab415d60ef65c09ef3f90e631229578c",
+          "source": "fsw_doc2.pdf",
+          "page": 29
+        },
+        {
+          "id": "a02fc56e46415c1c2cb309bf2c76bcfefb7286cd712284a524989a3901867939",
+          "source": "fsw_doc2.pdf",
+          "page": 11
+        },
+        {
+          "id": "a1b6720db5c927d8bf55edf0865bb23cab45a98ae2e7e49aa86286be16b6984e",
+          "source": "fsw_doc2.pdf",
+          "page": 132
+        },
+        {
+          "id": "95af4083e7cd72cbf873d19becf2f8ab5762d2d672deb3fd23d53b7ef3f86a49",
+          "source": "fsw_doc2.pdf",
+          "page": 131
+        },
+        {
+          "id": "169d6727cc8ee5590eb6f7d86f2efcad01f0f9aebba42a74a63a4c4057028d55",
+          "source": "fsw_doc2.pdf",
+          "page": 116
+        }
+      ]
+    },
+    {
+      "id": "FSW-007",
+      "category": "exact",
+      "variant": "vector",
+      "question": "What does the FSW tool shoulder contact?",
+      "retrieval_query": "What does the FSW tool shoulder contact?",
+      "latency_ms": 3.0633679998572916,
+      "retrieved": [
+        {
+          "id": "6c3df0cd38868f8c1a6c1a994b0d8156bfc21726a51d7c48a5d18dff440ee612",
+          "source": "fsw_doc4.pdf",
+          "page": 84
+        },
+        {
+          "id": "22fb73ebe2e9cbe2bac33aaf54b8a574b92be4f81965a0255faad40dcc0f4c35",
+          "source": "fsw_doc3.pdf",
+          "page": 1
+        },
+        {
+          "id": "815ee583a92a6597e9fccfd2ab6e2e1a6950d5b3aa7fa15a71af6e02a172fc4f",
+          "source": "fsw_doc4.pdf",
+          "page": 71
+        },
+        {
+          "id": "a02fc56e46415c1c2cb309bf2c76bcfefb7286cd712284a524989a3901867939",
+          "source": "fsw_doc2.pdf",
+          "page": 11
+        },
+        {
+          "id": "dc93cb4216f70709f69a9ca48495123f982a231e89e52375278fbd02f3d590da",
+          "source": "fsw_doc2.pdf",
+          "page": 28
+        }
+      ]
+    },
+    {
+      "id": "FSW-007",
+      "category": "exact",
+      "variant": "hybrid",
+      "question": "What does the FSW tool shoulder contact?",
+      "retrieval_query": "What does the FSW tool shoulder contact?",
+      "latency_ms": 2.581358996394556,
+      "retrieved": [
+        {
+          "id": "7020e134469bc1d44f25a285d0ffbf36ab415d60ef65c09ef3f90e631229578c",
+          "source": "fsw_doc2.pdf",
+          "page": 29
+        },
+        {
+          "id": "6c3df0cd38868f8c1a6c1a994b0d8156bfc21726a51d7c48a5d18dff440ee612",
+          "source": "fsw_doc4.pdf",
+          "page": 84
+        },
+        {
+          "id": "a02fc56e46415c1c2cb309bf2c76bcfefb7286cd712284a524989a3901867939",
+          "source": "fsw_doc2.pdf",
+          "page": 11
+        },
+        {
+          "id": "22fb73ebe2e9cbe2bac33aaf54b8a574b92be4f81965a0255faad40dcc0f4c35",
+          "source": "fsw_doc3.pdf",
+          "page": 1
+        },
+        {
+          "id": "a1b6720db5c927d8bf55edf0865bb23cab45a98ae2e7e49aa86286be16b6984e",
+          "source": "fsw_doc2.pdf",
+          "page": 132
+        }
+      ]
+    },
+    {
+      "id": "FSW-007",
+      "category": "exact",
+      "variant": "reranked",
+      "question": "What does the FSW tool shoulder contact?",
+      "retrieval_query": "What does the FSW tool shoulder contact?",
+      "latency_ms": 254.83223699848168,
+      "retrieved": [
+        {
+          "id": "34a14346da382f498fb6b7b8802960e858c41025a69f8c68ec581d558b4d0364",
+          "source": "fsw_doc2.pdf",
+          "page": 14
+        },
+        {
+          "id": "22fb73ebe2e9cbe2bac33aaf54b8a574b92be4f81965a0255faad40dcc0f4c35",
+          "source": "fsw_doc3.pdf",
+          "page": 1
+        },
+        {
+          "id": "95af4083e7cd72cbf873d19becf2f8ab5762d2d672deb3fd23d53b7ef3f86a49",
+          "source": "fsw_doc2.pdf",
+          "page": 131
+        },
+        {
+          "id": "a02fc56e46415c1c2cb309bf2c76bcfefb7286cd712284a524989a3901867939",
+          "source": "fsw_doc2.pdf",
+          "page": 11
+        },
+        {
+          "id": "6c3df0cd38868f8c1a6c1a994b0d8156bfc21726a51d7c48a5d18dff440ee612",
+          "source": "fsw_doc4.pdf",
+          "page": 84
+        }
+      ]
+    },
+    {
+      "id": "FSW-008",
+      "category": "exact",
+      "variant": "bm25",
+      "question": "Does the scope of ISO 25239-5 include friction stir spot welding?",
+      "retrieval_query": "Does the scope of ISO 25239-5 include friction stir spot welding?",
+      "latency_ms": 0.21950300288153812,
+      "retrieved": [
+        {
+          "id": "98561b3cf2544cdce77463703c40e935bafcb82e663e73a8409ebc3f7e122e43",
+          "source": "fsw_doc1.pdf",
+          "page": 7
+        },
+        {
+          "id": "c362a5f49f4a7140f8fc5aedc964920b2c8d6bcfeb4ecdd64f3281f5a239bd07",
+          "source": "fsw_doc2.pdf",
+          "page": 166
+        },
+        {
+          "id": "7c2a1612a01fbbc60cbb1b7d8483afd310580d27e81c949d8a54d34819cb47b8",
+          "source": "fsw_doc2.pdf",
+          "page": 166
+        },
+        {
+          "id": "84b2fc39249becc82b232d699c2106c01d4190eab00f26e64fafaaa613800587",
+          "source": "fsw_doc2.pdf",
+          "page": 109
+        },
+        {
+          "id": "bd2160b7e3227950402f98770a729771224468bdc266229f591ee57ce859796f",
+          "source": "fsw_doc1.pdf",
+          "page": 7
+        }
+      ]
+    },
+    {
+      "id": "FSW-008",
+      "category": "exact",
+      "variant": "vector",
+      "question": "Does the scope of ISO 25239-5 include friction stir spot welding?",
+      "retrieval_query": "Does the scope of ISO 25239-5 include friction stir spot welding?",
+      "latency_ms": 3.2918969955062494,
+      "retrieved": [
+        {
+          "id": "c362a5f49f4a7140f8fc5aedc964920b2c8d6bcfeb4ecdd64f3281f5a239bd07",
+          "source": "fsw_doc2.pdf",
+          "page": 166
+        },
+        {
+          "id": "34e5ce0bbb2b190895455f21405a3a91280704b9436b409cf10fd8b3bf8494d0",
+          "source": "fsw_doc3.pdf",
+          "page": 9
+        },
+        {
+          "id": "2610b71a4667dd0a018af4107e8bae305afde4d75cbbe9f789ff086e6d998425",
+          "source": "fsw_doc5.pdf",
+          "page": 11
+        },
+        {
+          "id": "08b428da18b33a826fdfad1aae7515e38fda2d3678b293ed1dd285050b2d1fc6",
+          "source": "fsw_doc5.pdf",
+          "page": 1
+        },
+        {
+          "id": "7bb5001391bec3d21975d425bd7b573d2b5ebc01acb50e45c72e0a0ed2a377ef",
+          "source": "fsw_doc3.pdf",
+          "page": 1
+        }
+      ]
+    },
+    {
+      "id": "FSW-008",
+      "category": "exact",
+      "variant": "hybrid",
+      "question": "Does the scope of ISO 25239-5 include friction stir spot welding?",
+      "retrieval_query": "Does the scope of ISO 25239-5 include friction stir spot welding?",
+      "latency_ms": 2.8794210011255927,
+      "retrieved": [
+        {
+          "id": "c362a5f49f4a7140f8fc5aedc964920b2c8d6bcfeb4ecdd64f3281f5a239bd07",
+          "source": "fsw_doc2.pdf",
+          "page": 166
+        },
+        {
+          "id": "98561b3cf2544cdce77463703c40e935bafcb82e663e73a8409ebc3f7e122e43",
+          "source": "fsw_doc1.pdf",
+          "page": 7
+        },
+        {
+          "id": "34e5ce0bbb2b190895455f21405a3a91280704b9436b409cf10fd8b3bf8494d0",
+          "source": "fsw_doc3.pdf",
+          "page": 9
+        },
+        {
+          "id": "7c2a1612a01fbbc60cbb1b7d8483afd310580d27e81c949d8a54d34819cb47b8",
+          "source": "fsw_doc2.pdf",
+          "page": 166
+        },
+        {
+          "id": "2610b71a4667dd0a018af4107e8bae305afde4d75cbbe9f789ff086e6d998425",
+          "source": "fsw_doc5.pdf",
+          "page": 11
+        }
+      ]
+    },
+    {
+      "id": "FSW-008",
+      "category": "exact",
+      "variant": "reranked",
+      "question": "Does the scope of ISO 25239-5 include friction stir spot welding?",
+      "retrieval_query": "Does the scope of ISO 25239-5 include friction stir spot welding?",
+      "latency_ms": 329.2571920028422,
+      "retrieved": [
+        {
+          "id": "2a22e3bd67ccfd04cb5a5826aec12b851e1f4fdb4c17caa52fd7ee34397d4ad5",
+          "source": "fsw_doc1.pdf",
+          "page": 1
+        },
+        {
+          "id": "98561b3cf2544cdce77463703c40e935bafcb82e663e73a8409ebc3f7e122e43",
+          "source": "fsw_doc1.pdf",
+          "page": 7
+        },
+        {
+          "id": "84b2fc39249becc82b232d699c2106c01d4190eab00f26e64fafaaa613800587",
+          "source": "fsw_doc2.pdf",
+          "page": 109
+        },
+        {
+          "id": "1c65882d8e61c30f646d939ec0cc5a5ac3dbb79ea77ad3ab0006b6b0903236da",
+          "source": "fsw_doc1.pdf",
+          "page": 7
+        },
+        {
+          "id": "7c2a1612a01fbbc60cbb1b7d8483afd310580d27e81c949d8a54d34819cb47b8",
+          "source": "fsw_doc2.pdf",
+          "page": 166
+        }
+      ]
+    },
+    {
+      "id": "FSW-009",
+      "category": "exact",
+      "variant": "bm25",
+      "question": "How many satisfactory test welds does the bundled FSW quality preview require for reproducibility testing?",
+      "retrieval_query": "How many satisfactory test welds does the bundled FSW quality preview require for reproducibility testing?",
+      "latency_ms": 0.25535000168019906,
+      "retrieved": [
+        {
+          "id": "6a86b7c2990c5727358bf124c7d0f0d341fe8fbe21ce248d791894d450ba8f71",
+          "source": "fsw_doc1.pdf",
+          "page": 9
+        },
+        {
+          "id": "169d6727cc8ee5590eb6f7d86f2efcad01f0f9aebba42a74a63a4c4057028d55",
+          "source": "fsw_doc2.pdf",
+          "page": 116
+        },
+        {
+          "id": "4b6ae13fe2d085d53b1d70ba8b0921dd489e072c1f2c14e0b7e21bbe8f852269",
+          "source": "fsw_doc1.pdf",
+          "page": 7
+        },
+        {
+          "id": "0982307bbf87d14e021dd72579b680e20454d24b4b8364caff2f2e848567b52a",
+          "source": "fsw_doc1.pdf",
+          "page": 9
+        },
+        {
+          "id": "5d98d33f0c566a4062ad7690fb48d400fc30b4b9fd96ab11f4ed5f69e8e23274",
+          "source": "fsw_doc2.pdf",
+          "page": 116
+        }
+      ]
+    },
+    {
+      "id": "FSW-009",
+      "category": "exact",
+      "variant": "vector",
+      "question": "How many satisfactory test welds does the bundled FSW quality preview require for reproducibility testing?",
+      "retrieval_query": "How many satisfactory test welds does the bundled FSW quality preview require for reproducibility testing?",
+      "latency_ms": 3.903909004293382,
+      "retrieved": [
+        {
+          "id": "0470490059ef17896db24a4095f1a3ae7b03de57d223d3621fdeb851c8461248",
+          "source": "fsw_doc2.pdf",
+          "page": 93
+        },
+        {
+          "id": "822e0624b366087fdd7d8cc2d4caba86b946618018f7577c1ae49b65aa5fbea5",
+          "source": "fsw_doc2.pdf",
+          "page": 39
+        },
+        {
+          "id": "3fb377fcceffa0be971a8abcd991e42942d6b6d7975ac50c0d84571a3d382513",
+          "source": "fsw_doc2.pdf",
+          "page": 95
+        },
+        {
+          "id": "c542ef480836e1aa5665e9b6bf7af78f7c374eccfb16cc09e834c57359fa8336",
+          "source": "fsw_doc2.pdf",
+          "page": 111
+        },
+        {
+          "id": "476a66aac495da9bf12df89f20a36142c1222f31f749b004b5fd428fa69d762b",
+          "source": "fsw_doc2.pdf",
+          "page": 105
+        }
+      ]
+    },
+    {
+      "id": "FSW-009",
+      "category": "exact",
+      "variant": "hybrid",
+      "question": "How many satisfactory test welds does the bundled FSW quality preview require for reproducibility testing?",
+      "retrieval_query": "How many satisfactory test welds does the bundled FSW quality preview require for reproducibility testing?",
+      "latency_ms": 3.6993739995523356,
+      "retrieved": [
+        {
+          "id": "6a86b7c2990c5727358bf124c7d0f0d341fe8fbe21ce248d791894d450ba8f71",
+          "source": "fsw_doc1.pdf",
+          "page": 9
+        },
+        {
+          "id": "0470490059ef17896db24a4095f1a3ae7b03de57d223d3621fdeb851c8461248",
+          "source": "fsw_doc2.pdf",
+          "page": 93
+        },
+        {
+          "id": "169d6727cc8ee5590eb6f7d86f2efcad01f0f9aebba42a74a63a4c4057028d55",
+          "source": "fsw_doc2.pdf",
+          "page": 116
+        },
+        {
+          "id": "822e0624b366087fdd7d8cc2d4caba86b946618018f7577c1ae49b65aa5fbea5",
+          "source": "fsw_doc2.pdf",
+          "page": 39
+        },
+        {
+          "id": "4b6ae13fe2d085d53b1d70ba8b0921dd489e072c1f2c14e0b7e21bbe8f852269",
+          "source": "fsw_doc1.pdf",
+          "page": 7
+        }
+      ]
+    },
+    {
+      "id": "FSW-009",
+      "category": "exact",
+      "variant": "reranked",
+      "question": "How many satisfactory test welds does the bundled FSW quality preview require for reproducibility testing?",
+      "retrieval_query": "How many satisfactory test welds does the bundled FSW quality preview require for reproducibility testing?",
+      "latency_ms": 316.20639900211245,
+      "retrieved": [
+        {
+          "id": "0982307bbf87d14e021dd72579b680e20454d24b4b8364caff2f2e848567b52a",
+          "source": "fsw_doc1.pdf",
+          "page": 9
+        },
+        {
+          "id": "6a86b7c2990c5727358bf124c7d0f0d341fe8fbe21ce248d791894d450ba8f71",
+          "source": "fsw_doc1.pdf",
+          "page": 9
+        },
+        {
+          "id": "78ede5486cd4cd748d718c6ab76110fc2c2931746a8d397bf4569c08c7a825e8",
+          "source": "fsw_doc2.pdf",
+          "page": 94
+        },
+        {
+          "id": "0470490059ef17896db24a4095f1a3ae7b03de57d223d3621fdeb851c8461248",
+          "source": "fsw_doc2.pdf",
+          "page": 93
+        },
+        {
+          "id": "fdfbbc5f82115b6a2c6a4ac1dfeb6b95ca462c79dd8b12027e8689b5935c2120",
+          "source": "fsw_doc5.pdf",
+          "page": 11
+        }
+      ]
+    },
+    {
+      "id": "FSW-010",
+      "category": "exact",
+      "variant": "bm25",
+      "question": "Which inspection methods does the FSW quality preview list after welding?",
+      "retrieval_query": "Which inspection methods does the FSW quality preview list after welding?",
+      "latency_ms": 0.2737549948506057,
+      "retrieved": [
+        {
+          "id": "65e68fcbfd85a2d1130b999eed51855e7352d702bc4c180ccff21f91db130f62",
+          "source": "fsw_doc3.pdf",
+          "page": 8
+        },
+        {
+          "id": "1c65882d8e61c30f646d939ec0cc5a5ac3dbb79ea77ad3ab0006b6b0903236da",
+          "source": "fsw_doc1.pdf",
+          "page": 7
+        },
+        {
+          "id": "ebdb712283d47f401a64be552028dfffadc617403af2ba36908f8d82589c6c3f",
+          "source": "fsw_doc2.pdf",
+          "page": 78
+        },
+        {
+          "id": "13e195a134fe458e89b6327dbfb1652f8f33c299a70f2e9cd4be70129c6c7730",
+          "source": "fsw_doc1.pdf",
+          "page": 3
+        },
+        {
+          "id": "5d98d33f0c566a4062ad7690fb48d400fc30b4b9fd96ab11f4ed5f69e8e23274",
+          "source": "fsw_doc2.pdf",
+          "page": 116
+        }
+      ]
+    },
+    {
+      "id": "FSW-010",
+      "category": "exact",
+      "variant": "vector",
+      "question": "Which inspection methods does the FSW quality preview list after welding?",
+      "retrieval_query": "Which inspection methods does the FSW quality preview list after welding?",
+      "latency_ms": 3.586181002901867,
+      "retrieved": [
+        {
+          "id": "a327d99f7dc8038ab0ecfb5fb0facfcd8b6ab996438bbc3ef53c92706d12dfa5",
+          "source": "fsw_doc2.pdf",
+          "page": 167
+        },
+        {
+          "id": "0470490059ef17896db24a4095f1a3ae7b03de57d223d3621fdeb851c8461248",
+          "source": "fsw_doc2.pdf",
+          "page": 93
+        },
+        {
+          "id": "ebdb712283d47f401a64be552028dfffadc617403af2ba36908f8d82589c6c3f",
+          "source": "fsw_doc2.pdf",
+          "page": 78
+        },
+        {
+          "id": "acf1d57a597c18f7679a45c210b064ea19f4d3f1f7570def4811ca9400a161da",
+          "source": "fsw_doc2.pdf",
+          "page": 77
+        },
+        {
+          "id": "65e68fcbfd85a2d1130b999eed51855e7352d702bc4c180ccff21f91db130f62",
+          "source": "fsw_doc3.pdf",
+          "page": 8
+        }
+      ]
+    },
+    {
+      "id": "FSW-010",
+      "category": "exact",
+      "variant": "hybrid",
+      "question": "Which inspection methods does the FSW quality preview list after welding?",
+      "retrieval_query": "Which inspection methods does the FSW quality preview list after welding?",
+      "latency_ms": 3.132286998152267,
+      "retrieved": [
+        {
+          "id": "65e68fcbfd85a2d1130b999eed51855e7352d702bc4c180ccff21f91db130f62",
+          "source": "fsw_doc3.pdf",
+          "page": 8
+        },
+        {
+          "id": "a327d99f7dc8038ab0ecfb5fb0facfcd8b6ab996438bbc3ef53c92706d12dfa5",
+          "source": "fsw_doc2.pdf",
+          "page": 167
+        },
+        {
+          "id": "ebdb712283d47f401a64be552028dfffadc617403af2ba36908f8d82589c6c3f",
+          "source": "fsw_doc2.pdf",
+          "page": 78
+        },
+        {
+          "id": "1c65882d8e61c30f646d939ec0cc5a5ac3dbb79ea77ad3ab0006b6b0903236da",
+          "source": "fsw_doc1.pdf",
+          "page": 7
+        },
+        {
+          "id": "0470490059ef17896db24a4095f1a3ae7b03de57d223d3621fdeb851c8461248",
+          "source": "fsw_doc2.pdf",
+          "page": 93
+        }
+      ]
+    },
+    {
+      "id": "FSW-010",
+      "category": "exact",
+      "variant": "reranked",
+      "question": "Which inspection methods does the FSW quality preview list after welding?",
+      "retrieval_query": "Which inspection methods does the FSW quality preview list after welding?",
+      "latency_ms": 334.2218350007897,
+      "retrieved": [
+        {
+          "id": "65e68fcbfd85a2d1130b999eed51855e7352d702bc4c180ccff21f91db130f62",
+          "source": "fsw_doc3.pdf",
+          "page": 8
+        },
+        {
+          "id": "43c82660a6f83c40ce13081d04bd71e2ac7af1c1bec2104aa7228c9d65301b6d",
+          "source": "fsw_doc2.pdf",
+          "page": 168
+        },
+        {
+          "id": "1c65882d8e61c30f646d939ec0cc5a5ac3dbb79ea77ad3ab0006b6b0903236da",
+          "source": "fsw_doc1.pdf",
+          "page": 7
+        },
+        {
+          "id": "ebdb712283d47f401a64be552028dfffadc617403af2ba36908f8d82589c6c3f",
+          "source": "fsw_doc2.pdf",
+          "page": 78
+        },
+        {
+          "id": "a327d99f7dc8038ab0ecfb5fb0facfcd8b6ab996438bbc3ef53c92706d12dfa5",
+          "source": "fsw_doc2.pdf",
+          "page": 167
+        }
+      ]
+    },
+    {
+      "id": "FSW-011",
+      "category": "paraphrase",
+      "variant": "bm25",
+      "question": "In friction stir welding, which part of the tool projects into the workpiece?",
+      "retrieval_query": "In friction stir welding, which part of the tool projects into the workpiece?",
+      "latency_ms": 0.25062100030481815,
+      "retrieved": [
+        {
+          "id": "8110dfab5c61af83f8c70dc21a6236a0fed7726033588383e73ab8946b566b06",
+          "source": "fsw_doc2.pdf",
+          "page": 11
+        },
+        {
+          "id": "4e2ad08a696c4d548d9e7358023f7eaa1e6596c442829767e685c51056f9cc42",
+          "source": "fsw_doc2.pdf",
+          "page": 121
+        },
+        {
+          "id": "11b3b4de85141ce9b7cd3c674a32dda113c30f90022b83ed12b7a276293981fb",
+          "source": "fsw_doc2.pdf",
+          "page": 121
+        },
+        {
+          "id": "c362a5f49f4a7140f8fc5aedc964920b2c8d6bcfeb4ecdd64f3281f5a239bd07",
+          "source": "fsw_doc2.pdf",
+          "page": 166
+        },
+        {
+          "id": "98561b3cf2544cdce77463703c40e935bafcb82e663e73a8409ebc3f7e122e43",
+          "source": "fsw_doc1.pdf",
+          "page": 7
+        }
+      ]
+    },
+    {
+      "id": "FSW-011",
+      "category": "paraphrase",
+      "variant": "vector",
+      "question": "In friction stir welding, which part of the tool projects into the workpiece?",
+      "retrieval_query": "In friction stir welding, which part of the tool projects into the workpiece?",
+      "latency_ms": 3.3649950055405498,
+      "retrieved": [
+        {
+          "id": "36d6dcbb9eb2266f6610fa45c260c1caed53f838880a2dcaa847c79ec988ce47",
+          "source": "fsw_doc2.pdf",
+          "page": 1
+        },
+        {
+          "id": "4e2ad08a696c4d548d9e7358023f7eaa1e6596c442829767e685c51056f9cc42",
+          "source": "fsw_doc2.pdf",
+          "page": 121
+        },
+        {
+          "id": "e1572a05edda6edeae81e20c65bb5af62e12ca57071a6833d759661289230fe4",
+          "source": "fsw_doc2.pdf",
+          "page": 86
+        },
+        {
+          "id": "64e76ecc2cdee3a4e05d95e31985d2c0e70522a8672f77d6bef5982c83d7fbac",
+          "source": "fsw_doc2.pdf",
+          "page": 14
+        },
+        {
+          "id": "08b428da18b33a826fdfad1aae7515e38fda2d3678b293ed1dd285050b2d1fc6",
+          "source": "fsw_doc5.pdf",
+          "page": 1
+        }
+      ]
+    },
+    {
+      "id": "FSW-011",
+      "category": "paraphrase",
+      "variant": "hybrid",
+      "question": "In friction stir welding, which part of the tool projects into the workpiece?",
+      "retrieval_query": "In friction stir welding, which part of the tool projects into the workpiece?",
+      "latency_ms": 3.07883600180503,
+      "retrieved": [
+        {
+          "id": "8110dfab5c61af83f8c70dc21a6236a0fed7726033588383e73ab8946b566b06",
+          "source": "fsw_doc2.pdf",
+          "page": 11
+        },
+        {
+          "id": "4e2ad08a696c4d548d9e7358023f7eaa1e6596c442829767e685c51056f9cc42",
+          "source": "fsw_doc2.pdf",
+          "page": 121
+        },
+        {
+          "id": "36d6dcbb9eb2266f6610fa45c260c1caed53f838880a2dcaa847c79ec988ce47",
+          "source": "fsw_doc2.pdf",
+          "page": 1
+        },
+        {
+          "id": "11b3b4de85141ce9b7cd3c674a32dda113c30f90022b83ed12b7a276293981fb",
+          "source": "fsw_doc2.pdf",
+          "page": 121
+        },
+        {
+          "id": "e1572a05edda6edeae81e20c65bb5af62e12ca57071a6833d759661289230fe4",
+          "source": "fsw_doc2.pdf",
+          "page": 86
+        }
+      ]
+    },
+    {
+      "id": "FSW-011",
+      "category": "paraphrase",
+      "variant": "reranked",
+      "question": "In friction stir welding, which part of the tool projects into the workpiece?",
+      "retrieval_query": "In friction stir welding, which part of the tool projects into the workpiece?",
+      "latency_ms": 285.8074879986816,
+      "retrieved": [
+        {
+          "id": "8110dfab5c61af83f8c70dc21a6236a0fed7726033588383e73ab8946b566b06",
+          "source": "fsw_doc2.pdf",
+          "page": 11
+        },
+        {
+          "id": "64e76ecc2cdee3a4e05d95e31985d2c0e70522a8672f77d6bef5982c83d7fbac",
+          "source": "fsw_doc2.pdf",
+          "page": 14
+        },
+        {
+          "id": "34f924d8a0209f5bc808f8928559f1033a5b5e298a320510e2de056c0974f3d9",
+          "source": "fsw_doc2.pdf",
+          "page": 16
+        },
+        {
+          "id": "4e2ad08a696c4d548d9e7358023f7eaa1e6596c442829767e685c51056f9cc42",
+          "source": "fsw_doc2.pdf",
+          "page": 121
+        },
+        {
+          "id": "2ece3c3da7edcaa421086a7cd0a2b56fe755f4c218ab931414db9e91b8d46e6b",
+          "source": "fsw_doc2.pdf",
+          "page": 19
+        }
+      ]
+    },
+    {
+      "id": "FSW-012",
+      "category": "paraphrase",
+      "variant": "bm25",
+      "question": "Why does the friction stir process hold the plates firmly against a support during plunging?",
+      "retrieval_query": "Why does the friction stir process hold the plates firmly against a support during plunging?",
+      "latency_ms": 0.2434779962641187,
+      "retrieved": [
+        {
+          "id": "4e2ad08a696c4d548d9e7358023f7eaa1e6596c442829767e685c51056f9cc42",
+          "source": "fsw_doc2.pdf",
+          "page": 121
+        },
+        {
+          "id": "11b3b4de85141ce9b7cd3c674a32dda113c30f90022b83ed12b7a276293981fb",
+          "source": "fsw_doc2.pdf",
+          "page": 121
+        },
+        {
+          "id": "f9bb42731cee0455190fa1b81b8d7da64274a8afa7025d1dfad1104781b95246",
+          "source": "fsw_doc2.pdf",
+          "page": 73
+        },
+        {
+          "id": "9caa8e88983490b474b5191ba69bfa1d9f02342550a74dc5655bc6a6c58ab23a",
+          "source": "fsw_doc2.pdf",
+          "page": 49
+        },
+        {
+          "id": "5f1407d89e31f3ff6d632288901b3f6fcce4fc2378055cc9e68d90ed1b065f49",
+          "source": "fsw_doc2.pdf",
+          "page": 73
+        }
+      ]
+    },
+    {
+      "id": "FSW-012",
+      "category": "paraphrase",
+      "variant": "vector",
+      "question": "Why does the friction stir process hold the plates firmly against a support during plunging?",
+      "retrieval_query": "Why does the friction stir process hold the plates firmly against a support during plunging?",
+      "latency_ms": 3.432181001699064,
+      "retrieved": [
+        {
+          "id": "56a7bcfd6874a6d7b29bc464a1cfaba7ff32bcd6933b8ba2ac3af5f2ad57b2b8",
+          "source": "fsw_doc2.pdf",
+          "page": 30
+        },
+        {
+          "id": "11b3b4de85141ce9b7cd3c674a32dda113c30f90022b83ed12b7a276293981fb",
+          "source": "fsw_doc2.pdf",
+          "page": 121
+        },
+        {
+          "id": "31ca4ae995509347e23bed283dfe964cb8a295e549380b76526d2b2a7f6026b8",
+          "source": "fsw_doc3.pdf",
+          "page": 1
+        },
+        {
+          "id": "d1f24af824574588600e405fcba58b4dc6a4eed1873e0f0e9a381449da3683ee",
+          "source": "fsw_doc4.pdf",
+          "page": 87
+        },
+        {
+          "id": "4e2ad08a696c4d548d9e7358023f7eaa1e6596c442829767e685c51056f9cc42",
+          "source": "fsw_doc2.pdf",
+          "page": 121
+        }
+      ]
+    },
+    {
+      "id": "FSW-012",
+      "category": "paraphrase",
+      "variant": "hybrid",
+      "question": "Why does the friction stir process hold the plates firmly against a support during plunging?",
+      "retrieval_query": "Why does the friction stir process hold the plates firmly against a support during plunging?",
+      "latency_ms": 3.0393119959626347,
+      "retrieved": [
+        {
+          "id": "4e2ad08a696c4d548d9e7358023f7eaa1e6596c442829767e685c51056f9cc42",
+          "source": "fsw_doc2.pdf",
+          "page": 121
+        },
+        {
+          "id": "11b3b4de85141ce9b7cd3c674a32dda113c30f90022b83ed12b7a276293981fb",
+          "source": "fsw_doc2.pdf",
+          "page": 121
+        },
+        {
+          "id": "56a7bcfd6874a6d7b29bc464a1cfaba7ff32bcd6933b8ba2ac3af5f2ad57b2b8",
+          "source": "fsw_doc2.pdf",
+          "page": 30
+        },
+        {
+          "id": "f9bb42731cee0455190fa1b81b8d7da64274a8afa7025d1dfad1104781b95246",
+          "source": "fsw_doc2.pdf",
+          "page": 73
+        },
+        {
+          "id": "31ca4ae995509347e23bed283dfe964cb8a295e549380b76526d2b2a7f6026b8",
+          "source": "fsw_doc3.pdf",
+          "page": 1
+        }
+      ]
+    },
+    {
+      "id": "FSW-012",
+      "category": "paraphrase",
+      "variant": "reranked",
+      "question": "Why does the friction stir process hold the plates firmly against a support during plunging?",
+      "retrieval_query": "Why does the friction stir process hold the plates firmly against a support during plunging?",
+      "latency_ms": 299.4047550018877,
+      "retrieved": [
+        {
+          "id": "34a14346da382f498fb6b7b8802960e858c41025a69f8c68ec581d558b4d0364",
+          "source": "fsw_doc2.pdf",
+          "page": 14
+        },
+        {
+          "id": "11b3b4de85141ce9b7cd3c674a32dda113c30f90022b83ed12b7a276293981fb",
+          "source": "fsw_doc2.pdf",
+          "page": 121
+        },
+        {
+          "id": "ac4ee5c911a5e7356d90d1f711ec463a33ea2ee45b22625bc9940a6e81bc682e",
+          "source": "fsw_doc2.pdf",
+          "page": 19
+        },
+        {
+          "id": "4e2ad08a696c4d548d9e7358023f7eaa1e6596c442829767e685c51056f9cc42",
+          "source": "fsw_doc2.pdf",
+          "page": 121
+        },
+        {
+          "id": "ab3d9f82414c9c6d0c2716070d6de6b23f4c5014dd83cc6b3f5206d1fef84622",
+          "source": "fsw_doc2.pdf",
+          "page": 51
+        }
+      ]
+    },
+    {
+      "id": "FSW-013",
+      "category": "paraphrase",
+      "variant": "bm25",
+      "question": "When FSW equipment is relocated, what repeatability demonstration does the quality preview require?",
+      "retrieval_query": "When FSW equipment is relocated, what repeatability demonstration does the quality preview require?",
+      "latency_ms": 0.23271800455404446,
+      "retrieved": [
+        {
+          "id": "169d6727cc8ee5590eb6f7d86f2efcad01f0f9aebba42a74a63a4c4057028d55",
+          "source": "fsw_doc2.pdf",
+          "page": 116
+        },
+        {
+          "id": "7ff271410786c682f94ccee5901f4c8c674132a97fcf3d38ad89971f692de061",
+          "source": "fsw_doc1.pdf",
+          "page": 8
+        },
+        {
+          "id": "0f62f80c8e987ec8d12228b40d5b49d018f16e5dfbce620ed30237ee58a616b1",
+          "source": "fsw_doc2.pdf",
+          "page": 115
+        },
+        {
+          "id": "8d12c091856fc90598eb8b8d6b3d934d6216f1f4bb39522c1ccebc48d3389481",
+          "source": "fsw_doc5.pdf",
+          "page": 2
+        },
+        {
+          "id": "c568e08510e6222a221492dcdd9566c14efcf18673a4170602aea0f86bafc4f8",
+          "source": "fsw_doc2.pdf",
+          "page": 89
+        }
+      ]
+    },
+    {
+      "id": "FSW-013",
+      "category": "paraphrase",
+      "variant": "vector",
+      "question": "When FSW equipment is relocated, what repeatability demonstration does the quality preview require?",
+      "retrieval_query": "When FSW equipment is relocated, what repeatability demonstration does the quality preview require?",
+      "latency_ms": 3.4750319973682053,
+      "retrieved": [
+        {
+          "id": "1978d0c3c57a1f0328e46a98981b694b84e1b49a4a1570c7a7608f0faaddc111",
+          "source": "fsw_doc2.pdf",
+          "page": 53
+        },
+        {
+          "id": "c1fe271545690c86a15809a7ba9983028c224a077236f3f08dabf519b3385e90",
+          "source": "fsw_doc2.pdf",
+          "page": 143
+        },
+        {
+          "id": "61661590a7121086f35dff893f55f0077c9f8b1f1d5bc33331ce70851d92f1ed",
+          "source": "fsw_doc4.pdf",
+          "page": 101
+        },
+        {
+          "id": "2fab5ae8622fec68d31e7b568d1c8ad3753c2e913e2f09deafe66f4d4cf0741e",
+          "source": "fsw_doc2.pdf",
+          "page": 142
+        },
+        {
+          "id": "eed5b59a62f2af6c1e1a42bb483b1a6cf6819fc2f9e68dd76d66422d8e5e136a",
+          "source": "fsw_doc2.pdf",
+          "page": 23
+        }
+      ]
+    },
+    {
+      "id": "FSW-013",
+      "category": "paraphrase",
+      "variant": "hybrid",
+      "question": "When FSW equipment is relocated, what repeatability demonstration does the quality preview require?",
+      "retrieval_query": "When FSW equipment is relocated, what repeatability demonstration does the quality preview require?",
+      "latency_ms": 3.8626619934802875,
+      "retrieved": [
+        {
+          "id": "169d6727cc8ee5590eb6f7d86f2efcad01f0f9aebba42a74a63a4c4057028d55",
+          "source": "fsw_doc2.pdf",
+          "page": 116
+        },
+        {
+          "id": "1978d0c3c57a1f0328e46a98981b694b84e1b49a4a1570c7a7608f0faaddc111",
+          "source": "fsw_doc2.pdf",
+          "page": 53
+        },
+        {
+          "id": "7ff271410786c682f94ccee5901f4c8c674132a97fcf3d38ad89971f692de061",
+          "source": "fsw_doc1.pdf",
+          "page": 8
+        },
+        {
+          "id": "c1fe271545690c86a15809a7ba9983028c224a077236f3f08dabf519b3385e90",
+          "source": "fsw_doc2.pdf",
+          "page": 143
+        },
+        {
+          "id": "0f62f80c8e987ec8d12228b40d5b49d018f16e5dfbce620ed30237ee58a616b1",
+          "source": "fsw_doc2.pdf",
+          "page": 115
+        }
+      ]
+    },
+    {
+      "id": "FSW-013",
+      "category": "paraphrase",
+      "variant": "reranked",
+      "question": "When FSW equipment is relocated, what repeatability demonstration does the quality preview require?",
+      "retrieval_query": "When FSW equipment is relocated, what repeatability demonstration does the quality preview require?",
+      "latency_ms": 292.07081600179663,
+      "retrieved": [
+        {
+          "id": "1978d0c3c57a1f0328e46a98981b694b84e1b49a4a1570c7a7608f0faaddc111",
+          "source": "fsw_doc2.pdf",
+          "page": 53
+        },
+        {
+          "id": "5681cc0d67c55d209f971a1099cbf896a9eaa6d51a82dde60ef6eceb1f7fe975",
+          "source": "fsw_doc2.pdf",
+          "page": 145
+        },
+        {
+          "id": "7ff271410786c682f94ccee5901f4c8c674132a97fcf3d38ad89971f692de061",
+          "source": "fsw_doc1.pdf",
+          "page": 8
+        },
+        {
+          "id": "da86111e295692cc35cfdfb2d70b6dd2fa9a839b0f2108746dc6d54fd205ba1d",
+          "source": "fsw_doc2.pdf",
+          "page": 149
+        },
+        {
+          "id": "c568e08510e6222a221492dcdd9566c14efcf18673a4170602aea0f86bafc4f8",
+          "source": "fsw_doc2.pdf",
+          "page": 89
+        }
+      ]
+    },
+    {
+      "id": "FSW-014",
+      "category": "paraphrase",
+      "variant": "bm25",
+      "question": "Before FSW, what contamination should be removed from the parent material?",
+      "retrieval_query": "Before FSW, what contamination should be removed from the parent material?",
+      "latency_ms": 0.23236800188897178,
+      "retrieved": [
+        {
+          "id": "a03f5358fd3596efa6ff47ca80c340c19dc42ad2179791a757369dd8eed07430",
+          "source": "fsw_doc2.pdf",
+          "page": 168
+        },
+        {
+          "id": "2f8ac77482553204235002393ffb50f9aaa06bc90e5c55ec4e66fd0cba071a6e",
+          "source": "fsw_doc2.pdf",
+          "page": 17
+        },
+        {
+          "id": "1d8ec90bfb9c457bd2b5debbfc9ed65ffd292699d5ac04f9a4bc2ad973aa54d0",
+          "source": "fsw_doc2.pdf",
+          "page": 47
+        },
+        {
+          "id": "8cd7ce42a4c78ab0ac24a8438e94c114b37b55fa7c7d51675f16864dc22ed216",
+          "source": "fsw_doc2.pdf",
+          "page": 11
+        },
+        {
+          "id": "6ae6b81e08bf988f0db9afb4424794c0fda5f2e4f706c57c3ab1e723f49176b3",
+          "source": "fsw_doc4.pdf",
+          "page": 65
+        }
+      ]
+    },
+    {
+      "id": "FSW-014",
+      "category": "paraphrase",
+      "variant": "vector",
+      "question": "Before FSW, what contamination should be removed from the parent material?",
+      "retrieval_query": "Before FSW, what contamination should be removed from the parent material?",
+      "latency_ms": 3.2342289996449836,
+      "retrieved": [
+        {
+          "id": "ede02e0aa3aa0caf79fb4755da4de71f32bc20af009c472e1561a914aa1d657d",
+          "source": "fsw_doc2.pdf",
+          "page": 75
+        },
+        {
+          "id": "ae46e1083c97e3ea85fdaf4598a5379ce7fa1c7642573ec45cf515f51a465751",
+          "source": "fsw_doc4.pdf",
+          "page": 146
+        },
+        {
+          "id": "fe306766c088359bb463a181a3d7698fe79753f6f701d10b7e909a2ec3f6f7b1",
+          "source": "fsw_doc2.pdf",
+          "page": 113
+        },
+        {
+          "id": "d491c8654cc4d9e8b27c26dc90af1f780fbcf83e3a9916367f7a19486ce8c709",
+          "source": "fsw_doc2.pdf",
+          "page": 53
+        },
+        {
+          "id": "c5d6d1bb46a7d30b186762d8c4c20b4faeb863657ac73be1344eca0939f8c38f",
+          "source": "fsw_doc4.pdf",
+          "page": 98
+        }
+      ]
+    },
+    {
+      "id": "FSW-014",
+      "category": "paraphrase",
+      "variant": "hybrid",
+      "question": "Before FSW, what contamination should be removed from the parent material?",
+      "retrieval_query": "Before FSW, what contamination should be removed from the parent material?",
+      "latency_ms": 2.9866120021324605,
+      "retrieved": [
+        {
+          "id": "a03f5358fd3596efa6ff47ca80c340c19dc42ad2179791a757369dd8eed07430",
+          "source": "fsw_doc2.pdf",
+          "page": 168
+        },
+        {
+          "id": "ede02e0aa3aa0caf79fb4755da4de71f32bc20af009c472e1561a914aa1d657d",
+          "source": "fsw_doc2.pdf",
+          "page": 75
+        },
+        {
+          "id": "2f8ac77482553204235002393ffb50f9aaa06bc90e5c55ec4e66fd0cba071a6e",
+          "source": "fsw_doc2.pdf",
+          "page": 17
+        },
+        {
+          "id": "ae46e1083c97e3ea85fdaf4598a5379ce7fa1c7642573ec45cf515f51a465751",
+          "source": "fsw_doc4.pdf",
+          "page": 146
+        },
+        {
+          "id": "1d8ec90bfb9c457bd2b5debbfc9ed65ffd292699d5ac04f9a4bc2ad973aa54d0",
+          "source": "fsw_doc2.pdf",
+          "page": 47
+        }
+      ]
+    },
+    {
+      "id": "FSW-014",
+      "category": "paraphrase",
+      "variant": "reranked",
+      "question": "Before FSW, what contamination should be removed from the parent material?",
+      "retrieval_query": "Before FSW, what contamination should be removed from the parent material?",
+      "latency_ms": 310.4441570030758,
+      "retrieved": [
+        {
+          "id": "fe306766c088359bb463a181a3d7698fe79753f6f701d10b7e909a2ec3f6f7b1",
+          "source": "fsw_doc2.pdf",
+          "page": 113
+        },
+        {
+          "id": "01d9e7ac711981cf3d2220ef7e7b03e9109ef38119ec3c170a64d2b1c2248e3a",
+          "source": "fsw_doc4.pdf",
+          "page": 114
+        },
+        {
+          "id": "efeb357c9def928fd9cbdf2cfcae29a029bc059697f22f24282de310be6f7dde",
+          "source": "fsw_doc4.pdf",
+          "page": 90
+        },
+        {
+          "id": "7dbe8eae889d5b5b7e6847c8501d13f12d6588d47c44f968aaf7c0972ea9e232",
+          "source": "fsw_doc2.pdf",
+          "page": 34
+        },
+        {
+          "id": "8cc70063ad8393743806d86881213917a959779e85e9e3e734adffbd57784b78",
+          "source": "fsw_doc4.pdf",
+          "page": 187
+        }
+      ]
+    },
+    {
+      "id": "FSW-015",
+      "category": "paraphrase",
+      "variant": "bm25",
+      "question": "Does friction stir welding join metal by melting it?",
+      "retrieval_query": "Does friction stir welding join metal by melting it?",
+      "latency_ms": 0.2533169972593896,
+      "retrieved": [
+        {
+          "id": "2973015d2a388c37fd7b408850645cf3c4ba22d08c69905050b421f78b4a8484",
+          "source": "fsw_doc1.pdf",
+          "page": 5
+        },
+        {
+          "id": "3a92c7ec9e0441a6400c31e6872c325422efe13513c7975a5615a3650a19c9c8",
+          "source": "fsw_doc2.pdf",
+          "page": 13
+        },
+        {
+          "id": "2a5f6e4bf82065cf4adc5a87ad504a5009267f1d4c5ad8136ea4779a9cffcf7f",
+          "source": "fsw_doc4.pdf",
+          "page": 25
+        },
+        {
+          "id": "064513f20733efe3c6ac694c4381bd1cc8e8f5c3559d4490868aeb977a2b8669",
+          "source": "fsw_doc2.pdf",
+          "page": 12
+        },
+        {
+          "id": "c2af76aa5f4b2853ff1a9ba4a24e42537b06225ab56f44280bc6a527df3fa93c",
+          "source": "fsw_doc4.pdf",
+          "page": 24
+        }
+      ]
+    },
+    {
+      "id": "FSW-015",
+      "category": "paraphrase",
+      "variant": "vector",
+      "question": "Does friction stir welding join metal by melting it?",
+      "retrieval_query": "Does friction stir welding join metal by melting it?",
+      "latency_ms": 3.153266996378079,
+      "retrieved": [
+        {
+          "id": "45a87e522afc4b40d375e788cc6ec12322b1316b2f4e6f44fb10c70183ab3095",
+          "source": "fsw_doc4.pdf",
+          "page": 304
+        },
+        {
+          "id": "a76e7f2be68bac755df832be0be6046d03fd67a349eec1f675da5ee5d7086a77",
+          "source": "fsw_doc2.pdf",
+          "page": 166
+        },
+        {
+          "id": "08b428da18b33a826fdfad1aae7515e38fda2d3678b293ed1dd285050b2d1fc6",
+          "source": "fsw_doc5.pdf",
+          "page": 1
+        },
+        {
+          "id": "36d6dcbb9eb2266f6610fa45c260c1caed53f838880a2dcaa847c79ec988ce47",
+          "source": "fsw_doc2.pdf",
+          "page": 1
+        },
+        {
+          "id": "c6d35109836096751a38ceb41b09eaa290cbe4903a9ab52a15589cd9eb9e2db9",
+          "source": "fsw_doc2.pdf",
+          "page": 122
+        }
+      ]
+    },
+    {
+      "id": "FSW-015",
+      "category": "paraphrase",
+      "variant": "hybrid",
+      "question": "Does friction stir welding join metal by melting it?",
+      "retrieval_query": "Does friction stir welding join metal by melting it?",
+      "latency_ms": 2.709430998947937,
+      "retrieved": [
+        {
+          "id": "2973015d2a388c37fd7b408850645cf3c4ba22d08c69905050b421f78b4a8484",
+          "source": "fsw_doc1.pdf",
+          "page": 5
+        },
+        {
+          "id": "45a87e522afc4b40d375e788cc6ec12322b1316b2f4e6f44fb10c70183ab3095",
+          "source": "fsw_doc4.pdf",
+          "page": 304
+        },
+        {
+          "id": "3a92c7ec9e0441a6400c31e6872c325422efe13513c7975a5615a3650a19c9c8",
+          "source": "fsw_doc2.pdf",
+          "page": 13
+        },
+        {
+          "id": "a76e7f2be68bac755df832be0be6046d03fd67a349eec1f675da5ee5d7086a77",
+          "source": "fsw_doc2.pdf",
+          "page": 166
+        },
+        {
+          "id": "2a5f6e4bf82065cf4adc5a87ad504a5009267f1d4c5ad8136ea4779a9cffcf7f",
+          "source": "fsw_doc4.pdf",
+          "page": 25
+        }
+      ]
+    },
+    {
+      "id": "FSW-015",
+      "category": "paraphrase",
+      "variant": "reranked",
+      "question": "Does friction stir welding join metal by melting it?",
+      "retrieval_query": "Does friction stir welding join metal by melting it?",
+      "latency_ms": 254.48548700660467,
+      "retrieved": [
+        {
+          "id": "3a92c7ec9e0441a6400c31e6872c325422efe13513c7975a5615a3650a19c9c8",
+          "source": "fsw_doc2.pdf",
+          "page": 13
+        },
+        {
+          "id": "ef636475ac6e90084fedcb28e002f45bb58e61c4cee05448dceb11eb45f2e9bf",
+          "source": "fsw_doc2.pdf",
+          "page": 34
+        },
+        {
+          "id": "84adda81127da47554c84cc25262489f675e347e845fc3a1da3b9a43c0995dd0",
+          "source": "fsw_doc3.pdf",
+          "page": 11
+        },
+        {
+          "id": "2973015d2a388c37fd7b408850645cf3c4ba22d08c69905050b421f78b4a8484",
+          "source": "fsw_doc1.pdf",
+          "page": 5
+        },
+        {
+          "id": "34e5ce0bbb2b190895455f21405a3a91280704b9436b409cf10fd8b3bf8494d0",
+          "source": "fsw_doc3.pdf",
+          "page": 9
+        }
+      ]
+    },
+    {
+      "id": "FSW-016",
+      "category": "paraphrase",
+      "variant": "bm25",
+      "question": "Why is a two-shouldered FSW tool described as self-reacting?",
+      "retrieval_query": "Why is a two-shouldered FSW tool described as self-reacting?",
+      "latency_ms": 0.24037300318013877,
+      "retrieved": [
+        {
+          "id": "7672a3232fc85ae4e877862c0afffe07fbe47266fb717386dfe243b12afadf40",
+          "source": "fsw_doc2.pdf",
+          "page": 11
+        },
+        {
+          "id": "8110dfab5c61af83f8c70dc21a6236a0fed7726033588383e73ab8946b566b06",
+          "source": "fsw_doc2.pdf",
+          "page": 11
+        },
+        {
+          "id": "9e03aa13d1145dc6cce7abf47ca846f4c64812919950b8255c241220df873236",
+          "source": "fsw_doc2.pdf",
+          "page": 33
+        },
+        {
+          "id": "0a2ec7d8c1b4efe4b8825f66864db03fcd8730072b78de26f878dabf31e82cdb",
+          "source": "fsw_doc2.pdf",
+          "page": 27
+        },
+        {
+          "id": "1ec97918305de0e57a480033da37df00e5bec6d9cdb9968e0b24cc20a9ac38f7",
+          "source": "fsw_doc2.pdf",
+          "page": 53
+        }
+      ]
+    },
+    {
+      "id": "FSW-016",
+      "category": "paraphrase",
+      "variant": "vector",
+      "question": "Why is a two-shouldered FSW tool described as self-reacting?",
+      "retrieval_query": "Why is a two-shouldered FSW tool described as self-reacting?",
+      "latency_ms": 3.6800680027226917,
+      "retrieved": [
+        {
+          "id": "e70e9c0b417bdbd66f00495aa9de32b01541d8d557e85346ab827f129a7670f6",
+          "source": "fsw_doc2.pdf",
+          "page": 22
+        },
+        {
+          "id": "43cfb1d15dcd86d460cc13699a8eff2b47e7778c4addc7e960a920b7a12e12d2",
+          "source": "fsw_doc2.pdf",
+          "page": 142
+        },
+        {
+          "id": "ab3a315fe66903ff722a0d26e2d90807ae2d7eed7bf722d2b2895437f66520e1",
+          "source": "fsw_doc2.pdf",
+          "page": 146
+        },
+        {
+          "id": "da86111e295692cc35cfdfb2d70b6dd2fa9a839b0f2108746dc6d54fd205ba1d",
+          "source": "fsw_doc2.pdf",
+          "page": 149
+        },
+        {
+          "id": "340ae0ce66af8ff7f33a215ba7c082b7dcedc3a905e45200633c5c2fb05b0d2a",
+          "source": "fsw_doc4.pdf",
+          "page": 73
+        }
+      ]
+    },
+    {
+      "id": "FSW-016",
+      "category": "paraphrase",
+      "variant": "hybrid",
+      "question": "Why is a two-shouldered FSW tool described as self-reacting?",
+      "retrieval_query": "Why is a two-shouldered FSW tool described as self-reacting?",
+      "latency_ms": 3.765089000808075,
+      "retrieved": [
+        {
+          "id": "7672a3232fc85ae4e877862c0afffe07fbe47266fb717386dfe243b12afadf40",
+          "source": "fsw_doc2.pdf",
+          "page": 11
+        },
+        {
+          "id": "e70e9c0b417bdbd66f00495aa9de32b01541d8d557e85346ab827f129a7670f6",
+          "source": "fsw_doc2.pdf",
+          "page": 22
+        },
+        {
+          "id": "8110dfab5c61af83f8c70dc21a6236a0fed7726033588383e73ab8946b566b06",
+          "source": "fsw_doc2.pdf",
+          "page": 11
+        },
+        {
+          "id": "43cfb1d15dcd86d460cc13699a8eff2b47e7778c4addc7e960a920b7a12e12d2",
+          "source": "fsw_doc2.pdf",
+          "page": 142
+        },
+        {
+          "id": "9e03aa13d1145dc6cce7abf47ca846f4c64812919950b8255c241220df873236",
+          "source": "fsw_doc2.pdf",
+          "page": 33
+        }
+      ]
+    },
+    {
+      "id": "FSW-016",
+      "category": "paraphrase",
+      "variant": "reranked",
+      "question": "Why is a two-shouldered FSW tool described as self-reacting?",
+      "retrieval_query": "Why is a two-shouldered FSW tool described as self-reacting?",
+      "latency_ms": 296.3398790016072,
+      "retrieved": [
+        {
+          "id": "0a2ec7d8c1b4efe4b8825f66864db03fcd8730072b78de26f878dabf31e82cdb",
+          "source": "fsw_doc2.pdf",
+          "page": 27
+        },
+        {
+          "id": "b1a93160ed4257c3595b4412bd88843dece3132ff2c1c43181a46da26c39f173",
+          "source": "fsw_doc2.pdf",
+          "page": 27
+        },
+        {
+          "id": "9e03aa13d1145dc6cce7abf47ca846f4c64812919950b8255c241220df873236",
+          "source": "fsw_doc2.pdf",
+          "page": 33
+        },
+        {
+          "id": "7672a3232fc85ae4e877862c0afffe07fbe47266fb717386dfe243b12afadf40",
+          "source": "fsw_doc2.pdf",
+          "page": 11
+        },
+        {
+          "id": "1074c60dd5ef54e98942bb06a00b5fdc5b225a02f34f7b98538ead6b33d5e8aa",
+          "source": "fsw_doc2.pdf",
+          "page": 54
+        }
+      ]
+    },
+    {
+      "id": "FSW-017",
+      "category": "paraphrase",
+      "variant": "bm25",
+      "question": "What does the thick-section FSW thesis mean by thick material?",
+      "retrieval_query": "What does the thick-section FSW thesis mean by thick material?",
+      "latency_ms": 0.23549400066258386,
+      "retrieved": [
+        {
+          "id": "e8744ff6ea51f136f1ee0e932ca3b427910f3f8dd4640d78cb83117f47b279e3",
+          "source": "fsw_doc4.pdf",
+          "page": 109
+        },
+        {
+          "id": "a36fa0d55bf57ff4668f7fb208ef1c214af679336694349cd6958c0791251342",
+          "source": "fsw_doc4.pdf",
+          "page": 27
+        },
+        {
+          "id": "8cce5b293a1209b38d7a8ea8c65fb32f67ab3ce1248c26a0829377d0a499b2cf",
+          "source": "fsw_doc4.pdf",
+          "page": 101
+        },
+        {
+          "id": "97e8d9a6aa5d490db4b7afe962e86ea04c99e60b352867f72f1a0a82d9b43a28",
+          "source": "fsw_doc4.pdf",
+          "page": 111
+        },
+        {
+          "id": "f714db5eabe4b0000db761055625eeb71e77decada5b42b2a57e58366ff59bb2",
+          "source": "fsw_doc4.pdf",
+          "page": 1
+        }
+      ]
+    },
+    {
+      "id": "FSW-017",
+      "category": "paraphrase",
+      "variant": "vector",
+      "question": "What does the thick-section FSW thesis mean by thick material?",
+      "retrieval_query": "What does the thick-section FSW thesis mean by thick material?",
+      "latency_ms": 3.5925330012105405,
+      "retrieved": [
+        {
+          "id": "e8744ff6ea51f136f1ee0e932ca3b427910f3f8dd4640d78cb83117f47b279e3",
+          "source": "fsw_doc4.pdf",
+          "page": 109
+        },
+        {
+          "id": "a36fa0d55bf57ff4668f7fb208ef1c214af679336694349cd6958c0791251342",
+          "source": "fsw_doc4.pdf",
+          "page": 27
+        },
+        {
+          "id": "ad29f9ca7c2697fd5c5afa2b761d2e947f3849ef8cfd859fa7067f105024e34f",
+          "source": "fsw_doc4.pdf",
+          "page": 109
+        },
+        {
+          "id": "1a9e5bde561ddc41a76b98dc7f83564300ae7389c36bcc6bd29200eb22c4ba50",
+          "source": "fsw_doc4.pdf",
+          "page": 117
+        },
+        {
+          "id": "97e8d9a6aa5d490db4b7afe962e86ea04c99e60b352867f72f1a0a82d9b43a28",
+          "source": "fsw_doc4.pdf",
+          "page": 111
+        }
+      ]
+    },
+    {
+      "id": "FSW-017",
+      "category": "paraphrase",
+      "variant": "hybrid",
+      "question": "What does the thick-section FSW thesis mean by thick material?",
+      "retrieval_query": "What does the thick-section FSW thesis mean by thick material?",
+      "latency_ms": 3.7554900045506656,
+      "retrieved": [
+        {
+          "id": "e8744ff6ea51f136f1ee0e932ca3b427910f3f8dd4640d78cb83117f47b279e3",
+          "source": "fsw_doc4.pdf",
+          "page": 109
+        },
+        {
+          "id": "a36fa0d55bf57ff4668f7fb208ef1c214af679336694349cd6958c0791251342",
+          "source": "fsw_doc4.pdf",
+          "page": 27
+        },
+        {
+          "id": "97e8d9a6aa5d490db4b7afe962e86ea04c99e60b352867f72f1a0a82d9b43a28",
+          "source": "fsw_doc4.pdf",
+          "page": 111
+        },
+        {
+          "id": "8cce5b293a1209b38d7a8ea8c65fb32f67ab3ce1248c26a0829377d0a499b2cf",
+          "source": "fsw_doc4.pdf",
+          "page": 101
+        },
+        {
+          "id": "ad29f9ca7c2697fd5c5afa2b761d2e947f3849ef8cfd859fa7067f105024e34f",
+          "source": "fsw_doc4.pdf",
+          "page": 109
+        }
+      ]
+    },
+    {
+      "id": "FSW-017",
+      "category": "paraphrase",
+      "variant": "reranked",
+      "question": "What does the thick-section FSW thesis mean by thick material?",
+      "retrieval_query": "What does the thick-section FSW thesis mean by thick material?",
+      "latency_ms": 295.1206639991142,
+      "retrieved": [
+        {
+          "id": "e8744ff6ea51f136f1ee0e932ca3b427910f3f8dd4640d78cb83117f47b279e3",
+          "source": "fsw_doc4.pdf",
+          "page": 109
+        },
+        {
+          "id": "01d9e7ac711981cf3d2220ef7e7b03e9109ef38119ec3c170a64d2b1c2248e3a",
+          "source": "fsw_doc4.pdf",
+          "page": 114
+        },
+        {
+          "id": "a36fa0d55bf57ff4668f7fb208ef1c214af679336694349cd6958c0791251342",
+          "source": "fsw_doc4.pdf",
+          "page": 27
+        },
+        {
+          "id": "8cce5b293a1209b38d7a8ea8c65fb32f67ab3ce1248c26a0829377d0a499b2cf",
+          "source": "fsw_doc4.pdf",
+          "page": 101
+        },
+        {
+          "id": "97e8d9a6aa5d490db4b7afe962e86ea04c99e60b352867f72f1a0a82d9b43a28",
+          "source": "fsw_doc4.pdf",
+          "page": 111
+        }
+      ]
+    },
+    {
+      "id": "FSW-018",
+      "category": "paraphrase",
+      "variant": "bm25",
+      "question": "Why should an FSW monitoring method be tested across different aluminium alloys?",
+      "retrieval_query": "Why should an FSW monitoring method be tested across different aluminium alloys?",
+      "latency_ms": 0.25192400062223896,
+      "retrieved": [
+        {
+          "id": "1c2d6cfef848b8ff2cc4f93c9be3271a5a5f0f6288bdc449777bf16545aca4b1",
+          "source": "fsw_doc5.pdf",
+          "page": 1
+        },
+        {
+          "id": "9a56a3d9db4dee2e2875af8c231321d5db166b71af347a8dcb73296b62bce486",
+          "source": "fsw_doc5.pdf",
+          "page": 2
+        },
+        {
+          "id": "14e4463c5c4e58991738b3d946338b1fdb804e2a6f2844727cecdf082fce73dc",
+          "source": "fsw_doc2.pdf",
+          "page": 68
+        },
+        {
+          "id": "1321b8dcc15f126056d150fe7f88163009ecb78d57291a7f9fedfb09947e76e7",
+          "source": "fsw_doc5.pdf",
+          "page": 2
+        },
+        {
+          "id": "f429ce46b1b2f70c265cc5ca5934d8b99b944c152f758c75b6d118aaefb5dce7",
+          "source": "fsw_doc4.pdf",
+          "page": 90
+        }
+      ]
+    },
+    {
+      "id": "FSW-018",
+      "category": "paraphrase",
+      "variant": "vector",
+      "question": "Why should an FSW monitoring method be tested across different aluminium alloys?",
+      "retrieval_query": "Why should an FSW monitoring method be tested across different aluminium alloys?",
+      "latency_ms": 3.32382699707523,
+      "retrieved": [
+        {
+          "id": "ae042a2347a6d17e4e72af41b82ebfb124b0847fc2d17a0527411f7f9c58a123",
+          "source": "fsw_doc2.pdf",
+          "page": 97
+        },
+        {
+          "id": "0470490059ef17896db24a4095f1a3ae7b03de57d223d3621fdeb851c8461248",
+          "source": "fsw_doc2.pdf",
+          "page": 93
+        },
+        {
+          "id": "653e5a6f960fbcb838d6110f0537b0497521671cb27e3d6f526c26f4579db65b",
+          "source": "fsw_doc2.pdf",
+          "page": 96
+        },
+        {
+          "id": "175db11dcb7dcea02fa8af3a433b8359e1cfa40e34534425f4f631b748bae13b",
+          "source": "fsw_doc2.pdf",
+          "page": 126
+        },
+        {
+          "id": "822e0624b366087fdd7d8cc2d4caba86b946618018f7577c1ae49b65aa5fbea5",
+          "source": "fsw_doc2.pdf",
+          "page": 39
+        }
+      ]
+    },
+    {
+      "id": "FSW-018",
+      "category": "paraphrase",
+      "variant": "hybrid",
+      "question": "Why should an FSW monitoring method be tested across different aluminium alloys?",
+      "retrieval_query": "Why should an FSW monitoring method be tested across different aluminium alloys?",
+      "latency_ms": 4.157907002081629,
+      "retrieved": [
+        {
+          "id": "1c2d6cfef848b8ff2cc4f93c9be3271a5a5f0f6288bdc449777bf16545aca4b1",
+          "source": "fsw_doc5.pdf",
+          "page": 1
+        },
+        {
+          "id": "ae042a2347a6d17e4e72af41b82ebfb124b0847fc2d17a0527411f7f9c58a123",
+          "source": "fsw_doc2.pdf",
+          "page": 97
+        },
+        {
+          "id": "9a56a3d9db4dee2e2875af8c231321d5db166b71af347a8dcb73296b62bce486",
+          "source": "fsw_doc5.pdf",
+          "page": 2
+        },
+        {
+          "id": "0470490059ef17896db24a4095f1a3ae7b03de57d223d3621fdeb851c8461248",
+          "source": "fsw_doc2.pdf",
+          "page": 93
+        },
+        {
+          "id": "14e4463c5c4e58991738b3d946338b1fdb804e2a6f2844727cecdf082fce73dc",
+          "source": "fsw_doc2.pdf",
+          "page": 68
+        }
+      ]
+    },
+    {
+      "id": "FSW-018",
+      "category": "paraphrase",
+      "variant": "reranked",
+      "question": "Why should an FSW monitoring method be tested across different aluminium alloys?",
+      "retrieval_query": "Why should an FSW monitoring method be tested across different aluminium alloys?",
+      "latency_ms": 276.7357129996526,
+      "retrieved": [
+        {
+          "id": "9a56a3d9db4dee2e2875af8c231321d5db166b71af347a8dcb73296b62bce486",
+          "source": "fsw_doc5.pdf",
+          "page": 2
+        },
+        {
+          "id": "ae042a2347a6d17e4e72af41b82ebfb124b0847fc2d17a0527411f7f9c58a123",
+          "source": "fsw_doc2.pdf",
+          "page": 97
+        },
+        {
+          "id": "4d6929adc2aa9d7344ad3d01d82452279f6041adf1a4806f3027f8c93e302d17",
+          "source": "fsw_doc2.pdf",
+          "page": 37
+        },
+        {
+          "id": "0470490059ef17896db24a4095f1a3ae7b03de57d223d3621fdeb851c8461248",
+          "source": "fsw_doc2.pdf",
+          "page": 93
+        },
+        {
+          "id": "653e5a6f960fbcb838d6110f0537b0497521671cb27e3d6f526c26f4579db65b",
+          "source": "fsw_doc2.pdf",
+          "page": 96
+        }
+      ]
+    },
+    {
+      "id": "FSW-019",
+      "category": "paraphrase",
+      "variant": "bm25",
+      "question": "How were internal voids checked independently in the FSW force-monitoring study?",
+      "retrieval_query": "How were internal voids checked independently in the FSW force-monitoring study?",
+      "latency_ms": 0.25542100047459826,
+      "retrieved": [
+        {
+          "id": "9a56a3d9db4dee2e2875af8c231321d5db166b71af347a8dcb73296b62bce486",
+          "source": "fsw_doc5.pdf",
+          "page": 2
+        },
+        {
+          "id": "310583aabffb2a2e52b80284408d29cdcf9e766bd872e795d06e5ed003341bef",
+          "source": "fsw_doc5.pdf",
+          "page": 5
+        },
+        {
+          "id": "ad77918e94f4f4158d833967791648796ede43591b6776a8f8cb7a694aafb7bf",
+          "source": "fsw_doc5.pdf",
+          "page": 3
+        },
+        {
+          "id": "a327d99f7dc8038ab0ecfb5fb0facfcd8b6ab996438bbc3ef53c92706d12dfa5",
+          "source": "fsw_doc2.pdf",
+          "page": 167
+        },
+        {
+          "id": "a03f5358fd3596efa6ff47ca80c340c19dc42ad2179791a757369dd8eed07430",
+          "source": "fsw_doc2.pdf",
+          "page": 168
+        }
+      ]
+    },
+    {
+      "id": "FSW-019",
+      "category": "paraphrase",
+      "variant": "vector",
+      "question": "How were internal voids checked independently in the FSW force-monitoring study?",
+      "retrieval_query": "How were internal voids checked independently in the FSW force-monitoring study?",
+      "latency_ms": 3.4020849998341873,
+      "retrieved": [
+        {
+          "id": "bfce0233ecfb60b00a84233632fa81be35e4fa2c27cc005f8657f374e102b074",
+          "source": "fsw_doc4.pdf",
+          "page": 267
+        },
+        {
+          "id": "a56fc5e1828243db6ad32c57a9c1bec17185d283be24938f6f038e90b11bce5a",
+          "source": "fsw_doc2.pdf",
+          "page": 84
+        },
+        {
+          "id": "28f709e40eea627e3c711e237287d7bf4000654b679aa87f8b14e67147b02783",
+          "source": "fsw_doc2.pdf",
+          "page": 69
+        },
+        {
+          "id": "ab3a315fe66903ff722a0d26e2d90807ae2d7eed7bf722d2b2895437f66520e1",
+          "source": "fsw_doc2.pdf",
+          "page": 146
+        },
+        {
+          "id": "23b883c7f74ebb57356cde49e886339688de6f7d010d0961e800ad1de1722d33",
+          "source": "fsw_doc3.pdf",
+          "page": 4
+        }
+      ]
+    },
+    {
+      "id": "FSW-019",
+      "category": "paraphrase",
+      "variant": "hybrid",
+      "question": "How were internal voids checked independently in the FSW force-monitoring study?",
+      "retrieval_query": "How were internal voids checked independently in the FSW force-monitoring study?",
+      "latency_ms": 3.40392799989786,
+      "retrieved": [
+        {
+          "id": "9a56a3d9db4dee2e2875af8c231321d5db166b71af347a8dcb73296b62bce486",
+          "source": "fsw_doc5.pdf",
+          "page": 2
+        },
+        {
+          "id": "bfce0233ecfb60b00a84233632fa81be35e4fa2c27cc005f8657f374e102b074",
+          "source": "fsw_doc4.pdf",
+          "page": 267
+        },
+        {
+          "id": "310583aabffb2a2e52b80284408d29cdcf9e766bd872e795d06e5ed003341bef",
+          "source": "fsw_doc5.pdf",
+          "page": 5
+        },
+        {
+          "id": "a56fc5e1828243db6ad32c57a9c1bec17185d283be24938f6f038e90b11bce5a",
+          "source": "fsw_doc2.pdf",
+          "page": 84
+        },
+        {
+          "id": "ad77918e94f4f4158d833967791648796ede43591b6776a8f8cb7a694aafb7bf",
+          "source": "fsw_doc5.pdf",
+          "page": 3
+        }
+      ]
+    },
+    {
+      "id": "FSW-019",
+      "category": "paraphrase",
+      "variant": "reranked",
+      "question": "How were internal voids checked independently in the FSW force-monitoring study?",
+      "retrieval_query": "How were internal voids checked independently in the FSW force-monitoring study?",
+      "latency_ms": 301.9038620041101,
+      "retrieved": [
+        {
+          "id": "9a56a3d9db4dee2e2875af8c231321d5db166b71af347a8dcb73296b62bce486",
+          "source": "fsw_doc5.pdf",
+          "page": 2
+        },
+        {
+          "id": "2ced246565fb86dbcafa11a0c4ef2362991620dc22cbc5c9c2c2fda836c1fda4",
+          "source": "fsw_doc5.pdf",
+          "page": 1
+        },
+        {
+          "id": "a327d99f7dc8038ab0ecfb5fb0facfcd8b6ab996438bbc3ef53c92706d12dfa5",
+          "source": "fsw_doc2.pdf",
+          "page": 167
+        },
+        {
+          "id": "bfce0233ecfb60b00a84233632fa81be35e4fa2c27cc005f8657f374e102b074",
+          "source": "fsw_doc4.pdf",
+          "page": 267
+        },
+        {
+          "id": "ad77918e94f4f4158d833967791648796ede43591b6776a8f8cb7a694aafb7bf",
+          "source": "fsw_doc5.pdf",
+          "page": 3
+        }
+      ]
+    },
+    {
+      "id": "FSW-020",
+      "category": "paraphrase",
+      "variant": "bm25",
+      "question": "Which moving parts does the FSW handbook identify for thermal management?",
+      "retrieval_query": "Which moving parts does the FSW handbook identify for thermal management?",
+      "latency_ms": 0.253637001151219,
+      "retrieved": [
+        {
+          "id": "438a8169159d6737dbec022b97d789af579d5180a1f067d0177f2a68398c813a",
+          "source": "fsw_doc2.pdf",
+          "page": 19
+        },
+        {
+          "id": "169d6727cc8ee5590eb6f7d86f2efcad01f0f9aebba42a74a63a4c4057028d55",
+          "source": "fsw_doc2.pdf",
+          "page": 116
+        },
+        {
+          "id": "d02abe1002fd41dd295a165091987e52c9344e26ef92bd8d76cc59c1203fba67",
+          "source": "fsw_doc2.pdf",
+          "page": 20
+        },
+        {
+          "id": "09d988392c1616bfe201a9d6ff82fd8f7e1f50743c41cae60e04af950aebbdcb",
+          "source": "fsw_doc4.pdf",
+          "page": 76
+        },
+        {
+          "id": "72a15714f6d13dfaa173388b7f0fd7a2913b117bd04fe16b320535282cdd1189",
+          "source": "fsw_doc4.pdf",
+          "page": 26
+        }
+      ]
+    },
+    {
+      "id": "FSW-020",
+      "category": "paraphrase",
+      "variant": "vector",
+      "question": "Which moving parts does the FSW handbook identify for thermal management?",
+      "retrieval_query": "Which moving parts does the FSW handbook identify for thermal management?",
+      "latency_ms": 3.3117850034614094,
+      "retrieved": [
+        {
+          "id": "438a8169159d6737dbec022b97d789af579d5180a1f067d0177f2a68398c813a",
+          "source": "fsw_doc2.pdf",
+          "page": 19
+        },
+        {
+          "id": "d02abe1002fd41dd295a165091987e52c9344e26ef92bd8d76cc59c1203fba67",
+          "source": "fsw_doc2.pdf",
+          "page": 20
+        },
+        {
+          "id": "28f709e40eea627e3c711e237287d7bf4000654b679aa87f8b14e67147b02783",
+          "source": "fsw_doc2.pdf",
+          "page": 69
+        },
+        {
+          "id": "0d7b9e81b461c5a29a388dfa9155de63ba583102f24719bec56d4e6037ba498f",
+          "source": "fsw_doc2.pdf",
+          "page": 70
+        },
+        {
+          "id": "24de6d09df85f88c5040574ef5293828d319af2493d2978435cacbbd60f30771",
+          "source": "fsw_doc2.pdf",
+          "page": 167
+        }
+      ]
+    },
+    {
+      "id": "FSW-020",
+      "category": "paraphrase",
+      "variant": "hybrid",
+      "question": "Which moving parts does the FSW handbook identify for thermal management?",
+      "retrieval_query": "Which moving parts does the FSW handbook identify for thermal management?",
+      "latency_ms": 3.131755998765584,
+      "retrieved": [
+        {
+          "id": "438a8169159d6737dbec022b97d789af579d5180a1f067d0177f2a68398c813a",
+          "source": "fsw_doc2.pdf",
+          "page": 19
+        },
+        {
+          "id": "d02abe1002fd41dd295a165091987e52c9344e26ef92bd8d76cc59c1203fba67",
+          "source": "fsw_doc2.pdf",
+          "page": 20
+        },
+        {
+          "id": "169d6727cc8ee5590eb6f7d86f2efcad01f0f9aebba42a74a63a4c4057028d55",
+          "source": "fsw_doc2.pdf",
+          "page": 116
+        },
+        {
+          "id": "28f709e40eea627e3c711e237287d7bf4000654b679aa87f8b14e67147b02783",
+          "source": "fsw_doc2.pdf",
+          "page": 69
+        },
+        {
+          "id": "09d988392c1616bfe201a9d6ff82fd8f7e1f50743c41cae60e04af950aebbdcb",
+          "source": "fsw_doc4.pdf",
+          "page": 76
+        }
+      ]
+    },
+    {
+      "id": "FSW-020",
+      "category": "paraphrase",
+      "variant": "reranked",
+      "question": "Which moving parts does the FSW handbook identify for thermal management?",
+      "retrieval_query": "Which moving parts does the FSW handbook identify for thermal management?",
+      "latency_ms": 337.355331001163,
+      "retrieved": [
+        {
+          "id": "438a8169159d6737dbec022b97d789af579d5180a1f067d0177f2a68398c813a",
+          "source": "fsw_doc2.pdf",
+          "page": 19
+        },
+        {
+          "id": "222f48133cb3871e210a943d2634a3d9f00d5373953b6760113fc6e0e9b0f3ad",
+          "source": "fsw_doc2.pdf",
+          "page": 126
+        },
+        {
+          "id": "a4766d5beed19474cdc25a1355666487a6fd16d91fbfe60f54717009af1ca18b",
+          "source": "fsw_doc2.pdf",
+          "page": 49
+        },
+        {
+          "id": "aeafb3d731f186c0f19a2974ec74807f55e3e18f3bd959dde1e4a948e07ee002",
+          "source": "fsw_doc2.pdf",
+          "page": 17
+        },
+        {
+          "id": "34f924d8a0209f5bc808f8928559f1033a5b5e298a320510e2de056c0974f3d9",
+          "source": "fsw_doc2.pdf",
+          "page": 16
+        }
+      ]
+    },
+    {
+      "id": "FSW-021",
+      "category": "synonym",
+      "variant": "bm25",
+      "question": "What is the TMAZ?",
+      "retrieval_query": "What is the TMAZ?",
+      "latency_ms": 0.24150500394171104,
+      "retrieved": [
+        {
+          "id": "b1be13452699afbca7401722a8bac494806e44a33be2f70eac06c4c3adb29989",
+          "source": "fsw_doc4.pdf",
+          "page": 213
+        },
+        {
+          "id": "c89a3541dcd244d7be1b79e5e9121247159c9887843baa87737bc6aede77bc5f",
+          "source": "fsw_doc4.pdf",
+          "page": 276
+        },
+        {
+          "id": "a952f3c25e233bd9bd7dd54b7d4088265035900bad4492addbdef1d72362725a",
+          "source": "fsw_doc2.pdf",
+          "page": 17
+        },
+        {
+          "id": "b5770b757ee830d9d9177f55bcf0e342f32760db307eba447233f79320811284",
+          "source": "fsw_doc4.pdf",
+          "page": 303
+        },
+        {
+          "id": "e85386a650c88ce568c63e25de42900be662a49539f335b4ecf5d1746285609b",
+          "source": "fsw_doc4.pdf",
+          "page": 21
+        }
+      ]
+    },
+    {
+      "id": "FSW-021",
+      "category": "synonym",
+      "variant": "vector",
+      "question": "What is the TMAZ?",
+      "retrieval_query": "What is the TMAZ?",
+      "latency_ms": 2.813977000187151,
+      "retrieved": [
+        {
+          "id": "0ec71fb90e27fdee37049ce2e443cf966674053504565670f08553f404cd0890",
+          "source": "fsw_doc2.pdf",
+          "page": 37
+        },
+        {
+          "id": "35b02cd7d2f387ef2121460c3035d943f0805dae0e9aa1500d78627e17577a34",
+          "source": "fsw_doc4.pdf",
+          "page": 275
+        },
+        {
+          "id": "a952f3c25e233bd9bd7dd54b7d4088265035900bad4492addbdef1d72362725a",
+          "source": "fsw_doc2.pdf",
+          "page": 17
+        },
+        {
+          "id": "c89a3541dcd244d7be1b79e5e9121247159c9887843baa87737bc6aede77bc5f",
+          "source": "fsw_doc4.pdf",
+          "page": 276
+        },
+        {
+          "id": "e85386a650c88ce568c63e25de42900be662a49539f335b4ecf5d1746285609b",
+          "source": "fsw_doc4.pdf",
+          "page": 21
+        }
+      ]
+    },
+    {
+      "id": "FSW-021",
+      "category": "synonym",
+      "variant": "hybrid",
+      "question": "What is the TMAZ?",
+      "retrieval_query": "What is the TMAZ?",
+      "latency_ms": 2.3913520053611137,
+      "retrieved": [
+        {
+          "id": "b1be13452699afbca7401722a8bac494806e44a33be2f70eac06c4c3adb29989",
+          "source": "fsw_doc4.pdf",
+          "page": 213
+        },
+        {
+          "id": "0ec71fb90e27fdee37049ce2e443cf966674053504565670f08553f404cd0890",
+          "source": "fsw_doc2.pdf",
+          "page": 37
+        },
+        {
+          "id": "c89a3541dcd244d7be1b79e5e9121247159c9887843baa87737bc6aede77bc5f",
+          "source": "fsw_doc4.pdf",
+          "page": 276
+        },
+        {
+          "id": "a952f3c25e233bd9bd7dd54b7d4088265035900bad4492addbdef1d72362725a",
+          "source": "fsw_doc2.pdf",
+          "page": 17
+        },
+        {
+          "id": "35b02cd7d2f387ef2121460c3035d943f0805dae0e9aa1500d78627e17577a34",
+          "source": "fsw_doc4.pdf",
+          "page": 275
+        }
+      ]
+    },
+    {
+      "id": "FSW-021",
+      "category": "synonym",
+      "variant": "reranked",
+      "question": "What is the TMAZ?",
+      "retrieval_query": "What is the TMAZ?",
+      "latency_ms": 315.9807810006896,
+      "retrieved": [
+        {
+          "id": "a952f3c25e233bd9bd7dd54b7d4088265035900bad4492addbdef1d72362725a",
+          "source": "fsw_doc2.pdf",
+          "page": 17
+        },
+        {
+          "id": "2d1eb89d45fa5a87be93a546ecaf2b6617d1b2ad13865a93ac2b675c0e6ba5e9",
+          "source": "fsw_doc3.pdf",
+          "page": 2
+        },
+        {
+          "id": "cc3a25c64e18c3eb67031e6dea223c98687162f1fb03a07367e47b243599202d",
+          "source": "fsw_doc4.pdf",
+          "page": 87
+        },
+        {
+          "id": "35b02cd7d2f387ef2121460c3035d943f0805dae0e9aa1500d78627e17577a34",
+          "source": "fsw_doc4.pdf",
+          "page": 275
+        },
+        {
+          "id": "0ec71fb90e27fdee37049ce2e443cf966674053504565670f08553f404cd0890",
+          "source": "fsw_doc2.pdf",
+          "page": 37
+        }
+      ]
+    },
+    {
+      "id": "FSW-022",
+      "category": "synonym",
+      "variant": "bm25",
+      "question": "What is the HAZ?",
+      "retrieval_query": "What is the HAZ?",
+      "latency_ms": 0.2656299984664656,
+      "retrieved": [
+        {
+          "id": "b5770b757ee830d9d9177f55bcf0e342f32760db307eba447233f79320811284",
+          "source": "fsw_doc4.pdf",
+          "page": 303
+        },
+        {
+          "id": "529c4317ee72be7c666a60e69257749c61c7cfa513bbcd3c2c2433c4b4c51887",
+          "source": "fsw_doc4.pdf",
+          "page": 303
+        },
+        {
+          "id": "ce961d4aa05fc609eb22d2368be5b4c7c25556af6c4bcccbb505fe926c0541ea",
+          "source": "fsw_doc2.pdf",
+          "page": 74
+        },
+        {
+          "id": "ed556b0793d04fa3436b2e34f2882efb65a54e0ff658c72273a10dce6cea7679",
+          "source": "fsw_doc2.pdf",
+          "page": 73
+        },
+        {
+          "id": "169d6727cc8ee5590eb6f7d86f2efcad01f0f9aebba42a74a63a4c4057028d55",
+          "source": "fsw_doc2.pdf",
+          "page": 116
+        }
+      ]
+    },
+    {
+      "id": "FSW-022",
+      "category": "synonym",
+      "variant": "vector",
+      "question": "What is the HAZ?",
+      "retrieval_query": "What is the HAZ?",
+      "latency_ms": 2.76879300508881,
+      "retrieved": [
+        {
+          "id": "0ec71fb90e27fdee37049ce2e443cf966674053504565670f08553f404cd0890",
+          "source": "fsw_doc2.pdf",
+          "page": 37
+        },
+        {
+          "id": "123741ba9975ef92f84b8dfd0f2a6dae178a19f15783a0d40ab79c3a4b9701ff",
+          "source": "fsw_doc4.pdf",
+          "page": 90
+        },
+        {
+          "id": "a7950a37afbc698fa6079f816111fc952b356708f0139c06cffc636da00ac3d9",
+          "source": "fsw_doc4.pdf",
+          "page": 89
+        },
+        {
+          "id": "cbe0975be97e8860c7e2083a6765e9efac7f0794b5d1f5518c5b37577e07aac4",
+          "source": "fsw_doc4.pdf",
+          "page": 275
+        },
+        {
+          "id": "ec12858a13cab00cfaf6da8b25dafb7e835ccdb1c756221bfbb951fd11daa5dc",
+          "source": "fsw_doc4.pdf",
+          "page": 278
+        }
+      ]
+    },
+    {
+      "id": "FSW-022",
+      "category": "synonym",
+      "variant": "hybrid",
+      "question": "What is the HAZ?",
+      "retrieval_query": "What is the HAZ?",
+      "latency_ms": 2.5420249949092977,
+      "retrieved": [
+        {
+          "id": "b5770b757ee830d9d9177f55bcf0e342f32760db307eba447233f79320811284",
+          "source": "fsw_doc4.pdf",
+          "page": 303
+        },
+        {
+          "id": "0ec71fb90e27fdee37049ce2e443cf966674053504565670f08553f404cd0890",
+          "source": "fsw_doc2.pdf",
+          "page": 37
+        },
+        {
+          "id": "529c4317ee72be7c666a60e69257749c61c7cfa513bbcd3c2c2433c4b4c51887",
+          "source": "fsw_doc4.pdf",
+          "page": 303
+        },
+        {
+          "id": "123741ba9975ef92f84b8dfd0f2a6dae178a19f15783a0d40ab79c3a4b9701ff",
+          "source": "fsw_doc4.pdf",
+          "page": 90
+        },
+        {
+          "id": "ce961d4aa05fc609eb22d2368be5b4c7c25556af6c4bcccbb505fe926c0541ea",
+          "source": "fsw_doc2.pdf",
+          "page": 74
+        }
+      ]
+    },
+    {
+      "id": "FSW-022",
+      "category": "synonym",
+      "variant": "reranked",
+      "question": "What is the HAZ?",
+      "retrieval_query": "What is the HAZ?",
+      "latency_ms": 311.46093999996083,
+      "retrieved": [
+        {
+          "id": "a7950a37afbc698fa6079f816111fc952b356708f0139c06cffc636da00ac3d9",
+          "source": "fsw_doc4.pdf",
+          "page": 89
+        },
+        {
+          "id": "0ec71fb90e27fdee37049ce2e443cf966674053504565670f08553f404cd0890",
+          "source": "fsw_doc2.pdf",
+          "page": 37
+        },
+        {
+          "id": "cbe0975be97e8860c7e2083a6765e9efac7f0794b5d1f5518c5b37577e07aac4",
+          "source": "fsw_doc4.pdf",
+          "page": 275
+        },
+        {
+          "id": "123741ba9975ef92f84b8dfd0f2a6dae178a19f15783a0d40ab79c3a4b9701ff",
+          "source": "fsw_doc4.pdf",
+          "page": 90
+        },
+        {
+          "id": "06a64fe9041818e582cb861f3e4beb3fa3d3dfc1e68bbb07ae5b2d10f34a57fe",
+          "source": "fsw_doc4.pdf",
+          "page": 277
+        }
+      ]
+    },
+    {
+      "id": "FSW-023",
+      "category": "synonym",
+      "variant": "bm25",
+      "question": "What does axial force mean?",
+      "retrieval_query": "What does axial force mean?",
+      "latency_ms": 0.23359900660580024,
+      "retrieved": [
+        {
+          "id": "c334c9ff6db5ad143146bae141a40c414702293e6269c2811602f9c871fc6052",
+          "source": "fsw_doc2.pdf",
+          "page": 57
+        },
+        {
+          "id": "de7897eb1151996ca90c217aaac537f60157ea55243be92a34347c2de4b06540",
+          "source": "fsw_doc2.pdf",
+          "page": 57
+        },
+        {
+          "id": "020fe75c94e134ff5507c879719f69964b3ec62c997dfbb32c6ccfb9f7698bf4",
+          "source": "fsw_doc2.pdf",
+          "page": 146
+        },
+        {
+          "id": "169d6727cc8ee5590eb6f7d86f2efcad01f0f9aebba42a74a63a4c4057028d55",
+          "source": "fsw_doc2.pdf",
+          "page": 116
+        },
+        {
+          "id": "2038091300d213459f1a6234c6b5fe32e8fc2f18fe3082b634b10c20e9909bf5",
+          "source": "fsw_doc2.pdf",
+          "page": 144
+        }
+      ]
+    },
+    {
+      "id": "FSW-023",
+      "category": "synonym",
+      "variant": "vector",
+      "question": "What does axial force mean?",
+      "retrieval_query": "What does axial force mean?",
+      "latency_ms": 2.9265990015119314,
+      "retrieved": [
+        {
+          "id": "c334c9ff6db5ad143146bae141a40c414702293e6269c2811602f9c871fc6052",
+          "source": "fsw_doc2.pdf",
+          "page": 57
+        },
+        {
+          "id": "10cb4366572a93c6de7e624dfac9a90c0bb440cca49cd607934ac0e702dbc0d9",
+          "source": "fsw_doc2.pdf",
+          "page": 146
+        },
+        {
+          "id": "020fe75c94e134ff5507c879719f69964b3ec62c997dfbb32c6ccfb9f7698bf4",
+          "source": "fsw_doc2.pdf",
+          "page": 146
+        },
+        {
+          "id": "df38b55951869643cb6b1916f059665c0f341d402df3309b5b6005725c283240",
+          "source": "fsw_doc5.pdf",
+          "page": 2
+        },
+        {
+          "id": "43cfb1d15dcd86d460cc13699a8eff2b47e7778c4addc7e960a920b7a12e12d2",
+          "source": "fsw_doc2.pdf",
+          "page": 142
+        }
+      ]
+    },
+    {
+      "id": "FSW-023",
+      "category": "synonym",
+      "variant": "hybrid",
+      "question": "What does axial force mean?",
+      "retrieval_query": "What does axial force mean?",
+      "latency_ms": 2.4497509948560037,
+      "retrieved": [
+        {
+          "id": "c334c9ff6db5ad143146bae141a40c414702293e6269c2811602f9c871fc6052",
+          "source": "fsw_doc2.pdf",
+          "page": 57
+        },
+        {
+          "id": "020fe75c94e134ff5507c879719f69964b3ec62c997dfbb32c6ccfb9f7698bf4",
+          "source": "fsw_doc2.pdf",
+          "page": 146
+        },
+        {
+          "id": "de7897eb1151996ca90c217aaac537f60157ea55243be92a34347c2de4b06540",
+          "source": "fsw_doc2.pdf",
+          "page": 57
+        },
+        {
+          "id": "10cb4366572a93c6de7e624dfac9a90c0bb440cca49cd607934ac0e702dbc0d9",
+          "source": "fsw_doc2.pdf",
+          "page": 146
+        },
+        {
+          "id": "169d6727cc8ee5590eb6f7d86f2efcad01f0f9aebba42a74a63a4c4057028d55",
+          "source": "fsw_doc2.pdf",
+          "page": 116
+        }
+      ]
+    },
+    {
+      "id": "FSW-023",
+      "category": "synonym",
+      "variant": "reranked",
+      "question": "What does axial force mean?",
+      "retrieval_query": "What does axial force mean?",
+      "latency_ms": 299.2813689998002,
+      "retrieved": [
+        {
+          "id": "c334c9ff6db5ad143146bae141a40c414702293e6269c2811602f9c871fc6052",
+          "source": "fsw_doc2.pdf",
+          "page": 57
+        },
+        {
+          "id": "020fe75c94e134ff5507c879719f69964b3ec62c997dfbb32c6ccfb9f7698bf4",
+          "source": "fsw_doc2.pdf",
+          "page": 146
+        },
+        {
+          "id": "7672a3232fc85ae4e877862c0afffe07fbe47266fb717386dfe243b12afadf40",
+          "source": "fsw_doc2.pdf",
+          "page": 11
+        },
+        {
+          "id": "df38b55951869643cb6b1916f059665c0f341d402df3309b5b6005725c283240",
+          "source": "fsw_doc5.pdf",
+          "page": 2
+        },
+        {
+          "id": "de7897eb1151996ca90c217aaac537f60157ea55243be92a34347c2de4b06540",
+          "source": "fsw_doc2.pdf",
+          "page": 57
+        }
+      ]
+    },
+    {
+      "id": "FSW-024",
+      "category": "synonym",
+      "variant": "bm25",
+      "question": "What is the anvil used for?",
+      "retrieval_query": "What is the anvil used for?",
+      "latency_ms": 0.2478560054441914,
+      "retrieved": [
+        {
+          "id": "a624c5c9e579f50f3ac9fc8b84722b94d4caad528f66d5913c0e975c3f3dbeec",
+          "source": "fsw_doc2.pdf",
+          "page": 19
+        },
+        {
+          "id": "b5770b757ee830d9d9177f55bcf0e342f32760db307eba447233f79320811284",
+          "source": "fsw_doc4.pdf",
+          "page": 303
+        },
+        {
+          "id": "6079e4abe1d779ef2ba19d73e6b523a6dfc79119f7471c74ea3b6088d5c5e613",
+          "source": "fsw_doc2.pdf",
+          "page": 31
+        },
+        {
+          "id": "2c2ef9903de8ea111712f088d7418d97df7e6b72dab404981eb851d2ae874ce2",
+          "source": "fsw_doc2.pdf",
+          "page": 56
+        },
+        {
+          "id": "438a8169159d6737dbec022b97d789af579d5180a1f067d0177f2a68398c813a",
+          "source": "fsw_doc2.pdf",
+          "page": 19
+        }
+      ]
+    },
+    {
+      "id": "FSW-024",
+      "category": "synonym",
+      "variant": "vector",
+      "question": "What is the anvil used for?",
+      "retrieval_query": "What is the anvil used for?",
+      "latency_ms": 2.9209689964773133,
+      "retrieved": [
+        {
+          "id": "7481b5508b28fdf75b22908f063d6a4239be008f4da485f899925170f08cbe9a",
+          "source": "fsw_doc2.pdf",
+          "page": 19
+        },
+        {
+          "id": "a624c5c9e579f50f3ac9fc8b84722b94d4caad528f66d5913c0e975c3f3dbeec",
+          "source": "fsw_doc2.pdf",
+          "page": 19
+        },
+        {
+          "id": "963ffcad74f5f5d89fbb9b84cc73b92333493824ea0881d006c6fd9233f3b1f3",
+          "source": "fsw_doc2.pdf",
+          "page": 20
+        },
+        {
+          "id": "27a1cc382f03f5ad97f457361ad295f8a2377e0fad5039dc67a920de9a5fb4df",
+          "source": "fsw_doc2.pdf",
+          "page": 44
+        },
+        {
+          "id": "6079e4abe1d779ef2ba19d73e6b523a6dfc79119f7471c74ea3b6088d5c5e613",
+          "source": "fsw_doc2.pdf",
+          "page": 31
+        }
+      ]
+    },
+    {
+      "id": "FSW-024",
+      "category": "synonym",
+      "variant": "hybrid",
+      "question": "What is the anvil used for?",
+      "retrieval_query": "What is the anvil used for?",
+      "latency_ms": 2.6041029996122234,
+      "retrieved": [
+        {
+          "id": "a624c5c9e579f50f3ac9fc8b84722b94d4caad528f66d5913c0e975c3f3dbeec",
+          "source": "fsw_doc2.pdf",
+          "page": 19
+        },
+        {
+          "id": "7481b5508b28fdf75b22908f063d6a4239be008f4da485f899925170f08cbe9a",
+          "source": "fsw_doc2.pdf",
+          "page": 19
+        },
+        {
+          "id": "6079e4abe1d779ef2ba19d73e6b523a6dfc79119f7471c74ea3b6088d5c5e613",
+          "source": "fsw_doc2.pdf",
+          "page": 31
+        },
+        {
+          "id": "b5770b757ee830d9d9177f55bcf0e342f32760db307eba447233f79320811284",
+          "source": "fsw_doc4.pdf",
+          "page": 303
+        },
+        {
+          "id": "963ffcad74f5f5d89fbb9b84cc73b92333493824ea0881d006c6fd9233f3b1f3",
+          "source": "fsw_doc2.pdf",
+          "page": 20
+        }
+      ]
+    },
+    {
+      "id": "FSW-024",
+      "category": "synonym",
+      "variant": "reranked",
+      "question": "What is the anvil used for?",
+      "retrieval_query": "What is the anvil used for?",
+      "latency_ms": 256.9110249969526,
+      "retrieved": [
+        {
+          "id": "a624c5c9e579f50f3ac9fc8b84722b94d4caad528f66d5913c0e975c3f3dbeec",
+          "source": "fsw_doc2.pdf",
+          "page": 19
+        },
+        {
+          "id": "7672a3232fc85ae4e877862c0afffe07fbe47266fb717386dfe243b12afadf40",
+          "source": "fsw_doc2.pdf",
+          "page": 11
+        },
+        {
+          "id": "7481b5508b28fdf75b22908f063d6a4239be008f4da485f899925170f08cbe9a",
+          "source": "fsw_doc2.pdf",
+          "page": 19
+        },
+        {
+          "id": "6079e4abe1d779ef2ba19d73e6b523a6dfc79119f7471c74ea3b6088d5c5e613",
+          "source": "fsw_doc2.pdf",
+          "page": 31
+        },
+        {
+          "id": "438a8169159d6737dbec022b97d789af579d5180a1f067d0177f2a68398c813a",
+          "source": "fsw_doc2.pdf",
+          "page": 19
+        }
+      ]
+    },
+    {
+      "id": "FSW-025",
+      "category": "synonym",
+      "variant": "bm25",
+      "question": "What does travel speed measure?",
+      "retrieval_query": "What does travel speed measure?",
+      "latency_ms": 0.24864800070645288,
+      "retrieved": [
+        {
+          "id": "4a882bf5af50a9aa00fe1ac29235014f866912696440fd5a5143f088c146f524",
+          "source": "fsw_doc2.pdf",
+          "page": 57
+        },
+        {
+          "id": "09b02a4719506c595a0c110355a8093c2249c883783c1ad01e1bf67a8ee87907",
+          "source": "fsw_doc2.pdf",
+          "page": 63
+        },
+        {
+          "id": "56c7aa553e68321ddd25a10d9fda38c8a6eff524376afe13fca34046c5e31362",
+          "source": "fsw_doc2.pdf",
+          "page": 26
+        },
+        {
+          "id": "697a4193a93ac8d54230a2ead492dadd0d8aadb044eb478c32feb682c3313783",
+          "source": "fsw_doc2.pdf",
+          "page": 29
+        },
+        {
+          "id": "169d6727cc8ee5590eb6f7d86f2efcad01f0f9aebba42a74a63a4c4057028d55",
+          "source": "fsw_doc2.pdf",
+          "page": 116
+        }
+      ]
+    },
+    {
+      "id": "FSW-025",
+      "category": "synonym",
+      "variant": "vector",
+      "question": "What does travel speed measure?",
+      "retrieval_query": "What does travel speed measure?",
+      "latency_ms": 2.801142996759154,
+      "retrieved": [
+        {
+          "id": "9ba006e46a18d7b1e9af238dfdfeefde4876175be27402c0fb56a26f68d907c7",
+          "source": "fsw_doc4.pdf",
+          "page": 73
+        },
+        {
+          "id": "dc85c8a216babe159eb525e6cca05dbc5c6ac9311fb33bf71c3771b1eceac134",
+          "source": "fsw_doc2.pdf",
+          "page": 127
+        },
+        {
+          "id": "46b8a6851b19447466c30e892f24034ad7cac7e8f4118f6ee0163c71ac597d67",
+          "source": "fsw_doc4.pdf",
+          "page": 82
+        },
+        {
+          "id": "4a882bf5af50a9aa00fe1ac29235014f866912696440fd5a5143f088c146f524",
+          "source": "fsw_doc2.pdf",
+          "page": 57
+        },
+        {
+          "id": "ac4c9f3d38f7a569560ae9290206a262cc7264d81ee836ba56a6716bcf55a525",
+          "source": "fsw_doc4.pdf",
+          "page": 224
+        }
+      ]
+    },
+    {
+      "id": "FSW-025",
+      "category": "synonym",
+      "variant": "hybrid",
+      "question": "What does travel speed measure?",
+      "retrieval_query": "What does travel speed measure?",
+      "latency_ms": 2.5155960029223934,
+      "retrieved": [
+        {
+          "id": "4a882bf5af50a9aa00fe1ac29235014f866912696440fd5a5143f088c146f524",
+          "source": "fsw_doc2.pdf",
+          "page": 57
+        },
+        {
+          "id": "9ba006e46a18d7b1e9af238dfdfeefde4876175be27402c0fb56a26f68d907c7",
+          "source": "fsw_doc4.pdf",
+          "page": 73
+        },
+        {
+          "id": "09b02a4719506c595a0c110355a8093c2249c883783c1ad01e1bf67a8ee87907",
+          "source": "fsw_doc2.pdf",
+          "page": 63
+        },
+        {
+          "id": "dc85c8a216babe159eb525e6cca05dbc5c6ac9311fb33bf71c3771b1eceac134",
+          "source": "fsw_doc2.pdf",
+          "page": 127
+        },
+        {
+          "id": "56c7aa553e68321ddd25a10d9fda38c8a6eff524376afe13fca34046c5e31362",
+          "source": "fsw_doc2.pdf",
+          "page": 26
+        }
+      ]
+    },
+    {
+      "id": "FSW-025",
+      "category": "synonym",
+      "variant": "reranked",
+      "question": "What does travel speed measure?",
+      "retrieval_query": "What does travel speed measure?",
+      "latency_ms": 261.128534002637,
+      "retrieved": [
+        {
+          "id": "4a882bf5af50a9aa00fe1ac29235014f866912696440fd5a5143f088c146f524",
+          "source": "fsw_doc2.pdf",
+          "page": 57
+        },
+        {
+          "id": "dc85c8a216babe159eb525e6cca05dbc5c6ac9311fb33bf71c3771b1eceac134",
+          "source": "fsw_doc2.pdf",
+          "page": 127
+        },
+        {
+          "id": "030750e61db958214ba3482ea337d8d023e7930e57c7b06597600582c031c1e9",
+          "source": "fsw_doc2.pdf",
+          "page": 55
+        },
+        {
+          "id": "c6e81de4a49e5f04e6837fd704b50febd14a1fc75d1349daf667df3bc6450db5",
+          "source": "fsw_doc3.pdf",
+          "page": 7
+        },
+        {
+          "id": "d077fb4176585d587d5f4824896c57e4f4466a98bfc65b1bcc3c021652ddd37f",
+          "source": "fsw_doc2.pdf",
+          "page": 58
+        }
+      ]
+    },
+    {
+      "id": "FSW-026",
+      "category": "synonym",
+      "variant": "bm25",
+      "question": "Explain the shoulder scroll feature.",
+      "retrieval_query": "Explain the shoulder scroll feature.",
+      "latency_ms": 0.23849900026107207,
+      "retrieved": [
+        {
+          "id": "7020e134469bc1d44f25a285d0ffbf36ab415d60ef65c09ef3f90e631229578c",
+          "source": "fsw_doc2.pdf",
+          "page": 29
+        },
+        {
+          "id": "46ae72328cb7a3893fc3e1f61a8507e7db334f6888294713659b6ebb1ef4d35e",
+          "source": "fsw_doc2.pdf",
+          "page": 29
+        },
+        {
+          "id": "99f86f4f3afeaccd466f390a7022423e3d7be01b1b9918e7620bb5561976d948",
+          "source": "fsw_doc2.pdf",
+          "page": 28
+        },
+        {
+          "id": "9ed6ed4ba2e776b240b1a301d5e58a90fd517247cccd7c1f7bee0bdc0bbbdddd",
+          "source": "fsw_doc4.pdf",
+          "page": 82
+        },
+        {
+          "id": "dd3be159aca7e0481742b2bfa470a61155fa27fe23083cad0a6172780b33cf41",
+          "source": "fsw_doc4.pdf",
+          "page": 83
+        }
+      ]
+    },
+    {
+      "id": "FSW-026",
+      "category": "synonym",
+      "variant": "vector",
+      "question": "Explain the shoulder scroll feature.",
+      "retrieval_query": "Explain the shoulder scroll feature.",
+      "latency_ms": 2.693800997803919,
+      "retrieved": [
+        {
+          "id": "6c3df0cd38868f8c1a6c1a994b0d8156bfc21726a51d7c48a5d18dff440ee612",
+          "source": "fsw_doc4.pdf",
+          "page": 84
+        },
+        {
+          "id": "f607aca4c50d4c931d5df3b4c1c159a2f0414f578d7473cd7dfb07251db8d4cb",
+          "source": "fsw_doc4.pdf",
+          "page": 84
+        },
+        {
+          "id": "5069e8dd6b2cf3defbfb57c60f732ef0b4c7624d6e376b569f78a408d61b5408",
+          "source": "fsw_doc4.pdf",
+          "page": 85
+        },
+        {
+          "id": "46ae72328cb7a3893fc3e1f61a8507e7db334f6888294713659b6ebb1ef4d35e",
+          "source": "fsw_doc2.pdf",
+          "page": 29
+        },
+        {
+          "id": "d773e4c76792db3bfee03c794be7606b8bcdfe1fa3012348d193fce898b39c37",
+          "source": "fsw_doc4.pdf",
+          "page": 84
+        }
+      ]
+    },
+    {
+      "id": "FSW-026",
+      "category": "synonym",
+      "variant": "hybrid",
+      "question": "Explain the shoulder scroll feature.",
+      "retrieval_query": "Explain the shoulder scroll feature.",
+      "latency_ms": 2.4710319994483143,
+      "retrieved": [
+        {
+          "id": "7020e134469bc1d44f25a285d0ffbf36ab415d60ef65c09ef3f90e631229578c",
+          "source": "fsw_doc2.pdf",
+          "page": 29
+        },
+        {
+          "id": "6c3df0cd38868f8c1a6c1a994b0d8156bfc21726a51d7c48a5d18dff440ee612",
+          "source": "fsw_doc4.pdf",
+          "page": 84
+        },
+        {
+          "id": "46ae72328cb7a3893fc3e1f61a8507e7db334f6888294713659b6ebb1ef4d35e",
+          "source": "fsw_doc2.pdf",
+          "page": 29
+        },
+        {
+          "id": "f607aca4c50d4c931d5df3b4c1c159a2f0414f578d7473cd7dfb07251db8d4cb",
+          "source": "fsw_doc4.pdf",
+          "page": 84
+        },
+        {
+          "id": "99f86f4f3afeaccd466f390a7022423e3d7be01b1b9918e7620bb5561976d948",
+          "source": "fsw_doc2.pdf",
+          "page": 28
+        }
+      ]
+    },
+    {
+      "id": "FSW-026",
+      "category": "synonym",
+      "variant": "reranked",
+      "question": "Explain the shoulder scroll feature.",
+      "retrieval_query": "Explain the shoulder scroll feature.",
+      "latency_ms": 239.43185600364814,
+      "retrieved": [
+        {
+          "id": "f607aca4c50d4c931d5df3b4c1c159a2f0414f578d7473cd7dfb07251db8d4cb",
+          "source": "fsw_doc4.pdf",
+          "page": 84
+        },
+        {
+          "id": "46ae72328cb7a3893fc3e1f61a8507e7db334f6888294713659b6ebb1ef4d35e",
+          "source": "fsw_doc2.pdf",
+          "page": 29
+        },
+        {
+          "id": "6c3df0cd38868f8c1a6c1a994b0d8156bfc21726a51d7c48a5d18dff440ee612",
+          "source": "fsw_doc4.pdf",
+          "page": 84
+        },
+        {
+          "id": "697a4193a93ac8d54230a2ead492dadd0d8aadb044eb478c32feb682c3313783",
+          "source": "fsw_doc2.pdf",
+          "page": 29
+        },
+        {
+          "id": "9ed6ed4ba2e776b240b1a301d5e58a90fd517247cccd7c1f7bee0bdc0bbbdddd",
+          "source": "fsw_doc4.pdf",
+          "page": 82
+        }
+      ]
+    },
+    {
+      "id": "FSW-027",
+      "category": "synonym",
+      "variant": "bm25",
+      "question": "What does dynamically recrystallized zone mean?",
+      "retrieval_query": "What does dynamically recrystallized zone mean?",
+      "latency_ms": 0.2506720047676936,
+      "retrieved": [
+        {
+          "id": "a6f9a962a131a046d945e7ebef9728dc526227fb8b0b5778c0c0ef59a069c998",
+          "source": "fsw_doc3.pdf",
+          "page": 9
+        },
+        {
+          "id": "169d6727cc8ee5590eb6f7d86f2efcad01f0f9aebba42a74a63a4c4057028d55",
+          "source": "fsw_doc2.pdf",
+          "page": 116
+        },
+        {
+          "id": "9554ce25a84a93ad8c3b9fcebb195a73d992e72c1cc90c72a5f8f463b775f7c9",
+          "source": "fsw_doc2.pdf",
+          "page": 17
+        },
+        {
+          "id": "0bd0a1d8d3ccd325689499d7c641726fcdf3b7073d95829f2375a4a60e3c246d",
+          "source": "fsw_doc4.pdf",
+          "page": 221
+        },
+        {
+          "id": "62e965c8dbd7360e1958cfb31ddab116256ec39ca44e30ad78ce49ae23fa5520",
+          "source": "fsw_doc2.pdf",
+          "page": 78
+        }
+      ]
+    },
+    {
+      "id": "FSW-027",
+      "category": "synonym",
+      "variant": "vector",
+      "question": "What does dynamically recrystallized zone mean?",
+      "retrieval_query": "What does dynamically recrystallized zone mean?",
+      "latency_ms": 3.4859320003306493,
+      "retrieved": [
+        {
+          "id": "9554ce25a84a93ad8c3b9fcebb195a73d992e72c1cc90c72a5f8f463b775f7c9",
+          "source": "fsw_doc2.pdf",
+          "page": 17
+        },
+        {
+          "id": "305eb996dd26df26e0f87fc75e3c8558aa486bbed3ec931bab6598afa72e1a1d",
+          "source": "fsw_doc4.pdf",
+          "page": 36
+        },
+        {
+          "id": "2d1eb89d45fa5a87be93a546ecaf2b6617d1b2ad13865a93ac2b675c0e6ba5e9",
+          "source": "fsw_doc3.pdf",
+          "page": 2
+        },
+        {
+          "id": "56b38b7d1b1741bf4e2ba6c1d6cf67f7ec0f8048f46739fa0c5e24ffc5fd0230",
+          "source": "fsw_doc4.pdf",
+          "page": 36
+        },
+        {
+          "id": "86f0e100f980f4d5ab643598600d5de8fed9034ca6da15d563d9bb5c74caf64f",
+          "source": "fsw_doc4.pdf",
+          "page": 274
+        }
+      ]
+    },
+    {
+      "id": "FSW-027",
+      "category": "synonym",
+      "variant": "hybrid",
+      "question": "What does dynamically recrystallized zone mean?",
+      "retrieval_query": "What does dynamically recrystallized zone mean?",
+      "latency_ms": 2.8291660055401735,
+      "retrieved": [
+        {
+          "id": "9554ce25a84a93ad8c3b9fcebb195a73d992e72c1cc90c72a5f8f463b775f7c9",
+          "source": "fsw_doc2.pdf",
+          "page": 17
+        },
+        {
+          "id": "a6f9a962a131a046d945e7ebef9728dc526227fb8b0b5778c0c0ef59a069c998",
+          "source": "fsw_doc3.pdf",
+          "page": 9
+        },
+        {
+          "id": "169d6727cc8ee5590eb6f7d86f2efcad01f0f9aebba42a74a63a4c4057028d55",
+          "source": "fsw_doc2.pdf",
+          "page": 116
+        },
+        {
+          "id": "305eb996dd26df26e0f87fc75e3c8558aa486bbed3ec931bab6598afa72e1a1d",
+          "source": "fsw_doc4.pdf",
+          "page": 36
+        },
+        {
+          "id": "2d1eb89d45fa5a87be93a546ecaf2b6617d1b2ad13865a93ac2b675c0e6ba5e9",
+          "source": "fsw_doc3.pdf",
+          "page": 2
+        }
+      ]
+    },
+    {
+      "id": "FSW-027",
+      "category": "synonym",
+      "variant": "reranked",
+      "question": "What does dynamically recrystallized zone mean?",
+      "retrieval_query": "What does dynamically recrystallized zone mean?",
+      "latency_ms": 290.49361199577106,
+      "retrieved": [
+        {
+          "id": "2d1eb89d45fa5a87be93a546ecaf2b6617d1b2ad13865a93ac2b675c0e6ba5e9",
+          "source": "fsw_doc3.pdf",
+          "page": 2
+        },
+        {
+          "id": "9554ce25a84a93ad8c3b9fcebb195a73d992e72c1cc90c72a5f8f463b775f7c9",
+          "source": "fsw_doc2.pdf",
+          "page": 17
+        },
+        {
+          "id": "4eaeccfcac45701c000140e39195e912a48d3a23d8ce93263ac9090bdb570685",
+          "source": "fsw_doc3.pdf",
+          "page": 2
+        },
+        {
+          "id": "0ec71fb90e27fdee37049ce2e443cf966674053504565670f08553f404cd0890",
+          "source": "fsw_doc2.pdf",
+          "page": 37
+        },
+        {
+          "id": "305eb996dd26df26e0f87fc75e3c8558aa486bbed3ec931bab6598afa72e1a1d",
+          "source": "fsw_doc4.pdf",
+          "page": 36
+        }
+      ]
+    },
+    {
+      "id": "FSW-028",
+      "category": "synonym",
+      "variant": "bm25",
+      "question": "Why is the solid-state joining tool called non-consumable?",
+      "retrieval_query": "Why is the solid-state joining tool called non-consumable?",
+      "latency_ms": 0.22361100127454847,
+      "retrieved": [
+        {
+          "id": "4a8f19700209a84e8a8894a7cf2e44014b8c140db1f054fd42e39fe57270fe19",
+          "source": "fsw_doc4.pdf",
+          "page": 68
+        },
+        {
+          "id": "39d78318cf6a166cdca79134b73486d1b7c6f367748634d0c9adefd6373ea6ba",
+          "source": "fsw_doc4.pdf",
+          "page": 26
+        },
+        {
+          "id": "aa33e6b12eec3bbf157369d8f0af34af6584c5d7159bd29676658962ae95126a",
+          "source": "fsw_doc3.pdf",
+          "page": 1
+        },
+        {
+          "id": "11b3b4de85141ce9b7cd3c674a32dda113c30f90022b83ed12b7a276293981fb",
+          "source": "fsw_doc2.pdf",
+          "page": 121
+        },
+        {
+          "id": "a580dde653c94fea74e19f3ecfe61feb4b701cc53f2ee921e055ffcf77f9c87b",
+          "source": "fsw_doc2.pdf",
+          "page": 13
+        }
+      ]
+    },
+    {
+      "id": "FSW-028",
+      "category": "synonym",
+      "variant": "vector",
+      "question": "Why is the solid-state joining tool called non-consumable?",
+      "retrieval_query": "Why is the solid-state joining tool called non-consumable?",
+      "latency_ms": 3.5642000002553686,
+      "retrieved": [
+        {
+          "id": "4a8f19700209a84e8a8894a7cf2e44014b8c140db1f054fd42e39fe57270fe19",
+          "source": "fsw_doc4.pdf",
+          "page": 68
+        },
+        {
+          "id": "5727306e290dae98c73707e05f65bea25b8bd25f44fe3b1e9714b0fe20991ca9",
+          "source": "fsw_doc4.pdf",
+          "page": 108
+        },
+        {
+          "id": "8ee6c168a0381d0709a559006a6aa8a1503ea7ebd5729df4f4315b60a8e55c8e",
+          "source": "fsw_doc2.pdf",
+          "page": 121
+        },
+        {
+          "id": "37c16a063d74f0b8077e360b99101296b1f0ea3da8bee0b4bcca941adbb0c945",
+          "source": "fsw_doc2.pdf",
+          "page": 73
+        },
+        {
+          "id": "ab9884b48e20611ffeadbd700d0c936cbf4e3c96de0938f41d2ad3faf95ec794",
+          "source": "fsw_doc4.pdf",
+          "page": 37
+        }
+      ]
+    },
+    {
+      "id": "FSW-028",
+      "category": "synonym",
+      "variant": "hybrid",
+      "question": "Why is the solid-state joining tool called non-consumable?",
+      "retrieval_query": "Why is the solid-state joining tool called non-consumable?",
+      "latency_ms": 2.9136049997759983,
+      "retrieved": [
+        {
+          "id": "4a8f19700209a84e8a8894a7cf2e44014b8c140db1f054fd42e39fe57270fe19",
+          "source": "fsw_doc4.pdf",
+          "page": 68
+        },
+        {
+          "id": "39d78318cf6a166cdca79134b73486d1b7c6f367748634d0c9adefd6373ea6ba",
+          "source": "fsw_doc4.pdf",
+          "page": 26
+        },
+        {
+          "id": "5727306e290dae98c73707e05f65bea25b8bd25f44fe3b1e9714b0fe20991ca9",
+          "source": "fsw_doc4.pdf",
+          "page": 108
+        },
+        {
+          "id": "aa33e6b12eec3bbf157369d8f0af34af6584c5d7159bd29676658962ae95126a",
+          "source": "fsw_doc3.pdf",
+          "page": 1
+        },
+        {
+          "id": "8ee6c168a0381d0709a559006a6aa8a1503ea7ebd5729df4f4315b60a8e55c8e",
+          "source": "fsw_doc2.pdf",
+          "page": 121
+        }
+      ]
+    },
+    {
+      "id": "FSW-028",
+      "category": "synonym",
+      "variant": "reranked",
+      "question": "Why is the solid-state joining tool called non-consumable?",
+      "retrieval_query": "Why is the solid-state joining tool called non-consumable?",
+      "latency_ms": 279.7514800040517,
+      "retrieved": [
+        {
+          "id": "4a8f19700209a84e8a8894a7cf2e44014b8c140db1f054fd42e39fe57270fe19",
+          "source": "fsw_doc4.pdf",
+          "page": 68
+        },
+        {
+          "id": "39d78318cf6a166cdca79134b73486d1b7c6f367748634d0c9adefd6373ea6ba",
+          "source": "fsw_doc4.pdf",
+          "page": 26
+        },
+        {
+          "id": "0e4e20a2a10d18af884dbdc36af65e5b58b922f9ac2c433703772ff0ee791268",
+          "source": "fsw_doc2.pdf",
+          "page": 46
+        },
+        {
+          "id": "a580dde653c94fea74e19f3ecfe61feb4b701cc53f2ee921e055ffcf77f9c87b",
+          "source": "fsw_doc2.pdf",
+          "page": 13
+        },
+        {
+          "id": "8ee6c168a0381d0709a559006a6aa8a1503ea7ebd5729df4f4315b60a8e55c8e",
+          "source": "fsw_doc2.pdf",
+          "page": 121
+        }
+      ]
+    },
+    {
+      "id": "FSW-029",
+      "category": "multihop",
+      "variant": "bm25",
+      "question": "In FSW, compare the advancing and retreating sides and distinguish tool rotation speed from travel speed.",
+      "retrieval_query": "In FSW, compare the advancing and retreating sides and distinguish tool rotation speed from travel speed.",
+      "latency_ms": 0.23107499873731285,
+      "retrieved": [
+        {
+          "id": "32e43aa3c56780af84c566455a39fad35581e0bc8e491d9982bc855a6098b25b",
+          "source": "fsw_doc2.pdf",
+          "page": 12
+        },
+        {
+          "id": "4a882bf5af50a9aa00fe1ac29235014f866912696440fd5a5143f088c146f524",
+          "source": "fsw_doc2.pdf",
+          "page": 57
+        },
+        {
+          "id": "af784ed226881d9b1180e651e5a223a61b80a51c9335ef78cac1a0055a038e24",
+          "source": "fsw_doc3.pdf",
+          "page": 4
+        },
+        {
+          "id": "40c1cc8c9c921e91052d472521dc30b8c2758bbd79c266a25f1d01c99ecf1e72",
+          "source": "fsw_doc4.pdf",
+          "page": 161
+        },
+        {
+          "id": "d077fb4176585d587d5f4824896c57e4f4466a98bfc65b1bcc3c021652ddd37f",
+          "source": "fsw_doc2.pdf",
+          "page": 58
+        }
+      ]
+    },
+    {
+      "id": "FSW-029",
+      "category": "multihop",
+      "variant": "vector",
+      "question": "In FSW, compare the advancing and retreating sides and distinguish tool rotation speed from travel speed.",
+      "retrieval_query": "In FSW, compare the advancing and retreating sides and distinguish tool rotation speed from travel speed.",
+      "latency_ms": 3.622379997977987,
+      "retrieved": [
+        {
+          "id": "4a882bf5af50a9aa00fe1ac29235014f866912696440fd5a5143f088c146f524",
+          "source": "fsw_doc2.pdf",
+          "page": 57
+        },
+        {
+          "id": "c05c3527ddc72e6c25a73c331d87338c3acb78a1f1441733d362355ebda0f0f3",
+          "source": "fsw_doc2.pdf",
+          "page": 30
+        },
+        {
+          "id": "9ba006e46a18d7b1e9af238dfdfeefde4876175be27402c0fb56a26f68d907c7",
+          "source": "fsw_doc4.pdf",
+          "page": 73
+        },
+        {
+          "id": "882a06ee276429a0b5da517ae342a0c91897e22572a31cbdf816dce786a9b2e2",
+          "source": "fsw_doc2.pdf",
+          "page": 32
+        },
+        {
+          "id": "a7321eede13cecdf876ad8c0940d3a177866a299dcbbbe1db88274a10609154b",
+          "source": "fsw_doc2.pdf",
+          "page": 30
+        }
+      ]
+    },
+    {
+      "id": "FSW-029",
+      "category": "multihop",
+      "variant": "hybrid",
+      "question": "In FSW, compare the advancing and retreating sides and distinguish tool rotation speed from travel speed.",
+      "retrieval_query": "In FSW, compare the advancing and retreating sides and distinguish tool rotation speed from travel speed.",
+      "latency_ms": 3.181529995345045,
+      "retrieved": [
+        {
+          "id": "4a882bf5af50a9aa00fe1ac29235014f866912696440fd5a5143f088c146f524",
+          "source": "fsw_doc2.pdf",
+          "page": 57
+        },
+        {
+          "id": "32e43aa3c56780af84c566455a39fad35581e0bc8e491d9982bc855a6098b25b",
+          "source": "fsw_doc2.pdf",
+          "page": 12
+        },
+        {
+          "id": "c05c3527ddc72e6c25a73c331d87338c3acb78a1f1441733d362355ebda0f0f3",
+          "source": "fsw_doc2.pdf",
+          "page": 30
+        },
+        {
+          "id": "af784ed226881d9b1180e651e5a223a61b80a51c9335ef78cac1a0055a038e24",
+          "source": "fsw_doc3.pdf",
+          "page": 4
+        },
+        {
+          "id": "9ba006e46a18d7b1e9af238dfdfeefde4876175be27402c0fb56a26f68d907c7",
+          "source": "fsw_doc4.pdf",
+          "page": 73
+        }
+      ]
+    },
+    {
+      "id": "FSW-029",
+      "category": "multihop",
+      "variant": "reranked",
+      "question": "In FSW, compare the advancing and retreating sides and distinguish tool rotation speed from travel speed.",
+      "retrieval_query": "In FSW, compare the advancing and retreating sides and distinguish tool rotation speed from travel speed.",
+      "latency_ms": 302.464766005869,
+      "retrieved": [
+        {
+          "id": "32e43aa3c56780af84c566455a39fad35581e0bc8e491d9982bc855a6098b25b",
+          "source": "fsw_doc2.pdf",
+          "page": 12
+        },
+        {
+          "id": "aa33e6b12eec3bbf157369d8f0af34af6584c5d7159bd29676658962ae95126a",
+          "source": "fsw_doc3.pdf",
+          "page": 1
+        },
+        {
+          "id": "af784ed226881d9b1180e651e5a223a61b80a51c9335ef78cac1a0055a038e24",
+          "source": "fsw_doc3.pdf",
+          "page": 4
+        },
+        {
+          "id": "4a882bf5af50a9aa00fe1ac29235014f866912696440fd5a5143f088c146f524",
+          "source": "fsw_doc2.pdf",
+          "page": 57
+        },
+        {
+          "id": "10cb4366572a93c6de7e624dfac9a90c0bb440cca49cd607934ac0e702dbc0d9",
+          "source": "fsw_doc2.pdf",
+          "page": 146
+        }
+      ]
+    },
+    {
+      "id": "FSW-030",
+      "category": "multihop",
+      "variant": "bm25",
+      "question": "In FSW, compare the definitions of HAZ and TMAZ.",
+      "retrieval_query": "In FSW, compare the definitions of HAZ and TMAZ.",
+      "latency_ms": 0.2124290040228516,
+      "retrieved": [
+        {
+          "id": "b1be13452699afbca7401722a8bac494806e44a33be2f70eac06c4c3adb29989",
+          "source": "fsw_doc4.pdf",
+          "page": 213
+        },
+        {
+          "id": "c89a3541dcd244d7be1b79e5e9121247159c9887843baa87737bc6aede77bc5f",
+          "source": "fsw_doc4.pdf",
+          "page": 276
+        },
+        {
+          "id": "893b06908197c8d9b7a3408b36a3145bbe8f6eda9e92792da043c7faa7d1cf0a",
+          "source": "fsw_doc1.pdf",
+          "page": 3
+        },
+        {
+          "id": "708b17900687cea5f362ea1caf69820c862e81e104994fc953d57145269ac32c",
+          "source": "fsw_doc4.pdf",
+          "page": 175
+        },
+        {
+          "id": "e85386a650c88ce568c63e25de42900be662a49539f335b4ecf5d1746285609b",
+          "source": "fsw_doc4.pdf",
+          "page": 21
+        }
+      ]
+    },
+    {
+      "id": "FSW-030",
+      "category": "multihop",
+      "variant": "vector",
+      "question": "In FSW, compare the definitions of HAZ and TMAZ.",
+      "retrieval_query": "In FSW, compare the definitions of HAZ and TMAZ.",
+      "latency_ms": 3.5664850001921877,
+      "retrieved": [
+        {
+          "id": "0ec71fb90e27fdee37049ce2e443cf966674053504565670f08553f404cd0890",
+          "source": "fsw_doc2.pdf",
+          "page": 37
+        },
+        {
+          "id": "b50e10cf7d2070e280ef448868ee925f566930841f704fe2a15a194a6b9262c2",
+          "source": "fsw_doc2.pdf",
+          "page": 92
+        },
+        {
+          "id": "c89a3541dcd244d7be1b79e5e9121247159c9887843baa87737bc6aede77bc5f",
+          "source": "fsw_doc4.pdf",
+          "page": 276
+        },
+        {
+          "id": "489bc4327d976fae04243ab3a348e217f24ab9303a1e65e93a0acee205dfe109",
+          "source": "fsw_doc4.pdf",
+          "page": 277
+        },
+        {
+          "id": "35b02cd7d2f387ef2121460c3035d943f0805dae0e9aa1500d78627e17577a34",
+          "source": "fsw_doc4.pdf",
+          "page": 275
+        }
+      ]
+    },
+    {
+      "id": "FSW-030",
+      "category": "multihop",
+      "variant": "hybrid",
+      "question": "In FSW, compare the definitions of HAZ and TMAZ.",
+      "retrieval_query": "In FSW, compare the definitions of HAZ and TMAZ.",
+      "latency_ms": 2.9434109965222888,
+      "retrieved": [
+        {
+          "id": "b1be13452699afbca7401722a8bac494806e44a33be2f70eac06c4c3adb29989",
+          "source": "fsw_doc4.pdf",
+          "page": 213
+        },
+        {
+          "id": "0ec71fb90e27fdee37049ce2e443cf966674053504565670f08553f404cd0890",
+          "source": "fsw_doc2.pdf",
+          "page": 37
+        },
+        {
+          "id": "c89a3541dcd244d7be1b79e5e9121247159c9887843baa87737bc6aede77bc5f",
+          "source": "fsw_doc4.pdf",
+          "page": 276
+        },
+        {
+          "id": "b50e10cf7d2070e280ef448868ee925f566930841f704fe2a15a194a6b9262c2",
+          "source": "fsw_doc2.pdf",
+          "page": 92
+        },
+        {
+          "id": "893b06908197c8d9b7a3408b36a3145bbe8f6eda9e92792da043c7faa7d1cf0a",
+          "source": "fsw_doc1.pdf",
+          "page": 3
+        }
+      ]
+    },
+    {
+      "id": "FSW-030",
+      "category": "multihop",
+      "variant": "reranked",
+      "question": "In FSW, compare the definitions of HAZ and TMAZ.",
+      "retrieval_query": "In FSW, compare the definitions of HAZ and TMAZ.",
+      "latency_ms": 383.58796399552375,
+      "retrieved": [
+        {
+          "id": "0ec71fb90e27fdee37049ce2e443cf966674053504565670f08553f404cd0890",
+          "source": "fsw_doc2.pdf",
+          "page": 37
+        },
+        {
+          "id": "a952f3c25e233bd9bd7dd54b7d4088265035900bad4492addbdef1d72362725a",
+          "source": "fsw_doc2.pdf",
+          "page": 17
+        },
+        {
+          "id": "4eaeccfcac45701c000140e39195e912a48d3a23d8ce93263ac9090bdb570685",
+          "source": "fsw_doc3.pdf",
+          "page": 2
+        },
+        {
+          "id": "a7950a37afbc698fa6079f816111fc952b356708f0139c06cffc636da00ac3d9",
+          "source": "fsw_doc4.pdf",
+          "page": 89
+        },
+        {
+          "id": "c89a3541dcd244d7be1b79e5e9121247159c9887843baa87737bc6aede77bc5f",
+          "source": "fsw_doc4.pdf",
+          "page": 276
+        }
+      ]
+    },
+    {
+      "id": "FSW-031",
+      "category": "multihop",
+      "variant": "bm25",
+      "question": "How do the FSW quality preview requirements differ before and after welding?",
+      "retrieval_query": "How do the FSW quality preview requirements differ before and after welding?",
+      "latency_ms": 0.23632500233361498,
+      "retrieved": [
+        {
+          "id": "6b22dc6ea2530d6de6bbec9cee40288bbaa45d4781bc935614edf51a2805511a",
+          "source": "fsw_doc2.pdf",
+          "page": 43
+        },
+        {
+          "id": "db87e6cc547095ce11502d41d25471874c22d9b0d23189628d98f34024f6854d",
+          "source": "fsw_doc2.pdf",
+          "page": 115
+        },
+        {
+          "id": "a03f5358fd3596efa6ff47ca80c340c19dc42ad2179791a757369dd8eed07430",
+          "source": "fsw_doc2.pdf",
+          "page": 168
+        },
+        {
+          "id": "1c65882d8e61c30f646d939ec0cc5a5ac3dbb79ea77ad3ab0006b6b0903236da",
+          "source": "fsw_doc1.pdf",
+          "page": 7
+        },
+        {
+          "id": "13e195a134fe458e89b6327dbfb1652f8f33c299a70f2e9cd4be70129c6c7730",
+          "source": "fsw_doc1.pdf",
+          "page": 3
+        }
+      ]
+    },
+    {
+      "id": "FSW-031",
+      "category": "multihop",
+      "variant": "vector",
+      "question": "How do the FSW quality preview requirements differ before and after welding?",
+      "retrieval_query": "How do the FSW quality preview requirements differ before and after welding?",
+      "latency_ms": 3.2718590009608306,
+      "retrieved": [
+        {
+          "id": "acf1d57a597c18f7679a45c210b064ea19f4d3f1f7570def4811ca9400a161da",
+          "source": "fsw_doc2.pdf",
+          "page": 77
+        },
+        {
+          "id": "a327d99f7dc8038ab0ecfb5fb0facfcd8b6ab996438bbc3ef53c92706d12dfa5",
+          "source": "fsw_doc2.pdf",
+          "page": 167
+        },
+        {
+          "id": "0470490059ef17896db24a4095f1a3ae7b03de57d223d3621fdeb851c8461248",
+          "source": "fsw_doc2.pdf",
+          "page": 93
+        },
+        {
+          "id": "1d62d7ff133a8be0a5ec1dcf4c3146b3d3cfff9e12c7ba680fe4177048b7022d",
+          "source": "fsw_doc2.pdf",
+          "page": 112
+        },
+        {
+          "id": "2678bb90fe77240f3202c9f4e232feeb58df0978052bd65029d539be73b7ceed",
+          "source": "fsw_doc2.pdf",
+          "page": 72
+        }
+      ]
+    },
+    {
+      "id": "FSW-031",
+      "category": "multihop",
+      "variant": "hybrid",
+      "question": "How do the FSW quality preview requirements differ before and after welding?",
+      "retrieval_query": "How do the FSW quality preview requirements differ before and after welding?",
+      "latency_ms": 2.9855800021323375,
+      "retrieved": [
+        {
+          "id": "6b22dc6ea2530d6de6bbec9cee40288bbaa45d4781bc935614edf51a2805511a",
+          "source": "fsw_doc2.pdf",
+          "page": 43
+        },
+        {
+          "id": "acf1d57a597c18f7679a45c210b064ea19f4d3f1f7570def4811ca9400a161da",
+          "source": "fsw_doc2.pdf",
+          "page": 77
+        },
+        {
+          "id": "db87e6cc547095ce11502d41d25471874c22d9b0d23189628d98f34024f6854d",
+          "source": "fsw_doc2.pdf",
+          "page": 115
+        },
+        {
+          "id": "a327d99f7dc8038ab0ecfb5fb0facfcd8b6ab996438bbc3ef53c92706d12dfa5",
+          "source": "fsw_doc2.pdf",
+          "page": 167
+        },
+        {
+          "id": "a03f5358fd3596efa6ff47ca80c340c19dc42ad2179791a757369dd8eed07430",
+          "source": "fsw_doc2.pdf",
+          "page": 168
+        }
+      ]
+    },
+    {
+      "id": "FSW-031",
+      "category": "multihop",
+      "variant": "reranked",
+      "question": "How do the FSW quality preview requirements differ before and after welding?",
+      "retrieval_query": "How do the FSW quality preview requirements differ before and after welding?",
+      "latency_ms": 319.3335420000949,
+      "retrieved": [
+        {
+          "id": "a03f5358fd3596efa6ff47ca80c340c19dc42ad2179791a757369dd8eed07430",
+          "source": "fsw_doc2.pdf",
+          "page": 168
+        },
+        {
+          "id": "6b22dc6ea2530d6de6bbec9cee40288bbaa45d4781bc935614edf51a2805511a",
+          "source": "fsw_doc2.pdf",
+          "page": 43
+        },
+        {
+          "id": "acf1d57a597c18f7679a45c210b064ea19f4d3f1f7570def4811ca9400a161da",
+          "source": "fsw_doc2.pdf",
+          "page": 77
+        },
+        {
+          "id": "1c65882d8e61c30f646d939ec0cc5a5ac3dbb79ea77ad3ab0006b6b0903236da",
+          "source": "fsw_doc1.pdf",
+          "page": 7
+        },
+        {
+          "id": "db87e6cc547095ce11502d41d25471874c22d9b0d23189628d98f34024f6854d",
+          "source": "fsw_doc2.pdf",
+          "page": 115
+        }
+      ]
+    },
+    {
+      "id": "FSW-032",
+      "category": "multihop",
+      "variant": "bm25",
+      "question": "How does the FSW thesis connect marine applications with its thick-section study?",
+      "retrieval_query": "How does the FSW thesis connect marine applications with its thick-section study?",
+      "latency_ms": 0.23719700402580202,
+      "retrieved": [
+        {
+          "id": "a36fa0d55bf57ff4668f7fb208ef1c214af679336694349cd6958c0791251342",
+          "source": "fsw_doc4.pdf",
+          "page": 27
+        },
+        {
+          "id": "3872704960d5be12e74385005dad74cbaafe5486bfe46df54b82db98748fe00b",
+          "source": "fsw_doc4.pdf",
+          "page": 99
+        },
+        {
+          "id": "b8163a7db75080e2ed792976ac2c084c46ed06d6634f8df96c2b47820e9eccfc",
+          "source": "fsw_doc4.pdf",
+          "page": 97
+        },
+        {
+          "id": "5e002f88742bb2e5cf23de2a6a65e552c9dd2e5eb03bf50b9c48d5f88a98a6cd",
+          "source": "fsw_doc4.pdf",
+          "page": 38
+        },
+        {
+          "id": "14164a5c71fafe29cb8442d77cede4cbb9b3f8e2c16ef3d37ca25dfb62342f0c",
+          "source": "fsw_doc4.pdf",
+          "page": 99
+        }
+      ]
+    },
+    {
+      "id": "FSW-032",
+      "category": "multihop",
+      "variant": "vector",
+      "question": "How does the FSW thesis connect marine applications with its thick-section study?",
+      "retrieval_query": "How does the FSW thesis connect marine applications with its thick-section study?",
+      "latency_ms": 3.5469270005705766,
+      "retrieved": [
+        {
+          "id": "a36fa0d55bf57ff4668f7fb208ef1c214af679336694349cd6958c0791251342",
+          "source": "fsw_doc4.pdf",
+          "page": 27
+        },
+        {
+          "id": "14164a5c71fafe29cb8442d77cede4cbb9b3f8e2c16ef3d37ca25dfb62342f0c",
+          "source": "fsw_doc4.pdf",
+          "page": 99
+        },
+        {
+          "id": "e8744ff6ea51f136f1ee0e932ca3b427910f3f8dd4640d78cb83117f47b279e3",
+          "source": "fsw_doc4.pdf",
+          "page": 109
+        },
+        {
+          "id": "5a087d8e8249029973fa08b8105b77b48275b9f31a9bdee7d608aae4c20e1b13",
+          "source": "fsw_doc2.pdf",
+          "page": 166
+        },
+        {
+          "id": "3872704960d5be12e74385005dad74cbaafe5486bfe46df54b82db98748fe00b",
+          "source": "fsw_doc4.pdf",
+          "page": 99
+        }
+      ]
+    },
+    {
+      "id": "FSW-032",
+      "category": "multihop",
+      "variant": "hybrid",
+      "question": "How does the FSW thesis connect marine applications with its thick-section study?",
+      "retrieval_query": "How does the FSW thesis connect marine applications with its thick-section study?",
+      "latency_ms": 2.8163320021121763,
+      "retrieved": [
+        {
+          "id": "a36fa0d55bf57ff4668f7fb208ef1c214af679336694349cd6958c0791251342",
+          "source": "fsw_doc4.pdf",
+          "page": 27
+        },
+        {
+          "id": "3872704960d5be12e74385005dad74cbaafe5486bfe46df54b82db98748fe00b",
+          "source": "fsw_doc4.pdf",
+          "page": 99
+        },
+        {
+          "id": "14164a5c71fafe29cb8442d77cede4cbb9b3f8e2c16ef3d37ca25dfb62342f0c",
+          "source": "fsw_doc4.pdf",
+          "page": 99
+        },
+        {
+          "id": "b8163a7db75080e2ed792976ac2c084c46ed06d6634f8df96c2b47820e9eccfc",
+          "source": "fsw_doc4.pdf",
+          "page": 97
+        },
+        {
+          "id": "e8744ff6ea51f136f1ee0e932ca3b427910f3f8dd4640d78cb83117f47b279e3",
+          "source": "fsw_doc4.pdf",
+          "page": 109
+        }
+      ]
+    },
+    {
+      "id": "FSW-032",
+      "category": "multihop",
+      "variant": "reranked",
+      "question": "How does the FSW thesis connect marine applications with its thick-section study?",
+      "retrieval_query": "How does the FSW thesis connect marine applications with its thick-section study?",
+      "latency_ms": 295.19413499656366,
+      "retrieved": [
+        {
+          "id": "a36fa0d55bf57ff4668f7fb208ef1c214af679336694349cd6958c0791251342",
+          "source": "fsw_doc4.pdf",
+          "page": 27
+        },
+        {
+          "id": "14164a5c71fafe29cb8442d77cede4cbb9b3f8e2c16ef3d37ca25dfb62342f0c",
+          "source": "fsw_doc4.pdf",
+          "page": 99
+        },
+        {
+          "id": "3872704960d5be12e74385005dad74cbaafe5486bfe46df54b82db98748fe00b",
+          "source": "fsw_doc4.pdf",
+          "page": 99
+        },
+        {
+          "id": "b8163a7db75080e2ed792976ac2c084c46ed06d6634f8df96c2b47820e9eccfc",
+          "source": "fsw_doc4.pdf",
+          "page": 97
+        },
+        {
+          "id": "1935926df08ce870afa397b4a483598a9748a39269d598823df6a431d6cbf52f",
+          "source": "fsw_doc4.pdf",
+          "page": 11
+        }
+      ]
+    },
+    {
+      "id": "FSW-033",
+      "category": "multihop",
+      "variant": "bm25",
+      "question": "Why are FSW force signals studied, and how did the monitoring paper independently check internal defects?",
+      "retrieval_query": "Why are FSW force signals studied, and how did the monitoring paper independently check internal defects?",
+      "latency_ms": 0.24075400142464787,
+      "retrieved": [
+        {
+          "id": "ad77918e94f4f4158d833967791648796ede43591b6776a8f8cb7a694aafb7bf",
+          "source": "fsw_doc5.pdf",
+          "page": 3
+        },
+        {
+          "id": "9a56a3d9db4dee2e2875af8c231321d5db166b71af347a8dcb73296b62bce486",
+          "source": "fsw_doc5.pdf",
+          "page": 2
+        },
+        {
+          "id": "262e49d30d4e147c4773d500b869d379b4150c96c36d14c9595f7ad649aae343",
+          "source": "fsw_doc2.pdf",
+          "page": 68
+        },
+        {
+          "id": "c766c8b14c9f254f2aa8e5df001245bc3d890f319b469b7d9131674b21098675",
+          "source": "fsw_doc5.pdf",
+          "page": 1
+        },
+        {
+          "id": "3769469f652d1390836557937038bf6c1d9a9d3f37a206888d868289e9db1017",
+          "source": "fsw_doc3.pdf",
+          "page": 1
+        }
+      ]
+    },
+    {
+      "id": "FSW-033",
+      "category": "multihop",
+      "variant": "vector",
+      "question": "Why are FSW force signals studied, and how did the monitoring paper independently check internal defects?",
+      "retrieval_query": "Why are FSW force signals studied, and how did the monitoring paper independently check internal defects?",
+      "latency_ms": 3.7351909995777532,
+      "retrieved": [
+        {
+          "id": "0e0886350d0a888dad098c267874812c0c1fa99660f73f4c92d32d4a1abb2568",
+          "source": "fsw_doc2.pdf",
+          "page": 100
+        },
+        {
+          "id": "a56fc5e1828243db6ad32c57a9c1bec17185d283be24938f6f038e90b11bce5a",
+          "source": "fsw_doc2.pdf",
+          "page": 84
+        },
+        {
+          "id": "df38b55951869643cb6b1916f059665c0f341d402df3309b5b6005725c283240",
+          "source": "fsw_doc5.pdf",
+          "page": 2
+        },
+        {
+          "id": "65e68fcbfd85a2d1130b999eed51855e7352d702bc4c180ccff21f91db130f62",
+          "source": "fsw_doc3.pdf",
+          "page": 8
+        },
+        {
+          "id": "ebdb712283d47f401a64be552028dfffadc617403af2ba36908f8d82589c6c3f",
+          "source": "fsw_doc2.pdf",
+          "page": 78
+        }
+      ]
+    },
+    {
+      "id": "FSW-033",
+      "category": "multihop",
+      "variant": "hybrid",
+      "question": "Why are FSW force signals studied, and how did the monitoring paper independently check internal defects?",
+      "retrieval_query": "Why are FSW force signals studied, and how did the monitoring paper independently check internal defects?",
+      "latency_ms": 2.946356005850248,
+      "retrieved": [
+        {
+          "id": "ad77918e94f4f4158d833967791648796ede43591b6776a8f8cb7a694aafb7bf",
+          "source": "fsw_doc5.pdf",
+          "page": 3
+        },
+        {
+          "id": "0e0886350d0a888dad098c267874812c0c1fa99660f73f4c92d32d4a1abb2568",
+          "source": "fsw_doc2.pdf",
+          "page": 100
+        },
+        {
+          "id": "9a56a3d9db4dee2e2875af8c231321d5db166b71af347a8dcb73296b62bce486",
+          "source": "fsw_doc5.pdf",
+          "page": 2
+        },
+        {
+          "id": "a56fc5e1828243db6ad32c57a9c1bec17185d283be24938f6f038e90b11bce5a",
+          "source": "fsw_doc2.pdf",
+          "page": 84
+        },
+        {
+          "id": "262e49d30d4e147c4773d500b869d379b4150c96c36d14c9595f7ad649aae343",
+          "source": "fsw_doc2.pdf",
+          "page": 68
+        }
+      ]
+    },
+    {
+      "id": "FSW-033",
+      "category": "multihop",
+      "variant": "reranked",
+      "question": "Why are FSW force signals studied, and how did the monitoring paper independently check internal defects?",
+      "retrieval_query": "Why are FSW force signals studied, and how did the monitoring paper independently check internal defects?",
+      "latency_ms": 293.39470700506354,
+      "retrieved": [
+        {
+          "id": "ad77918e94f4f4158d833967791648796ede43591b6776a8f8cb7a694aafb7bf",
+          "source": "fsw_doc5.pdf",
+          "page": 3
+        },
+        {
+          "id": "df38b55951869643cb6b1916f059665c0f341d402df3309b5b6005725c283240",
+          "source": "fsw_doc5.pdf",
+          "page": 2
+        },
+        {
+          "id": "9a56a3d9db4dee2e2875af8c231321d5db166b71af347a8dcb73296b62bce486",
+          "source": "fsw_doc5.pdf",
+          "page": 2
+        },
+        {
+          "id": "2744d96b62afaa902c054bcfae418445fd7a2a600acb7b6e9c58024cf4eeae07",
+          "source": "fsw_doc5.pdf",
+          "page": 11
+        },
+        {
+          "id": "262e49d30d4e147c4773d500b869d379b4150c96c36d14c9595f7ad649aae343",
+          "source": "fsw_doc2.pdf",
+          "page": 68
+        }
+      ]
+    },
+    {
+      "id": "FSW-034",
+      "category": "multihop",
+      "variant": "bm25",
+      "question": "Compare a bobbin FSW tool with dual-rotation tooling.",
+      "retrieval_query": "Compare a bobbin FSW tool with dual-rotation tooling.",
+      "latency_ms": 0.22303999867290258,
+      "retrieved": [
+        {
+          "id": "c05c3527ddc72e6c25a73c331d87338c3acb78a1f1441733d362355ebda0f0f3",
+          "source": "fsw_doc2.pdf",
+          "page": 30
+        },
+        {
+          "id": "7672a3232fc85ae4e877862c0afffe07fbe47266fb717386dfe243b12afadf40",
+          "source": "fsw_doc2.pdf",
+          "page": 11
+        },
+        {
+          "id": "56a7bcfd6874a6d7b29bc464a1cfaba7ff32bcd6933b8ba2ac3af5f2ad57b2b8",
+          "source": "fsw_doc2.pdf",
+          "page": 30
+        },
+        {
+          "id": "652401d2f67d2a35ef89cf595acf7758dc19357888c4052fad931c102fdb750a",
+          "source": "fsw_doc4.pdf",
+          "page": 5
+        },
+        {
+          "id": "40c1cc8c9c921e91052d472521dc30b8c2758bbd79c266a25f1d01c99ecf1e72",
+          "source": "fsw_doc4.pdf",
+          "page": 161
+        }
+      ]
+    },
+    {
+      "id": "FSW-034",
+      "category": "multihop",
+      "variant": "vector",
+      "question": "Compare a bobbin FSW tool with dual-rotation tooling.",
+      "retrieval_query": "Compare a bobbin FSW tool with dual-rotation tooling.",
+      "latency_ms": 3.278300995589234,
+      "retrieved": [
+        {
+          "id": "e5116e5d45df056fb2732214224e41aa7d8ffde7556580c89c8f557d66098700",
+          "source": "fsw_doc4.pdf",
+          "page": 75
+        },
+        {
+          "id": "7672a3232fc85ae4e877862c0afffe07fbe47266fb717386dfe243b12afadf40",
+          "source": "fsw_doc2.pdf",
+          "page": 11
+        },
+        {
+          "id": "40c1cc8c9c921e91052d472521dc30b8c2758bbd79c266a25f1d01c99ecf1e72",
+          "source": "fsw_doc4.pdf",
+          "page": 161
+        },
+        {
+          "id": "2aac65bfc3631e874a03bb560fe991de36f23b82374b005c774df5ef398d0ed7",
+          "source": "fsw_doc2.pdf",
+          "page": 151
+        },
+        {
+          "id": "a7321eede13cecdf876ad8c0940d3a177866a299dcbbbe1db88274a10609154b",
+          "source": "fsw_doc2.pdf",
+          "page": 30
+        }
+      ]
+    },
+    {
+      "id": "FSW-034",
+      "category": "multihop",
+      "variant": "hybrid",
+      "question": "Compare a bobbin FSW tool with dual-rotation tooling.",
+      "retrieval_query": "Compare a bobbin FSW tool with dual-rotation tooling.",
+      "latency_ms": 2.8063429999747314,
+      "retrieved": [
+        {
+          "id": "c05c3527ddc72e6c25a73c331d87338c3acb78a1f1441733d362355ebda0f0f3",
+          "source": "fsw_doc2.pdf",
+          "page": 30
+        },
+        {
+          "id": "7672a3232fc85ae4e877862c0afffe07fbe47266fb717386dfe243b12afadf40",
+          "source": "fsw_doc2.pdf",
+          "page": 11
+        },
+        {
+          "id": "e5116e5d45df056fb2732214224e41aa7d8ffde7556580c89c8f557d66098700",
+          "source": "fsw_doc4.pdf",
+          "page": 75
+        },
+        {
+          "id": "40c1cc8c9c921e91052d472521dc30b8c2758bbd79c266a25f1d01c99ecf1e72",
+          "source": "fsw_doc4.pdf",
+          "page": 161
+        },
+        {
+          "id": "56a7bcfd6874a6d7b29bc464a1cfaba7ff32bcd6933b8ba2ac3af5f2ad57b2b8",
+          "source": "fsw_doc2.pdf",
+          "page": 30
+        }
+      ]
+    },
+    {
+      "id": "FSW-034",
+      "category": "multihop",
+      "variant": "reranked",
+      "question": "Compare a bobbin FSW tool with dual-rotation tooling.",
+      "retrieval_query": "Compare a bobbin FSW tool with dual-rotation tooling.",
+      "latency_ms": 300.24663600488566,
+      "retrieved": [
+        {
+          "id": "7672a3232fc85ae4e877862c0afffe07fbe47266fb717386dfe243b12afadf40",
+          "source": "fsw_doc2.pdf",
+          "page": 11
+        },
+        {
+          "id": "c05c3527ddc72e6c25a73c331d87338c3acb78a1f1441733d362355ebda0f0f3",
+          "source": "fsw_doc2.pdf",
+          "page": 30
+        },
+        {
+          "id": "e5116e5d45df056fb2732214224e41aa7d8ffde7556580c89c8f557d66098700",
+          "source": "fsw_doc4.pdf",
+          "page": 75
+        },
+        {
+          "id": "a92d3652380f661d039c19d59bca3e1ea1a26d684881d8e7e335af0feec6bfa9",
+          "source": "fsw_doc2.pdf",
+          "page": 90
+        },
+        {
+          "id": "40c1cc8c9c921e91052d472521dc30b8c2758bbd79c266a25f1d01c99ecf1e72",
+          "source": "fsw_doc4.pdf",
+          "page": 161
+        }
+      ]
+    },
+    {
+      "id": "FSW-035",
+      "category": "followup",
+      "variant": "bm25",
+      "question": "How is that different from the retreating side?",
+      "retrieval_query": "What is the advancing side in FSW?\nFollow-up: How is that different from the retreating side?",
+      "latency_ms": 0.2377580021857284,
+      "retrieved": [
+        {
+          "id": "10cb4366572a93c6de7e624dfac9a90c0bb440cca49cd607934ac0e702dbc0d9",
+          "source": "fsw_doc2.pdf",
+          "page": 146
+        },
+        {
+          "id": "e7d04598569fe6dd2241338ded2884c2279caedbcb225b1f7a3a2ea1bbe3c5ae",
+          "source": "fsw_doc2.pdf",
+          "page": 31
+        },
+        {
+          "id": "3239a3ba0a07fbf72c7799428fa0f2c46c94ea7a8e2d52cd384549e12343b7db",
+          "source": "fsw_doc4.pdf",
+          "page": 69
+        },
+        {
+          "id": "0c41e91600b701c91f410ca003a5c845a17a5a055fbfea8698fad6a7e9c1fa4e",
+          "source": "fsw_doc4.pdf",
+          "page": 187
+        },
+        {
+          "id": "14a3e9b1cbce8db5c6025f6626d50b78520d4882b700d57b1e62dd0d3a6b4e1d",
+          "source": "fsw_doc4.pdf",
+          "page": 232
+        }
+      ]
+    },
+    {
+      "id": "FSW-035",
+      "category": "followup",
+      "variant": "vector",
+      "question": "How is that different from the retreating side?",
+      "retrieval_query": "What is the advancing side in FSW?\nFollow-up: How is that different from the retreating side?",
+      "latency_ms": 4.09374699665932,
+      "retrieved": [
+        {
+          "id": "de7897eb1151996ca90c217aaac537f60157ea55243be92a34347c2de4b06540",
+          "source": "fsw_doc2.pdf",
+          "page": 57
+        },
+        {
+          "id": "e6c6d3f597bef3d5c86bb1510976ebef8983b5f0ea486d878f674e71e02e3446",
+          "source": "fsw_doc4.pdf",
+          "page": 280
+        },
+        {
+          "id": "e70e9c0b417bdbd66f00495aa9de32b01541d8d557e85346ab827f129a7670f6",
+          "source": "fsw_doc2.pdf",
+          "page": 22
+        },
+        {
+          "id": "882a06ee276429a0b5da517ae342a0c91897e22572a31cbdf816dce786a9b2e2",
+          "source": "fsw_doc2.pdf",
+          "page": 32
+        },
+        {
+          "id": "09b02a4719506c595a0c110355a8093c2249c883783c1ad01e1bf67a8ee87907",
+          "source": "fsw_doc2.pdf",
+          "page": 63
+        }
+      ]
+    },
+    {
+      "id": "FSW-035",
+      "category": "followup",
+      "variant": "hybrid",
+      "question": "How is that different from the retreating side?",
+      "retrieval_query": "What is the advancing side in FSW?\nFollow-up: How is that different from the retreating side?",
+      "latency_ms": 3.282830002717674,
+      "retrieved": [
+        {
+          "id": "10cb4366572a93c6de7e624dfac9a90c0bb440cca49cd607934ac0e702dbc0d9",
+          "source": "fsw_doc2.pdf",
+          "page": 146
+        },
+        {
+          "id": "de7897eb1151996ca90c217aaac537f60157ea55243be92a34347c2de4b06540",
+          "source": "fsw_doc2.pdf",
+          "page": 57
+        },
+        {
+          "id": "e7d04598569fe6dd2241338ded2884c2279caedbcb225b1f7a3a2ea1bbe3c5ae",
+          "source": "fsw_doc2.pdf",
+          "page": 31
+        },
+        {
+          "id": "e6c6d3f597bef3d5c86bb1510976ebef8983b5f0ea486d878f674e71e02e3446",
+          "source": "fsw_doc4.pdf",
+          "page": 280
+        },
+        {
+          "id": "3239a3ba0a07fbf72c7799428fa0f2c46c94ea7a8e2d52cd384549e12343b7db",
+          "source": "fsw_doc4.pdf",
+          "page": 69
+        }
+      ]
+    },
+    {
+      "id": "FSW-035",
+      "category": "followup",
+      "variant": "reranked",
+      "question": "How is that different from the retreating side?",
+      "retrieval_query": "What is the advancing side in FSW?\nFollow-up: How is that different from the retreating side?",
+      "latency_ms": 319.8801250036922,
+      "retrieved": [
+        {
+          "id": "aa33e6b12eec3bbf157369d8f0af34af6584c5d7159bd29676658962ae95126a",
+          "source": "fsw_doc3.pdf",
+          "page": 1
+        },
+        {
+          "id": "e7d04598569fe6dd2241338ded2884c2279caedbcb225b1f7a3a2ea1bbe3c5ae",
+          "source": "fsw_doc2.pdf",
+          "page": 31
+        },
+        {
+          "id": "10cb4366572a93c6de7e624dfac9a90c0bb440cca49cd607934ac0e702dbc0d9",
+          "source": "fsw_doc2.pdf",
+          "page": 146
+        },
+        {
+          "id": "14a3e9b1cbce8db5c6025f6626d50b78520d4882b700d57b1e62dd0d3a6b4e1d",
+          "source": "fsw_doc4.pdf",
+          "page": 232
+        },
+        {
+          "id": "c7b6dedf52322e15b05e49a274bb7c29935c25bb14d9214a4537002451e9a7d5",
+          "source": "fsw_doc2.pdf",
+          "page": 18
+        }
+      ]
+    },
+    {
+      "id": "FSW-036",
+      "category": "followup",
+      "variant": "bm25",
+      "question": "What about its force direction?",
+      "retrieval_query": "Explain axial force in FSW.\nFollow-up: What about its force direction?",
+      "latency_ms": 0.2373870011069812,
+      "retrieved": [
+        {
+          "id": "2038091300d213459f1a6234c6b5fe32e8fc2f18fe3082b634b10c20e9909bf5",
+          "source": "fsw_doc2.pdf",
+          "page": 144
+        },
+        {
+          "id": "f7c9de06c48ee94bf389ef45d61feebad815f90bc954192b106210fd00d5408f",
+          "source": "fsw_doc3.pdf",
+          "page": 2
+        },
+        {
+          "id": "7672a3232fc85ae4e877862c0afffe07fbe47266fb717386dfe243b12afadf40",
+          "source": "fsw_doc2.pdf",
+          "page": 11
+        },
+        {
+          "id": "c334c9ff6db5ad143146bae141a40c414702293e6269c2811602f9c871fc6052",
+          "source": "fsw_doc2.pdf",
+          "page": 57
+        },
+        {
+          "id": "020fe75c94e134ff5507c879719f69964b3ec62c997dfbb32c6ccfb9f7698bf4",
+          "source": "fsw_doc2.pdf",
+          "page": 146
+        }
+      ]
+    },
+    {
+      "id": "FSW-036",
+      "category": "followup",
+      "variant": "vector",
+      "question": "What about its force direction?",
+      "retrieval_query": "Explain axial force in FSW.\nFollow-up: What about its force direction?",
+      "latency_ms": 3.6883540014969185,
+      "retrieved": [
+        {
+          "id": "c334c9ff6db5ad143146bae141a40c414702293e6269c2811602f9c871fc6052",
+          "source": "fsw_doc2.pdf",
+          "page": 57
+        },
+        {
+          "id": "10cb4366572a93c6de7e624dfac9a90c0bb440cca49cd607934ac0e702dbc0d9",
+          "source": "fsw_doc2.pdf",
+          "page": 146
+        },
+        {
+          "id": "020fe75c94e134ff5507c879719f69964b3ec62c997dfbb32c6ccfb9f7698bf4",
+          "source": "fsw_doc2.pdf",
+          "page": 146
+        },
+        {
+          "id": "ab3a315fe66903ff722a0d26e2d90807ae2d7eed7bf722d2b2895437f66520e1",
+          "source": "fsw_doc2.pdf",
+          "page": 146
+        },
+        {
+          "id": "964fa54ee4571e9377d242ca53f49892b5e3f416f89fea7f18575fe762441403",
+          "source": "fsw_doc2.pdf",
+          "page": 147
+        }
+      ]
+    },
+    {
+      "id": "FSW-036",
+      "category": "followup",
+      "variant": "hybrid",
+      "question": "What about its force direction?",
+      "retrieval_query": "Explain axial force in FSW.\nFollow-up: What about its force direction?",
+      "latency_ms": 3.0992539977887645,
+      "retrieved": [
+        {
+          "id": "c334c9ff6db5ad143146bae141a40c414702293e6269c2811602f9c871fc6052",
+          "source": "fsw_doc2.pdf",
+          "page": 57
+        },
+        {
+          "id": "2038091300d213459f1a6234c6b5fe32e8fc2f18fe3082b634b10c20e9909bf5",
+          "source": "fsw_doc2.pdf",
+          "page": 144
+        },
+        {
+          "id": "020fe75c94e134ff5507c879719f69964b3ec62c997dfbb32c6ccfb9f7698bf4",
+          "source": "fsw_doc2.pdf",
+          "page": 146
+        },
+        {
+          "id": "f7c9de06c48ee94bf389ef45d61feebad815f90bc954192b106210fd00d5408f",
+          "source": "fsw_doc3.pdf",
+          "page": 2
+        },
+        {
+          "id": "10cb4366572a93c6de7e624dfac9a90c0bb440cca49cd607934ac0e702dbc0d9",
+          "source": "fsw_doc2.pdf",
+          "page": 146
+        }
+      ]
+    },
+    {
+      "id": "FSW-036",
+      "category": "followup",
+      "variant": "reranked",
+      "question": "What about its force direction?",
+      "retrieval_query": "Explain axial force in FSW.\nFollow-up: What about its force direction?",
+      "latency_ms": 305.0449549991754,
+      "retrieved": [
+        {
+          "id": "020fe75c94e134ff5507c879719f69964b3ec62c997dfbb32c6ccfb9f7698bf4",
+          "source": "fsw_doc2.pdf",
+          "page": 146
+        },
+        {
+          "id": "c334c9ff6db5ad143146bae141a40c414702293e6269c2811602f9c871fc6052",
+          "source": "fsw_doc2.pdf",
+          "page": 57
+        },
+        {
+          "id": "e8a18cb92d84fb83d50113dc568d1031b5804657bd987ee2e4dd9b37fb8e63de",
+          "source": "fsw_doc2.pdf",
+          "page": 48
+        },
+        {
+          "id": "de7897eb1151996ca90c217aaac537f60157ea55243be92a34347c2de4b06540",
+          "source": "fsw_doc2.pdf",
+          "page": 57
+        },
+        {
+          "id": "10cb4366572a93c6de7e624dfac9a90c0bb440cca49cd607934ac0e702dbc0d9",
+          "source": "fsw_doc2.pdf",
+          "page": 146
+        }
+      ]
+    },
+    {
+      "id": "FSW-037",
+      "category": "followup",
+      "variant": "bm25",
+      "question": "And when does that interval end?",
+      "retrieval_query": "What is dwell time at the start of FSW?\nFollow-up: And when does that interval end?",
+      "latency_ms": 0.23796800087438896,
+      "retrieved": [
+        {
+          "id": "8cd7ce42a4c78ab0ac24a8438e94c114b37b55fa7c7d51675f16864dc22ed216",
+          "source": "fsw_doc2.pdf",
+          "page": 11
+        },
+        {
+          "id": "a32b8b654a1e8f51024822802893702c4e9a00a81598b3fa10f3262e1d63c481",
+          "source": "fsw_doc2.pdf",
+          "page": 58
+        },
+        {
+          "id": "169d6727cc8ee5590eb6f7d86f2efcad01f0f9aebba42a74a63a4c4057028d55",
+          "source": "fsw_doc2.pdf",
+          "page": 116
+        },
+        {
+          "id": "2da6193b48206445f52abbe3860395a74cf12cbca9e8e88e1f1c2b123e1b68f9",
+          "source": "fsw_doc2.pdf",
+          "page": 14
+        },
+        {
+          "id": "f7c9de06c48ee94bf389ef45d61feebad815f90bc954192b106210fd00d5408f",
+          "source": "fsw_doc3.pdf",
+          "page": 2
+        }
+      ]
+    },
+    {
+      "id": "FSW-037",
+      "category": "followup",
+      "variant": "vector",
+      "question": "And when does that interval end?",
+      "retrieval_query": "What is dwell time at the start of FSW?\nFollow-up: And when does that interval end?",
+      "latency_ms": 3.787479996390175,
+      "retrieved": [
+        {
+          "id": "a32b8b654a1e8f51024822802893702c4e9a00a81598b3fa10f3262e1d63c481",
+          "source": "fsw_doc2.pdf",
+          "page": 58
+        },
+        {
+          "id": "d940cdf8dd926c1927b2dd9a704ec576bbf519346cf1996eb92d0a00e7967ef3",
+          "source": "fsw_doc4.pdf",
+          "page": 72
+        },
+        {
+          "id": "9f956290ed17b19410525377fbb39fe4868ce8c640156ab8580dd7baef966fc2",
+          "source": "fsw_doc2.pdf",
+          "page": 141
+        },
+        {
+          "id": "f7c9de06c48ee94bf389ef45d61feebad815f90bc954192b106210fd00d5408f",
+          "source": "fsw_doc3.pdf",
+          "page": 2
+        },
+        {
+          "id": "340ae0ce66af8ff7f33a215ba7c082b7dcedc3a905e45200633c5c2fb05b0d2a",
+          "source": "fsw_doc4.pdf",
+          "page": 73
+        }
+      ]
+    },
+    {
+      "id": "FSW-037",
+      "category": "followup",
+      "variant": "hybrid",
+      "question": "And when does that interval end?",
+      "retrieval_query": "What is dwell time at the start of FSW?\nFollow-up: And when does that interval end?",
+      "latency_ms": 3.266849998908583,
+      "retrieved": [
+        {
+          "id": "a32b8b654a1e8f51024822802893702c4e9a00a81598b3fa10f3262e1d63c481",
+          "source": "fsw_doc2.pdf",
+          "page": 58
+        },
+        {
+          "id": "8cd7ce42a4c78ab0ac24a8438e94c114b37b55fa7c7d51675f16864dc22ed216",
+          "source": "fsw_doc2.pdf",
+          "page": 11
+        },
+        {
+          "id": "d940cdf8dd926c1927b2dd9a704ec576bbf519346cf1996eb92d0a00e7967ef3",
+          "source": "fsw_doc4.pdf",
+          "page": 72
+        },
+        {
+          "id": "f7c9de06c48ee94bf389ef45d61feebad815f90bc954192b106210fd00d5408f",
+          "source": "fsw_doc3.pdf",
+          "page": 2
+        },
+        {
+          "id": "169d6727cc8ee5590eb6f7d86f2efcad01f0f9aebba42a74a63a4c4057028d55",
+          "source": "fsw_doc2.pdf",
+          "page": 116
+        }
+      ]
+    },
+    {
+      "id": "FSW-037",
+      "category": "followup",
+      "variant": "reranked",
+      "question": "And when does that interval end?",
+      "retrieval_query": "What is dwell time at the start of FSW?\nFollow-up: And when does that interval end?",
+      "latency_ms": 305.9710890011047,
+      "retrieved": [
+        {
+          "id": "a32b8b654a1e8f51024822802893702c4e9a00a81598b3fa10f3262e1d63c481",
+          "source": "fsw_doc2.pdf",
+          "page": 58
+        },
+        {
+          "id": "8cd7ce42a4c78ab0ac24a8438e94c114b37b55fa7c7d51675f16864dc22ed216",
+          "source": "fsw_doc2.pdf",
+          "page": 11
+        },
+        {
+          "id": "2da6193b48206445f52abbe3860395a74cf12cbca9e8e88e1f1c2b123e1b68f9",
+          "source": "fsw_doc2.pdf",
+          "page": 14
+        },
+        {
+          "id": "531e19fedd915713e366465c3aa4c0bcdc26adf77d10d9305a381668f75f15b5",
+          "source": "fsw_doc2.pdf",
+          "page": 83
+        },
+        {
+          "id": "0c4c6d1a40d67576db4c79aad3933fd98ca6e4aaaec473ee6eced85a90fa603e",
+          "source": "fsw_doc3.pdf",
+          "page": 8
+        }
+      ]
+    },
+    {
+      "id": "FSW-038",
+      "category": "followup",
+      "variant": "bm25",
+      "question": "Tell me more about the cleaning requirement.",
+      "retrieval_query": "What does ISO 25239-5 say about pre-weld preparation?\nFollow-up: Tell me more about the cleaning requirement.",
+      "latency_ms": 0.24384899734286591,
+      "retrieved": [
+        {
+          "id": "8fc85d42702bec828ebba03621c2a3cf83a3d9b2855c8b4ff80e46925d2008d5",
+          "source": "fsw_doc1.pdf",
+          "page": 10
+        },
+        {
+          "id": "6000f090bb799e754f76c51df99d2e3f9947630ae5213a8422cab7c87022c7c1",
+          "source": "fsw_doc1.pdf",
+          "page": 3
+        },
+        {
+          "id": "f8250798235aac7dc81deb7ef11e531a72e8fccde5e381c5aba911b77c685cfa",
+          "source": "fsw_doc1.pdf",
+          "page": 4
+        },
+        {
+          "id": "a0461504d5f4b293bc255434bfa3233c9fa96bb70fb26fdf95120cae8ec3f9bb",
+          "source": "fsw_doc2.pdf",
+          "page": 95
+        },
+        {
+          "id": "dec8219ed67146d28c83494b1073ff0eaa74fee4f7d9e1540f5b6648fd9b5d0b",
+          "source": "fsw_doc1.pdf",
+          "page": 3
+        }
+      ]
+    },
+    {
+      "id": "FSW-038",
+      "category": "followup",
+      "variant": "vector",
+      "question": "Tell me more about the cleaning requirement.",
+      "retrieval_query": "What does ISO 25239-5 say about pre-weld preparation?\nFollow-up: Tell me more about the cleaning requirement.",
+      "latency_ms": 4.133661001105793,
+      "retrieved": [
+        {
+          "id": "33d344bfb47778e568f8c2304903db2296d366dc44b81e3499c153c01e592674",
+          "source": "fsw_doc1.pdf",
+          "page": 10
+        },
+        {
+          "id": "8fc85d42702bec828ebba03621c2a3cf83a3d9b2855c8b4ff80e46925d2008d5",
+          "source": "fsw_doc1.pdf",
+          "page": 10
+        },
+        {
+          "id": "ea66d42b8cad79707ddaef27f86f6c7d6e09db402f1515fc5de2d9d5f3a8dca7",
+          "source": "fsw_doc2.pdf",
+          "page": 105
+        },
+        {
+          "id": "e72875d87871fa8f86e21d41674892845faecb8e4b8c2da1e07573171697b31f",
+          "source": "fsw_doc1.pdf",
+          "page": 9
+        },
+        {
+          "id": "d2167b4948e373433d350a2844eddd8732307dc967fcc65dbc97d6952b4a73d6",
+          "source": "fsw_doc1.pdf",
+          "page": 8
+        }
+      ]
+    },
+    {
+      "id": "FSW-038",
+      "category": "followup",
+      "variant": "hybrid",
+      "question": "Tell me more about the cleaning requirement.",
+      "retrieval_query": "What does ISO 25239-5 say about pre-weld preparation?\nFollow-up: Tell me more about the cleaning requirement.",
+      "latency_ms": 3.462727996520698,
+      "retrieved": [
+        {
+          "id": "8fc85d42702bec828ebba03621c2a3cf83a3d9b2855c8b4ff80e46925d2008d5",
+          "source": "fsw_doc1.pdf",
+          "page": 10
+        },
+        {
+          "id": "33d344bfb47778e568f8c2304903db2296d366dc44b81e3499c153c01e592674",
+          "source": "fsw_doc1.pdf",
+          "page": 10
+        },
+        {
+          "id": "6000f090bb799e754f76c51df99d2e3f9947630ae5213a8422cab7c87022c7c1",
+          "source": "fsw_doc1.pdf",
+          "page": 3
+        },
+        {
+          "id": "f8250798235aac7dc81deb7ef11e531a72e8fccde5e381c5aba911b77c685cfa",
+          "source": "fsw_doc1.pdf",
+          "page": 4
+        },
+        {
+          "id": "ea66d42b8cad79707ddaef27f86f6c7d6e09db402f1515fc5de2d9d5f3a8dca7",
+          "source": "fsw_doc2.pdf",
+          "page": 105
+        }
+      ]
+    },
+    {
+      "id": "FSW-038",
+      "category": "followup",
+      "variant": "reranked",
+      "question": "Tell me more about the cleaning requirement.",
+      "retrieval_query": "What does ISO 25239-5 say about pre-weld preparation?\nFollow-up: Tell me more about the cleaning requirement.",
+      "latency_ms": 412.43507700710325,
+      "retrieved": [
+        {
+          "id": "8fc85d42702bec828ebba03621c2a3cf83a3d9b2855c8b4ff80e46925d2008d5",
+          "source": "fsw_doc1.pdf",
+          "page": 10
+        },
+        {
+          "id": "c5a1155de47dcd9eb5cd83166f33a8404ec8381022c0dd64351ad6020f589005",
+          "source": "fsw_doc1.pdf",
+          "page": 11
+        },
+        {
+          "id": "33d344bfb47778e568f8c2304903db2296d366dc44b81e3499c153c01e592674",
+          "source": "fsw_doc1.pdf",
+          "page": 10
+        },
+        {
+          "id": "5e1ecd235147a38c023b51f78d710c43949b683c8d0a2989accafd2274dfd33d",
+          "source": "fsw_doc2.pdf",
+          "page": 110
+        },
+        {
+          "id": "0982307bbf87d14e021dd72579b680e20454d24b4b8364caff2f2e848567b52a",
+          "source": "fsw_doc1.pdf",
+          "page": 9
+        }
+      ]
+    },
+    {
+      "id": "FSW-039",
+      "category": "followup",
+      "variant": "bm25",
+      "question": "What about its definition of thick section?",
+      "retrieval_query": "What materials does the FSW thesis investigate?\nFollow-up: What about its definition of thick section?",
+      "latency_ms": 0.2434289999655448,
+      "retrieved": [
+        {
+          "id": "ed556b0793d04fa3436b2e34f2882efb65a54e0ff658c72273a10dce6cea7679",
+          "source": "fsw_doc2.pdf",
+          "page": 73
+        },
+        {
+          "id": "169d6727cc8ee5590eb6f7d86f2efcad01f0f9aebba42a74a63a4c4057028d55",
+          "source": "fsw_doc2.pdf",
+          "page": 116
+        },
+        {
+          "id": "e8744ff6ea51f136f1ee0e932ca3b427910f3f8dd4640d78cb83117f47b279e3",
+          "source": "fsw_doc4.pdf",
+          "page": 109
+        },
+        {
+          "id": "ce961d4aa05fc609eb22d2368be5b4c7c25556af6c4bcccbb505fe926c0541ea",
+          "source": "fsw_doc2.pdf",
+          "page": 74
+        },
+        {
+          "id": "b5770b757ee830d9d9177f55bcf0e342f32760db307eba447233f79320811284",
+          "source": "fsw_doc4.pdf",
+          "page": 303
+        }
+      ]
+    },
+    {
+      "id": "FSW-039",
+      "category": "followup",
+      "variant": "vector",
+      "question": "What about its definition of thick section?",
+      "retrieval_query": "What materials does the FSW thesis investigate?\nFollow-up: What about its definition of thick section?",
+      "latency_ms": 3.767000998777803,
+      "retrieved": [
+        {
+          "id": "e8744ff6ea51f136f1ee0e932ca3b427910f3f8dd4640d78cb83117f47b279e3",
+          "source": "fsw_doc4.pdf",
+          "page": 109
+        },
+        {
+          "id": "a36fa0d55bf57ff4668f7fb208ef1c214af679336694349cd6958c0791251342",
+          "source": "fsw_doc4.pdf",
+          "page": 27
+        },
+        {
+          "id": "1a9e5bde561ddc41a76b98dc7f83564300ae7389c36bcc6bd29200eb22c4ba50",
+          "source": "fsw_doc4.pdf",
+          "page": 117
+        },
+        {
+          "id": "ad29f9ca7c2697fd5c5afa2b761d2e947f3849ef8cfd859fa7067f105024e34f",
+          "source": "fsw_doc4.pdf",
+          "page": 109
+        },
+        {
+          "id": "4b7b41dec77f609d764e15b0b6e41ce1bc1a63d5bc9591eab7074eb9db38df63",
+          "source": "fsw_doc4.pdf",
+          "page": 110
+        }
+      ]
+    },
+    {
+      "id": "FSW-039",
+      "category": "followup",
+      "variant": "hybrid",
+      "question": "What about its definition of thick section?",
+      "retrieval_query": "What materials does the FSW thesis investigate?\nFollow-up: What about its definition of thick section?",
+      "latency_ms": 3.0576060016755946,
+      "retrieved": [
+        {
+          "id": "e8744ff6ea51f136f1ee0e932ca3b427910f3f8dd4640d78cb83117f47b279e3",
+          "source": "fsw_doc4.pdf",
+          "page": 109
+        },
+        {
+          "id": "ed556b0793d04fa3436b2e34f2882efb65a54e0ff658c72273a10dce6cea7679",
+          "source": "fsw_doc2.pdf",
+          "page": 73
+        },
+        {
+          "id": "169d6727cc8ee5590eb6f7d86f2efcad01f0f9aebba42a74a63a4c4057028d55",
+          "source": "fsw_doc2.pdf",
+          "page": 116
+        },
+        {
+          "id": "a36fa0d55bf57ff4668f7fb208ef1c214af679336694349cd6958c0791251342",
+          "source": "fsw_doc4.pdf",
+          "page": 27
+        },
+        {
+          "id": "1a9e5bde561ddc41a76b98dc7f83564300ae7389c36bcc6bd29200eb22c4ba50",
+          "source": "fsw_doc4.pdf",
+          "page": 117
+        }
+      ]
+    },
+    {
+      "id": "FSW-039",
+      "category": "followup",
+      "variant": "reranked",
+      "question": "What about its definition of thick section?",
+      "retrieval_query": "What materials does the FSW thesis investigate?\nFollow-up: What about its definition of thick section?",
+      "latency_ms": 295.15462299605133,
+      "retrieved": [
+        {
+          "id": "e8744ff6ea51f136f1ee0e932ca3b427910f3f8dd4640d78cb83117f47b279e3",
+          "source": "fsw_doc4.pdf",
+          "page": 109
+        },
+        {
+          "id": "87ee03ebc756acbc820c3372acbda42694e51979e72a1fbfc38be6425a8510bd",
+          "source": "fsw_doc4.pdf",
+          "page": 11
+        },
+        {
+          "id": "97e8d9a6aa5d490db4b7afe962e86ea04c99e60b352867f72f1a0a82d9b43a28",
+          "source": "fsw_doc4.pdf",
+          "page": 111
+        },
+        {
+          "id": "4b7b41dec77f609d764e15b0b6e41ce1bc1a63d5bc9591eab7074eb9db38df63",
+          "source": "fsw_doc4.pdf",
+          "page": 110
+        },
+        {
+          "id": "01d9e7ac711981cf3d2220ef7e7b03e9109ef38119ec3c170a64d2b1c2248e3a",
+          "source": "fsw_doc4.pdf",
+          "page": 114
+        }
+      ]
+    },
+    {
+      "id": "FSW-040",
+      "category": "followup",
+      "variant": "bm25",
+      "question": "And how were internal defects confirmed?",
+      "retrieval_query": "Explain the FSW force-monitoring paper.\nFollow-up: And how were internal defects confirmed?",
+      "latency_ms": 0.22853999689687043,
+      "retrieved": [
+        {
+          "id": "f7c9de06c48ee94bf389ef45d61feebad815f90bc954192b106210fd00d5408f",
+          "source": "fsw_doc3.pdf",
+          "page": 2
+        },
+        {
+          "id": "ad77918e94f4f4158d833967791648796ede43591b6776a8f8cb7a694aafb7bf",
+          "source": "fsw_doc5.pdf",
+          "page": 3
+        },
+        {
+          "id": "04ff197b74984bbeb851c0006ba6de845a8ad1c1330d1a0b410a39097d234e50",
+          "source": "fsw_doc5.pdf",
+          "page": 6
+        },
+        {
+          "id": "9a56a3d9db4dee2e2875af8c231321d5db166b71af347a8dcb73296b62bce486",
+          "source": "fsw_doc5.pdf",
+          "page": 2
+        },
+        {
+          "id": "310583aabffb2a2e52b80284408d29cdcf9e766bd872e795d06e5ed003341bef",
+          "source": "fsw_doc5.pdf",
+          "page": 5
+        }
+      ]
+    },
+    {
+      "id": "FSW-040",
+      "category": "followup",
+      "variant": "vector",
+      "question": "And how were internal defects confirmed?",
+      "retrieval_query": "Explain the FSW force-monitoring paper.\nFollow-up: And how were internal defects confirmed?",
+      "latency_ms": 3.7750269984826446,
+      "retrieved": [
+        {
+          "id": "65e68fcbfd85a2d1130b999eed51855e7352d702bc4c180ccff21f91db130f62",
+          "source": "fsw_doc3.pdf",
+          "page": 8
+        },
+        {
+          "id": "ebdb712283d47f401a64be552028dfffadc617403af2ba36908f8d82589c6c3f",
+          "source": "fsw_doc2.pdf",
+          "page": 78
+        },
+        {
+          "id": "f7c9de06c48ee94bf389ef45d61feebad815f90bc954192b106210fd00d5408f",
+          "source": "fsw_doc3.pdf",
+          "page": 2
+        },
+        {
+          "id": "ff15cd2488c235af8dbf6fcefbd74247b3f8717dc1b90c514cb056fba42912e6",
+          "source": "fsw_doc3.pdf",
+          "page": 8
+        },
+        {
+          "id": "6e3544774c2a54c9dc6bfb75c003b86170ef8351ddb16993afb04d773cf584d5",
+          "source": "fsw_doc3.pdf",
+          "page": 3
+        }
+      ]
+    },
+    {
+      "id": "FSW-040",
+      "category": "followup",
+      "variant": "hybrid",
+      "question": "And how were internal defects confirmed?",
+      "retrieval_query": "Explain the FSW force-monitoring paper.\nFollow-up: And how were internal defects confirmed?",
+      "latency_ms": 3.2044220060925,
+      "retrieved": [
+        {
+          "id": "f7c9de06c48ee94bf389ef45d61feebad815f90bc954192b106210fd00d5408f",
+          "source": "fsw_doc3.pdf",
+          "page": 2
+        },
+        {
+          "id": "65e68fcbfd85a2d1130b999eed51855e7352d702bc4c180ccff21f91db130f62",
+          "source": "fsw_doc3.pdf",
+          "page": 8
+        },
+        {
+          "id": "ad77918e94f4f4158d833967791648796ede43591b6776a8f8cb7a694aafb7bf",
+          "source": "fsw_doc5.pdf",
+          "page": 3
+        },
+        {
+          "id": "ebdb712283d47f401a64be552028dfffadc617403af2ba36908f8d82589c6c3f",
+          "source": "fsw_doc2.pdf",
+          "page": 78
+        },
+        {
+          "id": "04ff197b74984bbeb851c0006ba6de845a8ad1c1330d1a0b410a39097d234e50",
+          "source": "fsw_doc5.pdf",
+          "page": 6
+        }
+      ]
+    },
+    {
+      "id": "FSW-040",
+      "category": "followup",
+      "variant": "reranked",
+      "question": "And how were internal defects confirmed?",
+      "retrieval_query": "Explain the FSW force-monitoring paper.\nFollow-up: And how were internal defects confirmed?",
+      "latency_ms": 311.3809289934579,
+      "retrieved": [
+        {
+          "id": "2ced246565fb86dbcafa11a0c4ef2362991620dc22cbc5c9c2c2fda836c1fda4",
+          "source": "fsw_doc5.pdf",
+          "page": 1
+        },
+        {
+          "id": "df38b55951869643cb6b1916f059665c0f341d402df3309b5b6005725c283240",
+          "source": "fsw_doc5.pdf",
+          "page": 2
+        },
+        {
+          "id": "ad77918e94f4f4158d833967791648796ede43591b6776a8f8cb7a694aafb7bf",
+          "source": "fsw_doc5.pdf",
+          "page": 3
+        },
+        {
+          "id": "9a56a3d9db4dee2e2875af8c231321d5db166b71af347a8dcb73296b62bce486",
+          "source": "fsw_doc5.pdf",
+          "page": 2
+        },
+        {
+          "id": "0c4c6d1a40d67576db4c79aad3933fd98ca6e4aaaec473ee6eced85a90fa603e",
+          "source": "fsw_doc3.pdf",
+          "page": 8
+        }
+      ]
+    }
+  ]
+}

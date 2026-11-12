@@ -14,7 +14,7 @@ services:
       - LANGFUSE_SECRET_KEY=${LANGFUSE_SECRET_KEY:-}
     volumes:
       - ./data:/app/data:ro
-      - ./vectorstore:/app/vectorstore
+      - ./indexes:/app/indexes
     restart: unless-stopped
     healthcheck:
       test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8501/_stcore/health', timeout=5)"]
@@ -28,10 +28,9 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    environment:
     volumes:
       - ./data:/app/data:ro
-      - ./vectorstore:/app/vectorstore
-    command: python build_vectorstore.py --pdf-dir /app/data --output-dir /app/vectorstore
+      - ./indexes:/app/indexes
+    command: python build_vectorstore.py --pdf-dir /app/data --output-dir /app/indexes/fsw-v2
     profiles:
       - build

@@ -7,14 +7,14 @@ A research assistant for **friction stir welding (FSW)** defects, causes, and co
 ## What it does
 
 - Answers greetings and questions about WeldScope and its sources locally, without inference calls or document search. Other unsupported requests receive a brief local scope refusal, including requests to assess real equipment or handle a live incident.
-- Searches five bundled research PDFs using BM25S keyword retrieval and Chroma semantic search, then reranks passages with a cross-encoder.
+- Searches five bundled research PDFs using BM25S keyword retrieval and local ONNX/NumPy semantic search, then reranks passages with a cross-encoder.
 - Uses Groq to generate answers with inspectable source passages. Research output is buffered until citation checks finish, before any answer text is displayed. The prompt asks it to abstain when evidence is insufficient; retrieval has a provisional 50-case development benchmark; semantic answer quality remains unmeasured.
 - Keeps up to ten completed exchanges within a bounded context budget. Search queries stay separate from chat history and sensor summaries; failed exchanges are excluded.
 - Includes example sensor readings only when requested. The CSV is a static demonstration, not a live feed.
 - Reports raw fusion and reranker scores separately. They are not probabilities; unmeasured response confidence is `None`.
 - Records retrieval, reranking, generation, first-token and total latency per reply. Token counts remain unknown unless the provider reports them.
 
-The packaged index contains **2,165 chunks**. The corpus remains local to the app; no new hosted vector database is required. Rebuild the index from the source PDFs when the corpus changes. Runtime edits to Community Cloud storage are not durable.
+The packaged index contains **2,124 current-PDF chunks**. The corpus remains local to the app; no new hosted vector database is required. Rebuild the index from the source PDFs when the corpus changes. Runtime edits to Community Cloud storage are not durable.
 
 ## Run locally
 
@@ -31,7 +31,7 @@ cp .env.example .env
 streamlit run app.py
 ```
 
-Dependencies and compatible transitive versions are pinned in `requirements*.txt`, `pyproject.toml`, and `constraints.txt`. PyTorch uses CPU wheels. Deprecated LangChain Community/Classic paths have been removed from the application runtime. RAGAS uses a separately locked offline assessment environment with an explicitly approved compatibility exception. PDF loading uses PyPDF directly; local embeddings use Sentence Transformers directly.
+Dependencies and compatible transitive versions are pinned in `requirements*.txt`, `pyproject.toml`, and `constraints.txt`. Local inference uses bundled ONNX models; the app needs no model downloads or HF token. Deprecated LangChain Community/Classic paths have been removed from the application runtime. RAGAS uses a separately locked offline assessment environment with an explicitly approved compatibility exception. PDF loading uses PyPDF directly; local embeddings and reranking use ONNX Runtime and Microsoft ORT Extensions. HF-related packages are allowed only in the separately locked offline RAGAS environment.
 
 ## Configure Groq generation
 
@@ -47,14 +47,14 @@ For local use, set these variables in the ignored `.env` file instead. Greetings
 
 Groq publishes free-plan limits of 30 requests/minute, 1,000/day, 8,000 tokens/minute and 200,000/day for this model; exact account limits may differ. A payment method is required to upgrade to its paid Developer plan. See [rate limits](https://console.groq.com/docs/rate-limits) and [billing FAQ](https://console.groq.com/docs/billing-faqs).
 
-HF Inference Providers currently lists no included credits for free accounts. Changing the model through the same HF billing route does not resolve an HTTP 402. This app uses Groq directly for generation; the embedding and reranking weights are downloaded from Hugging Face and run locally. See [HF pricing](https://huggingface.co/docs/inference-providers/en/pricing). No paid-provider fallback is attempted.
+The application uses Groq directly for generation. Embeddings and reranking run from bundled local ONNX assets. There are no HF runtime packages, model downloads, token requirements or inference calls. RAGAS retains its required HF dependencies only in the isolated evaluator, as explicitly approved.
 
 Other settings include `RETRIEVAL_K`, `RERANK_TOP_K`, `MAX_TOKENS`, `TEMPERATURE`, and `VECTORSTORE_PATH`. See [.env.example](.env.example).
 
 ## Rebuild the index
 
 ```bash
-python build_vectorstore.py --pdf-dir ./data --output-dir ./vectorstore
+python build_vectorstore.py --pdf-dir ./data --output-dir ./indexes/fsw-v2
 ```
 
 New chunks receive deterministic IDs from their source, page and text. Existing stored IDs are retained on load. Metadata filters are applied consistently to lexical and semantic search; the hybrid API supports exact metadata filters.
@@ -88,7 +88,7 @@ Optional Langfuse tracing connects query, retrieval and generation spans with fe
 
 [RAGAS](evaluation/README.md) is the active offline quality-assessment framework. Native ID-based context precision/recall have been executed on all 160 retrieval question/variant pairs. The custom model judge and custom retrieval scoring implementation were retired; historical reports retain their original labels.
 
-Native semantic assessment covers faithfulness, answer relevance, context precision/recall, factual correctness and a scope rubric. Run the manual **RAGAS Answer Assessment** workflow with the privately configured `GROQ_API_KEY` Actions secret. Semantic results are reported only after an actual completed judge run. RAGAS remains outside the Streamlit dependency graph, so evaluation adds no per-chat model calls. Ordinary pytest/AppTest/Playwright checks and runtime citation guards remain in place. See [methodology, results and limitations](docs/evaluation.md).
+Native semantic assessment covers faithfulness, answer relevance, context precision/recall, factual correctness and a scope rubric. Run the manual **RAGAS Answer Assessment** workflow with the privately configured `GROQ_API_KEY` Actions secret. Semantic results are reported only after an actual completed judge run. RAGAS remains outside the Streamlit dependency graph, so evaluation adds no per-chat model calls. Ordinary pytest/AppTest/Playwright checks and runtime citation guards remain in place. See [latest maintenance results](docs/maintenance-2026-11-13.md) and [methodology](docs/evaluation.md).
 
 ## Code layout
 

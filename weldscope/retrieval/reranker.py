@@ -4,11 +4,10 @@ from typing import List, Optional
 from threading import RLock
 from time import perf_counter
 from langchain_core.documents import Document
-from sentence_transformers import CrossEncoder
+from weldscope.core.local_models import LocalModel
 
 from weldscope.core.config import RAGConfig
 from weldscope.core.exceptions import RetrievalError
-from weldscope.core.model_loading import load_cached_model
 
 
 class Reranker:
@@ -17,13 +16,13 @@ class Reranker:
     def __init__(self, config: RAGConfig):
         self._lock = RLock()
         self.config = config
-        self._model: Optional[CrossEncoder] = None
+        self._model: Optional[LocalModel] = None
 
-    def _get_model(self) -> CrossEncoder:
+    def _get_model(self) -> LocalModel:
         """Initialize cross-encoder model."""
         if self._model is None:
             try:
-                self._model = load_cached_model(CrossEncoder, self.config.reranker_model)
+                self._model = LocalModel(self.config.reranker_model)
             except Exception as e:
                 raise RetrievalError(f"Failed to initialize reranker: {e}")
 

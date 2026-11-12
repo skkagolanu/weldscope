@@ -85,3 +85,8 @@ A public four-turn replay after pushing `31af62f` still repeated the definition 
 The rebooted `quality-v1` app now passes the exact reported conversation. The recipe refusal used no retrieval or provider call: **1 ms backend, 610 ms browser**. Warm TMAZ and HAZ follow-up turns completed in **582/614 ms backend**, **1,222/1,263 ms browser**.
 
 The first FSW request still cost **10,014 ms backend**: retriever initialization **4,598 ms**, reranker model load **4,663 ms**, prediction **104 ms**, search **33 ms** and generation **613 ms**. Thus the earlier local cached-constructor savings did not establish an equivalent hosted cold-start reduction. A separate unsupported-standard answer had **1.346 s provider queue time** and completed in 2,304 ms in the browser. Both limitations are preserved in [the raw hosted artifact](benchmarks/hosted-quality-2026-11-12.json); see [hosting verification](hosting.md). No cold costs were hidden or moved out of total timing.
+
+
+## 13 November ONNX runtime and validation update
+
+The [dated maintenance report](maintenance-2026-11-13.md) supersedes cache-first model downloading: runtime inference now uses bundled ONNX files and no HF packages or network loading. A local two-core profile measured 474 ms initialization plus first retrieval/reranking, 158 ms warm mean at 5→3, and 524 ms at 20→5, excluding imports/Groq/browser. Research text is buffered until final structural citation validation, so the old first-chunk redraw description is historical. Provider first-token and post-validation first-visible delivery are separate. No unconditional hosted two-second claim is made.

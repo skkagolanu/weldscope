@@ -1,0 +1,5 @@
+{
+  "max_length": 128,
+  "origin": "sentence-transformers/paraphrase-MiniLM-L3-v2",
+  "activation": "None"
+}

@@ -14,8 +14,8 @@ def main():
     parser.add_argument(
         "--output-dir",
         type=str,
-        default="./vectorstore",
-        help="Output directory for vector store (default: ./vectorstore)",
+        default="./indexes/fsw-v2",
+        help="Output directory for vector store (default: ./indexes/fsw-v2)",
     )
 
     args = parser.parse_args()
@@ -34,7 +34,7 @@ def main():
     print(f"Building vector store with {config.embedding_model}")
     vectorstore = builder.build_vectorstore(chunks, args.output_dir)
     print(f"Vector store saved to: {args.output_dir}")
-    print(f"Total documents in store: {vectorstore._collection.count()}")
+    print(f"Total documents in store: {len(vectorstore.get()["ids"])}")
 
     print("\nVector store build complete!")
 

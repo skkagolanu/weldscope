@@ -5,21 +5,20 @@ from hashlib import sha256
 from typing import List, Optional
 from langchain_core.documents import Document
 from pypdf import PdfReader
-from sentence_transformers import SentenceTransformer
+from weldscope.core.local_models import LocalModel
 from langchain_core.embeddings import Embeddings
 from langchain_text_splitters import RecursiveCharacterTextSplitter
-from langchain_chroma import Chroma
+from weldscope.ingestion.store import NumpyVectorStore
 
 from weldscope.core.config import RAGConfig
 from weldscope.core.exceptions import ConfigurationError
-from weldscope.core.model_loading import load_cached_model
 
 
 class LocalEmbeddings(Embeddings):
-    """Sentence Transformer inference without a provider integration package."""
+    """Local ONNX embeddings; no model downloads or hosted embedding provider."""
 
     def __init__(self, model_name):
-        self.model = load_cached_model(SentenceTransformer, model_name)
+        self.model = LocalModel(model_name)
 
     def embed_documents(self, texts):
         return self.model.encode(
@@ -86,7 +85,7 @@ class VectorStoreBuilder:
 
     def build_vectorstore(
         self, documents: List[Document], persist_directory: Optional[str] = None
-    ) -> Chroma:
+    ) -> NumpyVectorStore:
         """Build vector store from documents."""
         embeddings = self._get_embeddings()
         persist_dir = persist_directory or self.config.vectorstore_path
@@ -104,7 +103,7 @@ class VectorStoreBuilder:
             for doc in documents
         ]
         unique = dict(zip(ids, documents))
-        vectorstore = Chroma.from_documents(
+        vectorstore = NumpyVectorStore.from_documents(
             documents=list(unique.values()),
             ids=list(unique),
             embedding=embeddings,
@@ -115,7 +114,7 @@ class VectorStoreBuilder:
 
     def load_vectorstore(
         self, persist_directory: Optional[str] = None, *, corpus_directory: Optional[str] = None
-    ) -> tuple[Chroma, List[Document]]:
+    ) -> tuple[NumpyVectorStore, List[Document]]:
         """Load existing vector store and reconstruct documents."""
         embeddings = self._get_embeddings()
         persist_dir = persist_directory or self.config.vectorstore_path
@@ -123,7 +122,7 @@ class VectorStoreBuilder:
         if not Path(persist_dir).exists():
             raise ConfigurationError(f"Vector store not found: {persist_dir}")
 
-        vectorstore = Chroma(persist_directory=persist_dir, embedding_function=embeddings)
+        vectorstore = NumpyVectorStore(persist_directory=persist_dir, embedding_function=embeddings)
 
         # Reconstruct documents from vectorstore
         collection = vectorstore.get()
@@ -156,7 +155,9 @@ class VectorStoreBuilder:
                 raise ConfigurationError("No index passages match the bundled PDF corpus")
         return vectorstore, documents
 
-    def build_from_pdfs(self, pdf_dir: str, persist_directory: Optional[str] = None) -> Chroma:
+    def build_from_pdfs(
+        self, pdf_dir: str, persist_directory: Optional[str] = None
+    ) -> NumpyVectorStore:
         """Complete pipeline: load PDFs → split → build vectorstore."""
         documents = self.load_pdfs(pdf_dir)
         chunks = self.split_documents(documents)

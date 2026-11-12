@@ -121,7 +121,7 @@ def test_current_corpus_excludes_missing_files_and_out_of_range_pages(tmp_path):
     builder = VectorStoreBuilder(RAGConfig())
     with (
         patch.object(builder, "_get_embeddings"),
-        patch("weldscope.ingestion.builder.Chroma", return_value=store),
+        patch("weldscope.ingestion.builder.NumpyVectorStore", return_value=store),
     ):
         _, documents = builder.load_vectorstore(str(tmp_path), corpus_directory=str(corpus))
         assert [document.id for document in documents] == ["valid"]
