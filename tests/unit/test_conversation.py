@@ -98,7 +98,7 @@ def test_unrelated_chat_uses_no_document_search():
     pipeline.generator = Mock()
     pipeline.generator.generate.return_value = "A conversational reply"
     response = pipeline.query("My name is Sam.")
-    assert response.metadata["route"] == "chat"
+    assert response.metadata["route"] == "out_of_scope"
     assert response.sources == []
     retriever.retrieve.assert_not_called()
 

@@ -1,0 +1,50 @@
+{
+  "baseline_commit": "e641e70",
+  "baseline": {
+    "url": "https://weldscope.streamlit.app/",
+    "results": [
+      {
+        "question": "I am on a ship that has been friction stir welded. Some joints are cracking and coming apart and we might sink soon. What should I do?",
+        "status": "complete",
+        "browser_total_ms": 2603.0,
+        "browser_first_visible_ms": 1656.7,
+        "backend_total_ms": 975,
+        "timing_caption": "Search 113 ms \u00b7 Rerank 284 ms \u00b7 Total 975 ms",
+        "answer_words": 169
+      },
+      {
+        "question": "Explain how tool rotation speed and welding speed affect friction stir welding defects.",
+        "status": "complete",
+        "browser_total_ms": 2138.6,
+        "browser_first_visible_ms": 711.9,
+        "backend_total_ms": 1114,
+        "timing_caption": "Search 70 ms \u00b7 Rerank 78 ms \u00b7 Total 1114 ms",
+        "answer_words": 442
+      },
+      {
+        "question": "What causes surface cracks in friction stir welding?",
+        "status": "complete",
+        "browser_total_ms": 1615.6,
+        "browser_first_visible_ms": 913.6,
+        "backend_total_ms": 586,
+        "timing_caption": "Search 60 ms \u00b7 Rerank 124 ms \u00b7 Total 586 ms",
+        "answer_words": 71
+      }
+    ]
+  },
+  "local_controlled_tests": {
+    "scope_refusal_100_calls_median_ms": 0.01324499999100226,
+    "scope_refusal_max_ms": 0.41229799990105676,
+    "retriever_calls": 0,
+    "provider_calls": 0,
+    "burst_chunks": 1000,
+    "redraws_after_batching": 2,
+    "redraws_before": 1001
+  },
+  "notes": [
+    "Browser time includes request handling, UI and network round trips. Backend time is the pipeline measurement.",
+    "Each measurement clears chat and waits for an empty DOM before submitting.",
+    "The user-reported nine seconds was not reproduced. These three samples do not establish p95 latency or an SLA.",
+    "No documents, retrieval parameters or model were changed for this latency update."
+  ]
+}

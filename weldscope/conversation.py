@@ -25,6 +25,31 @@ FOLLOW_UP = re.compile(
 )
 
 
+SCOPE_REPLY = (
+    "I can answer questions supported by the bundled friction stir welding documents. "
+    "I can't assess a real vessel's condition, determine whether it is safe, or advise "
+    "on a live operational incident. Please ask a general question about the corpus."
+)
+
+
+def is_live_operational_request(text):
+    vessel = re.search(r"\b(?:ship|boat|vessel|yacht|ferry|hull)\b", text)
+    live = re.search(
+        r"\b(?:i am on|i'm on|we are on|we're on|aboard|onboard|my ship|our ship|my boat|our boat|this vessel|right now|currently|soon)\b",
+        text,
+    )
+    failure = re.search(
+        r"\b(?:sink|sinking|crack\w*|coming apart|coming loose|taking on water|flooding|failing|seaworth\w*|safe to sail)\b",
+        text,
+    )
+    assessment = re.search(r"\b(?:is (?:my|our|this) .{0,35}safe|can (?:we|i) .{0,30}sail)\b", text)
+    direct_incident = re.search(
+        r"\b(?:we|i)(?:'re| are|'m| am)?(?: might| may| could| will| are about to| am about to)?\s+(?:sink|sinking|taking on water)\b",
+        text,
+    )
+    return bool(direct_incident or (vessel and ((live and failure) or assessment)))
+
+
 def completed_history(messages, max_turns=10, character_budget=6000):
     """Keep complete successful exchanges; failed calls are never model context."""
     pairs = []
@@ -73,7 +98,7 @@ def _active_topic(history):
     for message in reversed(history):
         if message["role"] != "assistant":
             continue
-        if message.get("route") == "chat":
+        if message.get("route") in {"chat", "out_of_scope"}:
             return None
         if message.get("route") == "research":
             return message.get("retrieval_query")
@@ -84,6 +109,8 @@ def plan_conversation(question, history=None):
     """Handle known social/product questions locally; retrieve only for research."""
     text = re.sub(r"\s+", " ", question.lower()).strip().rstrip(".!? ")
     text = text.replace("what's", "what is").replace("who's", "who is")
+    if is_live_operational_request(text):
+        return ConversationPlan("out_of_scope", SCOPE_REPLY)
     if re.fullmatch(
         r"(?:hi|hey|hello|hiya|good (?:morning|afternoon|evening))(?: there| weldscope)?(?:[,! ]+how are you)?",
         text,
@@ -123,7 +150,10 @@ def plan_conversation(question, history=None):
         return ConversationPlan(
             "local", "Which welding process or defect would you like me to explain?"
         )
-    return ConversationPlan("chat")
+    return ConversationPlan(
+        "out_of_scope",
+        "I can only answer questions grounded in the bundled friction stir welding documents. Ask about the corpus, its sources, or how WeldScope works.",
+    )
 
 
 def needs_sensor_context(question):

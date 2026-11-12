@@ -83,7 +83,7 @@ class RAGPipeline:
         timings["total_ms"] = response.latency_ms
         usage = (
             getattr(self.generator, "last_usage", None)
-            if response.metadata["route"] != "local"
+            if response.metadata["route"] == "research"
             else None
         )
         usage = usage if isinstance(usage, dict) else None
@@ -109,59 +109,62 @@ class RAGPipeline:
         self, question: str, stream: bool, on_chunk=None, history=None, sensor_context=""
     ) -> RAGResponse:
         started = perf_counter()
-        timings = dict(retrieval_ms=0.0, reranking_ms=0.0, generation_ms=0.0, first_token_ms=None)
+        timings = dict(
+            initialization_ms=0.0,
+            retrieval_ms=0.0,
+            reranking_ms=0.0,
+            generation_ms=0.0,
+            render_ms=0.0,
+            first_token_ms=None,
+            first_token_total_ms=None,
+        )
         plan = plan_conversation(question, history)
         retrieved_docs = []
         reranked_docs = []
-        if plan.kind == "local":
+        if plan.kind in {"local", "out_of_scope"}:
             answer = plan.answer
-            if "model" in question.lower():
+            if plan.kind == "local" and "model" in question.lower():
                 answer += f"\n\nConfigured generation model: `{self.config.generation_model}`, served by Groq."
             if on_chunk:
                 on_chunk(answer)
-        else:
-            if plan.kind == "research":
-                if self.retriever is None and self.retriever_loader:
-                    self.retriever = self.retriever_loader()
-                if self.retriever is None:
-                    raise RetrievalError("The document collection is unavailable.")
-                retrieval_started = perf_counter()
-                retrieved_docs = self.retriever.retrieve(plan.retrieval_query)
-                timings["retrieval_ms"] = (perf_counter() - retrieval_started) * 1000
-                if self.tracer:
-                    self.tracer.log_retrieval(
-                        plan.retrieval_query, len(retrieved_docs), (perf_counter() - started) * 1000
-                    )
-                if not retrieved_docs:
-                    raise RetrievalError("No documents retrieved")
-                rerank_started = perf_counter()
-                reranked_docs = self.reranker.rerank(
-                    plan.retrieval_query, retrieved_docs, top_k=self.config.rerank_top_k
+        elif plan.kind == "research":
+            if self.retriever is None and self.retriever_loader:
+                init_started = perf_counter()
+                self.retriever = self.retriever_loader()
+                timings["initialization_ms"] = (perf_counter() - init_started) * 1000
+            if self.retriever is None:
+                raise RetrievalError("The document collection is unavailable.")
+            retrieval_started = perf_counter()
+            retrieved_docs = self.retriever.retrieve(plan.retrieval_query)
+            timings["retrieval_ms"] = (perf_counter() - retrieval_started) * 1000
+            if self.tracer:
+                self.tracer.log_retrieval(
+                    plan.retrieval_query, len(retrieved_docs), (perf_counter() - started) * 1000
                 )
-                timings["reranking_ms"] = (perf_counter() - rerank_started) * 1000
-                context = self._format_context(reranked_docs)
-                if sensor_context:
-                    context += (
-                        "\n\nBundled example sensor log (not a live feed):\n" + sensor_context
-                    )
-                # Only referential follow-ups carry the focused topic into generation.
-                prompt = self.generator.create_prompt(plan.retrieval_query, context)
-            else:
-                prompt = (
-                    "Reply conversationally to the current message. No documents were "
-                    "retrieved for this turn, so do not present claims as sourced evidence. "
-                    "For unrelated factual questions, briefly explain your welding scope.\n\n"
-                    f"Current message: {question}"
-                )
+            if not retrieved_docs:
+                raise RetrievalError("No documents retrieved")
+            rerank_started = perf_counter()
+            reranked_docs = self.reranker.rerank(
+                plan.retrieval_query, retrieved_docs, top_k=self.config.rerank_top_k
+            )
+            timings["reranking_ms"] = (perf_counter() - rerank_started) * 1000
+            context = self._format_context(reranked_docs)
+            if sensor_context:
+                context += "\n\nBundled example sensor log (not a live feed):\n" + sensor_context
+            # Only referential follow-ups carry the focused topic into generation.
+            prompt = self.generator.create_prompt(plan.retrieval_query, context)
             generation_started = perf_counter()
             if stream:
                 chunks = []
                 for chunk in self.generator.stream(prompt, history=history):
                     if timings["first_token_ms"] is None:
                         timings["first_token_ms"] = (perf_counter() - generation_started) * 1000
+                        timings["first_token_total_ms"] = (perf_counter() - started) * 1000
                     chunks.append(chunk)
                     if on_chunk:
+                        render_started = perf_counter()
                         on_chunk(chunk)
+                        timings["render_ms"] += (perf_counter() - render_started) * 1000
                 answer = "".join(chunks)
             else:
                 answer = self.generator.generate(prompt, history=history)
@@ -198,14 +201,8 @@ class RAGPipeline:
         """Legacy chunk API; use query(on_chunk=...) when citations are needed."""
         history = completed_history(history or [])
         plan = plan_conversation(question, history)
-        if plan.kind == "local":
+        if plan.kind in {"local", "out_of_scope"}:
             yield plan.answer
-            return
-        if plan.kind == "chat":
-            yield from self.generator.stream(
-                "Reply conversationally without claiming document evidence. " + question,
-                history=history,
-            )
             return
         if self.retriever is None and self.retriever_loader:
             self.retriever = self.retriever_loader()

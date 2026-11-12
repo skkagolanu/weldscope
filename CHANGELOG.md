@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## [Unreleased] - 2026-11-12
+
+- Enforce corpus-only generation; unsupported and live operational-assessment requests receive immediate local scope refusals without emergency/repair advice.
+- Batch streaming redraws while preserving the first chunk and exact final text.
+- Remove the redundant successful-turn rerun; preserve current-run citations, feedback and counters.
+- Keep default corpus answers concise without dropping evidence or changing retrieval/reranking.
+- Separate initialization, rendering, generation and first-text timing, and add a reproducible hosted latency harness and evidence report.
+
 ## [Unreleased] - 2026-11-11
 
 - Require Python 3.12 across package metadata, local configuration, Docker, dev container and CI.

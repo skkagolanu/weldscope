@@ -6,7 +6,7 @@ A research assistant for **friction stir welding (FSW)** defects, causes, and co
 
 ## What it does
 
-- Answers greetings and questions about WeldScope and its sources locally, without inference calls or document search.
+- Answers greetings and questions about WeldScope and its sources locally, without inference calls or document search. Other unsupported requests receive a brief local scope refusal, including requests to assess real equipment or handle a live incident.
 - Searches five bundled research PDFs using BM25S keyword retrieval and Chroma semantic search, then reranks passages with a cross-encoder.
 - Uses Groq to generate streamed answers with inspectable source passages. The prompt asks it to abstain when evidence is insufficient; answer quality has not yet been benchmarked.
 - Keeps up to ten completed exchanges within a bounded context budget. Search queries stay separate from chat history and sensor summaries; failed exchanges are excluded.
@@ -61,7 +61,7 @@ New chunks receive deterministic IDs from their source, page and text. Existing 
 
 ## Verification
 
-The current Python 3.12 suite passes 140 tests with 96.81% package coverage.
+The Python 3.12 suite includes regression tests for corpus-only routing, fast scope refusals, and bounded streaming redraws.
 
 ```bash
 pytest tests/ --cov-fail-under=90
@@ -92,6 +92,6 @@ A labeled retrieval/answer-quality benchmark, measured quality regression gates,
 
 ## Code layout
 
-`weldscope/` contains configuration, ingestion, retrieval, generation, conversation routing, orchestration, monitoring, tracing and optional evaluation. `app.py` is the Streamlit entrypoint. See [architecture](docs/architecture.md), [Streamlit documentation assessment](docs/streamlit-review.md), [dependency maintenance](docs/dependencies.md), and [hosting recovery](docs/hosting.md).
+`weldscope/` contains configuration, ingestion, retrieval, generation, conversation routing, orchestration, monitoring, tracing and optional evaluation. `app.py` is the Streamlit entrypoint. See [architecture](docs/architecture.md), [Streamlit documentation assessment](docs/streamlit-review.md), [dependency maintenance](docs/dependencies.md), [latency measurements](docs/latency.md), and [hosting recovery](docs/hosting.md).
 
 MIT License · Sai Karthik Kagolanu

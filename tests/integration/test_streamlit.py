@@ -72,7 +72,7 @@ def test_greeting_and_about_work_without_credentials_or_document_initialization(
         assert not app.exception
         assert not app.error
         assert "BM25" in app.chat_message[-1].markdown[0].value
-        assert not app.expander  # No fictitious source citations for a local reply.
+        assert all(not e.label.startswith("Source") for e in app.expander)
         load.assert_not_called()
         generate.assert_not_called()
     st.cache_resource.clear()

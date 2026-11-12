@@ -15,6 +15,7 @@ deployment
 hosting
 streamlit-review
 dependencies
+latency
 ```
 
 ## Features
