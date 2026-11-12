@@ -65,6 +65,8 @@ async def assess(args):
         metrics_runner_sha256=digest(Path(__file__).parent / "quality.py"),
         dependency_lock_sha256=digest(Path(__file__).parent / "requirements.lock"),
         judge_options=judge_options(args.judge_model),
+        embedding_adapter_sha256=digest(Path(__file__).parent / "embeddings.py"),
+        embedding_runtime_sha256=digest(Path("weldscope/core/local_models.py")),
         embedding_artifacts={
             name: digest(Path("models/embedding") / name)
             for name in ["model.onnx", "vocab.txt", "config.json"]
