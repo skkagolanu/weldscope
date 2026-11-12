@@ -4,16 +4,29 @@ on:
   workflow_dispatch:
     inputs:
       limit:
-        description: Number of development cases (1-50); native metrics make several judge calls per case
+        description: Number of selected development cases (1-50)
         required: true
-        default: '50'
+        default: '8'
+      case_ids:
+        description: Comma-separated IDs, or blank for the dataset prefix
+        default: FSW-001,FSW-011,FSW-021,FSW-029,FSW-035,FSW-044,FSW-045,FSW-047
       judge_model:
-        description: Groq judge model, separate from the answer model
+        description: Groq judge model separate from the answer model
         required: true
         default: openai/gpt-oss-120b
+      token_budget:
+        description: Maximum reported judge tokens for this run
+        default: '100000'
+      samples_run_id:
+        description: Optional prior run to reuse generated answers without metric resumption
+        default: ''
+      resume_run_id:
+        description: Optional compatible prior run to resume metric checkpoints and reuse answers
+        default: ''
 
 permissions:
   contents: read
+  actions: read
 
 jobs:
   semantic-assessment:
@@ -48,15 +61,49 @@ jobs:
           .venv/bin/pip install -r requirements.txt
           python -m venv .venv-eval
           .venv-eval/bin/pip install -r evaluation/requirements.txt
+      - name: Restore assessment inputs and checkpoint
+        if: inputs.samples_run_id != '' || inputs.resume_run_id != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SAMPLES_RUN: ${{ inputs.samples_run_id }}
+          RESUME_RUN: ${{ inputs.resume_run_id }}
+        run: |
+          python - <<'PY'
+          import os,subprocess,shutil
+          from pathlib import Path
+          if os.environ['SAMPLES_RUN'] and os.environ['RESUME_RUN']:
+              raise SystemExit('Choose sample reuse or checkpoint resumption, not both')
+          run=os.environ['RESUME_RUN'] or os.environ['SAMPLES_RUN']
+          if not run.isdigit():raise SystemExit('Run ID must be numeric')
+          subprocess.run(['gh','run','download',run,'--repo',os.environ['GITHUB_REPOSITORY'],'-n','ragas-answer-assessment','-D','artifacts/restored'],check=True)
+          shutil.copy2('artifacts/restored/assessment-samples.json','artifacts/assessment-samples.json')
+          if os.environ['RESUME_RUN']:
+              folder=Path('artifacts/restored/ragas-answers')
+              source=folder/'report.json' if (folder/'report.json').exists() else folder/'progress.json'
+              shutil.copy2(source,'artifacts/resume.json')
+          PY
       - name: Generate real pipeline answers from versioned cases
+        if: inputs.samples_run_id == '' && inputs.resume_run_id == ''
+        timeout-minutes: 15
         env:
           ASSESSMENT_LIMIT: ${{ inputs.limit }}
-        run: .venv/bin/python scripts/export_assessment_samples.py --limit "$ASSESSMENT_LIMIT" --output artifacts/assessment-samples.json
+          CASE_IDS: ${{ inputs.case_ids }}
+        run: .venv/bin/python scripts/export_assessment_samples.py --limit "$ASSESSMENT_LIMIT" --case-ids "$CASE_IDS" --output artifacts/assessment-samples.json
       - name: Run native RAGAS semantic metrics
+        timeout-minutes: 60
         env:
           ASSESSMENT_LIMIT: ${{ inputs.limit }}
+          CASE_IDS: ${{ inputs.case_ids }}
           JUDGE_MODEL: ${{ inputs.judge_model }}
-        run: .venv-eval/bin/python -m evaluation.run_answers --samples artifacts/assessment-samples.json --limit "$ASSESSMENT_LIMIT" --judge-model "$JUDGE_MODEL" --output artifacts/ragas-answers
+          TOKEN_BUDGET: ${{ inputs.token_budget }}
+          RESUME_RUN: ${{ inputs.resume_run_id }}
+        run: |
+          python - <<'PY'
+          import os,subprocess
+          command=['.venv-eval/bin/python','-m','evaluation.run_answers','--samples','artifacts/assessment-samples.json','--limit',os.environ['ASSESSMENT_LIMIT'],'--case-ids',os.environ['CASE_IDS'],'--judge-model',os.environ['JUDGE_MODEL'],'--token-budget',os.environ['TOKEN_BUDGET'],'--output','artifacts/ragas-answers']
+          if os.environ['RESUME_RUN']:command+=['--resume','artifacts/resume.json']
+          subprocess.run(command,check=True)
+          PY
       - uses: actions/upload-artifact@v4
         if: always()
         with:

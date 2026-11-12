@@ -22,6 +22,7 @@ def main():
     parser.add_argument("--output", type=Path, default=ROOT / "artifacts/assessment-samples.json")
     parser.add_argument("--limit", type=int, choices=range(1, 51), default=50)
     parser.add_argument("--request-interval", type=float, default=2.1)
+    parser.add_argument("--case-ids", default="")
     args = parser.parse_args()
     if args.request_interval < 0:
         parser.error("Request interval must be non-negative")
@@ -33,6 +34,17 @@ def main():
     for name, data in dataset["corpus"].items():
         if hashlib.sha256((ROOT / "data" / name).read_bytes()).hexdigest() != data["sha256"]:
             raise SystemExit("Corpus fingerprints changed; review the dataset before assessment.")
+    selected = dataset["cases"][: args.limit]
+    if args.case_ids:
+        identifiers = [value.strip() for value in args.case_ids.split(",") if value.strip()]
+        by_id = {case["id"]: case for case in dataset["cases"]}
+        if (
+            len(identifiers) != args.limit
+            or len(set(identifiers)) != len(identifiers)
+            or not set(identifiers) <= set(by_id)
+        ):
+            raise SystemExit("Case IDs must be unique dataset IDs and match the requested limit")
+        selected = [by_id[identifier] for identifier in identifiers]
     config = RAGConfig(_env_file=None, langfuse_enabled=False)
     payload = dict(
         dataset_sha256=hashlib.sha256(args.dataset.read_bytes()).hexdigest(),
@@ -52,12 +64,13 @@ def main():
         )
         pipeline = RAGPipeline(retriever, config)
         try:
-            for case in dataset["cases"][: args.limit]:
+            for case in selected:
                 try:
                     response = pipeline.query(case["question"], history=case["history"])
                     payload["samples"].append(
                         dict(
                             id=case["id"],
+                            category=case["category"],
                             question=case["question"],
                             response=response.answer,
                             reference=case["reference_answer"] if case["answerable"] else None,

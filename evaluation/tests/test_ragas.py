@@ -124,7 +124,8 @@ class NativeRagasTests(unittest.IsolatedAsyncioTestCase):
             on_progress=lambda rows: checkpoints.append(len(rows)),
             error_budget=1,
         )
-        self.assertEqual(checkpoints, [1])
+        self.assertTrue(checkpoints)
+        self.assertTrue(all(count == 1 for count in checkpoints))
         self.assertFalse(report["complete"])
         self.assertEqual(len(report["results"]), 3)
         self.assertEqual(
@@ -174,6 +175,125 @@ class GroqTransportContract(unittest.IsolatedAsyncioTestCase):
                 llm = make_judge(client, "openai/gpt-oss-120b")
                 reply = await llm.agenerate("Return the contract fixture", Reply)
                 self.assertEqual(reply.answer, "fixture")
+
+
+class RatePacingContract(unittest.IsolatedAsyncioTestCase):
+    async def test_quota_headers_delay_until_reset(self):
+        import httpx
+        from evaluation.pacing import RequestPacer
+
+        now = [100.0]
+        delays = []
+
+        async def sleep(seconds):
+            delays.append(seconds)
+            now[0] += seconds
+
+        pacer = RequestPacer(0)
+        pacer.estimate = lambda request: 300
+        with (
+            patch("evaluation.pacing.monotonic", side_effect=lambda: now[0]),
+            patch("evaluation.pacing.asyncio.sleep", side_effect=sleep),
+        ):
+            await pacer.response(
+                httpx.Response(
+                    200,
+                    headers={
+                        "x-ratelimit-remaining-tokens": "100",
+                        "x-ratelimit-limit-tokens": "8000",
+                        "x-ratelimit-reset-tokens": "1m2s",
+                    },
+                    json={"usage": {"total_tokens": 12}},
+                )
+            )
+            await pacer.request(
+                httpx.Request("POST", "https://example.invalid", content=b"fixture")
+            )
+        self.assertGreaterEqual(sum(delays), 62)
+        self.assertEqual(pacer.observed_token_limit, 8000)
+
+    async def test_retry_after_replays_a_429_then_succeeds(self):
+        import httpx
+        from evaluation.pacing import RequestPacer, QuotaTransport
+
+        calls = []
+        delays = []
+
+        def handle(request):
+            calls.append(request.content)
+            return (
+                httpx.Response(429, headers={"retry-after": ".5"}, json={})
+                if len(calls) == 1
+                else httpx.Response(200, json={"usage": {"total_tokens": 20}})
+            )
+
+        async def sleep(seconds):
+            delays.append(seconds)
+
+        pacer = RequestPacer(0)
+        pacer.estimate = lambda request: 100
+        transport = QuotaTransport(pacer, inner=httpx.MockTransport(handle))
+        with patch("evaluation.pacing.asyncio.sleep", side_effect=sleep):
+            async with httpx.AsyncClient(transport=transport) as client:
+                result = await client.post("https://example.invalid", json={"messages": []})
+        self.assertEqual(result.status_code, 200)
+        self.assertEqual(calls[0], calls[1])
+        self.assertGreaterEqual(sum(delays), 0.5)
+        self.assertEqual(pacer.status_counts, {"429": 1, "200": 1})
+        self.assertEqual(pacer.usage["total_tokens"], 20)
+
+    async def test_token_budget_defers_before_any_request(self):
+        import httpx
+        from evaluation.pacing import RequestPacer, QuotaDeferred
+
+        pacer = RequestPacer(0, token_budget=10)
+        pacer.estimate = lambda request: 20
+        with self.assertRaises(QuotaDeferred):
+            await pacer.request(httpx.Request("POST", "https://example.invalid"))
+        self.assertEqual(pacer.requests, 0)
+
+    async def test_completed_native_metric_is_reused_on_resume(self):
+        judge = JudgeStub()
+        with patch.object(judge, "agenerate", new_callable=AsyncMock) as generate:
+            report = await answer_scores(
+                [
+                    dict(
+                        id="one",
+                        question="Cook",
+                        response="Out of scope",
+                        contexts=[],
+                        answerable=False,
+                    )
+                ],
+                judge,
+                EmbeddingStub(),
+                resume_rows=[dict(id="one", scores={"scope_adherence": 5}, errors={}, skipped={})],
+            )
+        self.assertTrue(report["complete"])
+        generate.assert_not_called()
+
+    async def test_resume_rejects_unbound_inputs(self):
+        from evaluation.run_answers import assess
+        from types import SimpleNamespace
+        import os
+
+        with tempfile.TemporaryDirectory() as directory:
+            samples = Path(directory) / "samples.json"
+            samples.write_text(json.dumps({"samples": [{"id": "one"}]}))
+            resume = Path(directory) / "progress.json"
+            resume.write_text(json.dumps({"assessment_fingerprint": "different"}))
+            args = SimpleNamespace(
+                samples=samples,
+                limit=1,
+                judge_model="judge",
+                embedding_model="embedding",
+                resume=resume,
+            )
+            with (
+                patch.dict(os.environ, {"GROQ_API_KEY": "local-test-placeholder"}),
+                self.assertRaisesRegex(ValueError, "fingerprint"),
+            ):
+                await assess(args)
 
 
 if __name__ == "__main__":

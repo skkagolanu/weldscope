@@ -99,7 +99,14 @@ async def retrieval_scores(rankings_path, dataset_path, thresholds=None):
 
 
 async def answer_scores(
-    samples, llm, embeddings, *, minimum_interval=0, on_progress=None, error_budget=5
+    samples,
+    llm,
+    embeddings,
+    *,
+    minimum_interval=0,
+    on_progress=None,
+    error_budget=5,
+    resume_rows=None,
 ):
     """Use native collections metrics; skipped references and failed metrics stay explicit."""
     from ragas.metrics.collections import (
@@ -128,6 +135,11 @@ async def answer_scores(
             },
         ),
     }
+    resume_by_id = {row["id"]: row for row in (resume_rows or [])}
+    if len(resume_by_id) != len(resume_rows or []) or not set(resume_by_id) <= {
+        sample["id"] for sample in samples
+    }:
+        raise ValueError("Resume rows do not match selected samples")
     rows = []
     for sample in samples:
         if (
@@ -162,8 +174,20 @@ async def answer_scores(
                 retrieved_contexts=sample.get("contexts") or None,
             ),
         }
-        row = dict(id=sample["id"], scores={}, errors={}, skipped={})
+        prior = resume_by_id.get(sample["id"], {})
+        cached = dict(prior.get("scores", {}))
+        for name, value in cached.items():
+            if (
+                name not in metrics
+                or not isinstance(value, (int, float))
+                or not math.isfinite(value)
+                or not metrics[name].allowed_values[0] <= value <= metrics[name].allowed_values[1]
+            ):
+                raise ValueError("Invalid cached metric score")
+        row = dict(id=sample["id"], scores=cached, errors={}, skipped={})
         for name, metric in metrics.items():
+            if name in row["scores"]:
+                continue
             if name != "scope_adherence" and not sample.get("answerable", True):
                 row["skipped"][name] = "unsupported_case_use_scope_rubric"
                 continue
@@ -186,6 +210,8 @@ async def answer_scores(
             except Exception as error:
                 # Raw provider errors may contain request data; retain only the class.
                 row["errors"][name] = type(error).__name__
+            if on_progress:
+                on_progress(rows + [row])
             if minimum_interval:
                 await asyncio.sleep(minimum_interval)
         rows.append(row)

@@ -7,48 +7,25 @@ import json
 import os
 import platform
 from pathlib import Path
-from time import monotonic
 
 from evaluation.quality import answer_scores, digest
 
 
-class RequestPacer:
-    def __init__(self, interval):
-        self.interval = interval
-        self.last = 0.0
-        self.lock = asyncio.Lock()
-        self.requests = 0
-        self.usage_reports = 0
-        self.usage = {"prompt_tokens": 0, "completion_tokens": 0, "total_tokens": 0}
+from evaluation.pacing import RequestPacer, QuotaTransport
 
-    async def request(self, request):
-        async with self.lock:
-            await asyncio.sleep(max(0, self.interval - (monotonic() - self.last)))
-            self.last = monotonic()
-            self.requests += 1
 
-    async def response(self, response):
-        await response.aread()
-        if response.is_success:
-            try:
-                usage = response.json().get("usage") or {}
-                if isinstance(usage.get("total_tokens"), int):
-                    self.usage_reports += 1
-                for key in self.usage:
-                    value = usage.get(key)
-                    if isinstance(value, int):
-                        self.usage[key] += value
-            except (ValueError, AttributeError):
-                pass
+def judge_options(model):
+    options = dict(temperature=0, max_completion_tokens=4096, max_retries=2)
+    if model.startswith("openai/gpt-oss-"):
+        options.update(reasoning_effort="low", include_reasoning=False)
+    return options
 
 
 def make_judge(client, model):
     from instructor import Mode, from_groq
     from ragas.llms import InstructorLLM
 
-    options = dict(temperature=0, max_completion_tokens=4096)
-    if model.startswith("openai/gpt-oss-"):
-        options.update(reasoning_effort="low", include_reasoning=False)
+    options = judge_options(model)
     # RAGAS 0.4.3's generic Groq factory incorrectly expects client.messages.
     # Use the supported Instructor Groq client and public RAGAS wrapper directly.
     llm = InstructorLLM(
@@ -73,13 +50,34 @@ async def assess(args):
 
     payload = json.loads(args.samples.read_text())
     samples = payload["samples"][: args.limit]
+    selected_ids = [
+        value.strip() for value in getattr(args, "case_ids", "").split(",") if value.strip()
+    ]
+    if selected_ids and selected_ids != [sample["id"] for sample in samples]:
+        raise ValueError("Requested case IDs differ from saved samples")
     if payload.get("failures") or len(samples) != args.limit:
         raise ValueError("Incomplete generation samples; review failures before scoring")
-    pacer = RequestPacer(args.request_interval)
-    async with httpx.AsyncClient(
-        event_hooks={"request": [pacer.request], "response": [pacer.response]}
-    ) as transport:
-        async with AsyncGroq(http_client=transport, timeout=60, max_retries=1) as client:
+    binding = dict(
+        samples_sha256=digest(args.samples),
+        selected_ids=[s["id"] for s in samples],
+        judge_model=args.judge_model,
+        embedding_model=args.embedding_model,
+        metrics_runner_sha256=digest(Path(__file__).parent / "quality.py"),
+        dependency_lock_sha256=digest(Path(__file__).parent / "requirements.lock"),
+        judge_options=judge_options(args.judge_model),
+    )
+    fingerprint = (
+        __import__("hashlib").sha256(json.dumps(binding, sort_keys=True).encode()).hexdigest()
+    )
+    resume_rows = []
+    if args.resume:
+        saved = json.loads(args.resume.read_text())
+        if saved.get("assessment_fingerprint") != fingerprint:
+            raise ValueError("Resume fingerprint differs from inputs, model or metric definitions")
+        resume_rows = saved.get("results", [])
+    pacer = RequestPacer(args.request_interval, args.tokens_per_minute, args.token_budget)
+    async with httpx.AsyncClient(transport=QuotaTransport(pacer)) as transport:
+        async with AsyncGroq(http_client=transport, timeout=60, max_retries=0) as client:
             llm = make_judge(client, args.judge_model)
             embeddings = HuggingFaceEmbeddings(model=args.embedding_model, device="cpu")
 
@@ -93,7 +91,13 @@ async def assess(args):
                             "complete": False,
                             "status": "in_progress",
                             "requested_samples": len(samples),
-                            "completed_samples": len(rows),
+                            "rows_with_progress": len(rows),
+                            "completed_samples": sum(
+                                len(row["scores"]) + len(row["skipped"]) == 6 and not row["errors"]
+                                for row in rows
+                            ),
+                            "assessment_fingerprint": fingerprint,
+                            "binding": binding,
                             "results": rows,
                         },
                         indent=2,
@@ -103,17 +107,30 @@ async def assess(args):
                 temporary.replace(args.output / "progress.json")
 
             report = await answer_scores(
-                samples, llm, embeddings, on_progress=checkpoint, error_budget=args.error_budget
+                samples,
+                llm,
+                embeddings,
+                on_progress=checkpoint,
+                error_budget=args.error_budget,
+                resume_rows=resume_rows,
             )
     report.update(
+        assessment_fingerprint=fingerprint,
+        binding=binding,
+        resumed_from_sha256=digest(args.resume) if args.resume else None,
         judge_model=args.judge_model,
         embedding_model=args.embedding_model,
         samples_sha256=digest(args.samples),
         provider_requests=pacer.requests,
         reported_token_usage=pacer.usage if pacer.usage_reports else None,
         responses_reporting_usage=pacer.usage_reports,
+        provider_status_counts=pacer.status_counts,
+        observed_token_limit_per_minute=pacer.observed_token_limit,
         request_interval_seconds=args.request_interval,
         error_budget=args.error_budget,
+        token_budget=args.token_budget,
+        tokens_per_minute=args.tokens_per_minute,
+        deferred_reason=pacer.deferred_reason,
         dataset_sha256=payload.get("dataset_sha256"),
         generation_model=payload.get("generation_model"),
         lock_sha256=digest(Path(__file__).parent / "requirements.lock"),
@@ -121,6 +138,9 @@ async def assess(args):
         metrics_runner_sha256=digest(Path(__file__).parent / "quality.py"),
         python=platform.python_version(),
         source_commit=os.environ.get("GITHUB_SHA"),
+        selected_cases=len(samples),
+        selected_categories=sorted({sample.get("category", "unknown") for sample in samples}),
+        coverage_policy="Report descriptive quality only from complete eligible metrics; a pilot is integration evidence, not a population quality estimate.",
         limitations="Model-judged, provisional development labels; no human calibration or universal factual guarantee. Native scope rubric uses 1-5; other metrics retain their native scales.",
     )
     return report
@@ -137,7 +157,13 @@ def main():
     parser.add_argument("--limit", type=int, choices=range(1, 51), default=50)
     parser.add_argument("--request-interval", type=float, default=2.1)
     parser.add_argument("--error-budget", type=int, default=5)
+    parser.add_argument("--tokens-per-minute", type=int, default=6000)
+    parser.add_argument("--token-budget", type=int, default=100000)
+    parser.add_argument("--resume", type=Path)
+    parser.add_argument("--case-ids", default="")
     args = parser.parse_args()
+    if args.token_budget < 1 or args.tokens_per_minute < 1:
+        parser.error("Quota budgets must be positive")
     if args.error_budget < 1:
         parser.error("Error budget must be positive")
     if args.request_interval < 0:
@@ -159,7 +185,14 @@ def main():
                         skipped=row["skipped"].get(metric),
                     )
                 )
-    print(json.dumps({key: report[key] for key in ["framework", "complete", "summary"]}, indent=2))
+    published = {key: report[key] for key in ["framework", "complete"]}
+    published["coverage"] = {
+        name: {key: value for key, value in data.items() if key != "mean"}
+        for name, data in report["summary"].items()
+    }
+    if report["complete"] and args.limit >= 8:
+        published["summary"] = report["summary"]
+    print(json.dumps(published, indent=2))
     if not report["complete"]:
         raise SystemExit(1)
 
