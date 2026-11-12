@@ -1,0 +1,64 @@
+name: RAGAS Answer Assessment
+
+on:
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: Number of development cases (1-50); native metrics make several judge calls per case
+        required: true
+        default: '50'
+      judge_model:
+        description: Groq judge model, separate from the answer model
+        required: true
+        default: openai/gpt-oss-120b
+
+permissions:
+  contents: read
+
+jobs:
+  semantic-assessment:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    env:
+      GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+      PYTHONPATH: .
+      RAGAS_DO_NOT_TRACK: 'true'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify private judge configuration
+        run: |
+          python - <<'PY'
+          import os
+          if not os.environ.get('GROQ_API_KEY'):
+              raise SystemExit('Configure the GROQ_API_KEY repository Actions secret; no provider calls were made.')
+          PY
+      - name: Cache wheels and public model weights
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cache/pip
+            ~/.cache/huggingface
+          key: ragas-answers-${{ runner.os }}-${{ hashFiles('requirements.txt', 'constraints.txt', 'evaluation/requirements.lock') }}
+      - name: Install separate application and assessment environments
+        run: |
+          python -m venv .venv
+          .venv/bin/pip install -r requirements.txt
+          python -m venv .venv-eval
+          .venv-eval/bin/pip install -r evaluation/requirements.txt
+      - name: Generate real pipeline answers from versioned cases
+        env:
+          ASSESSMENT_LIMIT: ${{ inputs.limit }}
+        run: .venv/bin/python scripts/export_assessment_samples.py --limit "$ASSESSMENT_LIMIT" --output artifacts/assessment-samples.json
+      - name: Run native RAGAS semantic metrics
+        env:
+          ASSESSMENT_LIMIT: ${{ inputs.limit }}
+          JUDGE_MODEL: ${{ inputs.judge_model }}
+        run: .venv-eval/bin/python -m evaluation.run_answers --samples artifacts/assessment-samples.json --limit "$ASSESSMENT_LIMIT" --judge-model "$JUDGE_MODEL" --output artifacts/ragas-answers
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ragas-answer-assessment
+          path: artifacts/

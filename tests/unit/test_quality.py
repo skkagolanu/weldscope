@@ -7,24 +7,10 @@ import pytest
 from langchain_core.documents import Document
 from weldscope.conversation import plan_conversation
 from weldscope.core.config import RAGConfig
-from weldscope.evaluation.retrieval_metrics import anchor_metrics
 from weldscope.generation.validation import check_answer
 from weldscope.monitoring.telemetry import record_event
 from weldscope.pipeline.pipeline import RAGPipeline
 from weldscope.retrieval.retriever import HybridRetriever
-
-
-def test_duplicate_pages_do_not_inflate_metrics():
-    documents = [Document(page_content="A", metadata={"source": "data/a.pdf", "page": 0})] * 2
-    documents += [Document(page_content="B", metadata={"source": "data/a.pdf", "page": 1})]
-    metrics = anchor_metrics(
-        documents, [{"source": "a.pdf", "page": 1}, {"source": "a.pdf", "page": 2}]
-    )
-    assert metrics["recall"] == 1
-    assert metrics["mrr"] == 1
-    assert metrics["ndcg"] < 1
-    with pytest.raises(ValueError):
-        anchor_metrics([], [])
 
 
 def test_all_versioned_routing_cases():
@@ -141,16 +127,3 @@ def test_current_corpus_excludes_missing_files_and_out_of_range_pages(tmp_path):
         assert [document.id for document in documents] == ["valid"]
         with pytest.raises(ConfigurationError, match="No index passages"):
             builder.load_vectorstore(str(tmp_path), corpus_directory=str(tmp_path / "absent"))
-
-
-def test_regression_gate_rejects_metric_route_and_dataset_regressions():
-    from weldscope.evaluation.retrieval_metrics import regression_failures
-
-    thresholds = {
-        "dataset_sha256": "frozen",
-        "minimum": {"hybrid": {"recall": 0.5}},
-        "routing_accuracy": 1.0,
-    }
-    assert not regression_failures({"hybrid": {"recall": 0.5}}, 1, "frozen", thresholds)
-    failures = regression_failures({"hybrid": {"recall": 0.4}}, 0.9, "changed", thresholds)
-    assert len(failures) == 3

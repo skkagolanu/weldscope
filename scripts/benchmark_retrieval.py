@@ -18,7 +18,7 @@ from time import perf_counter
 
 from weldscope.conversation import plan_conversation
 from weldscope.core.config import RAGConfig
-from weldscope.evaluation.retrieval_metrics import anchor_metrics, page_key, regression_failures
+
 from weldscope.ingestion.builder import VectorStoreBuilder
 from weldscope.retrieval.retriever import HybridRetriever
 from weldscope.retrieval.reranker import Reranker
@@ -30,7 +30,11 @@ def digest(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
-def run(dataset_path, output, gate=None):
+def page_key(document):
+    return (Path(document.metadata.get("source", "")).name, document.metadata.get("page", -1) + 1)
+
+
+def run(dataset_path, output):
     dataset = json.loads(dataset_path.read_text())
     for name, fingerprint in dataset["corpus"].items():
         if digest(ROOT / "data" / name) != fingerprint["sha256"]:
@@ -85,7 +89,6 @@ def run(dataset_path, output, gate=None):
                     question=case["question"],
                     retrieval_query=query,
                     latency_ms=(perf_counter() - began) * 1000,
-                    **anchor_metrics(selected, case["evidence"]),
                 )
                 row["retrieved"] = [
                     dict(id=doc.id, source=page_key(doc)[0], page=page_key(doc)[1])
@@ -100,9 +103,6 @@ def run(dataset_path, output, gate=None):
     for variant, results in grouped.items():
         latency = sorted(row["latency_ms"] for row in results)
         summary[variant] = {
-            **{
-                metric: mean(row[metric] for row in results) for metric in ("recall", "mrr", "ndcg")
-            },
             "mean_latency_ms": mean(latency),
             "observed_p95_latency_ms": latency[min(len(latency) - 1, int(0.95 * len(latency)))],
             "cases": len(results),
@@ -154,13 +154,6 @@ def run(dataset_path, output, gate=None):
         summary=summary,
         results=rows,
     )
-    failures = []
-    if gate:
-        thresholds = json.loads(gate.read_text())
-        failures = regression_failures(
-            summary, report["routing_accuracy"], provenance["dataset_sha256"], thresholds
-        )
-    report["gate"] = dict(evaluated=bool(gate), passed=not failures, failures=failures)
     output.mkdir(parents=True, exist_ok=True)
     (output / "report.json").write_text(json.dumps(report, indent=2) + "\n")
     with (output / "results.csv").open("w", newline="") as handle:
@@ -171,12 +164,14 @@ def run(dataset_path, output, gate=None):
         )
     print(
         json.dumps(
-            dict(summary=summary, routing_accuracy=report["routing_accuracy"], gate=report["gate"]),
+            dict(
+                summary=summary,
+                routing_accuracy=report["routing_accuracy"],
+                assessment="Export only; score with evaluation.run_retrieval",
+            ),
             indent=2,
         )
     )
-    if failures:
-        raise SystemExit(1)
     return report
 
 
@@ -184,9 +179,8 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--dataset", type=Path, default=ROOT / "benchmarks/fsw-v1/questions.json")
     parser.add_argument("--output", type=Path, default=ROOT / "artifacts/retrieval")
-    parser.add_argument("--gate", type=Path)
     args = parser.parse_args()
-    run(args.dataset, args.output, args.gate)
+    run(args.dataset, args.output)
 
 
 if __name__ == "__main__":

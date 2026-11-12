@@ -1,0 +1,23 @@
+{
+  "framework": "ragas",
+  "dataset_sha256": "4d73bc960bdd57cdbe7cdb6ba2a925f2d889bd9a386d7092acc58b0d030a01d4",
+  "minimum": {
+    "bm25": {
+      "id_context_precision": 0.105,
+      "id_context_recall": 0.4575
+    },
+    "vector": {
+      "id_context_precision": 0.039583,
+      "id_context_recall": 0.22
+    },
+    "hybrid": {
+      "id_context_precision": 0.099583,
+      "id_context_recall": 0.4575
+    },
+    "reranked": {
+      "id_context_precision": 0.125,
+      "id_context_recall": 0.545
+    }
+  },
+  "policy": "Native RAGAS ID-based unique-page precision/recall; provisional positive anchors; 0.03 maximum absolute regression per metric. These are new metric definitions and a separate baseline from the historical custom MRR/nDCG report."
+}

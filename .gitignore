@@ -81,3 +81,6 @@ artifacts/
 
 # Streamlit deployment credentials
 .streamlit/secrets.toml
+
+# Isolated RAGAS assessment environment
+.venv-eval/

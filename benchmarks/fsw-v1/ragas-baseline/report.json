@@ -1,0 +1,1160 @@
+{
+  "timestamp": "2026-11-12T15:40:26.993230+00:00",
+  "framework": "ragas",
+  "ragas_version": "0.4.3",
+  "dataset_sha256": "4d73bc960bdd57cdbe7cdb6ba2a925f2d889bd9a386d7092acc58b0d030a01d4",
+  "rankings_sha256": "f4d1102552528b8d1190cc21f9ad3b5d5942cb0e32d062537f7a87c373ea7e70",
+  "lock_sha256": "920ab4a8831d7ecb27f6460109bb1d40d7a5e12457ce50c1da5036a7c58bbb30",
+  "metric_classes": {
+    "id_context_precision": "IDBasedContextPrecision",
+    "id_context_recall": "IDBasedContextRecall"
+  },
+  "protocol": "Native ID-based set precision/recall over unique physical PDF pages in top-five chunks; provisional positive anchors, not exhaustive relevance labels. No MRR/nDCG or semantic scores implied.",
+  "model_provider_calls": 0,
+  "answerable_cases": 40,
+  "results": [
+    {
+      "id": "FSW-001",
+      "variant": "bm25",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-001",
+      "variant": "vector",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-001",
+      "variant": "hybrid",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-001",
+      "variant": "reranked",
+      "category": "exact",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-002",
+      "variant": "bm25",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-002",
+      "variant": "vector",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-002",
+      "variant": "hybrid",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-002",
+      "variant": "reranked",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-003",
+      "variant": "bm25",
+      "category": "exact",
+      "id_context_precision": 0.25,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-003",
+      "variant": "vector",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-003",
+      "variant": "hybrid",
+      "category": "exact",
+      "id_context_precision": 0.25,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-003",
+      "variant": "reranked",
+      "category": "exact",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-004",
+      "variant": "bm25",
+      "category": "exact",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-004",
+      "variant": "vector",
+      "category": "exact",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-004",
+      "variant": "hybrid",
+      "category": "exact",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-004",
+      "variant": "reranked",
+      "category": "exact",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-005",
+      "variant": "bm25",
+      "category": "exact",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-005",
+      "variant": "vector",
+      "category": "exact",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-005",
+      "variant": "hybrid",
+      "category": "exact",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-005",
+      "variant": "reranked",
+      "category": "exact",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-006",
+      "variant": "bm25",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-006",
+      "variant": "vector",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-006",
+      "variant": "hybrid",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-006",
+      "variant": "reranked",
+      "category": "exact",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-007",
+      "variant": "bm25",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-007",
+      "variant": "vector",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-007",
+      "variant": "hybrid",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-007",
+      "variant": "reranked",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-008",
+      "variant": "bm25",
+      "category": "exact",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-008",
+      "variant": "vector",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-008",
+      "variant": "hybrid",
+      "category": "exact",
+      "id_context_precision": 0.25,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-008",
+      "variant": "reranked",
+      "category": "exact",
+      "id_context_precision": 0.25,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-009",
+      "variant": "bm25",
+      "category": "exact",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-009",
+      "variant": "vector",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-009",
+      "variant": "hybrid",
+      "category": "exact",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-009",
+      "variant": "reranked",
+      "category": "exact",
+      "id_context_precision": 0.25,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-010",
+      "variant": "bm25",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-010",
+      "variant": "vector",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-010",
+      "variant": "hybrid",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-010",
+      "variant": "reranked",
+      "category": "exact",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-011",
+      "variant": "bm25",
+      "category": "paraphrase",
+      "id_context_precision": 0.25,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-011",
+      "variant": "vector",
+      "category": "paraphrase",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-011",
+      "variant": "hybrid",
+      "category": "paraphrase",
+      "id_context_precision": 0.25,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-011",
+      "variant": "reranked",
+      "category": "paraphrase",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-012",
+      "variant": "bm25",
+      "category": "paraphrase",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-012",
+      "variant": "vector",
+      "category": "paraphrase",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-012",
+      "variant": "hybrid",
+      "category": "paraphrase",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-012",
+      "variant": "reranked",
+      "category": "paraphrase",
+      "id_context_precision": 0.25,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-013",
+      "variant": "bm25",
+      "category": "paraphrase",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-013",
+      "variant": "vector",
+      "category": "paraphrase",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-013",
+      "variant": "hybrid",
+      "category": "paraphrase",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-013",
+      "variant": "reranked",
+      "category": "paraphrase",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-014",
+      "variant": "bm25",
+      "category": "paraphrase",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-014",
+      "variant": "vector",
+      "category": "paraphrase",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-014",
+      "variant": "hybrid",
+      "category": "paraphrase",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-014",
+      "variant": "reranked",
+      "category": "paraphrase",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-015",
+      "variant": "bm25",
+      "category": "paraphrase",
+      "id_context_precision": 0.2,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-015",
+      "variant": "vector",
+      "category": "paraphrase",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-015",
+      "variant": "hybrid",
+      "category": "paraphrase",
+      "id_context_precision": 0.2,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-015",
+      "variant": "reranked",
+      "category": "paraphrase",
+      "id_context_precision": 0.2,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-016",
+      "variant": "bm25",
+      "category": "paraphrase",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-016",
+      "variant": "vector",
+      "category": "paraphrase",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-016",
+      "variant": "hybrid",
+      "category": "paraphrase",
+      "id_context_precision": 0.25,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-016",
+      "variant": "reranked",
+      "category": "paraphrase",
+      "id_context_precision": 0.25,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-017",
+      "variant": "bm25",
+      "category": "paraphrase",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-017",
+      "variant": "vector",
+      "category": "paraphrase",
+      "id_context_precision": 0.25,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-017",
+      "variant": "hybrid",
+      "category": "paraphrase",
+      "id_context_precision": 0.25,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-017",
+      "variant": "reranked",
+      "category": "paraphrase",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-018",
+      "variant": "bm25",
+      "category": "paraphrase",
+      "id_context_precision": 0.25,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-018",
+      "variant": "vector",
+      "category": "paraphrase",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-018",
+      "variant": "hybrid",
+      "category": "paraphrase",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-018",
+      "variant": "reranked",
+      "category": "paraphrase",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-019",
+      "variant": "bm25",
+      "category": "paraphrase",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-019",
+      "variant": "vector",
+      "category": "paraphrase",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-019",
+      "variant": "hybrid",
+      "category": "paraphrase",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-019",
+      "variant": "reranked",
+      "category": "paraphrase",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-020",
+      "variant": "bm25",
+      "category": "paraphrase",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-020",
+      "variant": "vector",
+      "category": "paraphrase",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-020",
+      "variant": "hybrid",
+      "category": "paraphrase",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-020",
+      "variant": "reranked",
+      "category": "paraphrase",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-021",
+      "variant": "bm25",
+      "category": "synonym",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-021",
+      "variant": "vector",
+      "category": "synonym",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-021",
+      "variant": "hybrid",
+      "category": "synonym",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-021",
+      "variant": "reranked",
+      "category": "synonym",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-022",
+      "variant": "bm25",
+      "category": "synonym",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-022",
+      "variant": "vector",
+      "category": "synonym",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-022",
+      "variant": "hybrid",
+      "category": "synonym",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-022",
+      "variant": "reranked",
+      "category": "synonym",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-023",
+      "variant": "bm25",
+      "category": "synonym",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-023",
+      "variant": "vector",
+      "category": "synonym",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-023",
+      "variant": "hybrid",
+      "category": "synonym",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-023",
+      "variant": "reranked",
+      "category": "synonym",
+      "id_context_precision": 0.25,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-024",
+      "variant": "bm25",
+      "category": "synonym",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-024",
+      "variant": "vector",
+      "category": "synonym",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-024",
+      "variant": "hybrid",
+      "category": "synonym",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-024",
+      "variant": "reranked",
+      "category": "synonym",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-025",
+      "variant": "bm25",
+      "category": "synonym",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-025",
+      "variant": "vector",
+      "category": "synonym",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-025",
+      "variant": "hybrid",
+      "category": "synonym",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-025",
+      "variant": "reranked",
+      "category": "synonym",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-026",
+      "variant": "bm25",
+      "category": "synonym",
+      "id_context_precision": 0.25,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-026",
+      "variant": "vector",
+      "category": "synonym",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-026",
+      "variant": "hybrid",
+      "category": "synonym",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-026",
+      "variant": "reranked",
+      "category": "synonym",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-027",
+      "variant": "bm25",
+      "category": "synonym",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-027",
+      "variant": "vector",
+      "category": "synonym",
+      "id_context_precision": 0.25,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-027",
+      "variant": "hybrid",
+      "category": "synonym",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-027",
+      "variant": "reranked",
+      "category": "synonym",
+      "id_context_precision": 0.25,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-028",
+      "variant": "bm25",
+      "category": "synonym",
+      "id_context_precision": 0.2,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-028",
+      "variant": "vector",
+      "category": "synonym",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-028",
+      "variant": "hybrid",
+      "category": "synonym",
+      "id_context_precision": 0.2,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-028",
+      "variant": "reranked",
+      "category": "synonym",
+      "id_context_precision": 0.2,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-029",
+      "variant": "bm25",
+      "category": "multihop",
+      "id_context_precision": 0.2,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-029",
+      "variant": "vector",
+      "category": "multihop",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-029",
+      "variant": "hybrid",
+      "category": "multihop",
+      "id_context_precision": 0.2,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-029",
+      "variant": "reranked",
+      "category": "multihop",
+      "id_context_precision": 0.2,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-030",
+      "variant": "bm25",
+      "category": "multihop",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-030",
+      "variant": "vector",
+      "category": "multihop",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-030",
+      "variant": "hybrid",
+      "category": "multihop",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-030",
+      "variant": "reranked",
+      "category": "multihop",
+      "id_context_precision": 0.2,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-031",
+      "variant": "bm25",
+      "category": "multihop",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-031",
+      "variant": "vector",
+      "category": "multihop",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-031",
+      "variant": "hybrid",
+      "category": "multihop",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-031",
+      "variant": "reranked",
+      "category": "multihop",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-032",
+      "variant": "bm25",
+      "category": "multihop",
+      "id_context_precision": 0.25,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-032",
+      "variant": "vector",
+      "category": "multihop",
+      "id_context_precision": 0.25,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-032",
+      "variant": "hybrid",
+      "category": "multihop",
+      "id_context_precision": 0.25,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-032",
+      "variant": "reranked",
+      "category": "multihop",
+      "id_context_precision": 0.25,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-033",
+      "variant": "bm25",
+      "category": "multihop",
+      "id_context_precision": 0.2,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-033",
+      "variant": "vector",
+      "category": "multihop",
+      "id_context_precision": 0.2,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-033",
+      "variant": "hybrid",
+      "category": "multihop",
+      "id_context_precision": 0.2,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-033",
+      "variant": "reranked",
+      "category": "multihop",
+      "id_context_precision": 0.25,
+      "id_context_recall": 0.5
+    },
+    {
+      "id": "FSW-034",
+      "variant": "bm25",
+      "category": "multihop",
+      "id_context_precision": 0.5,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-034",
+      "variant": "vector",
+      "category": "multihop",
+      "id_context_precision": 0.4,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-034",
+      "variant": "hybrid",
+      "category": "multihop",
+      "id_context_precision": 0.5,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-034",
+      "variant": "reranked",
+      "category": "multihop",
+      "id_context_precision": 0.4,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-035",
+      "variant": "bm25",
+      "category": "followup",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-035",
+      "variant": "vector",
+      "category": "followup",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-035",
+      "variant": "hybrid",
+      "category": "followup",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-035",
+      "variant": "reranked",
+      "category": "followup",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-036",
+      "variant": "bm25",
+      "category": "followup",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-036",
+      "variant": "vector",
+      "category": "followup",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-036",
+      "variant": "hybrid",
+      "category": "followup",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-036",
+      "variant": "reranked",
+      "category": "followup",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-037",
+      "variant": "bm25",
+      "category": "followup",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-037",
+      "variant": "vector",
+      "category": "followup",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-037",
+      "variant": "hybrid",
+      "category": "followup",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-037",
+      "variant": "reranked",
+      "category": "followup",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-038",
+      "variant": "bm25",
+      "category": "followup",
+      "id_context_precision": 0.25,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-038",
+      "variant": "vector",
+      "category": "followup",
+      "id_context_precision": 0.25,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-038",
+      "variant": "hybrid",
+      "category": "followup",
+      "id_context_precision": 0.25,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-038",
+      "variant": "reranked",
+      "category": "followup",
+      "id_context_precision": 0.3333333333333333,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-039",
+      "variant": "bm25",
+      "category": "followup",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-039",
+      "variant": "vector",
+      "category": "followup",
+      "id_context_precision": 0.25,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-039",
+      "variant": "hybrid",
+      "category": "followup",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-039",
+      "variant": "reranked",
+      "category": "followup",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-040",
+      "variant": "bm25",
+      "category": "followup",
+      "id_context_precision": 0.2,
+      "id_context_recall": 1.0
+    },
+    {
+      "id": "FSW-040",
+      "variant": "vector",
+      "category": "followup",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-040",
+      "variant": "hybrid",
+      "category": "followup",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    },
+    {
+      "id": "FSW-040",
+      "variant": "reranked",
+      "category": "followup",
+      "id_context_precision": 0.0,
+      "id_context_recall": 0.0
+    }
+  ],
+  "summary": {
+    "bm25": {
+      "id_context_precision": 0.135,
+      "id_context_recall": 0.4875
+    },
+    "vector": {
+      "id_context_precision": 0.06958333333333333,
+      "id_context_recall": 0.25
+    },
+    "hybrid": {
+      "id_context_precision": 0.12958333333333333,
+      "id_context_recall": 0.4875
+    },
+    "reranked": {
+      "id_context_precision": 0.155,
+      "id_context_recall": 0.575
+    }
+  },
+  "gate": {
+    "evaluated": false,
+    "passed": true,
+    "failures": []
+  }
+}

@@ -74,11 +74,6 @@
    :show-inheritance:
 ```
 
-## Evaluation
+## Offline evaluation
 
-```{eval-rst}
-.. automodule:: weldscope.evaluation.evaluator
-   :members:
-   :undoc-members:
-   :show-inheritance:
-```
+RAGAS assessment runs in the separate top-level `evaluation/` environment. It is not imported into the Streamlit runtime or this documentation build. See [RAGAS setup and commands](https://github.com/skkagolanu/weldscope/blob/main/evaluation/README.md) and [evaluation results](../evaluation.md).

@@ -31,7 +31,7 @@ cp .env.example .env
 streamlit run app.py
 ```
 
-Dependencies and compatible transitive versions are pinned in `requirements*.txt`, `pyproject.toml`, and `constraints.txt`. PyTorch uses CPU wheels. Deprecated LangChain Community/Classic and their RAGAS-dependent path have been removed. PDF loading uses PyPDF directly; local embeddings use Sentence Transformers directly.
+Dependencies and compatible transitive versions are pinned in `requirements*.txt`, `pyproject.toml`, and `constraints.txt`. PyTorch uses CPU wheels. Deprecated LangChain Community/Classic paths have been removed from the application runtime. RAGAS uses a separately locked offline assessment environment with an explicitly approved compatibility exception. PDF loading uses PyPDF directly; local embeddings use Sentence Transformers directly.
 
 ## Configure Groq generation
 
@@ -86,9 +86,9 @@ Daily and post-CI checks detect a sleep page, startup failure, stale deployment,
 
 Optional Langfuse tracing connects query, retrieval and generation spans with feedback. Enable it only after configuring the deployment keys. Query content can be sent to Langfuse when enabled.
 
-`GroundedAnswerEvaluator` provides explicit model-judged scores through the configured generator, with one provider request per example. It validates score ranges and input lengths, and leaves reference recall unknown when no reference is supplied. These are model judgements, not calibrated confidence or RAGAS benchmark results.
+[RAGAS](evaluation/README.md) is the active offline quality-assessment framework. Native ID-based context precision/recall have been executed on all 160 retrieval question/variant pairs. The custom model judge and custom retrieval scoring implementation were retired; historical reports retain their original labels.
 
-A [50-case FSW development benchmark](docs/evaluation.md) now compares BM25S, vector, hybrid and reranked retrieval, with frozen regression thresholds and reproducible JSON/CSV reports. Labels are provisional page anchors, not independently reviewed relevance judgements. RAGAS remains excluded under the owner’s no-legacy-package rule because its current release requires Community dependencies. Model-judged answer quality and durable hosted trace export remain unverified; software coverage does not establish RAG answer quality.
+Native semantic assessment covers faithfulness, answer relevance, context precision/recall, factual correctness and a scope rubric. Run the manual **RAGAS Answer Assessment** workflow with the privately configured `GROQ_API_KEY` Actions secret. Semantic results are reported only after an actual completed judge run. RAGAS remains outside the Streamlit dependency graph, so evaluation adds no per-chat model calls. Ordinary pytest/AppTest/Playwright checks and runtime citation guards remain in place. See [methodology, results and limitations](docs/evaluation.md).
 
 ## Code layout
 

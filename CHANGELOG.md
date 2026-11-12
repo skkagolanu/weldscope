@@ -4,6 +4,11 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased] - 2026-11-12
 
+- Adopt native RAGAS quality assessment in a separately locked Python 3.12 environment under the owner-approved offline compatibility exception.
+- Retire the custom model judge and active custom retrieval scoring; preserve historical metric reports without relabelling them.
+- Execute 160 native ID-based precision/recall assessments and add distinct RAGAS thresholds/CI gating.
+- Add native collections-based semantic metrics and scope rubrics, private-secret manual execution, explicit failed/skipped coverage and versioned JSON/CSV evidence.
+
 - Add a 50-case versioned FSW development benchmark with page anchors, reference summaries and PDF fingerprints; save actual four-variant retrieval JSON/CSV and frozen regression floors.
 - Exclude 42 stale index chunks for missing source PDFs from both retrieval paths without mutating the bundled index.
 - Accept domain synonyms and explicit follow-ups; reject unrelated requests despite incidental FSW keywords.

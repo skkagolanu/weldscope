@@ -1,5 +1,1 @@
-"""Optional grounded answer evaluation."""
-
-from weldscope.evaluation.evaluator import GroundedAnswerEvaluator, EvaluationResult
-
-__all__ = ["GroundedAnswerEvaluator", "EvaluationResult"]
+"""Quality assessment lives in the isolated top-level evaluation package."""

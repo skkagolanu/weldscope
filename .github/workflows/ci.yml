@@ -45,9 +45,9 @@ jobs:
         pylint weldscope/ --errors-only
         mypy weldscope/ --ignore-missing-imports
 
-    - name: Run corpus retrieval regression gate
+    - name: Export corpus retrieval rankings
       run: |
-        python scripts/benchmark_retrieval.py --gate benchmarks/fsw-v1/thresholds.json --output artifacts/retrieval
+        python scripts/benchmark_retrieval.py --output artifacts/retrieval
 
     - name: Preserve benchmark and operational evidence
       if: always()
@@ -106,3 +106,29 @@ jobs:
     - name: Run bandit security scan
       run: |
         bandit -r weldscope/ -ll
+
+  ragas-retrieval:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@v4
+        with:
+          name: quality-evidence-python-3.12
+          path: artifacts/upstream
+      - name: Install isolated assessment stack
+        run: |
+          python -m venv .venv-eval
+          .venv-eval/bin/pip install -r evaluation/requirements.txt
+      - name: Test actual RAGAS contracts
+        run: .venv-eval/bin/python -m unittest discover -s evaluation/tests -v
+      - name: Enforce native RAGAS retrieval gate
+        run: .venv-eval/bin/python -m evaluation.run_retrieval --rankings artifacts/upstream/artifacts/retrieval/report.json --thresholds benchmarks/fsw-v1/ragas-thresholds.json --output artifacts/ragas-retrieval
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ragas-retrieval-evidence
+          path: artifacts/ragas-retrieval/
