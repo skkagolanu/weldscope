@@ -26,7 +26,7 @@ class NumpyVectorStore:
             raise ValueError("Index contains non-finite embeddings")
 
     @classmethod
-    def from_documents(cls, documents, ids, embedding, persist_directory):
+    def from_documents(cls, documents, ids, embedding, persist_directory) -> "NumpyVectorStore":
         path = Path(persist_directory)
         path.mkdir(parents=True, exist_ok=True)
         rows = [
