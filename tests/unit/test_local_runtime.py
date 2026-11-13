@@ -82,6 +82,11 @@ def test_store_preserves_identity_filters_and_exact_distance(tmp_path):
             "question", filter={"$and": [{"source": {"$in": ["a.pdf"]}}, {"page": 2}]}
         )
     ] == ["three"]
+    # Rebuilding an existing index must replace its fingerprint before loading.
+    NumpyVectorStore.from_documents(
+        docs, ["new-one", "new-two", "new-three"], Embeddings(), tmp_path
+    )
+    assert NumpyVectorStore(tmp_path, Embeddings()).get()["ids"][0] == "new-one"
     (tmp_path / "manifest.json").write_text(json.dumps({"files": {"chunks.json": "invalid"}}))
     with pytest.raises(ValueError, match="fingerprint mismatch"):
         NumpyVectorStore(tmp_path, Embeddings())

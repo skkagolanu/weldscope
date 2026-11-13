@@ -74,6 +74,6 @@ Real in-memory Langfuse/OpenTelemetry tests verify local parent/child correlatio
 
 ## Verification and deployment boundary
 
-The fresh Python 3.12 application environment passed **173 tests, 97.37% package coverage**. Real inference was tested with network connections denied and no HF-related runtime distributions installed. The separate RAGAS environment passed 15 contract/pacing/checkpoint tests. Both installed dependency graphs passed compatibility checks; application mypy and error lint passed before final documentation changes.
+The fresh Python 3.12 application environment passed **173 tests, 97.40% package coverage**. Real inference was tested with network connections denied and no HF-related runtime distributions installed. The separate RAGAS environment passed 15 contract/pacing/checkpoint tests. Both installed dependency graphs passed compatibility checks; application mypy and error lint passed before final documentation changes.
 
 `quality-v3` public deployment verification is pending the pushed revision actually serving. Older successful `quality-v1` hosted tests remain dated evidence, not proof of this release. The exact multi-turn hosted regression and a real Groq query must be rerun against current diagnostics before claiming it deployed.

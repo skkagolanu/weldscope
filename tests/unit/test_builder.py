@@ -189,12 +189,15 @@ def test_build_from_pdfs_executes_full_pipeline(
     mock_split.return_value = mock_chunks
     mock_build.return_value = mock_vectorstore
 
-    result = builder.build_from_pdfs(str(pdf_dir))
+    output_dir = tmp_path / "index"
+    output_dir.mkdir()
+    (output_dir / "manifest.json").write_text("{}")
+    result = builder.build_from_pdfs(str(pdf_dir), str(output_dir))
 
     assert result is mock_vectorstore
     mock_load.assert_called_once_with(str(pdf_dir))
     mock_split.assert_called_once_with(mock_docs)
-    mock_build.assert_called_once_with(mock_chunks, None)
+    mock_build.assert_called_once_with(mock_chunks, str(output_dir))
 
 
 def test_native_pdf_loading_and_stable_chunk_ids(builder, tmp_path):

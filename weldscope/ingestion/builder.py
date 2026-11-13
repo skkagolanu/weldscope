@@ -1,5 +1,6 @@
 """Vector store builder for document ingestion."""
 
+import json
 from pathlib import Path
 from hashlib import sha256
 from typing import List, Optional
@@ -161,4 +162,13 @@ class VectorStoreBuilder:
         """Complete pipeline: load PDFs → split → build vectorstore."""
         documents = self.load_pdfs(pdf_dir)
         chunks = self.split_documents(documents)
-        return self.build_vectorstore(chunks, persist_directory)
+        store = self.build_vectorstore(chunks, persist_directory)
+        path = Path(persist_directory or self.config.vectorstore_path) / "manifest.json"
+        manifest = json.loads(path.read_text())
+        manifest["corpus"] = {
+            pdf.name: sha256(pdf.read_bytes()).hexdigest()
+            for pdf in sorted(Path(pdf_dir).glob("*.pdf"))
+        }
+        manifest["embedding"] = self.config.embedding_model
+        path.write_text(json.dumps(manifest, indent=2) + "\n")
+        return store

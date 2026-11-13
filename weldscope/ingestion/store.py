@@ -27,6 +27,8 @@ class NumpyVectorStore:
 
     @classmethod
     def from_documents(cls, documents, ids, embedding, persist_directory) -> "NumpyVectorStore":
+        if len(ids) != len(documents) or len(set(ids)) != len(ids):
+            raise ValueError("Every passage must have one unique ID")
         path = Path(persist_directory)
         path.mkdir(parents=True, exist_ok=True)
         rows = [
@@ -41,6 +43,16 @@ class NumpyVectorStore:
             ),
             allow_pickle=False,
         )
+        manifest = dict(
+            version="fsw-v2",
+            metric="squared_l2",
+            chunks=len(rows),
+            files={
+                name: sha256((path / name).read_bytes()).hexdigest()
+                for name in ["chunks.json", "vectors.npy"]
+            },
+        )
+        (path / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n")
         return cls(path, embedding)
 
     def get(self, include=None):
