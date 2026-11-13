@@ -104,3 +104,20 @@ def test_bundled_index_has_only_current_pdf_passages():
     assert len(rows) == manifest["chunks"] == 2124
     assert len({row["id"] for row in rows}) == len(rows)
     assert {Path(row["metadata"]["source"]).name for row in rows} == set(manifest["corpus"])
+
+
+def test_hosted_snapshot_detects_accidental_offline_dependencies(monkeypatch):
+    from weldscope.core import runtime
+    from importlib.metadata import PackageNotFoundError
+
+    def installed(name):
+        if name == "huggingface-hub":
+            return "unexpected"
+        raise PackageNotFoundError(name)
+
+    runtime.runtime_environment.cache_clear()
+    monkeypatch.setattr(runtime, "version", installed)
+    try:
+        assert runtime.runtime_environment()["unexpected_packages"] == ["huggingface-hub"]
+    finally:
+        runtime.runtime_environment.cache_clear()

@@ -45,3 +45,8 @@ The exact recipe was refused locally with **0 retrieval/generation**, **no token
 **Cold startup is still slow:** the first research request took **10,014 ms backend / 12,004 ms browser**: retriever initialization 4,598 ms, reranker loading 4,663 ms, reranker prediction 104 ms, search 33 ms, generation 613 ms. These measurements confirm model/index initialization dominates this request. They do not isolate CPU deserialization from model-file fetching. The future-standard answer took 1,648 ms backend / 2,304 ms browser, including 1.346 s reported provider queue time. There is no universal two-second claim.
 
 CI for `56b32ce` passed tests, blocking type/error lint, security and the actual retrieval regression gate: [executed workflow](https://github.com/skkagolanu/weldscope/actions/runs/43213547802). Its quality-evidence artifact preserves benchmark output and sanitized test telemetry. Live external Langfuse retention and reliable Community Cloud storage across rebuilds remain unverified.
+
+
+## 13 November environment verification
+
+The current browser regression requires `quality-v3`, Python 3.12 and an empty unexpected-HF-package list from the running environment. A public check still observed `quality-v1`, so the new hosted release is not verified. Community Cloud should automatically resolve committed dependency changes; a manual reboot can force a fresh build. The cause of the stale serving revision is unverified without owner logs/settings. [Official dependency updates](https://docs.streamlit.io/deploy/streamlit-community-cloud/manage-your-app/upgrade-streamlit), [official reboot instructions](https://docs.streamlit.io/deploy/streamlit-community-cloud/manage-your-app/reboot-your-app).
