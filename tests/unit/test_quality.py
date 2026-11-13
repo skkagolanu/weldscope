@@ -29,6 +29,9 @@ def test_all_versioned_routing_cases():
     [
         ("FSW is solid-state [1].", "passed_structural_checks"),
         ("FSW is solid-state [0].", "withheld"),
+        ("FSW is solid-state 【1】.", "passed_structural_checks"),
+        ("FSW is solid-state 【99】.", "withheld"),
+        ("FSW is solid-state ［99］.", "withheld"),
         ("FSW is solid-state [999].", "withheld"),
         ("FSW is solid-state [1-999999].", "withheld"),
         ("FSW is solid-state [2-1].", "withheld"),
@@ -129,7 +132,8 @@ def test_current_corpus_excludes_missing_files_and_out_of_range_pages(tmp_path):
             builder.load_vectorstore(str(tmp_path), corpus_directory=str(tmp_path / "absent"))
 
 
-def test_invalid_provider_text_is_never_delivered_before_validation():
+@pytest.mark.parametrize("citation", ["[99]", "【99】", "［99］"])
+def test_invalid_provider_text_is_never_delivered_before_validation(citation):
     docs = [Document(page_content="Evidence", metadata={"source": "current.pdf"})]
     retriever = Mock()
     retriever.retrieve.return_value = docs
@@ -138,13 +142,13 @@ def test_invalid_provider_text_is_never_delivered_before_validation():
     delivered = []
 
     def provider():
-        yield "Unsupported text [99]"
+        yield f"Unsupported text {citation}"
         assert delivered == []
 
     pipeline.generator.stream = Mock(return_value=provider())
     response = pipeline.query("What is FSW?", stream=True, on_chunk=delivered.append)
     assert delivered == [response.answer]
-    assert "[99]" not in delivered[0]
+    assert citation not in delivered[0]
     assert response.metadata["answer_checks"]["status"] == "withheld"
     assert (
         response.metadata["timings"]["first_visible_ms"]

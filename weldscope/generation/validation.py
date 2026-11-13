@@ -4,9 +4,10 @@ import re
 
 
 def check_answer(answer, documents):
+    citation_text = answer.translate(str.maketrans({"【": "[", "】": "]", "［": "[", "］": "]"}))
     numbers = []
     malformed = False
-    for group in re.findall(r"\[([0-9][0-9,\s–-]*)\]", answer):
+    for group in re.findall(r"\[([0-9][0-9,\s–-]*)\]", citation_text):
         for part in group.split(","):
             part = part.strip()
             if re.fullmatch(r"\d+", part):
@@ -29,7 +30,7 @@ def check_answer(answer, documents):
             re.I,
         )
     )
-    plain = re.sub(r"\[[0-9][0-9,\s–-]*\]", "", answer)
+    plain = re.sub(r"\[[0-9][0-9,\s–-]*\]", "", citation_text)
     claims = set(re.findall(r"(?<!\w)\d+(?:\.\d+)?", plain))
     evidence_numbers = set(
         re.findall(r"(?<!\w)\d+(?:\.\d+)?", " ".join(doc.page_content for doc in documents))
