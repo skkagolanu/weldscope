@@ -64,16 +64,33 @@ The fix implements rolling token reservations at 6,000/minute, provider reset he
 
 A fresh **one-case integration pilot completed all six native metrics**, with **14 successful provider requests, zero failed requests and 17,270 reported judge tokens**: [successful workflow](https://github.com/skkagolanu/weldscope/actions/runs/43302486289), [raw pilot artifact](../benchmarks/fsw-v1/maintenance-2026-11-13/semantic-pilot.json). One case is too small for headline quality averages; the artifact is retained as execution evidence. It reused exact saved generation inputs and the prior stack, and does not establish new-release generation quality.
 
-The next assessment uses freshly generated current-release answers on an eight-case panel spanning exact, paraphrase, synonym, multihop, follow-up and negative categories, capped at 100,000 judge tokens. Only completed eligible metrics will be reported, with positive/negative coverage and denominators. A small provisional development panel is not a calibrated population estimate.
+The expanded [eight-case run 43360885422](https://github.com/skkagolanu/weldscope/actions/runs/43360885422) **completed all planned eligible metrics**, spanning all six workload categories: five answerable cases and three negative cases. It made **73 successful judge requests, zero failed requests and 96,619 reported judge tokens**, below its 100,000-token cap; no quota deferral was needed. Generation also completed all eight samples without failure.
+
+| Native semantic metric | Descriptive panel mean | Scored | Intentionally skipped |
+| --- | ---: | ---: | ---: |
+| Faithfulness |0.7200|5|3 negative cases|
+| AnswerRelevancy |0.5432|5|3 negative cases|
+| ContextPrecision |0.3667|5|3 negative cases|
+| ContextRecall |0.5000|5|3 negative cases|
+| FactualCorrectness |0.3440|5|3 negative cases|
+| Scope DomainSpecificRubrics |5.0 /5|8|0|
+
+[Exact samples/contexts/usage](../benchmarks/fsw-v1/maintenance-2026-11-13/semantic-eight-samples.json), [native JSON](../benchmarks/fsw-v1/maintenance-2026-11-13/semantic-eight.json), [CSV](../benchmarks/fsw-v1/maintenance-2026-11-13/semantic-eight.csv). Negative cases use the scope rubric instead of misleading support/reference metrics. All planned eligible metrics completed; skips are by design, not hidden errors.
+
+These are descriptive results from a **small provisional development panel**, not calibrated population quality estimates or held-out accuracy. The low reference-based factual correctness and context coverage require further investigation; successful execution is not a quality-pass verdict. References are brief, non-exhaustive and not independently expert-adjudicated, so 0.344 must not be presented as a human-adjudicated factual-error rate. Scope 5/5 does not prove universal refusal correctness.
+
+Samples were generated and scored at commit `6533900` with the HF-free runtime and original 5→3 configuration. Later factory typing/manifest maintenance, hosted diagnostics and Unicode citation recognition have separate local/CI evidence; they are not retroactively attributed to these exact generation outputs.
 
 ## Pre-output validation and observability
 
-Research provider chunks are buffered until structural citation checks complete. Invalid citation numbers are replaced before any research text reaches UI callbacks; provider failures cannot leak partial research answers. `stream_query` uses the same validated path. `first_token_ms` remains a provider diagnostic, while `first_visible_ms` records post-validation server delivery. This adds a deliberate validation boundary and is not a claim of factual entailment or browser-paint timing.
+Research provider chunks are buffered until structural citation checks complete. Recognized numeric citation numbers, including `[1]`, `【1】` and `［1］` styles observed in Groq output, are checked; invalid ones are replaced before any research text reaches UI callbacks; provider failures cannot leak partial research answers. `stream_query` uses the same validated path. `first_token_ms` remains a provider diagnostic, while `first_visible_ms` records post-validation server delivery. This adds a deliberate validation boundary and is not a claim of factual entailment or browser-paint timing.
 
 Real in-memory Langfuse/OpenTelemetry tests verify local parent/child correlation. Sanitized bounded JSONL records retain timings, reported tokens and errors locally. **Hosted external Langfuse export and retention remain unverified by the owner's explicit choice.** Community Cloud disk is ephemeral and is not a durable monitoring backend.
 
 ## Verification and deployment boundary
 
-The fresh Python 3.12 application environment passed **174 tests, 97.44% package coverage**. Real inference was tested with network connections denied and no HF-related runtime distributions installed. The separate RAGAS environment passed 15 contract/pacing/checkpoint tests. Both installed dependency graphs passed compatibility checks; clean application mypy, error lint, formatting and the warning-free documentation build passed. [GitHub CI for de9128b](https://github.com/skkagolanu/weldscope/actions/runs/43361193808) passed every job, including the real native retrieval gate; [machine-readable CI record](../benchmarks/fsw-v1/maintenance-2026-11-13/ci.json).
+The fresh Python 3.12 application environment passed **179 tests, 97.44% package coverage**. Real inference was tested with network connections denied and no HF-related runtime distributions installed. The separate RAGAS environment passed 15 contract/pacing/checkpoint tests. Both installed dependency graphs passed compatibility checks; clean application mypy, error lint, formatting and the warning-free documentation build passed. [GitHub CI for 711bfbe](https://github.com/skkagolanu/weldscope/actions/runs/43362459127) passed every job, including the real native retrieval gate; [machine-readable CI record](../benchmarks/fsw-v1/maintenance-2026-11-13/ci.json).
 
 `quality-v3` public deployment verification is pending the pushed revision actually serving. The public browser still observed `quality-v1`; the updated harness also checks Python 3.12 and the live unexpected-HF-package list. Owner reboot has been requested because those controls are unavailable in the anonymous browser. Older successful `quality-v1` hosted tests remain dated evidence, not proof of this release. The exact multi-turn hosted regression and a real Groq query must be rerun against current diagnostics before claiming it deployed.
+
+Latest [public verification attempt](../benchmarks/fsw-v1/maintenance-2026-11-13/hosted-pending.json) stopped after the provider-free greeting because it observed `quality-v1`, not `quality-v3`. No new-release hosted research or latency result is claimed. The remaining external step is an owner reboot/source-coordinate check, followed by rerunning the same browser regression.

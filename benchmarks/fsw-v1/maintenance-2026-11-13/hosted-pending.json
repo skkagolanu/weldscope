@@ -1,0 +1,19 @@
+{
+  "timestamp": "2026-11-13T04:06:24.712030+00:00",
+  "url": "https://weldscope.streamlit.app/",
+  "passed": false,
+  "results": [
+    {
+      "question": "hi",
+      "status": "complete",
+      "browser_total_ms": 1137.9,
+      "browser_first_visible_ms": 834.4,
+      "backend_total_ms": 0,
+      "timing_caption": "Local reply \u00b7 Total 0 ms",
+      "answer_words": 18,
+      "answer": "Hi! I'm WeldScope. Ask me about friction stir welding, the documents I use, or how this assistant works."
+    }
+  ],
+  "limitations": "Public browser observations; no owner reboot or cold-start control. Structural checks are not semantic entailment or RAGAS scores.",
+  "failure": "AssertionError: Updated application not serving: observed quality-v1, expected quality-v3"
+}

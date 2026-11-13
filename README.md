@@ -80,7 +80,7 @@ playwright install chromium
 python scripts/check_hosted_app.py --url https://weldscope.streamlit.app/
 ```
 
-Daily and post-CI checks detect a sleep page, startup failure, stale deployment, or broken greeting. They do not guarantee always-on hosting or live inference availability.
+Daily and post-CI basic checks detect a sleep page, startup failure, old branding, or broken greeting. The manual hosted research regression separately verifies the current release marker, Python version and HF-package exclusions. They do not guarantee always-on hosting or live inference availability.
 
 ## Evaluation and observability
 
@@ -88,7 +88,7 @@ Optional Langfuse tracing connects query, retrieval and generation spans with fe
 
 [RAGAS](evaluation/README.md) is the active offline quality-assessment framework. Native ID-based context precision/recall have been executed on all 160 retrieval question/variant pairs. The custom model judge and custom retrieval scoring implementation were retired; historical reports retain their original labels.
 
-Native semantic assessment covers faithfulness, answer relevance, context precision/recall, factual correctness and a scope rubric. Run the manual **RAGAS Answer Assessment** workflow with the privately configured `GROQ_API_KEY` Actions secret. Semantic results are reported only after an actual completed judge run. RAGAS remains outside the Streamlit dependency graph, so evaluation adds no per-chat model calls. Ordinary pytest/AppTest/Playwright checks and runtime citation guards remain in place. See [latest maintenance results](docs/maintenance-2026-11-13.md) and [methodology](docs/evaluation.md).
+Native semantic assessment covers faithfulness, answer relevance, context precision/recall, factual correctness and a scope rubric. Run the manual **RAGAS Answer Assessment** workflow with the privately configured `GROQ_API_KEY` Actions secret. A completed eight-case panel is now recorded in the dated evaluation report (five answerable cases plus three negative cases); its small, provisional development labels do not establish population accuracy. RAGAS remains outside the Streamlit dependency graph, so evaluation adds no per-chat model calls. Ordinary pytest/AppTest/Playwright checks and runtime citation guards remain in place. See [latest maintenance results](docs/maintenance-2026-11-13.md) and [methodology](docs/evaluation.md).
 
 ## Code layout
 

@@ -1,0 +1,230 @@
+{
+  "framework": "ragas",
+  "ragas_version": "0.4.3",
+  "complete": true,
+  "metric_classes": {
+    "faithfulness": "Faithfulness",
+    "answer_relevancy": "AnswerRelevancy",
+    "context_precision": "ContextPrecision",
+    "context_recall": "ContextRecall",
+    "factual_correctness": "FactualCorrectness",
+    "scope_adherence": "DomainSpecificRubrics"
+  },
+  "summary": {
+    "faithfulness": {
+      "mean": 0.72,
+      "scored": 5,
+      "failed": 0,
+      "skipped": 3
+    },
+    "answer_relevancy": {
+      "mean": 0.5432026456536334,
+      "scored": 5,
+      "failed": 0,
+      "skipped": 3
+    },
+    "context_precision": {
+      "mean": 0.36666666665166664,
+      "scored": 5,
+      "failed": 0,
+      "skipped": 3
+    },
+    "context_recall": {
+      "mean": 0.5,
+      "scored": 5,
+      "failed": 0,
+      "skipped": 3
+    },
+    "factual_correctness": {
+      "mean": 0.344,
+      "scored": 5,
+      "failed": 0,
+      "skipped": 3
+    },
+    "scope_adherence": {
+      "mean": 5.0,
+      "scored": 8,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "id": "FSW-001",
+      "scores": {
+        "faithfulness": 0.5,
+        "answer_relevancy": 0.31515851866487427,
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "factual_correctness": 0.0,
+        "scope_adherence": 5.0
+      },
+      "errors": {},
+      "skipped": {}
+    },
+    {
+      "id": "FSW-011",
+      "scores": {
+        "faithfulness": 1.0,
+        "answer_relevancy": 0.836399442536269,
+        "context_precision": 0.8333333332916666,
+        "context_recall": 1.0,
+        "factual_correctness": 0.67,
+        "scope_adherence": 5.0
+      },
+      "errors": {},
+      "skipped": {}
+    },
+    {
+      "id": "FSW-021",
+      "scores": {
+        "faithfulness": 1.0,
+        "answer_relevancy": 0.3506009699845099,
+        "context_precision": 0.9999999999666667,
+        "context_recall": 1.0,
+        "factual_correctness": 0.33,
+        "scope_adherence": 5.0
+      },
+      "errors": {},
+      "skipped": {}
+    },
+    {
+      "id": "FSW-029",
+      "scores": {
+        "faithfulness": 0.1,
+        "answer_relevancy": 0.6717265615735086,
+        "context_precision": 0.0,
+        "context_recall": 0.5,
+        "factual_correctness": 0.15,
+        "scope_adherence": 5.0
+      },
+      "errors": {},
+      "skipped": {}
+    },
+    {
+      "id": "FSW-035",
+      "scores": {
+        "faithfulness": 1.0,
+        "answer_relevancy": 0.5421277355090054,
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "factual_correctness": 0.57,
+        "scope_adherence": 5.0
+      },
+      "errors": {},
+      "skipped": {}
+    },
+    {
+      "id": "FSW-044",
+      "scores": {
+        "scope_adherence": 5.0
+      },
+      "errors": {},
+      "skipped": {
+        "faithfulness": "unsupported_case_use_scope_rubric",
+        "answer_relevancy": "unsupported_case_use_scope_rubric",
+        "context_precision": "unsupported_case_use_scope_rubric",
+        "context_recall": "unsupported_case_use_scope_rubric",
+        "factual_correctness": "unsupported_case_use_scope_rubric"
+      }
+    },
+    {
+      "id": "FSW-045",
+      "scores": {
+        "scope_adherence": 5.0
+      },
+      "errors": {},
+      "skipped": {
+        "faithfulness": "unsupported_case_use_scope_rubric",
+        "answer_relevancy": "unsupported_case_use_scope_rubric",
+        "context_precision": "unsupported_case_use_scope_rubric",
+        "context_recall": "unsupported_case_use_scope_rubric",
+        "factual_correctness": "unsupported_case_use_scope_rubric"
+      }
+    },
+    {
+      "id": "FSW-047",
+      "scores": {
+        "scope_adherence": 5.0
+      },
+      "errors": {},
+      "skipped": {
+        "faithfulness": "unsupported_case_use_scope_rubric",
+        "answer_relevancy": "unsupported_case_use_scope_rubric",
+        "context_precision": "unsupported_case_use_scope_rubric",
+        "context_recall": "unsupported_case_use_scope_rubric",
+        "factual_correctness": "unsupported_case_use_scope_rubric"
+      }
+    }
+  ],
+  "assessment_fingerprint": "cc9f09f706451d14e8d56a4bcb867f216dc395dc0960588f533a7fcc42dfc51e",
+  "binding": {
+    "samples_sha256": "f037e71b463263a6cff17e4461b521d360af303da66c1f603f295d731c3007ef",
+    "selected_ids": [
+      "FSW-001",
+      "FSW-011",
+      "FSW-021",
+      "FSW-029",
+      "FSW-035",
+      "FSW-044",
+      "FSW-045",
+      "FSW-047"
+    ],
+    "judge_model": "openai/gpt-oss-120b",
+    "embedding_model": "embedding",
+    "metrics_runner_sha256": "8d7b1f7d4ab12732e80b48f7791f0d41ff745d0b7e1df7bfb7aef80a88314ca3",
+    "dependency_lock_sha256": "dfe37adb15822f490d12cd4465b8f3a7e0fd3d3980e8f9c412a49eac2258ba7d",
+    "judge_options": {
+      "temperature": 0,
+      "max_completion_tokens": 4096,
+      "max_retries": 2,
+      "reasoning_effort": "low",
+      "include_reasoning": false
+    },
+    "embedding_adapter_sha256": "013e609d9a5f3e63b20ee29d28b38dfed2a333cf6437efb0e50582739598501b",
+    "embedding_runtime_sha256": "39919e974e0379b1cc435f233a2783f356fda8aced6fbcaf09ab76d1a1dbd855",
+    "embedding_artifacts": {
+      "model.onnx": "52a79256bc926e9961c5e51ca8f4285726332e7285d3184024ff965ab23e71a6",
+      "vocab.txt": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3",
+      "config.json": "1e8fde880c3a8132e8fd3b5d0d164119ae97011e171e8cc5f8398908326edf08"
+    }
+  },
+  "resumed_from_sha256": null,
+  "judge_model": "openai/gpt-oss-120b",
+  "embedding_model": "embedding",
+  "samples_sha256": "f037e71b463263a6cff17e4461b521d360af303da66c1f603f295d731c3007ef",
+  "provider_requests": 73,
+  "reported_token_usage": {
+    "prompt_tokens": 81501,
+    "completion_tokens": 15118,
+    "total_tokens": 96619
+  },
+  "responses_reporting_usage": 73,
+  "provider_status_counts": {
+    "200": 73
+  },
+  "observed_token_limit_per_minute": 8000,
+  "request_interval_seconds": 2.1,
+  "error_budget": 5,
+  "token_budget": 100000,
+  "tokens_per_minute": 6000,
+  "deferred_reason": null,
+  "dataset_sha256": "4d73bc960bdd57cdbe7cdb6ba2a925f2d889bd9a386d7092acc58b0d030a01d4",
+  "generation_model": "openai/gpt-oss-20b",
+  "lock_sha256": "dfe37adb15822f490d12cd4465b8f3a7e0fd3d3980e8f9c412a49eac2258ba7d",
+  "runner_sha256": "1c721e13749209a30f58b47f2a7829767b8c41015e664a5cb68a98a6721cf12d",
+  "metrics_runner_sha256": "8d7b1f7d4ab12732e80b48f7791f0d41ff745d0b7e1df7bfb7aef80a88314ca3",
+  "python": "3.12.16",
+  "source_commit": "6533900e01a43377c3b07c807cc0054b96b316b3",
+  "selected_cases": 8,
+  "selected_categories": [
+    "exact",
+    "followup",
+    "multihop",
+    "negative",
+    "paraphrase",
+    "synonym"
+  ],
+  "coverage_policy": "Report descriptive quality only from complete eligible metrics; a pilot is integration evidence, not a population quality estimate.",
+  "limitations": "Model-judged, provisional development labels; no human calibration or universal factual guarantee. Native scope rubric uses 1-5; other metrics retain their native scales."
+}

@@ -1,0 +1,510 @@
+{
+  "dataset_sha256": "4d73bc960bdd57cdbe7cdb6ba2a925f2d889bd9a386d7092acc58b0d030a01d4",
+  "generation_model": "openai/gpt-oss-20b",
+  "samples": [
+    {
+      "id": "FSW-001",
+      "category": "exact",
+      "question": "What is the advancing side in FSW?",
+      "response": "In friction\u2011stir welding the **advancing side** is the side of the joint that the rotating tool moves toward as it traverses the weld line. Because the tool turns in one direction, the material on this side is heated more and becomes softer, giving it a lower resistance than the opposite (retreating) side\u30101\u3011\u30102\u3011.",
+      "reference": "Tool rotation and welding travel have the same direction on the advancing side.",
+      "answerable": true,
+      "contexts": [
+        "Transverse \nForce  \n(Fx) \nTransverse force is responsible for supporting material resistance \nto the tool movement along the joint line \nSide Force  \n(Fy) \nThe side force arises due to the asymmetry of the FSW process, \ncaused by the direction of the tool rotation. The advancing \nside of the weld is warmer than the retreating side of the weld, \nconsequently, the material on the advancing side is softer and \nless resistant. This force has the direction from the retreating side",
+        "welds. \nFSW lap weld needs to be differentiated from all other lap welds, \nbecause of its uniqueness. Conventional FSW is an asymmetric process, \nfor example one side of the weld is heated more than the other side. \nAnother example of asymmetry during FSW process is the difference in \nstrength between the advancing side and retreati ng side of the weld. \nDepending on whether the advancing side or the retreating side of the",
+        "Banding is prominent on the advancing side of both passes and the retreating side stir \nzone has a gradual transition into the HAZ."
+      ],
+      "sources": [
+        {
+          "chunk_id": "10cb4366572a93c6de7e624dfac9a90c0bb440cca49cd607934ac0e702dbc0d9",
+          "source": "data/fsw_doc2.pdf",
+          "page": 146
+        },
+        {
+          "chunk_id": "e7d04598569fe6dd2241338ded2884c2279caedbcb225b1f7a3a2ea1bbe3c5ae",
+          "source": "data/fsw_doc2.pdf",
+          "page": 31
+        },
+        {
+          "chunk_id": "0c41e91600b701c91f410ca003a5c845a17a5a055fbfea8698fad6a7e9c1fa4e",
+          "source": "data/fsw_doc4.pdf",
+          "page": 187
+        }
+      ],
+      "context_sha256": [
+        "22d8b6461bb6cfea0856a5f8a918800500847a05f18766339cb41ff2b69939ba",
+        "538709299e7c4266640881c949358bfb6d0486755a8bc2761068750c260ccc12",
+        "912d33fe75bf23ec85d35c05ccb706f172573ee146a52743966bb89cd7b64ebf"
+      ],
+      "timings": {
+        "initialization_ms": 0.0,
+        "retrieval_ms": 9.058991000003402,
+        "reranking_ms": 241.83987700000387,
+        "reranker_load_ms": 165.99477799999818,
+        "reranker_compute_ms": 75.76211399999977,
+        "generation_ms": 358.86620600000185,
+        "render_ms": 0.0,
+        "first_token_ms": null,
+        "first_token_total_ms": null,
+        "first_visible_ms": null,
+        "validation_ms": 1.1229060000061963,
+        "total_ms": 614.0348580000108
+      },
+      "answer_checks": {
+        "status": "needs_review",
+        "invalid_citations": [],
+        "malformed_citations": false,
+        "missing_citations": true,
+        "unsupported_numbers": [
+          "1",
+          "2"
+        ],
+        "semantic_support_verified": false
+      },
+      "route": "research",
+      "request_id": "35a6ff5a71f548cca7fcad8315cfd7cd",
+      "token_usage": {
+        "completion_tokens": 100,
+        "prompt_tokens": 610,
+        "total_tokens": 710,
+        "completion_time": 0.101925025,
+        "completion_tokens_details": {
+          "reasoning_tokens": 19
+        },
+        "prompt_time": 0.032140238,
+        "prompt_tokens_details": null,
+        "queue_time": 0.083860802,
+        "total_time": 0.134065263
+      }
+    },
+    {
+      "id": "FSW-011",
+      "category": "paraphrase",
+      "question": "In friction stir welding, which part of the tool projects into the workpiece?",
+      "response": "In friction stir welding, the **pin** is the part of the tool that projects into the workpiece. It is the component that rotates and penetrates the material to generate frictional heat and plasticize the material for joining. [1]",
+      "reference": "The pin extends into the workpiece to make the weld.",
+      "answerable": true,
+      "contexts": [
+        "Multiple spindles \u2013 a friction stir welding system with two or more spindles. \nPin - part of the welding tool that extends into the workpiece to make the \nweld. \nPosition control - a method to maintain the required position of the tool during \nwelding. \nRetreating side of weld - side of the weld where the direction of tool rotation \nis opposite to the welding direction. \nSelf-reacting tool  - a tool with two shoulders separated by a fixed length \nprobe or an adjustable-length probe.",
+        "moving part; not the geometry of the interface and Friction Stir Welding \n\u2014 often used for aluminium plates, extrusions, and sheets where seam or \nbutt welds are made between thin components without a restriction on \nthe component length. \n Types of Friction Stir Welds \nHow does the different processes work? \n\u2013 Rotary Friction Welding: a solid-state process in which one part is \nrotated at a high speed, and then pressed against another part",
+        "that is held stationary. The resulting friction heats the parts, \ncausing them to forge together. \n\u2013 Linear Friction Welding: a solid -state process in which one part \nmoves in a linear motion at a high speed. This is pressed against \nanother part that is kept stationary. The resulting friction heats the \nparts, causing them to forge together. \n\u2013 Friction Stir Wel ding: A solid -state joining process in which a pin \ntool rotates against the seam, between the two stationary parts,"
+      ],
+      "sources": [
+        {
+          "chunk_id": "8110dfab5c61af83f8c70dc21a6236a0fed7726033588383e73ab8946b566b06",
+          "source": "data/fsw_doc2.pdf",
+          "page": 11
+        },
+        {
+          "chunk_id": "4e2ad08a696c4d548d9e7358023f7eaa1e6596c442829767e685c51056f9cc42",
+          "source": "data/fsw_doc2.pdf",
+          "page": 121
+        },
+        {
+          "chunk_id": "11b3b4de85141ce9b7cd3c674a32dda113c30f90022b83ed12b7a276293981fb",
+          "source": "data/fsw_doc2.pdf",
+          "page": 121
+        }
+      ],
+      "context_sha256": [
+        "9d426cc256f04a405fbd2f7bbefe6585b8fd604d6ff88d1b4cf800e255922a3d",
+        "5a5f008cd54c79f9bb19f59e52360e3ce08118e4bafae202a006d3e71e15d0c7",
+        "3efd2fb69fb808f16915d26d51c4648c9557e8bd6eb1daf8c2ed7cfe3c09ce19"
+      ],
+      "timings": {
+        "initialization_ms": 0.0,
+        "retrieval_ms": 8.818394000002172,
+        "reranking_ms": 77.71371000001182,
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 77.63999200000171,
+        "generation_ms": 408.9329899999967,
+        "render_ms": 0.0,
+        "first_token_ms": null,
+        "first_token_total_ms": null,
+        "first_visible_ms": null,
+        "validation_ms": 0.20065300000737807,
+        "total_ms": 495.94218999999384
+      },
+      "answer_checks": {
+        "status": "passed_structural_checks",
+        "invalid_citations": [],
+        "malformed_citations": false,
+        "missing_citations": false,
+        "unsupported_numbers": [],
+        "semantic_support_verified": false
+      },
+      "route": "research",
+      "request_id": "f4c1d4604f744a38adf54b88afbefe0f",
+      "token_usage": {
+        "completion_tokens": 68,
+        "prompt_tokens": 696,
+        "total_tokens": 764,
+        "completion_time": 0.075621254,
+        "completion_tokens_details": {
+          "reasoning_tokens": 10
+        },
+        "prompt_time": 0.039383412,
+        "prompt_tokens_details": null,
+        "queue_time": 0.242430596,
+        "total_time": 0.115004666
+      }
+    },
+    {
+      "id": "FSW-021",
+      "category": "synonym",
+      "question": "What is the TMAZ?",
+      "response": "The Thermo\u2011Mechanically Affected Zone (TMAZ) is the region adjacent to the Stir Zone (SZ) in a friction\u2011stir weld that experiences mechanical deformation and heating but does not undergo recrystallization. In this zone the material is plastically deformed, similar to hot\u2011working, and its microstructure is inhomogeneous, leading to a hardness minimum compared to the SZ [1][2].",
+      "reference": "The thermomechanically affected zone is plastically deformed and altered by welding heat.",
+      "answerable": true,
+      "contexts": [
+        "heat generated by FSW process, while there is no plastic deformation.  \nThermo-mechanically affected zone (TMAZ) \nThe TMAZ undergone mechanical deformation the material in TMAZ is \nplastically deformed and the process is comparable to hot -working of \nmetallic material. TMAZ zone is often defined to be without \nrecrystallization. This is true for aluminium, which is one of the most \ncommonly applied materials in friction stir welding, but other mater ials",
+        "temperature and strain the TMAZ experiences are dependent on the distance from the \nSZ which results in an \u2018inhomogeneous\u2019 microstructure in this zone, as illustrated in \nFigure 185. The hardness at this region is labelled \u2018Hardness minima\u2019 by Lin et al \n(2019), which is attributed to the reduction in high angle grain boundaries compared \nto the SZ.  \n\ud835\udc3b\ud835\udc49 =  \ud835\udc3b\ud835\udc49\u0b34 + \ud835\udc58 \u221a\ud835\udc51 Equation 7",
+        "\u2013 Nugget zone presents \ufb01ne recrystallized grains, the TMAZ has \ndeformed large grains, and the HAZ is characterized by equiaxed \ngrains larger than those of the base metal (BM). \n\u2013 Pure copper FSW joint tensile strength is slightly lower than that of \nbase metal \u2013 Failure occurs near the HAZ."
+      ],
+      "sources": [
+        {
+          "chunk_id": "a952f3c25e233bd9bd7dd54b7d4088265035900bad4492addbdef1d72362725a",
+          "source": "data/fsw_doc2.pdf",
+          "page": 17
+        },
+        {
+          "chunk_id": "35b02cd7d2f387ef2121460c3035d943f0805dae0e9aa1500d78627e17577a34",
+          "source": "data/fsw_doc4.pdf",
+          "page": 275
+        },
+        {
+          "chunk_id": "0ec71fb90e27fdee37049ce2e443cf966674053504565670f08553f404cd0890",
+          "source": "data/fsw_doc2.pdf",
+          "page": 37
+        }
+      ],
+      "context_sha256": [
+        "6ee986ee7a7683e8b8ff487f2d67426b12e2be237eedfef85884a8be71395dcb",
+        "14e7ce02fb4cebb549b1088bb7fb004a296624601e9c81b2cd41b2cc128e255e",
+        "2470ae6944d0d7c96c27df262c3bf36bc0d171e7cc3d579bc5dbfd801debf1aa"
+      ],
+      "timings": {
+        "initialization_ms": 0.0,
+        "retrieval_ms": 6.145599000006996,
+        "reranking_ms": 99.45629700000325,
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 99.38901200000316,
+        "generation_ms": 279.28885299999706,
+        "render_ms": 0.0,
+        "first_token_ms": null,
+        "first_token_total_ms": null,
+        "first_visible_ms": null,
+        "validation_ms": 0.11152700000138793,
+        "total_ms": 385.2346069999868
+      },
+      "answer_checks": {
+        "status": "passed_structural_checks",
+        "invalid_citations": [],
+        "malformed_citations": false,
+        "missing_citations": false,
+        "unsupported_numbers": [],
+        "semantic_support_verified": false
+      },
+      "route": "research",
+      "request_id": "b6171c2d0f434ed19522b9bf3f252382",
+      "token_usage": {
+        "completion_tokens": 109,
+        "prompt_tokens": 663,
+        "total_tokens": 772,
+        "completion_time": 0.11101797,
+        "completion_tokens_details": {
+          "reasoning_tokens": 14
+        },
+        "prompt_time": 0.03224586,
+        "prompt_tokens_details": null,
+        "queue_time": 0.168015348,
+        "total_time": 0.14326383
+      }
+    },
+    {
+      "id": "FSW-029",
+      "category": "multihop",
+      "question": "In FSW, compare the advancing and retreating sides and distinguish tool rotation speed from travel speed.",
+      "response": "In friction\u2011stir welding the **advancing side** (AS) is the side where the tool moves forward relative to the workpiece, while the **retreating side** (RS) is the side where the tool moves backward relative to the workpiece. The AS typically experiences higher material flow and heat input, which can lead to defects such as tunnel defects when the tool angle, rotational speed, or travel speed are not optimal\u30102\u3011. The RS, by contrast, often shows fewer defects under the same conditions but can suffer from insufficient stirring if the tool geometry or speed is inappropriate\u30102\u3011.\n\n**Tool rotation speed** is the angular velocity of the welding tool, measured in revolutions per minute (rpm). It directly controls the processing temperature and the amount of plastic deformation in the stir zone\u30101\u3011\u30103\u3011.\n\n**Travel speed** is the linear rate at which the tool progresses along the joint, measured in units such as mm/min. It determines how quickly the weld is laid down and influences the overall heat input per unit length\u30101\u3011\u30103\u3011.",
+      "reference": "Advancing rotation agrees with travel and retreating rotation opposes it; rotation speed is angular speed in RPM while travel speed is forward progress.",
+      "answerable": true,
+      "contexts": [
+        "Tool rotation speed  - angular speed of the welding tool in revolutions per \nminute. \nTravel speed - rate at which the welding operation progresses in the direction \nof welding \n \n Difference between advancing and retreating side \u2013 Courtesy of [1-6] \n \nWelding (including FSW) related terminology \nComplex weld joint  - a continuous weld joint with variations in section \nthickness and/or tapered thickness transitioning. \nHeat affected zone (HAZ)  - the area of weld joint which has had its",
+        "tunnel defect appearance at the bottom toward advancing side \nin the stir zone when aluminum alloy 5052  on retreating side \nand stainless steel 304 on advancing side located and joined \nin FSW with zero tilt tool angle, low rotational speed, and slow \nweld travel speed. This study made by Chitturi et al. [76]. \n \n2.4 FRAGMENTAL \nIt is not possible to find this type of defect in similar  material \nweld and it is commonly found in dissimilar weld [33, 51] .",
+        "FSW Handbook for Specialists & Engineers \n 47 \n\u2212 Rotation speed (r/min) \nRotation speed is the rate at which the tool rotates around its axis and \nis one important parameter in FSW. It\u2019s directly related to the increase \nof the processing temperature and can be manipulated to increase \nwelding travel speeds. \nThe increase of the rotation speed results in a higher processing speed, \nbut unlike what\u2019s expected the deformation zone will not continuously"
+      ],
+      "sources": [
+        {
+          "chunk_id": "32e43aa3c56780af84c566455a39fad35581e0bc8e491d9982bc855a6098b25b",
+          "source": "data/fsw_doc2.pdf",
+          "page": 12
+        },
+        {
+          "chunk_id": "af784ed226881d9b1180e651e5a223a61b80a51c9335ef78cac1a0055a038e24",
+          "source": "data/fsw_doc3.pdf",
+          "page": 4
+        },
+        {
+          "chunk_id": "4a882bf5af50a9aa00fe1ac29235014f866912696440fd5a5143f088c146f524",
+          "source": "data/fsw_doc2.pdf",
+          "page": 57
+        }
+      ],
+      "context_sha256": [
+        "052c68b5d016ffa060ea5aafa1c92ad193c558f7da0de1734a0fc76b6f6acac9",
+        "da6a27b0d213fc3fd300b2a8b768d175237e73862f0cd9aa0eb815aa44184721",
+        "dbc10a132b942f1e24e65c09db501f8e81d07e337a599989e4b43352ccc1f95e"
+      ],
+      "timings": {
+        "initialization_ms": 0.0,
+        "retrieval_ms": 5.876666000006026,
+        "reranking_ms": 97.15840900000217,
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 97.09390999999812,
+        "generation_ms": 523.1661720000034,
+        "render_ms": 0.0,
+        "first_token_ms": null,
+        "first_token_total_ms": null,
+        "first_visible_ms": null,
+        "validation_ms": 0.17578599999978906,
+        "total_ms": 626.6091030000069
+      },
+      "answer_checks": {
+        "status": "needs_review",
+        "invalid_citations": [],
+        "malformed_citations": false,
+        "missing_citations": true,
+        "unsupported_numbers": [
+          "2",
+          "3"
+        ],
+        "semantic_support_verified": false
+      },
+      "route": "research",
+      "request_id": "da024c62b04e43d7a099c36896d0714b",
+      "token_usage": {
+        "completion_tokens": 242,
+        "prompt_tokens": 702,
+        "total_tokens": 944,
+        "completion_time": 0.263066177,
+        "completion_tokens_details": {
+          "reasoning_tokens": 15
+        },
+        "prompt_time": 0.034865696,
+        "prompt_tokens_details": null,
+        "queue_time": 0.177537689,
+        "total_time": 0.297931873
+      }
+    },
+    {
+      "id": "FSW-035",
+      "category": "followup",
+      "question": "How is that different from the retreating side?",
+      "response": "**Advancing side**  \nIn friction\u2011stir welding (FSW) the tool travels along the joint line while rotating.  \nThe side of the weld that the tool\u2019s rotation pushes material **toward** the tool\u2019s\ndirection of travel is called the *advancing side*\u30101\u3011.  \n\n**Retreating side**  \nThe opposite side, where material is pulled **away** from the tool\u2019s direction of travel,\nis the *retreating side*\u30101\u3011.  \n\n**Differences**  \n* The advancing side is warmer because the rotating tool shears material in that\ndirection, making the material softer and less resistant\u30102\u3011.  \n* The retreating side remains cooler and harder, leading to an asymmetry in\nstrength and force distribution across the weld.",
+      "reference": "Advancing-side rotation agrees with travel, while retreating-side rotation opposes it.",
+      "answerable": true,
+      "contexts": [
+        "welds. \nFSW lap weld needs to be differentiated from all other lap welds, \nbecause of its uniqueness. Conventional FSW is an asymmetric process, \nfor example one side of the weld is heated more than the other side. \nAnother example of asymmetry during FSW process is the difference in \nstrength between the advancing side and retreati ng side of the weld. \nDepending on whether the advancing side or the retreating side of the",
+        "Transverse \nForce  \n(Fx) \nTransverse force is responsible for supporting material resistance \nto the tool movement along the joint line \nSide Force  \n(Fy) \nThe side force arises due to the asymmetry of the FSW process, \ncaused by the direction of the tool rotation. The advancing \nside of the weld is warmer than the retreating side of the weld, \nconsequently, the material on the advancing side is softer and \nless resistant. This force has the direction from the retreating side",
+        "retreating side of the probe, as discussed in section 5.3.3.1. However, in G12 the \nfracture path progresses through the SZ (slightly on the advancing side) of the upper \npass before diverging towards the retreating side of the lower pass, see Appendix 40. \nThis weld had significant skewing, demonstrated by Figure 152, of the lower probe (the \nleading probe) and the hardness map (see Figure 178) shows the softest region of the"
+      ],
+      "sources": [
+        {
+          "chunk_id": "e7d04598569fe6dd2241338ded2884c2279caedbcb225b1f7a3a2ea1bbe3c5ae",
+          "source": "data/fsw_doc2.pdf",
+          "page": 31
+        },
+        {
+          "chunk_id": "10cb4366572a93c6de7e624dfac9a90c0bb440cca49cd607934ac0e702dbc0d9",
+          "source": "data/fsw_doc2.pdf",
+          "page": 146
+        },
+        {
+          "chunk_id": "e6c6d3f597bef3d5c86bb1510976ebef8983b5f0ea486d878f674e71e02e3446",
+          "source": "data/fsw_doc4.pdf",
+          "page": 280
+        }
+      ],
+      "context_sha256": [
+        "538709299e7c4266640881c949358bfb6d0486755a8bc2761068750c260ccc12",
+        "22d8b6461bb6cfea0856a5f8a918800500847a05f18766339cb41ff2b69939ba",
+        "4cc52c91d376974bd0c0f4887675b8ea68d155057a467395a83322746fb6c10b"
+      ],
+      "timings": {
+        "initialization_ms": 0.0,
+        "retrieval_ms": 5.898622000003684,
+        "reranking_ms": 104.20032400000423,
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 104.13102500000093,
+        "generation_ms": 308.2875369999982,
+        "render_ms": 0.0,
+        "first_token_ms": null,
+        "first_token_total_ms": null,
+        "first_visible_ms": null,
+        "validation_ms": 0.13742499999125357,
+        "total_ms": 418.73887699999557
+      },
+      "answer_checks": {
+        "status": "needs_review",
+        "invalid_citations": [],
+        "malformed_citations": false,
+        "missing_citations": true,
+        "unsupported_numbers": [
+          "1",
+          "2"
+        ],
+        "semantic_support_verified": false
+      },
+      "route": "research",
+      "request_id": "e1eb4ded3d7242f6b1f7ea3d9c3986b1",
+      "token_usage": {
+        "completion_tokens": 178,
+        "prompt_tokens": 726,
+        "total_tokens": 904,
+        "completion_time": 0.217725271,
+        "completion_tokens_details": {
+          "reasoning_tokens": 7
+        },
+        "prompt_time": 0.039665582,
+        "prompt_tokens_details": null,
+        "queue_time": 0.003175791,
+        "total_time": 0.257390853
+      }
+    },
+    {
+      "id": "FSW-044",
+      "category": "negative",
+      "question": "After that FSW explanation, how to cook butter chicken?",
+      "response": "Recipes and cooking instructions are outside this chatbot's corpus. I can answer questions grounded in the bundled friction stir welding documents.",
+      "reference": null,
+      "answerable": false,
+      "contexts": [],
+      "sources": [],
+      "context_sha256": [],
+      "timings": {
+        "initialization_ms": 0.0,
+        "retrieval_ms": 0.0,
+        "reranking_ms": 0.0,
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 0.0,
+        "generation_ms": 0.0,
+        "render_ms": 0.0,
+        "first_token_ms": null,
+        "first_token_total_ms": null,
+        "first_visible_ms": null,
+        "validation_ms": 0.0,
+        "total_ms": 0.12612399999056834
+      },
+      "answer_checks": {
+        "status": "not_applicable"
+      },
+      "route": "out_of_scope",
+      "request_id": "0b720b1cce684ecab4b09fccd7d23218",
+      "token_usage": null
+    },
+    {
+      "id": "FSW-045",
+      "category": "negative",
+      "question": "i am in a ship that has fsw for welds. unfortunately i think there were lots of faults and now the joints that had defects are coming off. i would be drowning soon but i want to know how to cook butter chicken one last time before sinkign",
+      "response": "Recipes and cooking instructions are outside this chatbot's corpus. I can answer questions grounded in the bundled friction stir welding documents.",
+      "reference": null,
+      "answerable": false,
+      "contexts": [],
+      "sources": [],
+      "context_sha256": [],
+      "timings": {
+        "initialization_ms": 0.0,
+        "retrieval_ms": 0.0,
+        "reranking_ms": 0.0,
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 0.0,
+        "generation_ms": 0.0,
+        "render_ms": 0.0,
+        "first_token_ms": null,
+        "first_token_total_ms": null,
+        "first_visible_ms": null,
+        "validation_ms": 0.0,
+        "total_ms": 0.16900299999633717
+      },
+      "answer_checks": {
+        "status": "not_applicable"
+      },
+      "route": "out_of_scope",
+      "request_id": "56ebaeb6a7ba49aa9ee805fdbe4a8e3e",
+      "token_usage": null
+    },
+    {
+      "id": "FSW-047",
+      "category": "negative",
+      "question": "Summarize the latest 2035 changes to the FSW standard.",
+      "response": "I\u2019m sorry, but the provided source documents do not contain any information about changes to the FSW standard in 2035.",
+      "reference": null,
+      "answerable": false,
+      "contexts": [
+        "FSW Handbook for Specialists & Engineers \n 49 \nfollowing the welding tool with a water quench as the water sprayed \nover the parts doesn\u2019t interfere with the welding process. \nConcluding, before choosing a heat treatment it should be analysed \nthe effects of changes to the base metal temper designed to facilitate \npost-weld aging response, as it  may require changes in welding \nparameters to offset the changes in initial temper [2-3]. \n\u2212 Heating and cooling rates",
+        "FSW Handbook for Specialists & Engineers \n 131 \n11. Implementation the FSW system \nAs with every manufacturing process, FSW has associated costs, either \nfor implement ation it but also operat ional. This chapter gathers the \nrelevant information associated to the topic.  \n FSW Costs \nIn term of the cost this issue depends on the size of FSW machine, if we \nspeak about a small robot that has a small table on which the \nspecimens will be welded, we can reach around 100,000 Euro and if",
+        "173 \n \n \nFigure 118 \u2013 Microstructure of WFW-FSW, G20/21, stir zone. (Top) shows a fine \ndispersed distribution of particles in the upper pass of the weld. (Middle) The joint \nline remnant is prominent in the double processed region of G20/21. (Bottom) \nshows finer dispersed particles, compared to the parent material, in the lower pass \nof the weld. The joint line remnant is also identified in the image."
+      ],
+      "sources": [
+        {
+          "chunk_id": "0c6fd74cf1fb5cf82a420ba4e6d19cdb409947a7da323b6c2f0b4ef9a7da2984",
+          "source": "data/fsw_doc2.pdf",
+          "page": 59
+        },
+        {
+          "chunk_id": "9f956290ed17b19410525377fbb39fe4868ce8c640156ab8580dd7baef966fc2",
+          "source": "data/fsw_doc2.pdf",
+          "page": 141
+        },
+        {
+          "chunk_id": "f5485e1e3aa69ec31b1e034a6e1febca172804d8cc923ed83d06dffdae7a74bd",
+          "source": "data/fsw_doc4.pdf",
+          "page": 197
+        }
+      ],
+      "context_sha256": [
+        "71a03e07050cdfcc0ae98ed90bc03a3defaf1989d8dd97f57f0f8088395da63b",
+        "21bfb491fedfa4f315137883c52bdfbe00fd1d797a3b491beb91c990e088dea7",
+        "0917bc1c4637b95b2b2f71ba87e5dba8f8c6261e60b7de1da80af8d77baaf6a1"
+      ],
+      "timings": {
+        "initialization_ms": 0.0,
+        "retrieval_ms": 4.9598610000032295,
+        "reranking_ms": 89.56403900000964,
+        "reranker_load_ms": 0.0,
+        "reranker_compute_ms": 89.49736499999972,
+        "generation_ms": 252.49730999999542,
+        "render_ms": 0.0,
+        "first_token_ms": null,
+        "first_token_total_ms": null,
+        "first_visible_ms": null,
+        "validation_ms": 0.08333499999935157,
+        "total_ms": 347.3137050000048
+      },
+      "answer_checks": {
+        "status": "abstention",
+        "invalid_citations": [],
+        "malformed_citations": false,
+        "missing_citations": false,
+        "unsupported_numbers": [],
+        "semantic_support_verified": false
+      },
+      "route": "research",
+      "request_id": "c6944c79021743598c637770224c53c4",
+      "token_usage": {
+        "completion_tokens": 62,
+        "prompt_tokens": 701,
+        "total_tokens": 763,
+        "completion_time": 0.062672942,
+        "completion_tokens_details": {
+          "reasoning_tokens": 27
+        },
+        "prompt_time": 0.046723821,
+        "prompt_tokens_details": null,
+        "queue_time": 0.083437362,
+        "total_time": 0.109396763
+      }
+    }
+  ],
+  "failures": []
+}
