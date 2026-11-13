@@ -18,6 +18,11 @@ def test_runtime_distribution_has_no_hf_dependency():
         item.metadata["Name"].lower().replace("_", "-")
         for item in importlib.metadata.distributions()
     }
+    from weldscope.core.runtime import runtime_environment
+
+    environment = runtime_environment()
+    assert environment["unexpected_packages"] == []
+    assert environment["python"].startswith("3.12.")
     assert not installed.intersection(
         {
             "huggingface-hub",

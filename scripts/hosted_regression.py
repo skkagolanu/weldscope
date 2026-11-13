@@ -23,7 +23,13 @@ def inspect_response(app):
     code = timing.locator('[data-testid="stCode"] code')
     expect(code).to_be_visible(timeout=10000)
     diagnostics = json.loads(code.inner_text())
-    assert diagnostics["app_revision"] == "quality-v3", "Updated application not serving"
+    assert (
+        diagnostics["app_revision"] == "quality-v3"
+    ), f"Updated application not serving: observed {diagnostics.get('app_revision')}, expected quality-v3"
+    environment = diagnostics["runtime_environment"]
+    assert not environment["unexpected_packages"], environment
+    assert environment["python"].startswith("3.12."), environment
+    assert environment["embedding_backend"] == "bundled_onnx"
     sources = []
     documents = []
     for expander in assistant.locator('[data-testid="stExpander"]').all():

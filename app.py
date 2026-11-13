@@ -7,6 +7,7 @@ import pandas as pd
 from datetime import datetime
 
 from weldscope.core.config import RAGConfig
+from weldscope.core.runtime import runtime_environment
 from weldscope.streaming import StreamDisplay
 from weldscope.conversation import completed_history, needs_sensor_context
 from weldscope.core.exceptions import RetrievalError, GenerationError
@@ -141,6 +142,7 @@ def render_details(message, message_index, tracer):
                     json.dumps(
                         {
                             "app_revision": "quality-v3",
+                            "runtime_environment": runtime_environment(),
                             "request_id": message["request_id"],
                             "route": message.get("route"),
                             "timings": t,
