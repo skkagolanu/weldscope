@@ -26,7 +26,7 @@ The updated source uses Groq directly for generation. Greetings and app/source e
 
 ## Verified locally
 
-Python 3.12, compatible pinned dependencies, real local embeddings and reranking, and retrieval from the 2,165-chunk index. Streamlit tests cover chat/reruns, citations, local replies without a key, and clearing history. Provider request tests use a local transport. Trace correlation is checked using real SDK spans with an in-memory exporter.
+Initial local verification used Python 3.12, compatible pinned dependencies, real embeddings/reranking and the historical 2,165-chunk index. The current rebuilt 2,124-chunk ONNX/NumPy release has separate verification in the 13 November report. Streamlit tests cover chat/reruns, citations, local replies without a key, and clearing history. Provider request tests use a local transport. Trace correlation is checked using real SDK spans with an in-memory exporter.
 
 Docker execution remains unverified because the local Docker daemon is unavailable.
 
@@ -47,6 +47,10 @@ The exact recipe was refused locally with **0 retrieval/generation**, **no token
 CI for `56b32ce` passed tests, blocking type/error lint, security and the actual retrieval regression gate: [executed workflow](https://github.com/skkagolanu/weldscope/actions/runs/43213547802). Its quality-evidence artifact preserves benchmark output and sanitized test telemetry. Live external Langfuse retention and reliable Community Cloud storage across rebuilds remain unverified.
 
 
-## 13 November environment verification
+## Verified after the 13 November owner reboot
 
-The current browser regression requires `quality-v3`, Python 3.12 and an empty unexpected-HF-package list from the running environment. A public check still observed `quality-v1`, so the new hosted release is not verified. Community Cloud should automatically resolve committed dependency changes; a manual reboot can force a fresh build. The cause of the stale serving revision is unverified without owner logs/settings. [Official dependency updates](https://docs.streamlit.io/deploy/streamlit-community-cloud/manage-your-app/upgrade-streamlit), [official reboot instructions](https://docs.streamlit.io/deploy/streamlit-community-cloud/manage-your-app/reboot-your-app).
+The public `quality-v3` app passed all seven browser turns at 04:50UTC: the exact greeting/purpose/FSW/ship-recipe sequence, TMAZ, its HAZ follow-up and an unsupported future-standard question. Runtime diagnostics report **Python 3.12.16, bundled ONNX inference and no unexpected installed HF packages**. Four research turns reported real Groq token usage, current-PDF sources and valid citation numbers; the future-standard reply correctly abstained without the older false review warning.
+
+The recipe was refused locally with no retrieval/generation or usage: 0.385 ms backend / 542 ms browser. Warm TMAZ/HAZ answers took 539/625 ms backend and 1,058/1,145 ms browser. The first research turn took 1,493 ms backend / 2,432 ms browser, including explicit model/index loading. Warm samples meet two seconds; the first browser sample does not.
+
+[Exact raw responses and runtime diagnostics](https://github.com/skkagolanu/weldscope/blob/main/benchmarks/fsw-v1/maintenance-2026-11-13/hosted-v3.json), [component breakdown and limitations](maintenance-2026-11-13.md). No runtime Git SHA is exposed; this verifies the observed release marker and behavior, not an exact serving commit. No always-on or universal latency guarantee is claimed. Native semantic-panel weaknesses and unverified external Langfuse retention remain separately documented.

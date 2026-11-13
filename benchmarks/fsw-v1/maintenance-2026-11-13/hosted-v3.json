@@ -1,0 +1,471 @@
+{
+  "timestamp": "2026-11-13T04:50:46.818797+00:00",
+  "url": "https://weldscope.streamlit.app/",
+  "passed": true,
+  "results": [
+    {
+      "question": "hi",
+      "status": "complete",
+      "browser_total_ms": 642.9,
+      "browser_first_visible_ms": 632.9,
+      "backend_total_ms": 4,
+      "timing_caption": "Local reply \u00b7 Total 4 ms",
+      "answer_words": 18,
+      "answer": "Hi! I'm WeldScope. Ask me about friction stir welding, the documents I use, or how this assistant works.",
+      "diagnostics": {
+        "app_revision": "quality-v3",
+        "runtime_environment": {
+          "python": "3.12.16",
+          "embedding_backend": "bundled_onnx",
+          "index_version": "fsw-v2",
+          "unexpected_packages": []
+        },
+        "request_id": "5d3a3ee1ce9c4c75bab78d37a2ab38f1",
+        "route": "local",
+        "timings": {
+          "initialization_ms": 0.0,
+          "retrieval_ms": 0.0,
+          "reranking_ms": 0.0,
+          "reranker_load_ms": 0.0,
+          "reranker_compute_ms": 0.0,
+          "generation_ms": 0.0,
+          "render_ms": 0.0,
+          "first_token_ms": null,
+          "first_token_total_ms": null,
+          "first_visible_ms": null,
+          "validation_ms": 0.0,
+          "total_ms": 4.381879232823849,
+          "render_updates": 2
+        },
+        "token_usage": null,
+        "answer_checks": {
+          "status": "not_applicable"
+        }
+      },
+      "sources": []
+    },
+    {
+      "question": "what do you do",
+      "status": "complete",
+      "browser_total_ms": 484.9,
+      "browser_first_visible_ms": 467.5,
+      "backend_total_ms": 3,
+      "timing_caption": "Local reply \u00b7 Total 3 ms",
+      "answer_words": 125,
+      "answer": "I'm WeldScope, a research assistant for friction stir welding (FSW). I help explore welding defects, possible causes, process parameters, and corrective actions.\n\nMy bundled document collection contains fsw_doc1.pdf, fsw_doc2.pdf, fsw_doc3.pdf, fsw_doc4.pdf, fsw_doc5.pdf. I combine keyword search (BM25) with semantic vector search, rerank the passages, and pass relevant evidence to a language model to write an answer with source passages. RAG means retrieval-augmented generation: the documents are searched at question time; they aren't used to train the model.\n\nThere's also a bundled example sensor CSV, used when you ask about sensor readings; it isn't a live feed. I use recent completed exchanges for follow-ups within this session. Clear Conversation resets that context.\n\nTry: What causes tunnel defects in FSW? or What do the sensor readings show?",
+      "diagnostics": {
+        "app_revision": "quality-v3",
+        "runtime_environment": {
+          "python": "3.12.16",
+          "embedding_backend": "bundled_onnx",
+          "index_version": "fsw-v2",
+          "unexpected_packages": []
+        },
+        "request_id": "fe5ccc7300174b898a06e351301e663d",
+        "route": "local",
+        "timings": {
+          "initialization_ms": 0.0,
+          "retrieval_ms": 0.0,
+          "reranking_ms": 0.0,
+          "reranker_load_ms": 0.0,
+          "reranker_compute_ms": 0.0,
+          "generation_ms": 0.0,
+          "render_ms": 0.0,
+          "first_token_ms": null,
+          "first_token_total_ms": null,
+          "first_visible_ms": null,
+          "validation_ms": 0.0,
+          "total_ms": 3.332250751554966,
+          "render_updates": 2
+        },
+        "token_usage": null,
+        "answer_checks": {
+          "status": "not_applicable"
+        }
+      },
+      "sources": []
+    },
+    {
+      "question": "what is fsw",
+      "status": "complete",
+      "browser_total_ms": 2431.7,
+      "browser_first_visible_ms": 1822.0,
+      "backend_total_ms": 1493,
+      "timing_caption": "Load 848 ms \u00b7 Search 11 ms \u00b7 Rerank 168 ms \u00b7 Generate 461 ms \u00b7 First text 1493 ms \u00b7 Total 1493 ms",
+      "answer_words": 72,
+      "answer": "Friction Stir Welding (FSW) is a solid\u2011state joining process that uses a rotating, non\u2011cutting tool to generate frictional heat and plasticize the material, then mechanically stir the material to form a weld. It can be performed on a variety of machines: conventional milling tools, dedicated FSW machines, or industrial robots. Dedicated machines offer higher load capacity, stiffness, accuracy, and availability, making them suitable for high\u2011volume production of thick or thin parts. [1][2]",
+      "diagnostics": {
+        "app_revision": "quality-v3",
+        "runtime_environment": {
+          "python": "3.12.16",
+          "embedding_backend": "bundled_onnx",
+          "index_version": "fsw-v2",
+          "unexpected_packages": []
+        },
+        "request_id": "95d26f1c4d4f435c902f7e8ede449a2e",
+        "route": "research",
+        "timings": {
+          "initialization_ms": 633.7329065427184,
+          "retrieval_ms": 11.087380349636078,
+          "reranking_ms": 383.0801974982023,
+          "reranker_load_ms": 214.67155124992132,
+          "reranker_compute_ms": 168.24194602668285,
+          "generation_ms": 461.3253101706505,
+          "render_ms": 0.4754001274704933,
+          "first_token_ms": 349.71415996551514,
+          "first_token_total_ms": 1378.760201856494,
+          "first_visible_ms": 1492.903291247785,
+          "validation_ms": 2.0538996905088425,
+          "total_ms": 1493.0054415017366,
+          "render_updates": 2
+        },
+        "token_usage": {
+          "completion_tokens": 134,
+          "prompt_tokens": 928,
+          "total_tokens": 1062,
+          "completion_time": 0.141801862,
+          "completion_tokens_details": {
+            "reasoning_tokens": 22
+          },
+          "prompt_time": 0.05375003,
+          "prompt_tokens_details": null,
+          "queue_time": 0.051042265,
+          "total_time": 0.195551892
+        },
+        "answer_checks": {
+          "status": "passed_structural_checks",
+          "invalid_citations": [],
+          "malformed_citations": false,
+          "missing_citations": false,
+          "unsupported_numbers": [],
+          "semantic_support_verified": false
+        }
+      },
+      "sources": [
+        {
+          "number": 1,
+          "source": "data/fsw_doc2.pdf",
+          "page": 141,
+          "passage_sha256": "680ccd7081736422923f0eb170ffb784ce798ea488dca5ca143678109c6d415d"
+        },
+        {
+          "number": 2,
+          "source": "data/fsw_doc2.pdf",
+          "page": 142,
+          "passage_sha256": "931f485dd52c37e4eecafff3c82c78d561ba76732935bc0b2b5e8782995be96f"
+        },
+        {
+          "number": 3,
+          "source": "data/fsw_doc2.pdf",
+          "page": 116,
+          "passage_sha256": "eb3eedd0a67f7f7f66e13e63440fe83945a6c0f6a00c3ad3bcb7aa60905ba83f"
+        }
+      ],
+      "independent_structural_check": {
+        "status": "passed_structural_checks",
+        "invalid_citations": [],
+        "malformed_citations": false,
+        "missing_citations": false,
+        "unsupported_numbers": [],
+        "semantic_support_verified": false
+      }
+    },
+    {
+      "question": "i am in a ship that has fsw for welds. unfortunately i think there were lots of faults and now the joints that had defects are coming off. i would be drowning soon but i want to know how to cook butter chicken one last time before sinkign",
+      "status": "complete",
+      "browser_total_ms": 542.0,
+      "browser_first_visible_ms": 533.2,
+      "backend_total_ms": 0,
+      "timing_caption": "Local reply \u00b7 Total 0 ms",
+      "answer_words": 21,
+      "answer": "Recipes and cooking instructions are outside this chatbot's corpus. I can answer questions grounded in the bundled friction stir welding documents.",
+      "diagnostics": {
+        "app_revision": "quality-v3",
+        "runtime_environment": {
+          "python": "3.12.16",
+          "embedding_backend": "bundled_onnx",
+          "index_version": "fsw-v2",
+          "unexpected_packages": []
+        },
+        "request_id": "f975c24adb60473c9a94ae680f5d6669",
+        "route": "out_of_scope",
+        "timings": {
+          "initialization_ms": 0.0,
+          "retrieval_ms": 0.0,
+          "reranking_ms": 0.0,
+          "reranker_load_ms": 0.0,
+          "reranker_compute_ms": 0.0,
+          "generation_ms": 0.0,
+          "render_ms": 0.0,
+          "first_token_ms": null,
+          "first_token_total_ms": null,
+          "first_visible_ms": null,
+          "validation_ms": 0.0,
+          "total_ms": 0.3847908228635788,
+          "render_updates": 2
+        },
+        "token_usage": null,
+        "answer_checks": {
+          "status": "not_applicable"
+        }
+      },
+      "sources": []
+    },
+    {
+      "question": "What is the TMAZ?",
+      "status": "complete",
+      "browser_total_ms": 1057.5,
+      "browser_first_visible_ms": 1055.3,
+      "backend_total_ms": 539,
+      "timing_caption": "Search 8 ms \u00b7 Rerank 139 ms \u00b7 Generate 390 ms \u00b7 First text 539 ms \u00b7 Total 539 ms",
+      "answer_words": 55,
+      "answer": "The Thermo\u2011Mechanically Affected Zone (TMAZ) is the region adjacent to the Stir Zone (SZ) that experiences mechanical deformation and plastic flow during friction stir welding. It is plastically deformed but does not recrystallize, unlike the SZ. The TMAZ\u2019s microstructure is inhomogeneous, with reduced high\u2011angle grain boundaries and a hardness minimum relative to the SZ. [1][2]",
+      "diagnostics": {
+        "app_revision": "quality-v3",
+        "runtime_environment": {
+          "python": "3.12.16",
+          "embedding_backend": "bundled_onnx",
+          "index_version": "fsw-v2",
+          "unexpected_packages": []
+        },
+        "request_id": "469f6f0b09164e6ab94a7818c2dff319",
+        "route": "research",
+        "timings": {
+          "initialization_ms": 0.0,
+          "retrieval_ms": 8.144439198076725,
+          "reranking_ms": 139.3641484901309,
+          "reranker_load_ms": 0.0,
+          "reranker_compute_ms": 139.2326382920146,
+          "generation_ms": 390.0479469448328,
+          "render_ms": 0.5254717543721199,
+          "first_token_ms": 280.959646217525,
+          "first_token_total_ms": 428.6081427708268,
+          "first_visible_ms": 538.6098539456725,
+          "validation_ms": 0.3860108554363251,
+          "total_ms": 538.7489050626755,
+          "render_updates": 2
+        },
+        "token_usage": {
+          "completion_tokens": 104,
+          "prompt_tokens": 1116,
+          "total_tokens": 1220,
+          "completion_time": 0.123676653,
+          "completion_tokens_details": {
+            "reasoning_tokens": 7
+          },
+          "prompt_time": 0.060040535,
+          "prompt_tokens_details": null,
+          "queue_time": 0.166953892,
+          "total_time": 0.183717188
+        },
+        "answer_checks": {
+          "status": "passed_structural_checks",
+          "invalid_citations": [],
+          "malformed_citations": false,
+          "missing_citations": false,
+          "unsupported_numbers": [],
+          "semantic_support_verified": false
+        }
+      },
+      "sources": [
+        {
+          "number": 1,
+          "source": "data/fsw_doc2.pdf",
+          "page": 17,
+          "passage_sha256": "6ee986ee7a7683e8b8ff487f2d67426b12e2be237eedfef85884a8be71395dcb"
+        },
+        {
+          "number": 2,
+          "source": "data/fsw_doc4.pdf",
+          "page": 275,
+          "passage_sha256": "14e7ce02fb4cebb549b1088bb7fb004a296624601e9c81b2cd41b2cc128e255e"
+        },
+        {
+          "number": 3,
+          "source": "data/fsw_doc2.pdf",
+          "page": 37,
+          "passage_sha256": "2470ae6944d0d7c96c27df262c3bf36bc0d171e7cc3d579bc5dbfd801debf1aa"
+        }
+      ],
+      "independent_structural_check": {
+        "status": "passed_structural_checks",
+        "invalid_citations": [],
+        "malformed_citations": false,
+        "missing_citations": false,
+        "unsupported_numbers": [],
+        "semantic_support_verified": false
+      }
+    },
+    {
+      "question": "How does it differ from the HAZ?",
+      "status": "complete",
+      "browser_total_ms": 1145.0,
+      "browser_first_visible_ms": 1139.6,
+      "backend_total_ms": 625,
+      "timing_caption": "Search 9 ms \u00b7 Rerank 141 ms \u00b7 Generate 474 ms \u00b7 First text 625 ms \u00b7 Total 625 ms",
+      "answer_words": 106,
+      "answer": "TMAZ (Thermo\u2011Mechanically Affected Zone)\nThe TMAZ is the region adjacent to the Stir Zone (SZ) that experiences plastic deformation and temperature rise during friction stir welding. It is plastically deformed but does not recrystallize, resulting in an inhomogeneous microstructure and a hardness minimum relative to the SZ. [1][2]\n\nDifference from the HAZ (Heat\u2011Affected Zone)\nThe HAZ lies further from the SZ and is affected only by the heat generated during welding, without significant plastic deformation. Consequently, the HAZ typically shows a different microstructural evolution (e.g., grain growth or coarsening) and a distinct hardness profile compared to the TMAZ, which is dominated by mechanical stirring effects. [2]",
+      "diagnostics": {
+        "app_revision": "quality-v3",
+        "runtime_environment": {
+          "python": "3.12.16",
+          "embedding_backend": "bundled_onnx",
+          "index_version": "fsw-v2",
+          "unexpected_packages": []
+        },
+        "request_id": "b3bee8a60e714a0683961e9b8bd85eff",
+        "route": "research",
+        "timings": {
+          "initialization_ms": 0.0,
+          "retrieval_ms": 9.262400679290295,
+          "reranking_ms": 140.7559672370553,
+          "reranker_load_ms": 0.0,
+          "reranker_compute_ms": 140.64188860356808,
+          "generation_ms": 474.0302003920078,
+          "render_ms": 0.5486896261572838,
+          "first_token_ms": 304.8764253035188,
+          "first_token_total_ms": 455.02375066280365,
+          "first_visible_ms": 625.2113068476319,
+          "validation_ms": 0.48255082219839096,
+          "total_ms": 625.3234958276153,
+          "render_updates": 2
+        },
+        "token_usage": {
+          "completion_tokens": 177,
+          "prompt_tokens": 1256,
+          "total_tokens": 1433,
+          "completion_time": 0.185460156,
+          "completion_tokens_details": {
+            "reasoning_tokens": 7
+          },
+          "prompt_time": 0.076508891,
+          "prompt_tokens_details": null,
+          "queue_time": 0.178510114,
+          "total_time": 0.261969047
+        },
+        "answer_checks": {
+          "status": "passed_structural_checks",
+          "invalid_citations": [],
+          "malformed_citations": false,
+          "missing_citations": false,
+          "unsupported_numbers": [],
+          "semantic_support_verified": false
+        }
+      },
+      "sources": [
+        {
+          "number": 1,
+          "source": "data/fsw_doc4.pdf",
+          "page": 276,
+          "passage_sha256": "c101bb00d4e4c7d4b234d7b2f9199a0c18fa6b9bb982366a35b24d073ca86433"
+        },
+        {
+          "number": 2,
+          "source": "data/fsw_doc4.pdf",
+          "page": 275,
+          "passage_sha256": "14e7ce02fb4cebb549b1088bb7fb004a296624601e9c81b2cd41b2cc128e255e"
+        },
+        {
+          "number": 3,
+          "source": "data/fsw_doc4.pdf",
+          "page": 279,
+          "passage_sha256": "6241ef4b81b533f386640b6d5ee55936fde5b6067d706199ffd4ed8e1fc394a4"
+        }
+      ],
+      "independent_structural_check": {
+        "status": "passed_structural_checks",
+        "invalid_citations": [],
+        "malformed_citations": false,
+        "missing_citations": false,
+        "unsupported_numbers": [],
+        "semantic_support_verified": false
+      }
+    },
+    {
+      "question": "Summarize the latest 2035 changes to the FSW standard.",
+      "status": "complete",
+      "browser_total_ms": 995.1,
+      "browser_first_visible_ms": 992.7,
+      "backend_total_ms": 456,
+      "timing_caption": "Search 9 ms \u00b7 Rerank 101 ms \u00b7 Generate 346 ms \u00b7 First text 456 ms \u00b7 Total 456 ms",
+      "answer_words": 19,
+      "answer": "I\u2019m sorry, but the supplied documents do not contain any information about changes to the FSW standard in 2035.",
+      "diagnostics": {
+        "app_revision": "quality-v3",
+        "runtime_environment": {
+          "python": "3.12.16",
+          "embedding_backend": "bundled_onnx",
+          "index_version": "fsw-v2",
+          "unexpected_packages": []
+        },
+        "request_id": "87ac517766ba41a6a904febbeb2ac03a",
+        "route": "research",
+        "timings": {
+          "initialization_ms": 0.0,
+          "retrieval_ms": 8.508310653269291,
+          "reranking_ms": 101.08637064695358,
+          "reranker_load_ms": 0.0,
+          "reranker_compute_ms": 100.98065063357353,
+          "generation_ms": 345.77551018446684,
+          "render_ms": 0.3828704357147217,
+          "first_token_ms": 318.7999418005347,
+          "first_token_total_ms": 428.52148320525885,
+          "first_visible_ms": 456.03159070014954,
+          "validation_ms": 0.15094038099050522,
+          "total_ms": 456.1866903677583,
+          "render_updates": 2
+        },
+        "token_usage": {
+          "completion_tokens": 49,
+          "prompt_tokens": 1439,
+          "total_tokens": 1488,
+          "completion_time": 0.052162715,
+          "completion_tokens_details": {
+            "reasoning_tokens": 15
+          },
+          "prompt_time": 0.071453946,
+          "prompt_tokens_details": null,
+          "queue_time": 0.179694189,
+          "total_time": 0.123616661
+        },
+        "answer_checks": {
+          "status": "abstention",
+          "invalid_citations": [],
+          "malformed_citations": false,
+          "missing_citations": false,
+          "unsupported_numbers": [],
+          "semantic_support_verified": false
+        }
+      },
+      "sources": [
+        {
+          "number": 1,
+          "source": "data/fsw_doc2.pdf",
+          "page": 59,
+          "passage_sha256": "71a03e07050cdfcc0ae98ed90bc03a3defaf1989d8dd97f57f0f8088395da63b"
+        },
+        {
+          "number": 2,
+          "source": "data/fsw_doc2.pdf",
+          "page": 141,
+          "passage_sha256": "21bfb491fedfa4f315137883c52bdfbe00fd1d797a3b491beb91c990e088dea7"
+        },
+        {
+          "number": 3,
+          "source": "data/fsw_doc4.pdf",
+          "page": 197,
+          "passage_sha256": "1aefd8f891b7841755b9ba2a7644adb38c3ed93e0134391a62506295c46f8e09"
+        }
+      ],
+      "independent_structural_check": {
+        "status": "abstention",
+        "invalid_citations": [],
+        "malformed_citations": false,
+        "missing_citations": false,
+        "unsupported_numbers": [],
+        "semantic_support_verified": false
+      }
+    }
+  ],
+  "limitations": "Public browser observations; no owner reboot or cold-start control. Structural checks are not semantic entailment or RAGAS scores."
+}

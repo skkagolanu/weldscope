@@ -90,3 +90,20 @@ The first FSW request still cost **10,014 ms backend**: retriever initialization
 ## 13 November ONNX runtime and validation update
 
 The [dated maintenance report](maintenance-2026-11-13.md) supersedes cache-first model downloading: runtime inference now uses bundled ONNX files and no HF packages or network loading. A local two-core profile measured 474 ms initialization plus first retrieval/reranking, 158 ms warm mean at 5→3, and 524 ms at 20→5, excluding imports/Groq/browser. Research text is buffered until final structural citation validation, so the old first-chunk redraw description is historical. Provider first-token and post-validation first-visible delivery are separate. No unconditional hosted two-second claim is made.
+
+
+## Hosted ONNX release after the 13 November reboot
+
+`quality-v3` passed the exact seven-turn public regression on Python 3.12.16, with no unexpected installed HF packages. [Raw observations](https://github.com/skkagolanu/weldscope/blob/main/benchmarks/fsw-v1/maintenance-2026-11-13/hosted-v3.json).
+
+| Turn | Backend total | Browser total |
+| --- | ---: | ---: |
+| First FSW research turn |1,493 ms|2,432 ms|
+| Exact recipe refusal |0.385 ms|542 ms|
+| Warm TMAZ |539 ms|1,058 ms|
+| Warm HAZ follow-up |625 ms|1,145 ms|
+| Unsupported-standard abstention |456 ms|995 ms|
+
+The first research turn incurred 634 ms retriever initialization, 215 ms reranker loading, 168 ms reranker compute, 11 ms search, 461 ms generation and 2 ms validation. Its first-visible server delivery followed validation; browser timing separately includes framework scheduling, rendering and network. Model-loading costs were observed but infrastructure cold state was not forced.
+
+The historical quality-v1 first research observation was 10,014 ms backend / 12,004 ms browser, with 4,598 ms initialization and 4,663 ms reranker loading. Comparing these separate dated runs suggests the largest reduction is loading, consistent with the source change and local ONNX profile; it is not a randomized, hardware-controlled percentage speedup. Warm browser samples meet two seconds, while the first research sample remains above that target. The recipe refusal uses no retrieval, generation, sources or provider tokens. See [full interpretation and semantic-quality limits](maintenance-2026-11-13.md).

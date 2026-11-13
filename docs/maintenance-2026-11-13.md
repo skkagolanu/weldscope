@@ -91,6 +91,26 @@ Real in-memory Langfuse/OpenTelemetry tests verify local parent/child correlatio
 
 The fresh Python 3.12 application environment passed **179 tests, 97.44% package coverage**. Real inference was tested with network connections denied and no HF-related runtime distributions installed. The separate RAGAS environment passed 15 contract/pacing/checkpoint tests. Both installed dependency graphs passed compatibility checks; clean application mypy, error lint, formatting and the warning-free documentation build passed. [GitHub CI for 711bfbe](https://github.com/skkagolanu/weldscope/actions/runs/43362459127) passed every job, including the real native retrieval gate; [machine-readable CI record](../benchmarks/fsw-v1/maintenance-2026-11-13/ci.json).
 
-`quality-v3` public deployment verification is pending the pushed revision actually serving. The public browser still observed `quality-v1`; the updated harness also checks Python 3.12 and the live unexpected-HF-package list. Owner reboot has been requested because those controls are unavailable in the anonymous browser. Older successful `quality-v1` hosted tests remain dated evidence, not proof of this release. The exact multi-turn hosted regression and a real Groq query must be rerun against current diagnostics before claiming it deployed.
+## Hosted quality-v3 verification after owner reboot
 
-Latest [public verification attempt](../benchmarks/fsw-v1/maintenance-2026-11-13/hosted-pending.json) stopped after the provider-free greeting because it observed `quality-v1`, not `quality-v3`. No new-release hosted research or latency result is claimed. The remaining external step is an owner reboot/source-coordinate check, followed by rerunning the same browser regression.
+The public browser regression **passed all seven turns** on 13 November 2026 at 04:50UTC, after the owner confirmed reboot. The serving app reports **quality-v3, Python 3.12.16, bundled ONNX inference and no unexpected installed HF packages** from the checked exclusion list. The release marker is observed; no runtime Git SHA is exposed. [Raw browser responses, diagnostics, usage and sources](../benchmarks/fsw-v1/maintenance-2026-11-13/hosted-v3.json).
+
+| Turn | Backend total | Browser total | Observed behavior |
+| --- | ---: | ---: | --- |
+| hi |4 ms|643 ms|Local greeting, no provider usage|
+| what do you do |3 ms|485 ms|Local purpose/source explanation|
+| what is FSW |1,493 ms|2,432 ms|First research turn; live Groq response and source passages|
+| Exact ship/butter-chicken request |0.385 ms|542 ms|Local corpus-only refusal; no retrieval, reranking, generation, sources or token usage|
+| What is the TMAZ? |539 ms|1,058 ms|Warm research; valid domain synonym|
+| How does it differ from the HAZ? |625 ms|1,145 ms|Warm contextual follow-up|
+| Latest 2035 FSW-standard changes |456 ms|995 ms|Abstention because the corpus has no supporting information|
+
+All four research turns reported real token usage and passed citation-number checks. Displayed sources refer only to current `fsw_doc*.pdf` files. The unsupported future-standard answer now has the correct `abstention` diagnostic rather than a false support warning. Structural checks are not semantic entailment or factual-support certification.
+
+The first research turn explicitly incurred **634 ms retriever initialization, 215 ms reranker loading, 168 ms reranker computation, 11 ms search, 461 ms generation and 2 ms validation**. Its post-validation server delivery was 1,493 ms; browser completion was 2,432 ms. The browser/backend difference includes framework scheduling, rendering and network, and cannot be attributed solely to network. This is an observed load-incurring first turn, not a forced infrastructure-cold boot or a deployment/install-time measurement.
+
+The earlier quality-v1 hosted observation had 10,014 ms backend / 12,004 ms browser for its first research turn, with 4,598 ms initialization and 4,663 ms reranker loading. These separate dated observations support a substantial reduction in the measured loading stages after bundled ONNX inference; they are not randomized, hardware-controlled speedup trials or a universal latency SLA. The warm TMAZ/HAZ samples now complete under two seconds in the browser, while this first research sample still exceeds that target.
+
+Production source defaults remain 5 candidates→3 passages; the browser observes three displayed passages. The candidate-pool setting itself is not exposed by the current hosted diagnostics, so this observation does not independently prove that no owner configuration override is present. The controlled 5→3 versus 20→3/5 comparison remains the separately recorded local experiment.
+
+Hosted external Langfuse export/retention remains unverified by explicit owner choice. The small semantic panel still indicates answer-quality limitations; passing this deployment regression does not supersede those results.

@@ -4,6 +4,8 @@ A research assistant for **friction stir welding (FSW)** defects, causes, and co
 
 [Open the app](https://weldscope.streamlit.app/) · [CI](https://github.com/skkagolanu/weldscope/actions/workflows/ci.yml) · [Hosted checks](https://github.com/skkagolanu/weldscope/actions/workflows/deploy.yml) · [Hosting status](docs/hosting.md)
 
+Verified on 13 November 2026 after owner reboot: public `quality-v3`, Python 3.12.16, HF-free application environment and a passing seven-turn live regression. Warm research samples took about 1.1 seconds in the browser; the first research sample took 2.43 seconds. See the dated hosting report for limitations.
+
 ## What it does
 
 - Answers greetings and questions about WeldScope and its sources locally, without inference calls or document search. Other unsupported requests receive a brief local scope refusal, including requests to assess real equipment or handle a live incident.
